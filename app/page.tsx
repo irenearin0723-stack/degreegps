@@ -20,7 +20,7 @@ export default function Home(){
  useEffect(()=>{const saved=localStorage.getItem(sessionKey);if(saved){try{const profile=JSON.parse(saved) as DemoUser;setUser(profile);const savedPlan=localStorage.getItem(planKey(profile.email));if(savedPlan)setPlan(JSON.parse(savedPlan) as PlanResponse)}catch{localStorage.removeItem(sessionKey)}}},[]);
  const completeLogin=(profile:DemoUser)=>{setUser(profile);localStorage.setItem(sessionKey,JSON.stringify(profile));if(plan)localStorage.setItem(planKey(profile.email),JSON.stringify(plan));else{const saved=localStorage.getItem(planKey(profile.email));if(saved)setPlan(JSON.parse(saved) as PlanResponse)}setAuthOpen(false);setView('account')};
  const openAccount=()=>user?setView('account'):setAuthOpen(true);
- const logout=()=>{localStorage.removeItem(sessionKey);setUser(undefined);setView('landing')};
+ const logout=()=>{localStorage.removeItem(sessionKey);setUser(undefined);setPlan(undefined);setRequest(undefined);setView('landing')};
  const generate=async(payload:PlanRequest)=>{setRequest(payload);setError(undefined);setView('loading');try{const nextPlan=await createPlan(payload);setPlan(nextPlan);if(user)localStorage.setItem(planKey(user.email),JSON.stringify(nextPlan));setView('dashboard')}catch(caught){setError(caught instanceof PlanApiError?caught:new PlanApiError('Something went wrong.'));setView('error')}};
  if(view==='loading')return <LoadingPlan/>;
  if(view==='dashboard'&&plan)return <><PlanDashboard plan={plan} accountName={user?.name} onAccount={openAccount} onEdit={()=>setView('planner')} onRegenerate={()=>generate(plan.request)}/>{authOpen&&<AccountModal onClose={()=>setAuthOpen(false)} onContinue={completeLogin}/>}</>;

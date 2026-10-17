@@ -66,6 +66,18 @@ export interface CareerMilestone {
   status: 'not_started' | 'in_progress' | 'done';
 }
 
+export interface RecommendedSkill {
+  name: string;
+  reason: string;
+  priority: 'now' | 'next' | 'later';
+}
+
+export interface RecommendedProject {
+  title: string;
+  description: string;
+  skills: string[];
+}
+
 export interface PlanWarning {
   code: string;
   severity: 'info' | 'warning' | 'blocking';
@@ -95,6 +107,9 @@ export interface PlanResponse {
   request: PlanRequest;
   quarters: QuarterPlan[];
   career_milestones: CareerMilestone[];
+  /** Optional until the v2 backend rollout; the UI safely omits missing sections. */
+  recommended_skills?: RecommendedSkill[];
+  recommended_projects?: RecommendedProject[];
   warnings: PlanWarning[];
   sources: PlanSource[];
 }

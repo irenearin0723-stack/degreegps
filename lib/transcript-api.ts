@@ -28,7 +28,7 @@ const mockResult: TranscriptParseResponse = {
     { id: 'det-3', code: 'MATH 207', term: 'Spring 2026', grade: '3.7', status: 'completed', confidence: 0.96 },
     { id: 'det-4', code: 'CSE 311', term: 'Autumn 2026', grade: null, status: 'in_progress', confidence: 0.99 },
     { id: 'det-5', code: 'CSE 351', term: 'Autumn 2026', grade: null, status: 'in_progress', confidence: 0.97 },
-    { id: 'det-6', code: 'INFO 201', term: 'Autumn 2026', grade: null, status: 'in_progress', confidence: 0.94 },
+    { id: 'det-6', code: 'INFO 20I', term: 'Autumn 2026', grade: null, status: 'uncertain', confidence: 0.72 },
   ],
   warnings: ['Demo extraction: review every detected course before adding it to your plan.'],
 };
