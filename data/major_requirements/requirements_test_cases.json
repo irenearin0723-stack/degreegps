@@ -1,0 +1,214 @@
+{
+  "execution_status": "Two AMATH credit/category fixtures and dataset integrity checks executed. Remaining fixtures specify backend acceptance behavior and have not been run against the application.",
+  "fixtures": [
+    {
+      "case_id": "AMATH_6_COURSES_24_CREDITS",
+      "program_id": "AMATH",
+      "completed": [
+        [
+          "AMATH 401",
+          4
+        ],
+        [
+          "AMATH 402",
+          4
+        ],
+        [
+          "AMATH 342",
+          3
+        ],
+        [
+          "AMATH 383",
+          3
+        ],
+        [
+          "AMATH 481",
+          5
+        ],
+        [
+          "AMATH 482",
+          5
+        ]
+      ],
+      "expected": {
+        "category_minima": "met",
+        "elective_credits": 24,
+        "elective_credit_minimum": "unmet"
+      },
+      "reason": "Two courses in each category do not necessarily reach 27 credits."
+    },
+    {
+      "case_id": "AMATH_27_CREDITS",
+      "program_id": "AMATH",
+      "completed": [
+        [
+          "AMATH 401",
+          4
+        ],
+        [
+          "AMATH 402",
+          4
+        ],
+        [
+          "AMATH 342",
+          3
+        ],
+        [
+          "AMATH 383",
+          3
+        ],
+        [
+          "AMATH 481",
+          5
+        ],
+        [
+          "AMATH 482",
+          5
+        ],
+        [
+          "AMATH 422",
+          3
+        ]
+      ],
+      "expected": {
+        "category_minima": "met",
+        "elective_credits": 27,
+        "elective_credit_minimum": "met"
+      }
+    },
+    {
+      "case_id": "CS_FOUR_CORES_ONLY",
+      "program_id": "CS",
+      "completed_courses": [
+        "CSE 401",
+        "CSE 403",
+        "CSE 421",
+        "CSE 446"
+      ],
+      "expected": {
+        "four_400_level": "met",
+        "seven_distinct_slots": "unmet"
+      },
+      "reason": "Four courses cannot be allocated again to the two additional and one additional slots."
+    },
+    {
+      "case_id": "CS_331_EXCLUSION",
+      "program_id": "CS",
+      "completed_courses": [
+        "CSE 331"
+      ],
+      "expected": {
+        "fundamental_match": true,
+        "additional_core_match": false,
+        "additional_elective_credits": 0
+      }
+    },
+    {
+      "case_id": "INFO_490_ONLY",
+      "program_id": "INFO",
+      "completed": [
+        [
+          "INFO 490",
+          4
+        ]
+      ],
+      "grades": {
+        "INFO 490": 3
+      },
+      "expected": {
+        "capstone": "unmet"
+      }
+    },
+    {
+      "case_id": "INFO_492_EIGHT",
+      "program_id": "INFO",
+      "completed": [
+        [
+          "INFO 492",
+          8
+        ]
+      ],
+      "grades": {
+        "INFO 492": 3
+      },
+      "expected": {
+        "capstone": "met"
+      }
+    },
+    {
+      "case_id": "INFO_493_FOUR",
+      "program_id": "INFO",
+      "completed": [
+        [
+          "INFO 493",
+          4
+        ]
+      ],
+      "grades": {
+        "INFO 493": 3
+      },
+      "expected": {
+        "capstone": "unmet"
+      }
+    },
+    {
+      "case_id": "INFO_CORE_LOW_GRADE",
+      "program_id": "INFO",
+      "completed": [
+        [
+          "INFO 280",
+          4
+        ]
+      ],
+      "grades": {
+        "INFO 280": 1.9
+      },
+      "expected": {
+        "course_core_grade": "unmet"
+      }
+    },
+    {
+      "case_id": "INFO_290_OLD_CREDIT",
+      "program_id": "INFO",
+      "completed_courses": [
+        "INFO 290"
+      ],
+      "expected": {
+        "auto_satisfies_INFO_280": false,
+        "substitution_status": "needs_review"
+      }
+    },
+    {
+      "case_id": "WINTER_491",
+      "program_id": "INFO",
+      "requested_course": "INFO 491",
+      "expected": {
+        "winter_2027_status": "not_listed",
+        "schedule_eligible": false
+      }
+    },
+    {
+      "case_id": "WINTER_MATH",
+      "program_id": "AMATH",
+      "requested_course": "MATH 124",
+      "expected": {
+        "winter_2027_status": "not_collected",
+        "schedule_eligible": "unknown"
+      }
+    },
+    {
+      "case_id": "DOUBLE_MAJOR_OVERLAP",
+      "program_ids": [
+        "CS",
+        "AMATH"
+      ],
+      "completed_courses": [
+        "AMATH 401"
+      ],
+      "expected": {
+        "candidate_matches_both": true,
+        "approved_double_counting": "needs_review"
+      }
+    }
+  ]
+}

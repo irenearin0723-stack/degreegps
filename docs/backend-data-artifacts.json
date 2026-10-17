@@ -1,0 +1,18 @@
+{
+  "passed": 1378,
+  "failed": 0,
+  "failures": [],
+  "workbooks": [
+    {
+      "path": "data/target_courses/UniFlow_Winter_2027.xlsx",
+      "worksheet_xml_count": 3,
+      "stored_error_cells": 0
+    },
+    {
+      "path": "data/major_requirements/UniFlow_Three_Majors.xlsx",
+      "worksheet_xml_count": 6,
+      "stored_error_cells": 0
+    }
+  ],
+  "scope": "CSV parity, prerequisite semantics, references, XLSX structural integrity; no full spreadsheet calculation or degree-audit engine."
+}

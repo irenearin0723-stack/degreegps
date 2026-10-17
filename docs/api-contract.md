@@ -1,158 +1,214 @@
-# DegreeGPS API Contract (v1.0.0)
+# DegreeGPS API contract v2.0.0
 
-**Status:** Frozen for the hackathon MVP. **Owners:** everyone on the team.  
-**Source of truth:** [`types/plan.ts`](../types/plan.ts).  
-**Canonical sample:** [`mocks/sample-plan.json`](../mocks/sample-plan.json).
+`types/plan.ts`, `types/course.ts`, and `types/transcript.ts` are the canonical
+shared types and Zod schemas. Do not maintain duplicate frontend types. Types
+are inferred from schemas so runtime validation and TypeScript agree.
 
-## Goal
+## POST /api/plan
 
-A student provides major(s), courses taken, internship goal, and workload preference. The backend returns a quarter-by-quarter academic plan and parallel career milestones. The frontend should be able to render **the mock response today** and replace it with **the real API response later without rewriting its UI**.
-
-> The mock is **not** verified academic advice. Before presenting a generated plan as reliable, validate prerequisites, degree requirements and course offerings against official UW sources.
-
-## Endpoint
-
-`POST /api/plan`
-
-Headers: `Content-Type: application/json`  
-Success: `200 OK` with a `PlanResponse` object.  
-Invalid input: `400 Bad Request` with `ApiErrorResponse`.  
-Cannot produce feasible plan: `422 Unprocessable Entity` with `ApiErrorResponse`.  
-Unexpected failure: `500 Internal Server Error` with `ApiErrorResponse`.
-
-The path is relative to whatever origin hosts the backend. Frontend developer may configure the backend base URL via environment variables; do not hardcode production domains.
-
-### Request example
+Content-Type: `application/json`, maximum body 64 KiB, unknown keys rejected.
 
 ```json
 {
-  "majors": ["Computer Science", "Applied Mathematics"],
+  "major": "Computer Science + Applied Mathematics",
   "completed_courses": ["CSE 123", "MATH 126"],
-  "in_progress_courses": ["CSE 311", "CSE 351", "INFO 201"],
-  "target_role": "Machine Learning Engineer Intern",
-  "target_summer": 2027,
-  "max_courses_per_term": 3,
-  "start_term": "autumn",
-  "start_year": 2026,
-  "horizon_terms": 4
+  "in_progress_courses": [],
+  "goal": {
+    "type": "internship",
+    "track": "ml",
+    "deadline": "2027-06-01",
+    "notes": "I want to practice evaluating models."
+  },
+  "max_courses_per_term": 2,
+  "start_term": "2027-winter",
+  "use_ai_explanation": false
 }
 ```
 
-### Request rules
+`major`: one nonempty label (maximum 200 characters). A combined major string is
+accepted; it must match a verified dataset eligibility label or an explicit `*`
+rule. The planner does not infer that every combined major qualifies for every course.
+`completed_courses` (max 300) and `in_progress_courses` (max 30) contain IDs, not
+transcript files or grades. Course IDs normalize spaces/case (`cse311` → `CSE 311`).
+Duplicates and overlaps are errors after normalization. The client must confirm
+extracted course history before planning.
 
-| Field | Required | Rules |
-| --- | --- | --- |
-| `majors` | yes | Nonempty list of strings; supports double majors |
-| `completed_courses` | yes | Array of course codes, `[]` allowed |
-| `in_progress_courses` | yes | Array of course codes, `[]` allowed |
-| `target_role` | yes | Nonempty string, e.g. `ML Engineer Intern` |
-| `target_summer` | yes | Four-digit integer year |
-| `max_courses_per_term` | yes | Integer in `[1,5]`, includes in-progress courses |
-| `start_term` | yes | `autumn`, `winter`, `spring` or `summer` |
-| `start_year` | yes | Four-digit integer year |
-| `horizon_terms` | yes | Integer in `[1,8]`; summer counts as one term |
+`goal.type`: `internship | research | projects | explore`.
+`goal.track`: `swe | ml | data | systems | hci | undecided`.
+The undecided track is supported only with explore; all five focused tracks work
+with every goal type. Unsupported combinations return 400. Deadline is a real
+`YYYY-MM-DD` date or null (flexible); relative dates need user confirmation.
+`goal.notes` and top-level `preferences` are optional text, each max 2000 characters.
+They never change deterministic eligibility or hard constraints. AI may use these
+preferences to choose the explanation focus when explicitly enabled; the current
+MVP does not automatically interpret arbitrary academic constraints from prose.
 
-Normalize course codes to uppercase with a single space, e.g. `cse311` -> `CSE 311`. Remove duplicates. A course must not appear in both completed and in-progress arrays; reject conflicting inputs with `400`.
+`max_courses_per_term`: integer 1–5, limits NEW recommended courses. In-progress
+courses are excluded and never automatically promoted to completed. The start
+term should be a future planning quarter after the current enrollment period.
+`start_term`: optional `YYYY-winter|spring|summer|autumn`; when omitted, uses the
+next approximate seasonal window and emits a warning. A past/current requested term is adjusted to the next future planning window with `START_TERM_ADJUSTED`; chronological quarter order is used. The horizon is exactly
+three consecutive quarters, including summer. These windows are not UW term dates.
 
-### Response example
+`use_ai_explanation`: defaults false; true explicitly permits external transmission
+of goal/preferences and generated plan sentences for optional explanation selection.
+A missing API key returns a local summary and `AI_UNAVAILABLE`, with HTTP 200.
 
-The entire JSON file at [`mocks/sample-plan.json`](../mocks/sample-plan.json) is the canonical response fixture. **Do not hand-maintain a second, contradictory response example here.**
+### Response
 
-The success JSON has exactly these top-level keys:
-
-```text
-schema_version          "1.0.0"
-plan_id                 string
-mode                    "mock" | "generated"
-generated_at            ISO-8601 datetime
-request                 PlanRequest (normalized echo)
-quarters                QuarterPlan[]
-career_milestones       CareerMilestone[]
-warnings                PlanWarning[]
-sources                 PlanSource[]
-```
-
-### Required semantics / UI promises
-
-1. **Names and casing never change.** All JSON keys use `snake_case`. TypeScript uses identical keys. No silent conversions to camelCase.
-2. **IDs are stable and unique.** Quarter IDs are `YYYY-term`, e.g. `2027-winter`. `career_milestones[].quarter_id` must refer to a returned quarter. `courses[].source_ids` must refer to IDs in `sources`.
-3. **Quarter order is chronological.** `autumn → winter → spring → summer` **across academic-year boundaries**: for example `2026-autumn → 2027-winter → 2027-spring → 2027-summer → 2027-autumn`. Summer may have `courses: []`.
-4. **Do not exceed workload.** Every quarter has at most `max_courses_per_term` courses, including courses already in progress. No completed course may be planned again.
-5. **Truthful uncertainty.** Use `credits: null` when credits are unverified. `source_ids: []` is valid when there is no source. Never invent citations, prerequisites, degree fulfillment, course availability, or internship guarantees. Add a warning for material unknowns.
-6. **Separation of concerns.** Backend owns planning logic and validation. Frontend owns layout and interaction. Retrieval/RAG owns source lookup and returns source metadata to the backend. Frontend **must not** infer academic prerequisites.
-7. **Rendering errors.** Show `error.message` for 4xx/5xx cases; do not treat an error response as a successful plan.
-8. **Term-specific milestones.** Every milestone points at a quarter. Career milestones may exist for terms with no classes.
-
-### Error example
+HTTP 200: `PlanResponse`, even when no safe academic courses can be scheduled.
+See `examples/plan-response.json` for a complete real-planner example and
+`mocks/sample-plan.json` for a dashboard with illustrative coursework.
 
 ```json
 {
-  "error": {
-    "code": "INVALID_REQUEST",
-    "message": "max_courses_per_term must be between 1 and 5",
-    "details": ["Received: 7"]
-  }
+  "schema_version": "2.0.0",
+  "mode": "generated",
+  "quarters": [
+    {"term": "2027-winter", "courses": [], "notes": "Eligibility requires review."},
+    {"term": "2027-spring", "courses": [], "notes": "Eligibility requires review."},
+    {"term": "2027-summer", "courses": [], "notes": "Eligibility requires review."}
+  ],
+  "recommended_skills": ["Python", "Linear algebra", "Model evaluation"],
+  "recommended_projects": ["Evaluate a baseline model on a public, non-sensitive dataset"]
 }
 ```
 
-## Frontend integration
+The snippet omits required metadata, request echo, milestones, warnings, sources,
+and summary for readability; use the complete JSON files or runtime schema.
+Each course has `id`, `title`, nullable `credits`, `explanation`, `source_ids`, and
+`scheduling_status`: `eligible` or `tentative`. Eligible means the recorded rules
+were satisfied, not a reserved seat, an official degree recommendation, or a
+promise of future availability. Dependencies on earlier planned quarters are
+always tentative until prerequisites are actually completed.
 
-- During UI work, import and render `mocks/sample-plan.json` as if it came from the server.
-- Frontend types come from `types/plan.ts`, e.g. `import type { PlanResponse } from '../types/plan'` (adjust relative import path to your app).
-- All UI components should take **one `PlanResponse`** rather than ad-hoc unrelated data.
-- When backend is ready, replace the mock-loading function with a `fetch` call to `POST /api/plan`; keep rendering components unchanged.
-- Do not display a real-catalog/source badge when `mode: "mock"` or when `sources[].kind: "mock"`.
+Warnings contain `code`, `severity` (`info|warning|blocking`), `message`, and
+`affected_course_codes`. They may identify blocked courses absent from quarters.
+Sources include evidence for blocked candidates as well as selected courses, so even empty safe plans remain traceable. Sources contain `id`, `title`, nullable `url`, `kind`, `verified_at`, and
+`data_status`. No synthetic URL is supplied for bundled sample data.
 
-Example networking layer (adapt the path to your framework):
+Milestones contain `action`, `explanation`, `associated_goal`, `related_course_ids`,
+and `timeframe: {start, end, basis: "recommended"}`. These dates begin today and
+adapt to the user's deadline; they are not actual hiring or lab deadlines.
+Deadlines less than 42 days away (including past ones) trigger a feasibility warning
+and prioritize the first three actions. Flexible goals use a recommended 180-day
+window. Related course references express a preparation connection, not proven mastery.
+
+## GET /api/plan/mock
+
+Returns the canonical fictional Summer 2027 ML internship fixture (three quarters).
+Always `mode: "mock"`, includes `UNVERIFIED_CATALOG`, and marks courses tentative.
+This route does not call OpenAI or use user inputs. Render a visible DEMO label.
+
+## POST /api/transcript
+
+Send multipart/form-data with **exactly one `file` field**, filename ending `.pdf`,
+MIME `application/pdf`, up to 5 MiB, up to 30 pages. The endpoint also checks the
+PDF signature and caps the actual request stream (including missing Content-Length).
+Do not set Content-Type yourself when using browser FormData; the browser adds
+its multipart boundary.
 
 ```ts
-import type { PlanRequest, PlanResponse, ApiErrorResponse } from './types/plan';
-
-export async function createPlan(
-  baseUrl: string,
-  payload: PlanRequest
-): Promise<PlanResponse> {
-  const res = await fetch(`${baseUrl}/api/plan`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok) {
-    const data = (await res.json()) as ApiErrorResponse;
-    throw new Error(data.error?.message ?? `HTTP ${res.status}`);
-  }
-  return (await res.json()) as PlanResponse;
-}
+import { TranscriptResponseSchema } from '@/types/transcript';
+const form = new FormData();
+form.set('file', pdfFile);
+const response = await fetch('/api/transcript', { method: 'POST', body: form });
+if (!response.ok) throw new Error((await response.json()).error.message);
+const extraction = TranscriptResponseSchema.parse(await response.json());
+// Show an editable review screen; do not auto-submit extracted history.
 ```
 
-TypeScript `as PlanResponse` is a *compile-time assertion*, not runtime validation. Backend must validate incoming JSON. Frontend can add runtime response validation before production.
+Complete fictional response: `examples/transcript-response.json`.
+Records preserve course ID, title, term, grade, credits, status, repeated/transfer
+flags, course-line text, and review reasons. A missing grade is ambiguous, never
+assumed in-progress. Only explicit `IP` or `IN PROGRESS` counts as in-progress.
+Numeric nonzero grades/CR/S are provisionally completed; minimum-grade eligibility
+is a separate rule, never inferred from merely having a course ID.
 
-## Backend + future RAG agreement
+Repeated attempts and transfer entries are withheld from the suggested completed
+list until manually confirmed. Withdrawn/failed/ambiguous courses do not count.
+Header/student identity lines are not intentionally returned. Course-entry text
+is still sensitive: keep it in memory, do not log or persist it.
 
-The first backend endpoint may return the unchanged sample JSON to unblock the frontend. Later, replace the hard-coded JSON with planning logic and retrieved source documents **without changing the response shape**.
+Every successful response has `needs_review: true` and
+`user_confirmation_required: true`, including apparently clear records. Image-only
+PDFs return 200 with empty records and `SCANNED_PDF_UNSUPPORTED`; the UI should
+provide manual entry. Unsupported text layouts return `NO_RECOGNIZABLE_COURSES`
+or ambiguous records. Damaged/encrypted PDFs return 422. OCR is not implemented.
+No PDF bytes or extracted transcript text are sent to AI.
 
-Future RAG integration:
+## POST /api/goal
 
-1. Retrieve relevant official UW catalog / departmental documents.
-2. Parse prerequisites and degree requirements into structured constraints.
-3. Validate proposed course sequences deterministically against those constraints.
-4. Put the retrieved records in `sources` (with actual URL and retrieval time), and reference them via `source_ids` on related courses.
-5. Add `warnings` when sources conflict or constraints cannot be verified. RAG retrieval alone does not guarantee correctness.
+```json
+{"text":"ML research before 2027-06-01","use_ai":false}
+```
 
-## Git workflow / change policy
+Returns `{goal, clarification_required, warnings, mode}`. `goal` is null when an
+unsupported/ambiguous request needs clarification. Local interpretation is a
+minimal keyword matcher; it never pretends to understand all free text. AI is
+optional (`use_ai: true` is explicit consent to send that text externally). The
+user must review the interpreted structured fields. Relative dates are not guessed.
 
-- `main` is the integration branch. Each person works on a separate feature branch: `feat/frontend`, `feat/planner`, `feat/data`, `feat/design` (or name-specific branches).
-- Open a Pull Request to `main`, ideally reviewed by one teammate. Never force-push `main`.
-- **No breaking changes** to these types or API fields during the hackathon unless all owners approve. For a breaking change, bump `schema_version`, update type + mock + docs + any consumers in the **same PR**.
-- Run `npm run check` before merging. GitHub Actions runs the same check on every PR.
-- The person responsible for integration tests the full mock→backend swap after PR merges.
+## Errors and privacy
 
-## MVP definition of done
+```json
+{"error":{"code":"INVALID_REQUEST","message":"Check the request fields and supported goal combination.","details":["goal.track: select a supported focus"]}}
+```
 
-A teammate can clone the repo, run `npm install && npm run check`, open the sample JSON, and build a term timeline without waiting for the planner implementation. Planner can independently return the agreed shape. RAG team can add source records without changing the UI.
+| Status | Examples |
+| --- | --- |
+| 400 | Invalid JSON, goal, duplicate course IDs, missing file, malformed multipart |
+| 413 | File/body size or PDF page count limit exceeded |
+| 415 | Wrong JSON/multipart content type or wrong file type |
+| 422 | Invalid PDF signature, damaged/encrypted PDF, extraction failure |
+| 503 | Missing/invalid course or career dataset |
+| 500 | Unexpected planning/goal service failure |
 
-## Team starter extras
+All API responses use `Cache-Control: no-store`. Unknown internal errors do not
+include raw exception text, student data, or secrets. A partial/impossible schedule
+is a valid 200 plan with warnings, not a server error. Routes run on Node, not Edge.
 
-- Use [`examples/sample-request.json`](../examples/sample-request.json) as the exact request fixture for backend smoke tests; `npm run check` ensures it matches the request echoed by the sample response.
-- Read [`team-workflow.md`](team-workflow.md) for branch naming and the contract-change checklist.
-- Follow [`github-private.md`](github-private.md) for **GitHub repository** visibility. The npm `private` flag is unrelated to GitHub visibility.
+## Frontend migration from v1
+
+The old contract is preserved only for migration under `docs/legacy/`.
+
+| Old field | v2 field |
+| --- | --- |
+| `majors` | `major` (one explicit label) |
+| `target_role`, `target_summer` | `goal.type`, `goal.track`, `goal.deadline` |
+| `start_year` + `start_term` | combined `start_term`, e.g. `2027-winter` |
+| `horizon_terms` | removed; three quarters fixed for MVP |
+| `quarters[].id/year/term` | `quarters[].term` (combined ID) |
+| `courses[].code/rationale` | `courses[].id/explanation` |
+| milestone quarter/title/action_items | action, recommended date range, explanation |
+| `sources[].retrieved_at` | `sources[].verified_at` (date or null) |
+
+Do not send v1 request keys. Validate responses with `PlanResponseSchema` and import
+`type PlanRequest` / `type PlanResponse` from `@/types/plan`. Keep the frontend and
+backend in this same Next.js app and use relative `/api/...` URLs; no separate
+backend origin or CORS configuration is needed for the MVP.
+
+## Confirmed / projected / unknown offering update
+
+The v2 frontend response shape and request fields are unchanged. Internal course
+records now have exact-term `offering_evidence`. Only confirmed or projected
+positive evidence can produce a recommendation. A confirmed record means presence
+in a dated Time Schedule snapshot, not a seat guarantee. Projected recommendations
+always use `scheduling_status: "tentative"`, explain that the offering is projected,
+include `PROJECTED_OFFERING`, and cite the departmental projection in `source_ids`.
+Unknown offering/prerequisite/grade information never becomes successful eligibility.
+
+If registration eligibility is unknown but prerequisites and positive offering
+are known, up to the remaining quarter capacity may be exposed as **review-only
+candidates** through existing `quarters[].notes` and warnings with
+`code: "COURSE_REVIEW_REQUIRED"`. These are not in `quarters[].courses`, cannot
+satisfy later prerequisites, and must not be rendered as validated assignments.
+Each warning includes its exact quarter, course ID, offering status, and source ID.
+The current imported catalog still has unresolved eligibility, so its useful
+three-quarter response is an adviser-review roadmap, not a confirmed registration plan.
+
+Lecture/quiz times are not required for quarter-level planning. Specific section
+selection, meeting conflicts, seat availability and add-code clearance are future
+features. Known registration restrictions are still enforced; missing details
+remain explicitly unknown. See `examples/projected-review-request.json` and
+`docs/backend-projected-plan.json` for the full actual HTTP request/response.

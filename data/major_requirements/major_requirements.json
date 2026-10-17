@@ -1,0 +1,1300 @@
+{
+  "schema_version": "major-requirements-v1",
+  "institution": "University of Washington Seattle",
+  "checked_at": "2026-10-17",
+  "target_term": "Winter 2027",
+  "programs": [
+    {
+      "program_id": "CS",
+      "name": "Computer Science",
+      "degree": "BS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "document_revision": "2023-09",
+      "effective_from": null,
+      "source_ids": [
+        "CS_OVERVIEW",
+        "CS_SHEET",
+        "CS_LISTS"
+      ],
+      "published_major_credit_range": null,
+      "coverage": "Major course rules and selected general requirements; senior elective pool is partial."
+    },
+    {
+      "program_id": "AMATH",
+      "name": "Applied Mathematics",
+      "degree": "BS",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "document_revision": null,
+      "effective_from": null,
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "published_major_credit_range": [
+        54,
+        59
+      ],
+      "coverage": "Named standard-major course requirements. College general education requires a separate profile."
+    },
+    {
+      "program_id": "INFO",
+      "name": "Informatics",
+      "degree": "BS",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "document_revision": null,
+      "effective_from": null,
+      "source_ids": [
+        "INFO_CATALOG",
+        "INFO_PLAN"
+      ],
+      "published_major_credit_range": [
+        82,
+        95
+      ],
+      "coverage": "Standard major course groups and catalog general education. Exact elective target and non-INFO approvals require confirmation."
+    }
+  ],
+  "requirements": [
+    {
+      "rule_id": "CS_CALCULUS",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Calculus sequence",
+      "logic": {
+        "type": "any_of",
+        "branches": [
+          {
+            "type": "all_of",
+            "courses": [
+              "MATH 124",
+              "MATH 125",
+              "MATH 126"
+            ]
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "MATH 134",
+              "MATH 135",
+              "MATH 136"
+            ]
+          }
+        ]
+      },
+      "source_ids": [
+        "CS_SHEET"
+      ],
+      "verification_status": "verified",
+      "notes": "Mixed sequences or transfer substitutions require approved equivalencies.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_LINEAR",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Linear algebra",
+      "logic": {
+        "type": "any_of",
+        "branches": [
+          {
+            "type": "all_of",
+            "courses": [
+              "MATH 208"
+            ]
+          },
+          {
+            "type": "waiver_if_completed",
+            "course": "MATH 136"
+          }
+        ]
+      },
+      "source_ids": [
+        "CS_SHEET"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_PROGRAMMING",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Programming foundation",
+      "logic": {
+        "type": "choose_courses",
+        "courses": [
+          "CSE 123",
+          "CSE 143"
+        ],
+        "min_courses": 1,
+        "distinct_courses": true
+      },
+      "source_ids": [
+        "CS_SHEET"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_FUNDAMENTALS",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Computing fundamentals",
+      "logic": {
+        "type": "all_of",
+        "courses": [
+          "CSE 311",
+          "CSE 312",
+          "CSE 331",
+          "CSE 332",
+          "CSE 351"
+        ]
+      },
+      "source_ids": [
+        "CS_SHEET"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_SCIENCE",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Approved natural science",
+      "logic": {
+        "type": "any_of",
+        "branches": [
+          {
+            "type": "all_of",
+            "courses": [
+              "PHYS 121"
+            ],
+            "min_credits": 5
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "PHYS 141"
+            ],
+            "min_credits": 5
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "CHEM 142"
+            ],
+            "min_credits": 5
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "CHEM 143"
+            ],
+            "min_credits": 5
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "CHEM 145"
+            ],
+            "min_credits": 5
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "BIOL 180"
+            ],
+            "min_credits": 5
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "BIOL 162"
+            ],
+            "min_credits": 5
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "PHYS 116",
+              "PHYS 119"
+            ],
+            "min_credits": 5
+          }
+        ]
+      },
+      "source_ids": [
+        "CS_LISTS"
+      ],
+      "verification_status": "verified",
+      "notes": "BIOL 162 refers to AP credit. Other science substitutions require a petition.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_CORE_400",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Four 400-level core courses",
+      "logic": {
+        "type": "choose_courses",
+        "pool_id": "cs_core_400",
+        "min_courses": 4,
+        "distinct_courses": true,
+        "allocation_group": "cs_seven_core_slots"
+      },
+      "source_ids": [
+        "CS_SHEET",
+        "CS_LISTS"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_CORE_EXTRA",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Two additional core courses",
+      "logic": {
+        "type": "choose_courses",
+        "pool_id": "cs_core_all",
+        "min_courses": 2,
+        "distinct_courses": true,
+        "allocation_group": "cs_seven_core_slots"
+      },
+      "source_ids": [
+        "CS_SHEET",
+        "CS_LISTS"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_CORE_OR_CAPSTONE",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "One additional core or capstone",
+      "logic": {
+        "type": "choose_courses",
+        "pool_ids": [
+          "cs_core_all",
+          "cs_capstone_examples"
+        ],
+        "min_courses": 1,
+        "distinct_courses": true,
+        "allocation_group": "cs_seven_core_slots"
+      },
+      "source_ids": [
+        "CS_SHEET",
+        "CS_LISTS",
+        "CS_CAPSTONE"
+      ],
+      "verification_status": "verified",
+      "notes": "Capstone pool is illustrative and requires offering-level approval.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_ELECTIVE_CREDITS",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "major",
+      "label": "Additional core and senior elective credits",
+      "logic": {
+        "type": "min_credits",
+        "min_credits": 33,
+        "pool_id": "cs_elective_sample",
+        "credit_bucket": "cs_additional_electives"
+      },
+      "source_ids": [
+        "CS_SHEET",
+        "CS_LISTS"
+      ],
+      "verification_status": "partial_pool",
+      "notes": "Credits from the seven core slots also count toward 33. Count each course once in this bucket. Exclude fundamental CSE 331. Senior elective pool is partial.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_TOTAL",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "degree",
+      "label": "Degree total",
+      "logic": {
+        "type": "min_credits",
+        "min_credits": 180
+      },
+      "source_ids": [
+        "CS_SHEET"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_GPA",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "degree",
+      "label": "Cumulative GPA",
+      "logic": {
+        "type": "min_gpa",
+        "minimum": 2,
+        "metric": "cumulative_gpa"
+      },
+      "source_ids": [
+        "CS_SHEET"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "CS_GENERAL_ED",
+      "program_id": "CS",
+      "profile_id": "cs_standard_checklist_2023_09",
+      "scope": "general_education",
+      "label": "General education",
+      "logic": {
+        "type": "manual_review",
+        "requirements": {
+          "composition": 5,
+          "writing": 10,
+          "reasoning": 5,
+          "arts_humanities": 20,
+          "social_sciences": 20,
+          "natural_sciences": 20,
+          "additional_areas_of_inquiry": 15,
+          "diversity": 5,
+          "foreign_language": "Through third quarter or approved proficiency"
+        }
+      },
+      "source_ids": [
+        "CS_SHEET"
+      ],
+      "verification_status": "requires_profile_match",
+      "notes": "Overlaps are permitted where the checklist specifies them. Do not add these credit categories to degree credits.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_CALCULUS",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Calculus sequence",
+      "logic": {
+        "type": "any_of",
+        "branches": [
+          {
+            "type": "all_of",
+            "courses": [
+              "MATH 124",
+              "MATH 125",
+              "MATH 126"
+            ]
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "MATH 134",
+              "MATH 135",
+              "MATH 136"
+            ]
+          }
+        ]
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_COMPUTING",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Introductory computing",
+      "logic": {
+        "type": "all_of",
+        "courses": [
+          "AMATH 301"
+        ]
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_INTRO",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Introductory applied mathematics",
+      "logic": {
+        "type": "all_of",
+        "courses": [
+          "AMATH 351",
+          "AMATH 352",
+          "AMATH 353"
+        ]
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_METHODS",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Methods electives",
+      "logic": {
+        "type": "choose_courses",
+        "pool_id": "amath_methods",
+        "min_courses": 2,
+        "distinct_courses": true
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_MODELING",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Modeling electives",
+      "logic": {
+        "type": "choose_courses",
+        "pool_id": "amath_modeling",
+        "min_courses": 2,
+        "distinct_courses": true
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_DATA",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Computing and data science electives",
+      "logic": {
+        "type": "choose_courses",
+        "pool_id": "amath_computing",
+        "min_courses": 2,
+        "distinct_courses": true
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_ELECTIVE_CREDITS",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Total elective credits",
+      "logic": {
+        "type": "min_credits",
+        "min_credits": 27,
+        "pool_id": "amath_all_electives",
+        "credit_bucket": "amath_electives"
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "The same elective may satisfy its category and contribute credits to this total. Count each course once in total credits.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_GPA",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Major cumulative GPA",
+      "logic": {
+        "type": "min_gpa",
+        "minimum": 2,
+        "metric": "major_gpa"
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "AMATH_GENERAL_ED",
+      "program_id": "AMATH",
+      "profile_id": "amath_standard_snapshot_2026_10_17",
+      "scope": "general_education",
+      "label": "College general education",
+      "logic": {
+        "type": "manual_review",
+        "action": "Apply the applicable College of Arts and Sciences general education and university degree requirements."
+      },
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "verification_status": "not_encoded",
+      "notes": "College general education is outside this major-course profile.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_ADMISSION_FOUNDATION",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "admission",
+      "label": "Admission foundation",
+      "logic": {
+        "type": "all_of",
+        "courses": [
+          "INFO 200"
+        ],
+        "min_grade": 2
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "Minimum grade 2.0. Admission eligibility does not guarantee admission.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_ADMISSION_PROGRAMMING",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "admission",
+      "label": "Admission programming",
+      "logic": {
+        "type": "choose_courses",
+        "courses": [
+          "CSE 121",
+          "CSE 122",
+          "CSE 123",
+          "CSE 142",
+          "CSE 143",
+          "CSE 154",
+          "CSE 160",
+          "CSE 163",
+          "CSE 180",
+          "INFO 180",
+          "INFO 201",
+          "STAT 180"
+        ],
+        "min_courses": 1,
+        "distinct_courses": true,
+        "min_grade": 2
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "Cross-listed INFO/STAT/CSE 180 is one course.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_ADMISSION_STATS",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "admission",
+      "label": "Admission statistics",
+      "logic": {
+        "type": "choose_courses",
+        "courses": [
+          "STAT 220",
+          "STAT 221",
+          "STAT 290",
+          "STAT 311",
+          "STAT 390",
+          "CS&SS 221",
+          "SOC 221",
+          "QMETH 201"
+        ],
+        "min_courses": 1,
+        "distinct_courses": true,
+        "min_grade": 2
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "STAT/CS&SS/SOC 221 is one course.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_ADMISSION_GPA",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "admission",
+      "label": "Admission college GPA",
+      "logic": {
+        "type": "min_gpa",
+        "minimum": 2,
+        "metric": "cumulative_college_gpa"
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_REQUIRED",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Required core courses",
+      "logic": {
+        "type": "all_of",
+        "courses": [
+          "INFO 201",
+          "INFO 280",
+          "INFO 300",
+          "INFO 330",
+          "INFO 340",
+          "INFO 360",
+          "INFO 380"
+        ],
+        "min_grade": 2
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "Use current catalog INFO 280. INFO 290 is retained only as a source conflict.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_CORE_PROGRAMMING",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Core programming",
+      "logic": {
+        "type": "choose_courses",
+        "courses": [
+          "CSE 123",
+          "CSE 143",
+          "CSE 163"
+        ],
+        "min_courses": 1,
+        "distinct_courses": true,
+        "min_grade": 2
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_SOFTWARE",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Software course choice",
+      "logic": {
+        "type": "choose_courses",
+        "courses": [
+          "CSE 373",
+          "INFO 442",
+          "INFO 443"
+        ],
+        "min_courses": 1,
+        "distinct_courses": true,
+        "min_grade": 2
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_SOCIETY",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Information and society",
+      "logic": {
+        "type": "choose_courses",
+        "pool_id": "info_society",
+        "min_courses": 2,
+        "distinct_courses": true,
+        "min_grade": 2
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "verified",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_CAPSTONE",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Capstone path",
+      "logic": {
+        "type": "any_of",
+        "branches": [
+          {
+            "type": "all_of",
+            "courses": [
+              "INFO 490",
+              "INFO 491"
+            ],
+            "min_credits": 8,
+            "min_grade": 2
+          },
+          {
+            "type": "all_of",
+            "courses": [
+              "INFO 492"
+            ],
+            "min_credits": 8,
+            "min_grade": 2
+          },
+          {
+            "type": "min_credits",
+            "courses": [
+              "INFO 493"
+            ],
+            "min_credits": 8,
+            "min_grade": 2,
+            "repeatable_credit_accumulation": true
+          }
+        ]
+      },
+      "source_ids": [
+        "INFO_CATALOG",
+        "INFO_COURSES"
+      ],
+      "verification_status": "verified",
+      "notes": "INFO 493 may carry 1-8 credits. A single low-credit registration does not complete the capstone.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_ELECTIVES",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "major",
+      "label": "Additional approved electives",
+      "logic": {
+        "type": "manual_review",
+        "published_credit_range": [
+          12,
+          15
+        ],
+        "minimum_floor": 12,
+        "exact_target": null,
+        "selector": "Upper-division INFO courses or non-INFO courses on the approved list"
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "requires_advisor_confirmation",
+      "notes": "Confirm the applicable 12-15 credit target and approved non-INFO list. Do not reuse core credits as additional electives.",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "rule_id": "INFO_GENERAL_ED",
+      "program_id": "INFO",
+      "profile_id": "info_standard_catalog_snapshot_2026_10_17",
+      "scope": "general_education",
+      "label": "General education",
+      "logic": {
+        "type": "manual_review",
+        "requirements": {
+          "composition": 5,
+          "reasoning": 5,
+          "writing": 10,
+          "natural_sciences": 20,
+          "social_sciences": 20,
+          "arts_humanities": 20,
+          "diversity": 5
+        },
+        "conditions": [
+          {
+            "if": "UW admission before Autumn 2023",
+            "diversity": 3
+          }
+        ],
+        "info_prefix_aoi_credit_cap": 15
+      },
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "verification_status": "requires_profile_match",
+      "notes": "",
+      "checked_at": "2026-10-17"
+    }
+  ],
+  "course_pools": {
+    "cs_core_400": {
+      "courses": [
+        "CSE 401",
+        "CSE 402",
+        "CSE 403",
+        "CSE 421",
+        "CSE 422",
+        "CSE 426",
+        "CSE 427",
+        "CSE 431",
+        "CSE 434",
+        "CSE 438",
+        "CSE 440",
+        "CSE 442",
+        "CSE 443",
+        "CSE 444",
+        "CSE 446",
+        "CSE 447",
+        "CSE 451",
+        "CSE 452",
+        "CSE 453",
+        "CSE 455",
+        "CSE 457",
+        "CSE 458",
+        "CSE 461",
+        "CSE 462",
+        "CSE 469",
+        "CSE 470",
+        "CSE 473",
+        "CSE 474",
+        "CSE 478",
+        "CSE 484",
+        "CSE 486",
+        "CSE 493"
+      ],
+      "source_id": "CS_LISTS",
+      "complete": true
+    },
+    "cs_core_300": {
+      "courses": [
+        "CSE 333",
+        "CSE 340",
+        "CSE 341",
+        "CSE 344",
+        "CSE 369",
+        "CSE 371",
+        "STAT 391"
+      ],
+      "source_id": "CS_LISTS",
+      "complete": true
+    },
+    "cs_capstone_examples": {
+      "courses": [
+        "CSE 428",
+        "CSE 475",
+        "CSE 481"
+      ],
+      "source_id": "CS_CAPSTONE",
+      "complete": false,
+      "approval_required": true
+    },
+    "cs_senior_extra_sample": {
+      "courses": [
+        "AMATH 401",
+        "AMATH 402",
+        "AMATH 403",
+        "AMATH 422",
+        "AMATH 423",
+        "AMATH 483"
+      ],
+      "source_id": "CS_LISTS",
+      "complete": false
+    },
+    "amath_methods": {
+      "courses": [
+        "AMATH 401",
+        "AMATH 402",
+        "AMATH 403"
+      ],
+      "source_id": "AMATH_MAJOR",
+      "complete": true
+    },
+    "amath_modeling": {
+      "courses": [
+        "AMATH 342",
+        "AMATH 383",
+        "AMATH 422",
+        "AMATH 423"
+      ],
+      "source_id": "AMATH_MAJOR",
+      "complete": true
+    },
+    "amath_computing": {
+      "courses": [
+        "AMATH 481",
+        "AMATH 482",
+        "AMATH 483",
+        "CFRM 410",
+        "CFRM 420",
+        "CFRM 421"
+      ],
+      "source_id": "AMATH_MAJOR",
+      "complete": true
+    },
+    "info_society": {
+      "courses": [
+        "INFO 351",
+        "INFO 352",
+        "INFO 353",
+        "INFO 354",
+        "INFO 355",
+        "INFO 356",
+        "INFO 357",
+        "INFO 358"
+      ],
+      "source_id": "INFO_CATALOG",
+      "complete": false,
+      "selector": "INFO 350-level courses; named pool reflects current catalog entries."
+    },
+    "cs_core_all": {
+      "courses": [
+        "CSE 333",
+        "CSE 340",
+        "CSE 341",
+        "CSE 344",
+        "CSE 369",
+        "CSE 371",
+        "STAT 391",
+        "CSE 401",
+        "CSE 402",
+        "CSE 403",
+        "CSE 421",
+        "CSE 422",
+        "CSE 426",
+        "CSE 427",
+        "CSE 431",
+        "CSE 434",
+        "CSE 438",
+        "CSE 440",
+        "CSE 442",
+        "CSE 443",
+        "CSE 444",
+        "CSE 446",
+        "CSE 447",
+        "CSE 451",
+        "CSE 452",
+        "CSE 453",
+        "CSE 455",
+        "CSE 457",
+        "CSE 458",
+        "CSE 461",
+        "CSE 462",
+        "CSE 469",
+        "CSE 470",
+        "CSE 473",
+        "CSE 474",
+        "CSE 478",
+        "CSE 484",
+        "CSE 486",
+        "CSE 493"
+      ],
+      "source_id": "CS_LISTS",
+      "complete": true
+    },
+    "cs_elective_sample": {
+      "courses": [
+        "CSE 333",
+        "CSE 340",
+        "CSE 341",
+        "CSE 344",
+        "CSE 369",
+        "CSE 371",
+        "STAT 391",
+        "CSE 401",
+        "CSE 402",
+        "CSE 403",
+        "CSE 421",
+        "CSE 422",
+        "CSE 426",
+        "CSE 427",
+        "CSE 431",
+        "CSE 434",
+        "CSE 438",
+        "CSE 440",
+        "CSE 442",
+        "CSE 443",
+        "CSE 444",
+        "CSE 446",
+        "CSE 447",
+        "CSE 451",
+        "CSE 452",
+        "CSE 453",
+        "CSE 455",
+        "CSE 457",
+        "CSE 458",
+        "CSE 461",
+        "CSE 462",
+        "CSE 469",
+        "CSE 470",
+        "CSE 473",
+        "CSE 474",
+        "CSE 478",
+        "CSE 484",
+        "CSE 486",
+        "CSE 493",
+        "CSE 428",
+        "CSE 475",
+        "CSE 481",
+        "AMATH 401",
+        "AMATH 402",
+        "AMATH 403",
+        "AMATH 422",
+        "AMATH 423",
+        "AMATH 483"
+      ],
+      "source_id": "CS_LISTS",
+      "complete": false
+    },
+    "amath_all_electives": {
+      "courses": [
+        "AMATH 401",
+        "AMATH 402",
+        "AMATH 403",
+        "AMATH 342",
+        "AMATH 383",
+        "AMATH 422",
+        "AMATH 423",
+        "AMATH 481",
+        "AMATH 482",
+        "AMATH 483",
+        "CFRM 410",
+        "CFRM 420",
+        "CFRM 421"
+      ],
+      "source_id": "AMATH_MAJOR",
+      "complete": true
+    }
+  },
+  "optional_profiles": [
+    {
+      "option_id": "INFO_DS",
+      "program_id": "INFO",
+      "enabled_by_default": false,
+      "courses": [
+        "INFO 370",
+        "INFO 371",
+        "INFO 430",
+        "INFO 474"
+      ],
+      "credits": 20,
+      "source_id": "INFO_CATALOG"
+    },
+    {
+      "option_id": "INFO_BHI",
+      "program_id": "INFO",
+      "enabled_by_default": false,
+      "courses": [
+        "BIME 300",
+        "BIME 435",
+        "INFO 468",
+        "INFO 478"
+      ],
+      "credits": 20,
+      "source_id": "INFO_CATALOG"
+    }
+  ],
+  "source_registry": [
+    {
+      "source_id": "CS_OVERVIEW",
+      "title": "CS degree requirements",
+      "url": "https://www.cs.washington.edu/academics/undergraduate/degree-requirements/",
+      "version_note": "Current linked curriculum and degree policies",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "CS_SHEET",
+      "title": "Computer Science graduation checklist",
+      "url": "https://s3-us-west-2.amazonaws.com/www-cse-public/ugrad/curriculum/CS__Fall23.pdf",
+      "version_note": "Document revision 9/2023; verify personal catalog year",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "CS_LISTS",
+      "title": "CS core, science and senior electives",
+      "url": "https://www.cs.washington.edu/academics/undergraduate/degree-requirements/courses/",
+      "version_note": "Current course lists; special cases retained",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "CS_CAPSTONE",
+      "title": "CSE capstones",
+      "url": "https://www.cs.washington.edu/academics/undergraduate/degree-requirements/capstones/",
+      "version_note": "Offering-specific list; not an unconditional whitelist",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "AMATH_MAJOR",
+      "title": "Applied Mathematics major",
+      "url": "https://amath.washington.edu/undergraduate-major-applied-mathematics",
+      "version_note": "Standard BS; effective year not stated",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "INFO_CATALOG",
+      "title": "Informatics General Catalog",
+      "url": "https://www.washington.edu/students/gencat/program/S/TheInformationSchool-671.html",
+      "version_note": "Current snapshot; effective year not stated",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "INFO_PLAN",
+      "title": "Informatics degree planning",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/degree-planning",
+      "version_note": "Planning examples are recommendations, not guaranteed offerings",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "INFO_LEGACY",
+      "title": "Informatics department curriculum",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum",
+      "version_note": "Page says effective Autumn 2023; differs from current catalog",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "INFO_COURSES",
+      "title": "INFO course catalog",
+      "url": "https://www.washington.edu/students/crscat/info.html",
+      "version_note": "Course credits, prerequisites and overlap information",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "source_id": "INFO_WINTER",
+      "title": "INFO Winter 2027 Time Schedule",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "version_note": "Schedule snapshot 2026-10-17 00:03 Pacific; not live registration",
+      "checked_at": "2026-10-17"
+    }
+  ],
+  "policy": {
+    "course_ids": "Department prefix, one space, course number. Joint course aliases require explicit normalization.",
+    "null": "Unknown or not encoded; never interpret as zero.",
+    "profile_match_required": true,
+    "unsupported_rules_return": "needs_review",
+    "cross_major_double_counting": "requires_advisor_confirmation",
+    "candidate_mapping_is_not_credit_allocation": true,
+    "degree_audit_complete": false
+  },
+  "issues": [
+    {
+      "issue_id": "INFO_VERSION",
+      "program_id": "INFO",
+      "issue": "Catalog uses INFO 280; the department page marked Autumn 2023 lists INFO 290.",
+      "resolution": "Use the current catalog snapshot for new planning. Confirm the student catalog year and any substitution in DARS. Never auto-convert old completed courses.",
+      "source_ids": [
+        "INFO_CATALOG",
+        "INFO_LEGACY",
+        "INFO_PLAN"
+      ],
+      "status": "documented",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "issue_id": "INFO_ELECTIVES",
+      "program_id": "INFO",
+      "issue": "The standard program lists 12-15 elective credits without one universal target. The approved non-INFO list has not been imported.",
+      "resolution": "Preserve the range and request the personal target/approved list. Return needs_review rather than complete.",
+      "source_ids": [
+        "INFO_CATALOG"
+      ],
+      "status": "documented",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "issue_id": "AMATH_TOTAL",
+      "program_id": "AMATH",
+      "issue": "The page publishes 54-59 major credits; listed standard components total 55 at the stated minima.",
+      "resolution": "Preserve the published range as descriptive metadata. Enforce named groups and the 27-credit elective minimum rather than inventing a total.",
+      "source_ids": [
+        "AMATH_MAJOR"
+      ],
+      "status": "documented",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "issue_id": "CS_PARTIAL_ELECTIVES",
+      "program_id": "CS",
+      "issue": "Only named core courses and selected cross-major senior electives are encoded. Capstones depend on offerings.",
+      "resolution": "An unlisted elective is unknown, not automatically ineligible. Verify capstone approval and expand the senior list when needed.",
+      "source_ids": [
+        "CS_LISTS",
+        "CS_CAPSTONE"
+      ],
+      "status": "documented",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "issue_id": "CROSS_MAJOR",
+      "program_id": "ALL",
+      "issue": "Course eligibility in two majors does not establish permission to double-count credits.",
+      "resolution": "Calculate tentative matches separately and flag allocation for advisor review. AMATH and ACMS are different programs.",
+      "source_ids": [
+        "CS_OVERVIEW"
+      ],
+      "status": "documented",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "issue_id": "WINTER_COVERAGE",
+      "program_id": "ALL",
+      "issue": "Existing CSE/AMATH schedule covers 20 selected courses. INFO addition is a course inventory, not a parsed section-meeting dataset.",
+      "resolution": "Use sections.json only for existing section data. INFO inventory alone cannot prove schedule conflicts or registration eligibility.",
+      "source_ids": [
+        "INFO_WINTER"
+      ],
+      "status": "documented",
+      "checked_at": "2026-10-17"
+    },
+    {
+      "issue_id": "PROFILE_YEAR",
+      "program_id": "ALL",
+      "issue": "Current AMATH and INFO pages do not provide a precise effective year. CS checklist revision is September 2023.",
+      "resolution": "Match the student requirement profile before declaring degree progress.",
+      "source_ids": [
+        "AMATH_MAJOR",
+        "INFO_CATALOG",
+        "CS_SHEET"
+      ],
+      "status": "documented",
+      "checked_at": "2026-10-17"
+    }
+  ]
+}

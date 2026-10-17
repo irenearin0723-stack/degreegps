@@ -33,3 +33,7 @@ out/
 .vercel/
 *.tsbuildinfo
 .envrc
+.tools/
+uploads/
+transcripts/
+*.pdf

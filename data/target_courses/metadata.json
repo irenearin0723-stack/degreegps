@@ -1,0 +1,40 @@
+{
+  "schema_version": "winter-2027-v2-info",
+  "institution": "University of Washington Seattle",
+  "term": "Winter 2027",
+  "time_zone": "America/Los_Angeles",
+  "checked_at": "2026-10-17",
+  "schedule_snapshot_at": "2026-10-17T00:03:00-07:00",
+  "target_courses": 64,
+  "listed_courses": 58,
+  "not_listed_courses": [
+    "AMATH 353",
+    "AMATH 401",
+    "AMATH 481",
+    "AMATH 483",
+    "INFO 443",
+    "INFO 491"
+  ],
+  "sections": 115,
+  "quiz_credits": "Zero means no separate credits; add lecture credits once.",
+  "registration_details": "MyUW was signed in. UW NetID sign-in completed, but MyPlan returned 504 Gateway Timeout and SLN detail pages did not load. Visible schedule flags and notes are retained.",
+  "section_linkage": "Quiz parent candidates can be inferred from section prefixes, but registration-compatible combinations have not been verified against SLN details.",
+  "source_urls": [
+    "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+    "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+    "https://www.washington.edu/students/crscat/cse.html",
+    "https://www.washington.edu/students/crscat/appmath.html",
+    "https://www.washington.edu/students/reg/tshelp/restr.html",
+    "https://www.washington.edu/students/reg/tshelp/meetings.html",
+    "https://www.washington.edu/students/crscat/info.html",
+    "https://www.washington.edu/students/timeschd/WIN2027/info.html"
+  ],
+  "department_course_counts": {
+    "CSE": 10,
+    "AMATH": 10,
+    "INFO": 44
+  },
+  "info_section_data": "INFO has catalog and offering records, but section meetings have not been imported. Existing sections.json remains the 115-record CSE/AMATH dataset. Exclude listed INFO courses with section_data_status=not_imported from automated timetable generation until section data is added.",
+  "variable_credit_policy": "credits=null indicates variable credits. Use credits_min and credits_max as catalog bounds; determine actual registered credits from the selected section or study arrangement.",
+  "concurrent_prerequisite_policy": "INFO 340 allows CSE 163 concurrently. Only branch concurrent_allowed explicitly authorizes concurrency. All other prerequisites and grade minima still apply."
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "2.0.0",
+  "records": [
+    {
+      "id": "1986da1b-55e2-41eb-a050-c5a47c2a6705",
+      "course_id": "CSE 123",
+      "title": "PROGRAMMING FOUNDATIONS",
+      "term": "2026-autumn",
+      "grade": "3.8",
+      "credits": 5,
+      "status": "completed",
+      "transfer_credit": false,
+      "repeated": false,
+      "needs_review": false,
+      "review_reasons": [],
+      "raw_entry": "CSE 123 PROGRAMMING FOUNDATIONS 5.0 3.8"
+    },
+    {
+      "id": "04b31a4c-8fbf-40d0-9237-d175f5fb521a",
+      "course_id": "CSE 311",
+      "title": "DISCRETE FOUNDATIONS",
+      "term": "2026-autumn",
+      "grade": "IP",
+      "credits": 4,
+      "status": "in_progress",
+      "transfer_credit": false,
+      "repeated": false,
+      "needs_review": false,
+      "review_reasons": [],
+      "raw_entry": "CSE 311 DISCRETE FOUNDATIONS 4.0 IP"
+    },
+    {
+      "id": "9bf38960-e52e-446d-a847-619ad8f59674",
+      "course_id": "CSE 351",
+      "title": "UNKNOWN STATUS",
+      "term": "2026-autumn",
+      "grade": null,
+      "credits": null,
+      "status": "ambiguous",
+      "transfer_credit": false,
+      "repeated": false,
+      "needs_review": true,
+      "review_reasons": [
+        "Missing or ambiguous credit/grade fields; confirm course status."
+      ],
+      "raw_entry": "CSE 351 UNKNOWN STATUS"
+    }
+  ],
+  "completed_courses": [
+    "CSE 123"
+  ],
+  "in_progress_courses": [
+    "CSE 311"
+  ],
+  "needs_review": true,
+  "user_confirmation_required": true,
+  "warnings": [
+    {
+      "code": "CONFIRM_EXTRACTION",
+      "message": "Review and correct every record before submitting course IDs to /api/plan. Extraction is heuristic, not an academic audit."
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "generated_at": "2026-10-17T22:29:19.283Z",
+  "paid_ai_requests": 0,
+  "passed": 31,
+  "failed": 0,
+  "checks_passed": [
+    "Scenario A: CS → SWE internship",
+    "Scenario B: CS + AMATH → ML internship",
+    "Scenario C: AI research assistant preparation",
+    "Scenario D: Missing prerequisites",
+    "Scenario E: Maximum two courses per quarter",
+    "Scenario F: Completed courses must not repeat",
+    "Scenario G: In-progress prerequisite is not completed",
+    "Scenario H: No feasible courses",
+    "Scenario I: Primary goal changed to ML research",
+    "Scenario J: Approaching internship deadline",
+    "Primary goal change changes roadmap over HTTP",
+    "GET /api/plan/mock returns independent explicit demo fixture",
+    "POST /api/plan rejects unsupported goal",
+    "POST /api/plan rejects normalized conflicting course history",
+    "POST /api/plan rejects malformed JSON",
+    "POST /api/plan rejects wrong MIME",
+    "POST /api/plan bounds actual body size",
+    "POST /api/plan missing data returns 503 in isolated server",
+    "POST /api/plan AI opt-in without key returns deterministic fallback",
+    "POST /api/transcript extracts a real in-memory synthetic PDF",
+    "POST /api/transcript blank/image-only document requires manual review",
+    "POST /api/transcript rejects invalid file type",
+    "POST /api/transcript rejects spoofed PDF signature",
+    "POST /api/transcript rejects damaged PDF",
+    "POST /api/transcript rejects oversized file",
+    "POST /api/transcript rejects missing file",
+    "POST /api/goal works locally without an API key",
+    "POST /api/goal missing key falls back with opt-in",
+    "POST /api/goal unsupported or ambiguous goal requests clarification",
+    "POST /api/goal invalid body returns structured 400",
+    "Projected three-quarter CS + AMATH review plan preserves unknown registration restrictions"
+  ],
+  "failures": [],
+  "scenarios": [
+    {
+      "id": "A",
+      "scenario": "CS → SWE internship",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 125,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "B",
+      "scenario": "CS + AMATH → ML internship",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 127,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "C",
+      "scenario": "AI research assistant preparation",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 125,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "D",
+      "scenario": "Missing prerequisites",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 111,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "E",
+      "scenario": "Maximum two courses per quarter",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 125,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "F",
+      "scenario": "Completed courses must not repeat",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 118,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "G",
+      "scenario": "In-progress prerequisite is not completed",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 120,
+      "warning_codes": [
+        "IN_PROGRESS_NOT_COMPLETED",
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "H",
+      "scenario": "No feasible courses",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 111,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "I",
+      "scenario": "Primary goal changed to ML research",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 4,
+      "sources": 125,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "RECOMMENDED_TIMELINES"
+      ]
+    },
+    {
+      "id": "J",
+      "scenario": "Approaching internship deadline",
+      "safety_checks": "PASS",
+      "academic_completeness": "BLOCKED_BY_INCOMPLETE_VERIFICATION",
+      "courses_per_quarter": [
+        0,
+        0,
+        0
+      ],
+      "milestones": 3,
+      "sources": 125,
+      "warning_codes": [
+        "ENROLLMENT_UNVERIFIED",
+        "TERM_COVERAGE_LIMITED",
+        "COURSE_REVIEW_REQUIRED",
+        "PARTIAL_SCHEDULE",
+        "COURSE_BLOCKED",
+        "NEEDS_GRADE_CONFIRMATION",
+        "DEADLINE_FEASIBILITY",
+        "RECOMMENDED_TIMELINES"
+      ]
+    }
+  ]
+}

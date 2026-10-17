@@ -1,0 +1,123 @@
+{
+  "json_files": [
+    {
+      "file": "career_paths.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/major_requirements.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/policy_issues.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/requirements_test_cases.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/courses.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/external_prerequisites.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/info_winter_inventory.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/metadata.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/prerequisites.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/projected_offerings.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/sections.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/test_cases.json",
+      "valid_json": true
+    }
+  ],
+  "total_courses": 64,
+  "raw_schema_valid": 64,
+  "raw_required_fields_missing": {},
+  "direct_canonical_valid": 0,
+  "direct_canonical_rejected": 64,
+  "canonical_fields_missing_before_adapter": {
+    "title": 64,
+    "prerequisite_groups": 64,
+    "offered_terms": 64,
+    "eligible_majors": 64,
+    "source_url": 64,
+    "verified_at": 64,
+    "data_status": 64,
+    "tracks": 64,
+    "foundation_priority": 64
+  },
+  "normalized_schema_valid": 64,
+  "normalized_rejected": 0,
+  "rejected_records": [],
+  "duplicate_ids": [],
+  "unnormalized_ids": [],
+  "placeholder_course_records": [],
+  "valid_prerequisite_records": 64,
+  "preserved_or_branches": 233,
+  "external_prerequisite_ids": 27,
+  "dangling_prerequisites": [],
+  "catalog_source_and_date_preserved": 64,
+  "listed_winter_2027": 58,
+  "not_listed_winter_2027": [
+    "AMATH 353",
+    "AMATH 401",
+    "AMATH 481",
+    "AMATH 483",
+    "INFO 443",
+    "INFO 491"
+  ],
+  "unresolved_enrollment_records": 64,
+  "missing_section_meetings": 42,
+  "incomplete_verification_excluded": 64,
+  "independently_reverified_by_this_run": 0,
+  "sections": 115,
+  "duplicate_slns": 0,
+  "orphan_sections": 0,
+  "metadata_counts_match": true,
+  "major_requirement_groups": 32,
+  "major_acceptance_fixtures_outside_mvp": 12,
+  "dangling_major_source_ids": [],
+  "notes": [
+    "Source URLs/dates are preserved human-curated provenance; this audit does not reverify UW policy.",
+    "All 64 enrollment restrictions remain unresolved. No winter offering is generalized into another term.",
+    "Degree membership, credit allocation, and requirement profiles are not implemented by the MVP planner."
+  ],
+  "projected_source_pages": 3,
+  "projected_source_entries": 164,
+  "effective_offerings": {
+    "2027-winter": {
+      "confirmed": 58,
+      "projected": 0,
+      "unknown": 6
+    },
+    "2027-spring": {
+      "confirmed": 0,
+      "projected": 49,
+      "unknown": 15
+    },
+    "2027-summer": {
+      "confirmed": 0,
+      "projected": 5,
+      "unknown": 59
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "course_ids": [
+    "CS&SS 221",
+    "CSE 122",
+    "CSE 123",
+    "CSE 142",
+    "CSE 143",
+    "CSE 154",
+    "CSE 160",
+    "CSE 163",
+    "CSE 414",
+    "HCDE 210",
+    "I S 445",
+    "MATH 125",
+    "MATH 126",
+    "MATH 135",
+    "MATH 136",
+    "MATH 207",
+    "MATH 208",
+    "Q SCI 292",
+    "Q SCI 381",
+    "QMETH 201",
+    "SOC 221",
+    "STAT 220",
+    "STAT 221",
+    "STAT 290",
+    "STAT 311",
+    "STAT 390",
+    "STAT 391"
+  ],
+  "note": "Recognize these as completed prerequisites. Their own catalog and target-term records are not included as schedulable courses."
+}

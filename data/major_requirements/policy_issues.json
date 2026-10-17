@@ -1,0 +1,84 @@
+[
+  {
+    "issue_id": "INFO_VERSION",
+    "program_id": "INFO",
+    "issue": "Catalog uses INFO 280; the department page marked Autumn 2023 lists INFO 290.",
+    "resolution": "Use the current catalog snapshot for new planning. Confirm the student catalog year and any substitution in DARS. Never auto-convert old completed courses.",
+    "source_ids": [
+      "INFO_CATALOG",
+      "INFO_LEGACY",
+      "INFO_PLAN"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "INFO_ELECTIVES",
+    "program_id": "INFO",
+    "issue": "The standard program lists 12-15 elective credits without one universal target. The approved non-INFO list has not been imported.",
+    "resolution": "Preserve the range and request the personal target/approved list. Return needs_review rather than complete.",
+    "source_ids": [
+      "INFO_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "AMATH_TOTAL",
+    "program_id": "AMATH",
+    "issue": "The page publishes 54-59 major credits; listed standard components total 55 at the stated minima.",
+    "resolution": "Preserve the published range as descriptive metadata. Enforce named groups and the 27-credit elective minimum rather than inventing a total.",
+    "source_ids": [
+      "AMATH_MAJOR"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CS_PARTIAL_ELECTIVES",
+    "program_id": "CS",
+    "issue": "Only named core courses and selected cross-major senior electives are encoded. Capstones depend on offerings.",
+    "resolution": "An unlisted elective is unknown, not automatically ineligible. Verify capstone approval and expand the senior list when needed.",
+    "source_ids": [
+      "CS_LISTS",
+      "CS_CAPSTONE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CROSS_MAJOR",
+    "program_id": "ALL",
+    "issue": "Course eligibility in two majors does not establish permission to double-count credits.",
+    "resolution": "Calculate tentative matches separately and flag allocation for advisor review. AMATH and ACMS are different programs.",
+    "source_ids": [
+      "CS_OVERVIEW"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "WINTER_COVERAGE",
+    "program_id": "ALL",
+    "issue": "Existing CSE/AMATH schedule covers 20 selected courses. INFO addition is a course inventory, not a parsed section-meeting dataset.",
+    "resolution": "Use sections.json only for existing section data. INFO inventory alone cannot prove schedule conflicts or registration eligibility.",
+    "source_ids": [
+      "INFO_WINTER"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PROFILE_YEAR",
+    "program_id": "ALL",
+    "issue": "Current AMATH and INFO pages do not provide a precise effective year. CS checklist revision is September 2023.",
+    "resolution": "Match the student requirement profile before declaring degree progress.",
+    "source_ids": [
+      "AMATH_MAJOR",
+      "INFO_CATALOG",
+      "CS_SHEET"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  }
+]

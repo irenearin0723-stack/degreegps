@@ -3,8 +3,8 @@
 ## Before coding
 
 1. Read `types/plan.ts` and `docs/api-contract.md`.
-2. Run `npm install && npm run check` on the shared `main` branch.
-3. Agree on **one backend origin**: local backend commonly on port 8000 and frontend dev server on port 3000 (these are examples, not mandated ports). Keep the URL in frontend config, not scattered through UI components.
+2. Use Node.js 22, then run `npm ci`, `npm run check`, and `npm run build`.
+3. Keep frontend and backend in one Next.js app (`npm run dev`, port 3000). Use relative `/api/...` requests; no separate backend origin is needed.
 
 ## Suggested ownership
 
@@ -32,7 +32,7 @@ For a small team, one person can combine multiple roles. Less-experienced progra
 - [ ] Rules/examples updated in `docs/api-contract.md`
 - [ ] `examples/sample-request.json` updated if request changed
 - [ ] `npm run check` passes
-- [ ] Frontend and backend owners both approve breaking changes
+- [ ] Frontend and backend owners coordinate breaking changes (v1 artifacts are archived; new clients use v2)
 
 ## End-to-end smoke test
 

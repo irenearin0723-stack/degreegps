@@ -1,0 +1,1965 @@
+{
+  "CSE 311": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 126"
+        ],
+        "min_grades": {
+          "CSE 123": 2,
+          "MATH 126": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 135"
+        ],
+        "min_grades": {
+          "CSE 123": 2,
+          "MATH 135": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 126"
+        ],
+        "min_grades": {
+          "CSE 143": 2,
+          "MATH 126": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 135"
+        ],
+        "min_grades": {
+          "CSE 143": 2,
+          "MATH 135": 2
+        }
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143) AND (MATH 126 OR MATH 135); minimum grade 2.0 in each required course",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse311",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 312": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 311"
+        ]
+      }
+    ],
+    "summary": "(CSE 311)",
+    "original_text": "Prerequisite: CSE 311.",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse312",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 331": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ],
+        "min_grades": {
+          "CSE 123": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ],
+        "min_grades": {
+          "CSE 143": 2
+        }
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143); minimum grade 2.0 in each required course",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse331",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 332": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 311"
+        ]
+      }
+    ],
+    "summary": "(CSE 311)",
+    "original_text": "Prerequisite: CSE 311.",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse332",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 333": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 351"
+        ]
+      }
+    ],
+    "summary": "(CSE 351)",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse333",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 344": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 311"
+        ]
+      }
+    ],
+    "summary": "(CSE 311)",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse344",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 351": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143)",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse351",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 373": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143)",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse373",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 391": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 122 OR CSE 123 OR CSE 143)",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse391",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 446": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 332",
+          "MATH 208",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 332",
+          "MATH 208",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 332",
+          "MATH 208",
+          "CSE 312"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 332",
+          "MATH 136",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 332",
+          "MATH 136",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 332",
+          "MATH 136",
+          "CSE 312"
+        ]
+      }
+    ],
+    "summary": "(CSE 332) AND (MATH 208 OR MATH 136) AND (STAT 390 OR STAT 391 OR CSE 312)",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse446",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 301": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 292"
+        ]
+      }
+    ],
+    "summary": "(MATH 125 OR MATH 135 OR Q SCI 292)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath301",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 351": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      }
+    ],
+    "summary": "(MATH 125 OR MATH 135)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath351",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 352": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136)",
+    "original_text": "Prerequisite: MATH 126 or MATH 136.",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath352",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 353": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 351"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207"
+        ]
+      }
+    ],
+    "summary": "(AMATH 351 OR MATH 136 OR MATH 207)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath353",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 383": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 351"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207"
+        ]
+      }
+    ],
+    "summary": "(AMATH 351 OR MATH 136 OR MATH 207)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath383",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 401": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath401",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 402": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 351"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207"
+        ]
+      }
+    ],
+    "summary": "(AMATH 351 OR MATH 136 OR MATH 207)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath402",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 481": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 301",
+          "AMATH 351",
+          "AMATH 352"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "AMATH 351",
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "AMATH 351",
+          "MATH 208"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 135",
+          "AMATH 352"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 135",
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 135",
+          "MATH 208"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 207",
+          "AMATH 352"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 207",
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 207",
+          "MATH 208"
+        ]
+      }
+    ],
+    "summary": "(AMATH 301) AND (AMATH 351 OR MATH 135 OR MATH 207) AND (AMATH 352 OR MATH 136 OR MATH 208)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath481",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 482": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 301",
+          "AMATH 352"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 208"
+        ]
+      }
+    ],
+    "summary": "(AMATH 301) AND (AMATH 352 OR MATH 136 OR MATH 208)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath482",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 483": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 481",
+          "AMATH 352"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 481",
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 481",
+          "MATH 208"
+        ]
+      }
+    ],
+    "summary": "(AMATH 481) AND (AMATH 352 OR MATH 136 OR MATH 208)",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath483",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 102": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info102",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 108": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info108",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 200": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info200",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 201": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info201",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 280": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info280",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 300": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info300",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 310": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info310",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 312": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info312",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 314": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 122 OR CSE 123 OR CSE 142 OR CSE 143)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info314",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 330": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info330",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 331": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info331",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 340": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123",
+          "INFO 201"
+        ],
+        "min_grades": {
+          "INFO 201": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "INFO 201"
+        ],
+        "min_grades": {
+          "INFO 201": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "INFO 201"
+        ],
+        "min_grades": {
+          "INFO 201": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "INFO 201"
+        ],
+        "min_grades": {
+          "INFO 201": 2
+        },
+        "concurrent_allowed": [
+          "CSE 163"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143 OR CSE 154 OR CSE 163) AND (INFO 201); minimum grade 2.0 in INFO 201; CSE 163 may be taken concurrently",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info340",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 351": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info351",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 352": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info352",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 353": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info353",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 354": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info354",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 355": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 360"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 210"
+        ]
+      }
+    ],
+    "summary": "(INFO 360 OR HCDE 210)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info355",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 356": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 360"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 210"
+        ]
+      }
+    ],
+    "summary": "(INFO 360 OR HCDE 210)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info356",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 357": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info357",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 358": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info358",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 360": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info360",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 370": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163",
+          "Q SCI 381"
+        ]
+      }
+    ],
+    "summary": "(INFO 201) AND (CSE 122 OR CSE 123 OR CSE 142 OR CSE 143 OR CSE 160 OR CSE 163) AND (STAT 220 OR STAT 221 OR CS&SS 221 OR SOC 221 OR STAT 290 OR STAT 311 OR STAT 390 OR QMETH 201 OR Q SCI 381)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info370",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 371": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 370"
+        ]
+      }
+    ],
+    "summary": "(INFO 370)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info371",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 376": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 143"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 160"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 201",
+          "CSE 163"
+        ]
+      }
+    ],
+    "summary": "(INFO 201) AND (CSE 122 OR CSE 123 OR CSE 142 OR CSE 143 OR CSE 160 OR CSE 163)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info376",
+    "checked_at": "2026-10-17",
+    "recommended_preparation": [
+      "Basic Python programming"
+    ]
+  },
+  "INFO 380": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info380",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 410": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info410",
+    "checked_at": "2026-10-17",
+    "recommended_preparation": [
+      "INFO 310 or equivalent"
+    ]
+  },
+  "INFO 430": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 330"
+        ],
+        "min_grades": {
+          "INFO 330": 2
+        }
+      },
+      {
+        "all_of": [
+          "CSE 414"
+        ],
+        "min_grades": {
+          "CSE 414": 2
+        }
+      },
+      {
+        "all_of": [
+          "I S 445"
+        ],
+        "min_grades": {
+          "I S 445": 2
+        }
+      }
+    ],
+    "summary": "(INFO 330 OR CSE 414 OR I S 445); minimum grade 2.0 in the selected prerequisite",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info430",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 433": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info433",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 441": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123",
+          "INFO 340",
+          "INFO 330"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "CSE 154",
+          "INFO 330"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "INFO 340",
+          "INFO 330"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "CSE 154",
+          "INFO 330"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "INFO 340",
+          "INFO 330"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "CSE 154",
+          "INFO 330"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143 OR CSE 163) AND (INFO 340 OR CSE 154) AND (INFO 330)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info441",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 442": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 360",
+          "INFO 340"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 360",
+          "CSE 154"
+        ]
+      }
+    ],
+    "summary": "(INFO 360) AND (INFO 340 OR CSE 154)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info442",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 443": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123",
+          "INFO 340"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "INFO 340"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "INFO 340"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143 OR CSE 163) AND (INFO 340)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info443",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 449": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123",
+          "INFO 340"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "INFO 340"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143) AND (INFO 340)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info449",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 463": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 360"
+        ]
+      }
+    ],
+    "summary": "(INFO 360)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info463",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 465": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 360"
+        ]
+      }
+    ],
+    "summary": "(INFO 360)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info465",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 474": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 123",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 143",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 340",
+          "CSE 163",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 123",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 143",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 154",
+          "CSE 163",
+          "Q SCI 381"
+        ]
+      }
+    ],
+    "summary": "(INFO 340 OR CSE 154) AND (CSE 123 OR CSE 143 OR CSE 163) AND (STAT 220 OR STAT 221 OR CS&SS 221 OR SOC 221 OR STAT 290 OR STAT 311 OR STAT 390 OR QMETH 201 OR Q SCI 381)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info474",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 478": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 201"
+        ]
+      }
+    ],
+    "summary": "(INFO 201)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info478",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 490": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 340",
+          "INFO 360",
+          "INFO 380"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 300",
+          "INFO 360",
+          "INFO 380"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 300",
+          "INFO 340",
+          "INFO 380"
+        ]
+      },
+      {
+        "all_of": [
+          "INFO 300",
+          "INFO 340",
+          "INFO 360"
+        ]
+      }
+    ],
+    "summary": "Any three of INFO 300, INFO 340, INFO 360, INFO 380",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info490",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 491": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 490"
+        ]
+      }
+    ],
+    "summary": "(INFO 490)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info491",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 492": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 300",
+          "INFO 340",
+          "INFO 360",
+          "INFO 380"
+        ]
+      }
+    ],
+    "summary": "(INFO 300) AND (INFO 340) AND (INFO 360) AND (INFO 380)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info492",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 493": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 300",
+          "INFO 340",
+          "INFO 360",
+          "INFO 380"
+        ]
+      }
+    ],
+    "summary": "(INFO 300) AND (INFO 340) AND (INFO 360) AND (INFO 380)",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info493",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 494": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info494",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 495": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info495",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 498": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info498",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 499": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info499",
+    "checked_at": "2026-10-17"
+  }
+}
