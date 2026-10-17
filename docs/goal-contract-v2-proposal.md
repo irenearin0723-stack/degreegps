@@ -5,7 +5,9 @@
 ```ts
 interface Goal {
   type: 'internship' | 'research' | 'projects' | 'explore';
-  track: 'swe' | 'ml' | 'data' | 'systems' | 'hci' | 'undecided';
+  track: 'swe' | 'ml' | 'data' | 'systems' | 'cybersecurity' | 'cloud'
+    | 'data_engineering' | 'quantitative' | 'robotics' | 'hci' | 'product'
+    | 'bioinformatics' | 'undecided';
   deadline: { term: AcademicTerm; year: number } | null;
   notes?: string;
 }
@@ -13,10 +15,9 @@ interface Goal {
 
 Valid combinations:
 
-- internship: swe, ml, data, undecided
-- research: ml, systems, hci, undecided
-- projects: swe, ml, data, systems, hci
-- explore: undecided
+- internship and explore: all tracks above
+- research: ml, data, systems, cybersecurity, robotics, hci, quantitative, bioinformatics, undecided
+- projects: all tracks above
 
 The backend must validate combinations. Notes may personalize action milestones but must never override prerequisites, offerings, or degree rules.
 
