@@ -1,0 +1,14 @@
+{
+  "name": "degreegps",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Shared DegreeGPS API contract for DubHacks",
+  "scripts": {
+    "check": "node scripts/check-contract.mjs && tsc --noEmit",
+    "check:mock": "node scripts/check-contract.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

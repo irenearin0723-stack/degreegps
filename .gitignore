@@ -1,0 +1,35 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+dist/
+.next/
+coverage/
+*.log
+
+# Local credentials and private keys
+.aws/
+.ssh/
+.netrc
+.npmrc
+credentials.json
+credentials.*.json
+client_secret*.json
+service-account*.json
+service_account*.json
+secrets/
+.secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated files and local caches
+build/
+out/
+.cache/
+.turbo/
+.vercel/
+*.tsbuildinfo
+.envrc
