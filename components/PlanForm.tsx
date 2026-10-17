@@ -1,56 +1,29 @@
 'use client';
+import {useState} from 'react';
+import {ArrowLeft,ArrowRight,Binoculars,BrainCircuit,BriefcaseBusiness,Code2,Compass,FlaskConical,FolderGit2,Gauge,Lightbulb,Scale,Sparkles} from 'lucide-react';
+import type {PlanRequest} from '../types/plan';
+import type {GoalDraft,GoalTrack,GoalType} from '../types/goal';
+import {deadlineToSummer,goalToV1TargetRole,validGoalTracks} from '../types/goal';
+import {CourseInput} from './CourseInput';
+import {TranscriptUpload} from './TranscriptUpload';
 
-import { useState } from 'react';
-import { ArrowLeft, ArrowRight, BrainCircuit, Code2, Scale, Sparkles } from 'lucide-react';
-import type { PlanRequest } from '../types/plan';
-import { CourseInput } from './CourseInput';
-import { TranscriptUpload } from './TranscriptUpload';
+type Props={onSubmit:(request:PlanRequest)=>void;initial?:PlanRequest};
+const base:PlanRequest={majors:['Computer Science','Applied Mathematics'],completed_courses:['CSE 123','MATH 126'],in_progress_courses:['CSE 311','CSE 351','INFO 201'],target_role:'AI / Machine Learning Intern',target_summer:2027,max_courses_per_term:3,start_term:'autumn',start_year:2026,horizon_terms:4};
+const baseGoal:GoalDraft={type:'internship',track:'ml',deadline:'summer-2027',notes:'',career_hours_per_week:6,intensity:'balanced'};
+const goals=[{value:'internship' as GoalType,title:'Get an internship',note:'SWE, ML, or data roles',icon:BriefcaseBusiness},{value:'research' as GoalType,title:'Join research / RA',note:'Find a lab or professor',icon:FlaskConical},{value:'projects' as GoalType,title:'Build my profile',note:'Skills, projects, and evidence',icon:FolderGit2},{value:'explore' as GoalType,title:'Explore my options',note:'Compare possible paths',icon:Binoculars}];
+const tracks:Record<GoalTrack,{title:string;note:string;icon:typeof Code2}>={swe:{title:'Software Engineering',note:'Products, systems & scale',icon:Code2},ml:{title:'AI / Machine Learning',note:'Models, data & experiments',icon:BrainCircuit},data:{title:'Data Science / Analytics',note:'Evidence, analysis & decisions',icon:Gauge},systems:{title:'Computer Systems',note:'Infrastructure & performance',icon:Code2},hci:{title:'Human-Computer Interaction',note:'People, design & research',icon:Lightbulb},undecided:{title:"I'm not sure yet",note:'Help me explore deliberately',icon:Compass}};
 
-type Props = { onSubmit: (request: PlanRequest) => void; initial?: PlanRequest };
-
-const defaultRequest: PlanRequest = {
-  majors: ['Computer Science', 'Applied Mathematics'],
-  completed_courses: ['CSE 123', 'MATH 126'],
-  in_progress_courses: ['CSE 311', 'CSE 351', 'INFO 201'],
-  target_role: 'Machine Learning Engineer Intern',
-  target_summer: 2027,
-  max_courses_per_term: 3,
-  start_term: 'autumn',
-  start_year: 2026,
-  horizon_terms: 4,
-};
-
-export function PlanForm({ onSubmit, initial }: Props) {
-  const [step, setStep] = useState(1);
-  const [form, setForm] = useState<PlanRequest>(initial ?? defaultRequest);
-  const update = <K extends keyof PlanRequest>(key: K, value: PlanRequest[K]) => setForm((current) => ({ ...current, [key]: value }));
-  const roles = [
-    { value: 'Machine Learning Engineer Intern', title: 'ML Engineer', note: 'Models, data & systems', icon: BrainCircuit },
-    { value: 'Software Engineer Intern', title: 'Software Engineer', note: 'Products, systems & scale', icon: Code2 },
-  ];
-
-  return (
-    <section className="planner-card">
-      <div className="form-progress"><span>STEP {step} OF 3</span><div><i style={{ width: `${step * 33.33}%` }} /></div></div>
-      {step === 1 && <div className="form-step">
-        <p className="eyebrow">ACADEMIC PROFILE</p><h2>Start with where you are.</h2><p className="step-lede">Completed and in-progress courses stay separate so the backend never treats unfinished work as a satisfied prerequisite.</p>
-        <div className="field-group"><label>University</label><div className="locked-field"><span>University of Washington</span><b>UW</b></div></div>
-        <div className="two-fields"><div className="field-group"><label>Primary major</label><select value={form.majors[0]} onChange={(event) => update('majors', [event.target.value, ...form.majors.slice(1)])}><option>Computer Science</option><option>Applied Mathematics</option><option>Informatics</option></select></div><div className="field-group"><label>Second major</label><select value={form.majors[1] ?? ''} onChange={(event) => update('majors', event.target.value ? [form.majors[0], event.target.value] : [form.majors[0]])}><option value="">None</option><option>Applied Mathematics</option><option>Computer Science</option><option>Informatics</option></select></div></div>
-      </div>}
-      {step === 2 && <div className="form-step">
-        <p className="eyebrow">COURSE HISTORY</p><h2>What have you taken?</h2><p className="step-lede">Use official course codes where possible. The backend will normalize and validate them.</p>
-        <TranscriptUpload onConfirm={(completed, inProgress) => { update('completed_courses', completed); update('in_progress_courses', inProgress); }} />
-        <div className="manual-divider"><span>or enter courses manually</span></div>
-        <CourseInput label="Completed courses" hint="These may satisfy prerequisites." values={form.completed_courses} blockedValues={form.in_progress_courses} onChange={(value) => update('completed_courses', value)} />
-        <CourseInput label="Courses in progress" hint="These appear in the current term but do not count as completed yet." values={form.in_progress_courses} blockedValues={form.completed_courses} onChange={(value) => update('in_progress_courses', value)} />
-      </div>}
-      {step === 3 && <div className="form-step">
-        <p className="eyebrow">DESTINATION & PACE</p><h2>Where should this route take you?</h2><p className="step-lede">The planner works backward from your internship target without letting career goals override academic rules.</p>
-        <div className="role-grid">{roles.map(({ value, title, note, icon: Icon }) => <button type="button" key={value} className={form.target_role === value ? 'role-card active' : 'role-card'} onClick={() => update('target_role', value)}><Icon size={22} /><b>{title}</b><span>{note}</span></button>)}</div>
-        <div className="two-fields"><div className="field-group"><label>Target summer</label><select value={form.target_summer} onChange={(event) => update('target_summer', Number(event.target.value))}><option>2027</option><option>2028</option><option>2029</option></select></div><div className="field-group"><label>Courses per term</label><select value={form.max_courses_per_term} onChange={(event) => update('max_courses_per_term', Number(event.target.value))}><option value="2">2 · Focused</option><option value="3">3 · Balanced</option><option value="4">4 · Ambitious</option></select></div></div>
-        <div className="truth-note"><Scale size={19} /><div><b>Built for truthful planning</b><span>Unverified prerequisites, offerings, and degree requirements will be shown as warnings—not guesses.</span></div></div>
-      </div>}
-      <div className="form-actions"><button type="button" className="button secondary" disabled={step === 1} onClick={() => setStep((value) => value - 1)}><ArrowLeft size={16} /> Back</button>{step < 3 ? <button type="button" className="button primary" onClick={() => setStep((value) => value + 1)}>Continue <ArrowRight size={16} /></button> : <button type="button" className="button primary sparkle" onClick={() => onSubmit(form)}>Generate roadmap <Sparkles size={16} /></button>}</div>
-    </section>
-  );
+export function PlanForm({onSubmit,initial}:Props){
+ const [step,setStep]=useState(1),[form,setForm]=useState<PlanRequest>(initial??base),[goal,setGoal]=useState<GoalDraft>(baseGoal);
+ const update=<K extends keyof PlanRequest>(key:K,value:PlanRequest[K])=>setForm(c=>({...c,[key]:value}));
+ const updateGoal=<K extends keyof GoalDraft>(key:K,value:GoalDraft[K])=>setGoal(c=>({...c,[key]:value}));
+ const selectGoal=(type:GoalType)=>setGoal(c=>({...c,type,track:validGoalTracks[type].includes(c.track)?c.track:validGoalTracks[type][0]}));
+ const submit=()=>onSubmit({...form,target_role:goalToV1TargetRole(goal),target_summer:deadlineToSummer(goal.deadline)});
+ return <section className="planner-card"><div className="form-progress"><span>STEP {step} OF 5</span><div><i style={{width:`${step*20}%`}}/></div></div>
+ {step===1&&<div className="form-step"><p className="eyebrow">ACADEMIC PROFILE</p><h2>Start with where you are.</h2><p className="step-lede">Your academic starting point anchors every recommendation.</p><div className="field-group"><label>University</label><div className="locked-field"><span>University of Washington</span><b>UW</b></div></div><div className="two-fields"><div className="field-group"><label>Primary major</label><select value={form.majors[0]} onChange={e=>update('majors',[e.target.value,...form.majors.slice(1)])}><option>Computer Science</option><option>Applied Mathematics</option><option>Informatics</option></select></div><div className="field-group"><label>Second major</label><select value={form.majors[1]??''} onChange={e=>update('majors',e.target.value?[form.majors[0],e.target.value]:[form.majors[0]])}><option value="">None</option><option>Applied Mathematics</option><option>Computer Science</option><option>Informatics</option></select></div></div></div>}
+ {step===2&&<div className="form-step"><p className="eyebrow">COURSE HISTORY</p><h2>What have you taken?</h2><p className="step-lede">Upload a transcript or enter official course codes. You always confirm extracted data.</p><TranscriptUpload onConfirm={(a,b)=>{update('completed_courses',a);update('in_progress_courses',b)}}/><div className="manual-divider"><span>or enter courses manually</span></div><CourseInput label="Completed courses" hint="These may satisfy prerequisites." values={form.completed_courses} blockedValues={form.in_progress_courses} onChange={v=>update('completed_courses',v)}/><CourseInput label="Courses in progress" hint="These do not count as completed yet." values={form.in_progress_courses} blockedValues={form.completed_courses} onChange={v=>update('in_progress_courses',v)}/></div>}
+ {step===3&&<div className="form-step"><p className="eyebrow">PRIMARY GOAL</p><h2>What do you want to achieve?</h2><p className="step-lede">Choose one primary goal. You can replan later as priorities change.</p><div className="goal-grid">{goals.map(({value,title,note,icon:Icon})=><button type="button" key={value} className={goal.type===value?'goal-card active':'goal-card'} onClick={()=>selectGoal(value)}><Icon size={21}/><div><b>{title}</b><span>{note}</span></div></button>)}</div></div>}
+ {step===4&&<div className="form-step"><p className="eyebrow">DIRECTION & DEADLINE</p><h2>Choose a direction.</h2><p className="step-lede">Only combinations supported by your selected goal are shown.</p><div className="role-grid">{validGoalTracks[goal.type].map(track=>{const item=tracks[track],Icon=item.icon;return <button type="button" key={track} className={goal.track===track?'role-card active':'role-card'} onClick={()=>updateGoal('track',track)}><Icon size={22}/><b>{item.title}</b><span>{item.note}</span></button>})}</div><div className="field-group"><label>Target deadline</label><div className="segmented-control">{([['summer-2027','Before Summer 2027'],['autumn-2027','By Autumn 2027'],['flexible','Flexible']] as const).map(([value,label])=><button type="button" className={goal.deadline===value?'active':''} key={value} onClick={()=>updateGoal('deadline',value)}>{label}</button>)}</div></div></div>}
+ {step===5&&<div className="form-step"><p className="eyebrow">PREFERENCES</p><h2>Shape a plan you can sustain.</h2><p className="step-lede">Free text personalizes the route but never overrides academic rules.</p><div className="field-group"><label>Anything else? <span className="optional-label">Optional</span></label><textarea className="goal-notes" maxLength={500} value={goal.notes} onChange={e=>updateGoal('notes',e.target.value)} placeholder="I enjoy applied AI, but need a balanced workload and want to explore research."/><small>{goal.notes.length}/500 · academic, research, skill, or career context only</small></div><div className="two-fields"><div className="field-group"><label>Courses per term</label><select value={form.max_courses_per_term} onChange={e=>update('max_courses_per_term',Number(e.target.value))}><option value="2">2 · Focused</option><option value="3">3 · Balanced</option><option value="4">4 · Ambitious</option></select></div><div className="field-group"><label>Career hours per week</label><select value={goal.career_hours_per_week} onChange={e=>updateGoal('career_hours_per_week',Number(e.target.value))}><option value="3">3 hours</option><option value="6">6 hours</option><option value="10">10 hours</option></select></div></div><div className="truth-note"><Scale size={19}/><div><b>Goal Parser → Rules Engine → Explanation</b><span>Your description personalizes the plan but never decides whether a course is valid.</span></div></div></div>}
+ <div className="form-actions"><button type="button" className="button secondary" disabled={step===1} onClick={()=>setStep(v=>v-1)}><ArrowLeft size={16}/> Back</button>{step<5?<button type="button" className="button primary" onClick={()=>setStep(v=>v+1)}>Continue <ArrowRight size={16}/></button>:<button type="button" className="button primary sparkle" onClick={submit}>Generate roadmap <Sparkles size={16}/></button>}</div></section>;
 }

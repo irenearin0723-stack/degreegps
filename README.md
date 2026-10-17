@@ -39,6 +39,7 @@ Frontend implementation:
 - `lib/plan-api.ts` — the only Mock/API switching boundary
 - `lib/transcript-api.ts` — Mock/real transcript parsing boundary
 - `docs/transcript-api-proposal.md` — proposed upload contract and privacy rules
+- `docs/goal-contract-v2-proposal.md` — structured goal schema and v1 migration plan
 
 - `types/plan.ts` — single source of truth for request/response TypeScript types.
 - `mocks/sample-plan.json` — canonical, **demo-only** backend response.
