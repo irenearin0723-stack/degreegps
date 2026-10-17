@@ -24,6 +24,7 @@ API. To connect the backend, set:
 ```env
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 NEXT_PUBLIC_USE_MOCK_DATA=false
+NEXT_PUBLIC_USE_MOCK_TRANSCRIPT=false
 ```
 
 The frontend then sends `POST /api/plan` using `PlanRequest` and renders the
@@ -36,6 +37,8 @@ Frontend implementation:
 - `components/PlanForm.tsx` — contract-compatible onboarding form
 - `components/PlanDashboard.tsx` — quarters, milestones, warnings, sources
 - `lib/plan-api.ts` — the only Mock/API switching boundary
+- `lib/transcript-api.ts` — Mock/real transcript parsing boundary
+- `docs/transcript-api-proposal.md` — proposed upload contract and privacy rules
 
 - `types/plan.ts` — single source of truth for request/response TypeScript types.
 - `mocks/sample-plan.json` — canonical, **demo-only** backend response.

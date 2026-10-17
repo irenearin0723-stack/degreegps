@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ArrowLeft, ArrowRight, BrainCircuit, Code2, Scale, Sparkles } from 'lucide-react';
 import type { PlanRequest } from '../types/plan';
 import { CourseInput } from './CourseInput';
+import { TranscriptUpload } from './TranscriptUpload';
 
 type Props = { onSubmit: (request: PlanRequest) => void; initial?: PlanRequest };
 
@@ -38,6 +39,8 @@ export function PlanForm({ onSubmit, initial }: Props) {
       </div>}
       {step === 2 && <div className="form-step">
         <p className="eyebrow">COURSE HISTORY</p><h2>What have you taken?</h2><p className="step-lede">Use official course codes where possible. The backend will normalize and validate them.</p>
+        <TranscriptUpload onConfirm={(completed, inProgress) => { update('completed_courses', completed); update('in_progress_courses', inProgress); }} />
+        <div className="manual-divider"><span>or enter courses manually</span></div>
         <CourseInput label="Completed courses" hint="These may satisfy prerequisites." values={form.completed_courses} blockedValues={form.in_progress_courses} onChange={(value) => update('completed_courses', value)} />
         <CourseInput label="Courses in progress" hint="These appear in the current term but do not count as completed yet." values={form.in_progress_courses} blockedValues={form.completed_courses} onChange={(value) => update('in_progress_courses', value)} />
       </div>}
