@@ -13,6 +13,8 @@
     "incremental": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["./*"] },
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
