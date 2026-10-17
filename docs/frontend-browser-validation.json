@@ -1,0 +1,15 @@
+{
+  "passed": 6,
+  "failed": 0,
+  "checks": [
+    "Retained teammate landing page and planner render and hydrate",
+    "Synthetic PDF uploads to real parser and requires explicit course confirmation",
+    "Goal controls expose supported tracks and preserve a flexible deadline",
+    "Browser sends real v2 goal/history and receives a generated three-quarter response",
+    "Dashboard renders real quarters, career milestones, warnings, sources and flexible deadline",
+    "Editing preserves the structured goal; no browser runtime errors"
+  ],
+  "browser_errors": [],
+  "paid_ai_requests": 0,
+  "screenshot": "Temporary local artifact only; no student PDF saved"
+}

@@ -114,3 +114,10 @@ Original v1 types/docs/examples are preserved under `docs/legacy/`, `mocks/legac
 and `examples/legacy/` for teammate migration. Do not use them in new clients.
 
 No changes are automatically committed or pushed. See [team workflow](docs/team-workflow.md).
+
+## Frontend integration
+
+The teammate frontend is retained. Browser API clients adapt the legacy UI view model
+to the canonical v2 backend schemas. Real same-origin APIs are enabled by default.
+See `docs/frontend-integration.md` for supported goals, transcript limits, and verification.
+Use `npm ci`; `package-lock.json` is the canonical lockfile for the combined app.

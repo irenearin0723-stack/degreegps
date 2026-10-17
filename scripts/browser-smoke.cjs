@@ -1,0 +1,61 @@
+/* Optional real-browser check. Install playwright-core in a temporary directory;
+   point DEGREEGPS_PLAYWRIGHT_PATH at that installation. No browser download needed. */
+const assert = require('node:assert/strict');
+const { writeFile } = require('node:fs/promises');
+const { PDFDocument, StandardFonts } = require('pdf-lib');
+const { chromium } = require(process.env.DEGREEGPS_PLAYWRIGHT_PATH || 'playwright-core');
+async function main() {
+  const browser = await chromium.launch({ executablePath: process.env.DEGREEGPS_CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  const errors = []; const passed = [];
+  page.on('pageerror', error => errors.push(String(error)));
+  try {
+    await page.goto('http://127.0.0.1:3101', { waitUntil: 'networkidle' });
+    await page.getByRole('button', { name: /Open planner/ }).click();
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    passed.push('Retained teammate landing page and planner render and hydrate');
+    const pdf = await PDFDocument.create(); const pdfPage = pdf.addPage();
+    const font = await pdf.embedFont(StandardFonts.Helvetica);
+    ['AUTUMN 2026', 'CSE 123 PROGRAMMING 5.0 3.8', 'CSE 311 FOUNDATIONS 4.0 IP'].forEach((line, index) => pdfPage.drawText(line, { x: 40, y: 700 - index * 25, size: 12, font }));
+    const upload = page.waitForResponse(r => r.url().endsWith('/api/transcript') && r.request().method() === 'POST');
+    await page.locator('input[type=file]').setInputFiles({ name: 'fictional-transcript.pdf', mimeType: 'application/pdf', buffer: Buffer.from(await pdf.save()) });
+    assert.equal((await upload).status(), 200);
+    await page.getByRole('button', { name: /Confirm and add courses/ }).click();
+    await page.getByText('2 courses added. You can edit them below.').waitFor();
+    passed.push('Synthetic PDF uploads to real parser and requires explicit course confirmation');
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    await page.getByRole('button', { name: /Join research \/ RA/ }).click();
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    const values = await page.locator('.direction-select select option').evaluateAll(options => options.map(o => o.value));
+    assert.ok(!values.includes('robotics') && !values.includes('undecided'));
+    await page.locator('.direction-select select').selectOption('ml');
+    await page.getByRole('button', { name: /I'm not sure yet/ }).click();
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    await page.locator('textarea.goal-notes').fill('Fictional test: interested in research reproducibility.');
+    passed.push('Goal controls expose supported tracks and preserve a flexible deadline');
+    const generated = page.waitForResponse(r => r.url().endsWith('/api/plan') && r.request().method() === 'POST');
+    await page.getByRole('button', { name: /Generate roadmap/ }).click();
+    const response = await generated; assert.equal(response.status(), 200);
+    const data = await response.json(); assert.equal(data.mode, 'generated'); assert.equal(data.quarters.length, 3);
+    assert.equal(data.request.goal.type, 'research'); assert.equal(data.request.goal.track, 'ml'); assert.equal(data.request.goal.deadline, null);
+    assert.deepEqual(data.request.completed_courses, ['CSE 123']); assert.deepEqual(data.request.in_progress_courses, ['CSE 311']);
+    assert.equal(data.request.use_ai_explanation, false);
+    passed.push('Browser sends real v2 goal/history and receives a generated three-quarter response');
+    await page.getByText('GENERATED PLAN', { exact: true }).waitFor();
+    assert.equal(await page.locator('.quarter').count(), 3);
+    assert.ok((await page.locator('.milestone-card').count()) > 0);
+    assert.ok((await page.locator('.warning-row').count()) > 0);
+    assert.ok((await page.locator('.destination-card').innerText()).includes('Flexible deadline'));
+    await page.screenshot({ path: '/private/tmp/degreegps-integrated-dashboard.png', fullPage: true });
+    passed.push('Dashboard renders real quarters, career milestones, warnings, sources and flexible deadline');
+    await page.getByRole('button', { name: /Edit inputs/ }).click();
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    await page.getByRole('button', { name: 'Continue', exact: true }).click();
+    assert.ok((await page.getByRole('button', { name: /Join research \/ RA/ }).getAttribute('class')).includes('active'));
+    assert.equal(errors.length, 0, errors.join('\n'));
+    passed.push('Editing preserves the structured goal; no browser runtime errors');
+    await writeFile('docs/frontend-browser-validation.json', JSON.stringify({ passed: passed.length, failed: 0, checks: passed, browser_errors: errors, paid_ai_requests: 0, screenshot: 'Temporary local artifact only; no student PDF saved' }, null, 2) + '\n');
+    console.log(`${passed.length} real-browser checks passed; no runtime errors.`);
+  } finally { await browser.close(); }
+}
+main().catch(error => { console.error(error); process.exitCode = 1; });

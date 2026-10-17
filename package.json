@@ -2,10 +2,10 @@
   "name": "degreegps",
   "private": true,
   "version": "2.0.0",
-  "description": "Shared DegreeGPS API contract for DubHacks",
+  "description": "DegreeGPS academic and career planning platform",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "check": "npm run typecheck && npm run validate:data && npm test && npm run check:mock",
     "check:mock": "node --conditions=react-server --import tsx scripts/check-contract.ts",
@@ -16,20 +16,26 @@
     "verify:http": "node --import tsx scripts/verify-http.ts"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "tsx": "^4.20.0",
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.8.3",
+    "tsx": "^4.20.0",
     "pdf-lib": "^1.17.1"
   },
   "engines": {
     "node": ">=22.13.0"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.7.0",
     "zod": "^4.0.0",
     "openai": "^6.0.0",
     "pdf-parse": "^2.4.5",
