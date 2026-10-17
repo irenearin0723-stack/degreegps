@@ -9,6 +9,34 @@ npm install
 npm run check
 ```
 
+## Run the frontend
+
+```bash
+cp .env.example .env.local
+pnpm install
+pnpm dev
+```
+
+The frontend starts in safe mock mode and renders the canonical
+`mocks/sample-plan.json` response through the same components used for the real
+API. To connect the backend, set:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+NEXT_PUBLIC_USE_MOCK_DATA=false
+```
+
+The frontend then sends `POST /api/plan` using `PlanRequest` and renders the
+returned `PlanResponse` without changing UI component props. API errors show the
+backend-provided `error.message` and optional `details`.
+
+Frontend implementation:
+
+- `app/page.tsx` — landing, planner state, loading/error handling
+- `components/PlanForm.tsx` — contract-compatible onboarding form
+- `components/PlanDashboard.tsx` — quarters, milestones, warnings, sources
+- `lib/plan-api.ts` — the only Mock/API switching boundary
+
 - `types/plan.ts` — single source of truth for request/response TypeScript types.
 - `mocks/sample-plan.json` — canonical, **demo-only** backend response.
 - `docs/api-contract.md` — HTTP endpoint, conventions, and integration agreement.
