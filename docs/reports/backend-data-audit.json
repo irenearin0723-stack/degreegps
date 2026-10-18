@@ -13,11 +13,19 @@
       "valid_json": true
     },
     {
+      "file": "index/embeddings.json",
+      "valid_json": true
+    },
+    {
       "file": "major_requirements/major_requirements.json",
       "valid_json": true
     },
     {
       "file": "major_requirements/policy_issues.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/program_catalog.json",
       "valid_json": true
     },
     {
@@ -61,33 +69,33 @@
       "valid_json": true
     }
   ],
-  "total_courses": 64,
-  "raw_schema_valid": 64,
+  "total_courses": 345,
+  "raw_schema_valid": 345,
   "raw_required_fields_missing": {},
   "direct_canonical_valid": 0,
-  "direct_canonical_rejected": 64,
+  "direct_canonical_rejected": 345,
   "canonical_fields_missing_before_adapter": {
-    "title": 64,
-    "prerequisite_groups": 64,
-    "offered_terms": 64,
-    "eligible_majors": 64,
-    "source_url": 64,
-    "verified_at": 64,
-    "data_status": 64,
-    "tracks": 64,
-    "foundation_priority": 64
+    "title": 345,
+    "prerequisite_groups": 345,
+    "offered_terms": 345,
+    "eligible_majors": 345,
+    "source_url": 345,
+    "verified_at": 345,
+    "data_status": 345,
+    "tracks": 345,
+    "foundation_priority": 345
   },
-  "normalized_schema_valid": 64,
+  "normalized_schema_valid": 345,
   "normalized_rejected": 0,
   "rejected_records": [],
   "duplicate_ids": [],
   "unnormalized_ids": [],
   "placeholder_course_records": [],
-  "valid_prerequisite_records": 64,
-  "preserved_or_branches": 233,
-  "external_prerequisite_ids": 27,
+  "valid_prerequisite_records": 345,
+  "preserved_or_branches": 987,
+  "external_prerequisite_ids": 52,
   "dangling_prerequisites": [],
-  "catalog_source_and_date_preserved": 64,
+  "catalog_source_and_date_preserved": 345,
   "listed_winter_2027": 58,
   "not_listed_winter_2027": [
     "AMATH 353",
@@ -97,16 +105,17 @@
     "INFO 443",
     "INFO 491"
   ],
-  "unresolved_enrollment_records": 64,
-  "missing_section_meetings": 42,
-  "incomplete_verification_excluded": 64,
+  "not_collected_winter_2027": 281,
+  "unresolved_enrollment_records": 345,
+  "missing_section_meetings": 323,
+  "incomplete_verification_excluded": 345,
   "independently_reverified_by_this_run": 0,
   "sections": 115,
   "duplicate_slns": 0,
   "orphan_sections": 0,
   "metadata_counts_match": true,
-  "major_requirement_groups": 32,
-  "major_acceptance_fixtures_outside_mvp": 12,
+  "major_requirement_groups": 622,
+  "major_acceptance_fixtures_outside_mvp": 66,
   "dangling_major_source_ids": [],
   "notes": [
     "Source URLs/dates are preserved human-curated provenance; this audit does not reverify UW policy.",
@@ -119,17 +128,17 @@
     "2027-winter": {
       "confirmed": 58,
       "projected": 0,
-      "unknown": 6
+      "unknown": 287
     },
     "2027-spring": {
       "confirmed": 0,
       "projected": 49,
-      "unknown": 15
+      "unknown": 296
     },
     "2027-summer": {
       "confirmed": 0,
       "projected": 5,
-      "unknown": 59
+      "unknown": 340
     }
   }
 }

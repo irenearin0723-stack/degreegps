@@ -41,10 +41,14 @@ for (const fixture of fixtures) {
 }
 test('all supplied course/prerequisite records import without loss, duplicate IDs, or invented offerings', async () => {
   const audit = await auditData();
-  assert.equal(audit.total_courses, 64); assert.equal(audit.normalized_schema_valid, 64);
-  assert.equal(audit.normalized_rejected, 0); assert.deepEqual(audit.duplicate_ids, []);
   const rows = await read('data/target_courses/courses.json');
   const rules = await read('data/target_courses/prerequisites.json');
+  // 64 Winter 2027 target courses plus 281 records added for the 2026-10-17 full-depth major profiles.
+  assert.equal(rows.length, 345);
+  assert.equal(audit.total_courses, rows.length); assert.equal(audit.normalized_schema_valid, rows.length);
+  assert.equal(audit.normalized_rejected, 0); assert.deepEqual(audit.duplicate_ids, []);
+  // Courses whose Winter 2027 schedule was not checked never get a confirmed offering.
+  assert.equal(audit.not_collected_winter_2027, rows.filter((r: { offering_status: string }) => r.offering_status === 'not_collected').length);
   for (const row of rows) {
     const course = importCourse(row, rules[row.course_id]);
     assert.equal(course.title, row.course_name); assert.equal(course.credits, row.credits);
@@ -55,6 +59,9 @@ test('all supplied course/prerequisite records import without loss, duplicate ID
     assert.equal(course.offered_terms, null);
     assert.deepEqual(course.offered_term_ids, row.offering_status === 'listed' ? ['2027-winter'] : []);
     assert.equal(course.eligible_majors, null);
+    if (['non_course_only', 'too_complex'].includes(rules[row.course_id].catalog_prerequisite_status)) {
+      assert.equal(course.prerequisite_alternatives, undefined); continue;
+    }
     assert.equal(course.prerequisite_alternatives!.length, rules[row.course_id].any_of.length);
     for (let i = 0; i < course.prerequisite_alternatives!.length; i++) {
       const original = rules[row.course_id].any_of[i];
@@ -96,4 +103,49 @@ test('invalid import rules fail closed instead of dropping grades or concurrency
   const rules = await read('data/target_courses/prerequisites.json');
   assert.throws(() => importCourse(rows[0], { ...rules['CSE 311'], any_of: [{ all_of: ['CSE 123'], min_grades: { 'MATH 126': 2 } }] }));
   assert.throws(() => importCourse({ ...rows[0], category: 'invented_requirement' }, rules['CSE 311']));
+});
+test('program catalog covers every UW Seattle undergraduate major and links full profiles both ways', async () => {
+  const catalog = await read('data/major_requirements/program_catalog.json');
+  const major = await read('data/major_requirements/major_requirements.json');
+  const programIds = new Set(major.programs.map((p: { program_id: string }) => p.program_id));
+  assert.equal(programIds.size, major.programs.length);
+  assert.equal(catalog.programs.length, 112);
+  for (const record of catalog.programs) {
+    assert.match(record.source_url, /^https:\/\/www\.washington\.edu\/students\/gencat\//);
+    assert.ok(record.credentials.length > 0);
+    for (const id of record.requirement_program_ids) assert.ok(programIds.has(id), id);
+    assert.equal(record.detail_level, record.requirement_program_ids.length ? 'full_requirement_profiles' : 'catalog_summary');
+  }
+  const full = catalog.programs.filter((r: { detail_level: string }) => r.detail_level !== 'catalog_summary');
+  assert.equal(full.length, 14);
+  for (const p of major.programs.filter((p: { parent_program_id?: string }) => p.parent_program_id))
+    assert.ok(full.some((r: { catalog_program_id: string }) => r.catalog_program_id === p.catalog_program_id), p.program_id);
+});
+test('new major names map to official institutional codes from catalog program IDs', async () => {
+  const { institutionalMajorCodes } = await import('../lib/registration');
+  const catalog = await read('data/major_requirements/program_catalog.json');
+  const codes = new Set(catalog.programs.map((r: { institutional_major_code: string }) => r.institutional_major_code));
+  for (const [name, code] of [['Statistics', 'STAT'], ['Computer Engineering', 'CMP E'], ['Electrical and Computer Engineering', 'ECENG'],
+    ['Industrial and Systems Engineering', 'IND E'], ['Mechanical Engineering', 'M E'], ['Aeronautics and Astronautics', 'A A'],
+    ['Human Centered Design and Engineering', 'HCDE'], ['Applied and Computational Mathematical Sciences', 'ACMS']]) {
+    assert.deepEqual([...institutionalMajorCodes(name)], [code]);
+    assert.ok(codes.has(code), code);
+  }
+  assert.ok(!institutionalMajorCodes('Computer Science').has('CMP E'));
+});
+test('not_collected Winter 2027 status is never treated as an offering, and unencodable prerequisites stay unknown', async () => {
+  const rows = await read('data/target_courses/courses.json');
+  const rules = await read('data/target_courses/prerequisites.json');
+  const row = rows.find((r: { course_id: string }) => r.course_id === 'STAT 302');
+  assert.equal(row.offering_status, 'not_collected');
+  const course = importCourse(row, rules['STAT 302']);
+  assert.deepEqual(course.offered_term_ids, []); assert.deepEqual(course.offering_evidence, []);
+  const plan = planAcademic(PlanRequestSchema.parse({ major: 'Statistics', completed_courses: [], in_progress_courses: [],
+    goal: { type: 'internship', track: 'data', deadline: '2027-06-01' }, max_courses_per_term: 3, start_term: '2027-winter' }),
+    [course], new Date('2026-10-17T18:00:00Z'));
+  assert.equal(plan.quarters.flatMap(q => q.courses).length, 0);
+  assert.ok(plan.academic_decisions.every(d => d.term_offering_status === 'unknown'));
+  const opaque = importCourse(row, { ...rules['STAT 302'], any_of: [{ all_of: [] }], catalog_prerequisite_status: 'non_course_only' });
+  assert.equal(opaque.prerequisite_alternatives, undefined);
+  assert.equal(checkPrerequisites(opaque, { completed: new Set() }).status, 'unknown');
 });

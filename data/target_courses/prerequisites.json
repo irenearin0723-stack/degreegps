@@ -1961,5 +1961,7786 @@
     "catalog_prerequisite_status": "none_listed",
     "source_url": "https://www.washington.edu/students/crscat/info.html#info499",
     "checked_at": "2026-10-17"
+  },
+  "A A 210": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "MATH 126": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "MATH 126": 2.0,
+          "PHYS 141": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0,
+          "PHYS 141": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136) AND (PHYS 121 OR PHYS 141); minimum grade 2.0 in each required course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 126 or MATH 136; and a minimum grade of 2.0 in either PHYS 121 or PHYS 141.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa210",
+    "checked_at": "2026-10-17"
+  },
+  "A A 260": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 126",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "CHEM 142": 2.0,
+          "MATH 126": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 126",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "CHEM 142": 2.0,
+          "MATH 126": 2.0,
+          "PHYS 141": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 136",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "CHEM 142": 2.0,
+          "MATH 136": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 136",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "CHEM 142": 2.0,
+          "MATH 136": 2.0,
+          "PHYS 141": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 126",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "CHEM 143": 2.0,
+          "MATH 126": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 126",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "CHEM 143": 2.0,
+          "MATH 126": 2.0,
+          "PHYS 141": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 136",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "CHEM 143": 2.0,
+          "MATH 136": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 136",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "CHEM 143": 2.0,
+          "MATH 136": 2.0,
+          "PHYS 141": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 126",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "CHEM 145": 2.0,
+          "MATH 126": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 126",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "CHEM 145": 2.0,
+          "MATH 126": 2.0,
+          "PHYS 141": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 136",
+          "PHYS 121"
+        ],
+        "min_grades": {
+          "CHEM 145": 2.0,
+          "MATH 136": 2.0,
+          "PHYS 121": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 136",
+          "PHYS 141"
+        ],
+        "min_grades": {
+          "CHEM 145": 2.0,
+          "MATH 136": 2.0,
+          "PHYS 141": 2.0
+        }
+      }
+    ],
+    "summary": "(CHEM 142 OR CHEM 143 OR CHEM 145) AND (MATH 126 OR MATH 136) AND (PHYS 121 OR PHYS 141); minimum grade 2.0 in each required course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either CHEM 142, CHEM 143, or CHEM 145; a minimum grade of 2.0 in either MATH 126 or MATH 136; and a minimum grade of 2.0 in either PHYS 121 or PHYS 141.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa260",
+    "checked_at": "2026-10-17"
+  },
+  "A A 301": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 311"
+        ]
+      }
+    ],
+    "summary": "(A A 311)",
+    "original_text": "Prerequisite: A A 311.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa301",
+    "checked_at": "2026-10-17"
+  },
+  "A A 302": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 311",
+          "MATH 207",
+          "PHYS 123"
+        ]
+      },
+      {
+        "all_of": [
+          "A A 311",
+          "MATH 207",
+          "PHYS 143"
+        ]
+      }
+    ],
+    "summary": "(A A 311) AND (MATH 207) AND (PHYS 123 OR PHYS 143)",
+    "original_text": "Prerequisite: A A 311; MATH 207; and either PHYS 123 or PHYS 143.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa302",
+    "checked_at": "2026-10-17"
+  },
+  "A A 310": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 230"
+        ]
+      }
+    ],
+    "summary": "(M E 230)",
+    "original_text": "Prerequisite: M E 230.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa310",
+    "checked_at": "2026-10-17"
+  },
+  "A A 311": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 230",
+          "A A 260"
+        ]
+      }
+    ],
+    "summary": "(M E 230) AND (A A 260)",
+    "original_text": "Prerequisite: M E 230; and A A 260.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa311",
+    "checked_at": "2026-10-17"
+  },
+  "A A 312": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 310",
+          "A A 311"
+        ]
+      }
+    ],
+    "summary": "(A A 310) AND (A A 311)",
+    "original_text": "Prerequisite: A A 310 and A A 311.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa312",
+    "checked_at": "2026-10-17"
+  },
+  "A A 320": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 123"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 143"
+        ]
+      }
+    ],
+    "summary": "(PHYS 123 OR PHYS 143)",
+    "original_text": "Prerequisite: PHYS 123 or PHYS 143.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa320",
+    "checked_at": "2026-10-17"
+  },
+  "A A 321": {
+    "any_of": [
+      {
+        "all_of": [
+          "CEE 220",
+          "A A 310",
+          "A A 311",
+          "A A 320"
+        ]
+      }
+    ],
+    "summary": "(CEE 220) AND (A A 310) AND (A A 311) AND (A A 320)",
+    "original_text": "Prerequisite: CEE 220; A A 310; A A 311; and A A 320",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa321",
+    "checked_at": "2026-10-17"
+  },
+  "A A 322": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 321"
+        ]
+      }
+    ],
+    "summary": "(A A 321)",
+    "original_text": "Prerequisite: A A 321.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa322",
+    "checked_at": "2026-10-17"
+  },
+  "A A 331": {
+    "any_of": [
+      {
+        "all_of": [
+          "CEE 220"
+        ]
+      }
+    ],
+    "summary": "(CEE 220)",
+    "original_text": "Prerequisite: CEE 220.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa331",
+    "checked_at": "2026-10-17"
+  },
+  "A A 332": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 331"
+        ]
+      }
+    ],
+    "summary": "(A A 331)",
+    "original_text": "Prerequisite: A A 331.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa332",
+    "checked_at": "2026-10-17"
+  },
+  "A A 395": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa395",
+    "checked_at": "2026-10-17"
+  },
+  "A A 410": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 322",
+          "A A 332",
+          "A A 447",
+          "A A 460"
+        ]
+      }
+    ],
+    "summary": "(A A 322) AND (A A 332) AND (A A 447) AND (A A 460)",
+    "original_text": "Prerequisite: A A 322; A A 332; A A 447; and A A 460",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa410",
+    "checked_at": "2026-10-17"
+  },
+  "A A 411": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 410"
+        ]
+      }
+    ],
+    "summary": "(A A 410)",
+    "original_text": "Prerequisite: A A 410.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa411",
+    "checked_at": "2026-10-17"
+  },
+  "A A 420": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 322",
+          "A A 332",
+          "A A 447",
+          "A A 460"
+        ]
+      }
+    ],
+    "summary": "(A A 322) AND (A A 332) AND (A A 447) AND (A A 460)",
+    "original_text": "Prerequisite: A A 322; A A 332; A A 447; and A A 460",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa420",
+    "checked_at": "2026-10-17"
+  },
+  "A A 421": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 420"
+        ]
+      }
+    ],
+    "summary": "(A A 420)",
+    "original_text": "Prerequisite: A A 420.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa421",
+    "checked_at": "2026-10-17"
+  },
+  "A A 447": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 312",
+          "MATH 208"
+        ]
+      }
+    ],
+    "summary": "(A A 312) AND (MATH 208)",
+    "original_text": "Prerequisite: A A 312 and MATH 208.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa447",
+    "checked_at": "2026-10-17"
+  },
+  "A A 460": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 301",
+          "A A 302"
+        ]
+      }
+    ],
+    "summary": "(A A 301) AND (A A 302)",
+    "original_text": "Prerequisite: A A 301 and A A 302.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/aa.html#aa460",
+    "checked_at": "2026-10-17"
+  },
+  "ASTR 321": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 224"
+        ],
+        "concurrent_allowed": [
+          "PHYS 224"
+        ]
+      }
+    ],
+    "summary": "(PHYS 224); PHYS 224 may be taken concurrently",
+    "original_text": "Prerequisite: PHYS 224 which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/astro.html#astr321",
+    "checked_at": "2026-10-17"
+  },
+  "ASTR 322": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 224"
+        ],
+        "concurrent_allowed": [
+          "PHYS 224"
+        ]
+      }
+    ],
+    "summary": "(PHYS 224); PHYS 224 may be taken concurrently",
+    "original_text": "Prerequisite: PHYS 224 which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/astro.html#astr322",
+    "checked_at": "2026-10-17"
+  },
+  "ASTR 323": {
+    "any_of": [
+      {
+        "all_of": [
+          "ASTR 322"
+        ],
+        "concurrent_allowed": [
+          "ASTR 322"
+        ]
+      }
+    ],
+    "summary": "(ASTR 322); ASTR 322 may be taken concurrently",
+    "original_text": "Prerequisite: ASTR 322 which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/astro.html#astr323",
+    "checked_at": "2026-10-17"
+  },
+  "ASTR 480": {
+    "any_of": [
+      {
+        "all_of": [
+          "ASTR 300",
+          "ASTR 323"
+        ],
+        "concurrent_allowed": [
+          "ASTR 323"
+        ]
+      }
+    ],
+    "summary": "(ASTR 300) AND (ASTR 323); ASTR 323 may be taken concurrently",
+    "original_text": "Prerequisite: ASTR 300; ASTR 323, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/astro.html#astr480",
+    "checked_at": "2026-10-17"
+  },
+  "ASTR 481": {
+    "any_of": [
+      {
+        "all_of": [
+          "ASTR 480"
+        ]
+      }
+    ],
+    "summary": "(ASTR 480)",
+    "original_text": "Prerequisite: ASTR 480.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/astro.html#astr481",
+    "checked_at": "2026-10-17"
+  },
+  "BIOEN 461": {
+    "any_of": [
+      {
+        "all_of": [
+          "BIOEN 460"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 460"
+        ]
+      }
+    ],
+    "summary": "(BIOEN 460 OR E E 460)",
+    "original_text": "Prerequisite: BIOEN 460/E E 460.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/bioeng.html#bioen461",
+    "checked_at": "2026-10-17"
+  },
+  "BIOEN 499": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/bioeng.html#bioen499",
+    "checked_at": "2026-10-17"
+  },
+  "BIOL 130": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/biology.html#biol130",
+    "checked_at": "2026-10-17"
+  },
+  "BIOL 180": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/biology.html#biol180",
+    "checked_at": "2026-10-17"
+  },
+  "BIOL 200": {
+    "any_of": [
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 143"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 145"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 223"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 237"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "OCEAN 295"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 152"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 152"
+        ]
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 153"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 153"
+        ]
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 155"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 155"
+        ]
+      },
+      {
+        "all_of": [
+          "BIOL 180",
+          "CHEM 220"
+        ],
+        "min_grades": {
+          "BIOL 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 220"
+        ]
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 143"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 145"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 223"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 237"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "OCEAN 295"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 152"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 152"
+        ]
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 153"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 153"
+        ]
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 155"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 155"
+        ]
+      },
+      {
+        "all_of": [
+          "B BIO 180",
+          "CHEM 220"
+        ],
+        "min_grades": {
+          "B BIO 180": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 220"
+        ]
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 143"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 145"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 223"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 237"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "OCEAN 295"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 152"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 152"
+        ]
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 153"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 153"
+        ]
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 155"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 155"
+        ]
+      },
+      {
+        "all_of": [
+          "T BIOL 120",
+          "CHEM 220"
+        ],
+        "min_grades": {
+          "T BIOL 120": 1.7
+        },
+        "concurrent_allowed": [
+          "CHEM 220"
+        ]
+      }
+    ],
+    "summary": "(BIOL 180 OR B BIO 180 OR T BIOL 120) AND (CHEM 143 OR CHEM 145 OR CHEM 223 OR CHEM 237 OR OCEAN 295 OR CHEM 152 OR CHEM 153 OR CHEM 155 OR CHEM 220); minimum grade 1.7 in BIOL 180 / B BIO 180 / T BIOL 120; CHEM 152, CHEM 153, CHEM 155, CHEM 220 may be taken concurrently",
+    "original_text": "Prerequisite: a minimum grade of 1.7 in either BIOL 180, B BIO 180, or T BIOL 120; and either CHEM 143, CHEM 145, CHEM 223, CHEM 237, or OCEAN 295, or concurrently taking either CHEM 152, CHEM 153, CHEM 155, or CHEM 220.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/biology.html#biol200",
+    "checked_at": "2026-10-17"
+  },
+  "BIOL 220": {
+    "any_of": [
+      {
+        "all_of": [
+          "BIOL 200"
+        ],
+        "min_grades": {
+          "BIOL 200": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "B BIO 200"
+        ],
+        "min_grades": {
+          "B BIO 200": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "T BIOL 130"
+        ],
+        "min_grades": {
+          "T BIOL 130": 2.0
+        }
+      }
+    ],
+    "summary": "(BIOL 200 OR B BIO 200 OR T BIOL 130); minimum grade 2.0 in each required course",
+    "original_text": "Prerequisite: minimum grade of 2.0 in either BIOL 200, B BIO 200, or T BIOL 130.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/biology.html#biol220",
+    "checked_at": "2026-10-17"
+  },
+  "BIOL 499": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/biology.html#biol499",
+    "checked_at": "2026-10-17"
+  },
+  "BIOST 425": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      }
+    ],
+    "summary": "(STAT 341 OR STAT 391)",
+    "original_text": "Prerequisite: STAT 341 or STAT 391.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/biostat.html#biost425",
+    "checked_at": "2026-10-17"
+  },
+  "CEE 220": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 210"
+        ],
+        "min_grades": {
+          "A A 210": 2.0
+        }
+      }
+    ],
+    "summary": "(A A 210); minimum grade 2.0 in each required course",
+    "original_text": "Prerequisite: minimum grade of 2.0 in A A 210.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cee.html#cee220",
+    "checked_at": "2026-10-17"
+  },
+  "CFRM 410": {
+    "any_of": [
+      {
+        "all_of": [
+          "CFRM 405"
+        ]
+      }
+    ],
+    "summary": "(CFRM 405)",
+    "original_text": "Prerequisite: CFRM 405.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cfrm.html#cfrm410",
+    "checked_at": "2026-10-17"
+  },
+  "CFRM 420": {
+    "any_of": [
+      {
+        "all_of": [
+          "CFRM 405"
+        ]
+      },
+      {
+        "all_of": [
+          "CFRM 410"
+        ]
+      }
+    ],
+    "summary": "(CFRM 405 OR CFRM 410); or instructor permission",
+    "original_text": "Prerequisite: CFRM 405, CFRM 410, or instructor permission.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cfrm.html#cfrm420",
+    "checked_at": "2026-10-17"
+  },
+  "CFRM 421": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CFRM 405"
+        ]
+      }
+    ],
+    "summary": "(STAT 391 OR CFRM 405)",
+    "original_text": "Prerequisite: STAT 391 or CFRM 405.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cfrm.html#cfrm421",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 142": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 110"
+        ],
+        "min_grades": {
+          "CHEM 110": 1.7
+        }
+      }
+    ],
+    "summary": "(CHEM 110); minimum grade 1.7 in each required course; alternatively a passing General Chemistry Placement exam score or a minimum score of 1 on the Chemistry AP exam; recommended: MATH 120 or MATH 124 (not required)",
+    "original_text": "Prerequisite: either a minimum grade of 1.7 in CHEM 110, a passing score in the General Chemistry Placement exam, or a minimum score of 1 on the Chemistry AP exam; recommended: MATH 120 or MATH 124.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem142",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 143": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 110"
+        ],
+        "min_grades": {
+          "CHEM 110": 1.7
+        }
+      }
+    ],
+    "summary": "(CHEM 110); minimum grade 1.7 in each required course; alternatively a passing General Chemistry Placement exam score or a minimum score of 1 on the Chemistry AP exam; recommended: MATH 120 or MATH 124 (not required)",
+    "original_text": "Prerequisite: either a minimum grade of 1.7 in CHEM 110, a passing score in the General Chemistry Placement exam, or a minimum score of 1 on the Chemistry AP exam; recommended: MATH 120 or MATH 124.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem143",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 145": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 124"
+        ],
+        "concurrent_allowed": [
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 134"
+        ],
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      }
+    ],
+    "summary": "(MATH 124 OR MATH 134); MATH 124, MATH 134 may be taken concurrently; alternatively a minimum score of 66 on the Honors General Chemistry placement exam, 3 on the AP Chemistry exam, or 5 on the IB high level chemistry exam",
+    "original_text": "Prerequisite: either MATH 124 or MATH 134 (either of which may be taken concurrently), a minimum score of 66 on the Honors General Chemistry placement exam (HCHEMC or HCHEMD), a minimum score of 3 on the AP Chemistry exam, or a minimum score of 5 on the IB high level chemistry exam.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem145",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 152": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 142"
+        ],
+        "min_grades": {
+          "CHEM 142": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 143"
+        ],
+        "min_grades": {
+          "CHEM 143": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "CHEM 145"
+        ],
+        "min_grades": {
+          "CHEM 145": 1.7
+        }
+      }
+    ],
+    "summary": "(CHEM 142 OR CHEM 143 OR CHEM 145); minimum grade 1.7 in each required course",
+    "original_text": "Prerequisite: a minimum grade of 1.7 in either CHEM 142, CHEM 143, or CHEM 145.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem152",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 153": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 143"
+        ],
+        "min_grades": {
+          "CHEM 143": 2.0
+        }
+      }
+    ],
+    "summary": "(CHEM 143); minimum grade 2.0 in each required course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in CHEM 143.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem153",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 155": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 145"
+        ],
+        "min_grades": {
+          "CHEM 145": 2.2
+        }
+      }
+    ],
+    "summary": "(CHEM 145); minimum grade 2.2 in each required course",
+    "original_text": "Prerequisite: a minimum grade of 2.2 in CHEM 145.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem155",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 162": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 152"
+        ],
+        "min_grades": {
+          "CHEM 152": 1.7
+        }
+      }
+    ],
+    "summary": "(CHEM 152); minimum grade 1.7 in each required course",
+    "original_text": "Prerequisite: a minimum grade of 1.7 in CHEM 152.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem162",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 165": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 155"
+        ],
+        "min_grades": {
+          "CHEM 155": 2.2
+        }
+      }
+    ],
+    "summary": "(CHEM 155); minimum grade 2.2 in each required course",
+    "original_text": "Prerequisite: minimum grade of 2.2 in CHEM 155.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem165",
+    "checked_at": "2026-10-17"
+  },
+  "CHEM 499": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/chem.html#chem499",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 121": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse121",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 122": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse122",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 123": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse123",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 142": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse142",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 143": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 142"
+        ]
+      }
+    ],
+    "summary": "(CSE 142)",
+    "original_text": "Prerequisite: CSE 142.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse143",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 160": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse160",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 163": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160"
+        ]
+      }
+    ],
+    "summary": "(CSE 122 OR CSE 123 OR CSE 142 OR CSE 143 OR CSE 160)",
+    "original_text": "Prerequisite: either CSE 122, CSE 123, CSE 142, CSE 143, or CSE 160.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse163",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 369": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 311"
+        ]
+      }
+    ],
+    "summary": "(CSE 311)",
+    "original_text": "Prerequisite: CSE 311.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse369",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 371": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 205",
+          "E E 271"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 205",
+          "CSE 369"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 215",
+          "E E 271"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 215",
+          "CSE 369"
+        ]
+      }
+    ],
+    "summary": "(E E 205 OR E E 215) AND (E E 271 OR CSE 369)",
+    "original_text": "Prerequisite: either E E 205 or E E 215; either E E 271 or CSE 369.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse371",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 403": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 331",
+          "CSE 332"
+        ]
+      }
+    ],
+    "summary": "(CSE 331) AND (CSE 332)",
+    "original_text": "Prerequisite: CSE 331; CSE 332.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse403",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 412": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143 OR CSE 163)",
+    "original_text": "Prerequisite: either CSE 123, CSE 143, or CSE 163.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse412",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 414": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ],
+        "min_grades": {
+          "CSE 123": 2.5
+        }
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ],
+        "min_grades": {
+          "CSE 143": 2.5
+        }
+      },
+      {
+        "all_of": [
+          "CSE 163"
+        ],
+        "min_grades": {
+          "CSE 163": 2.5
+        }
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143 OR CSE 163); minimum grade 2.5 in each required course",
+    "original_text": "Prerequisite: a minimum grade of 2.5 in either CSE 123, CSE 143, or CSE 163.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse414",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 416": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "Q SCI 381"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143 OR CSE 160 OR CSE 163) AND (STAT 311 OR STAT 390 OR STAT 391 OR IND E 315 OR MATH 394 OR STAT 394 OR STAT 395 OR MATH 395 OR Q SCI 381)",
+    "original_text": "Prerequisite: either CSE 123, CSE 143, CSE 160, or CSE 163; and either STAT 311, STAT 390, STAT 391, IND E 315, MATH 394/STAT 394, STAT 395/MATH 395, or Q SCI 381.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse416",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 417": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 373"
+        ]
+      }
+    ],
+    "summary": "(CSE 373)",
+    "original_text": "Prerequisite: CSE 373.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse417",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 421": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 312",
+          "CSE 332"
+        ]
+      }
+    ],
+    "summary": "(CSE 312) AND (CSE 332)",
+    "original_text": "Prerequisite: CSE 312; CSE 332.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse421",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 427": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 312",
+          "CSE 332"
+        ]
+      }
+    ],
+    "summary": "(CSE 312) AND (CSE 332)",
+    "original_text": "Prerequisite: CSE 312; CSE 332.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse427",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 442": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 332"
+        ]
+      }
+    ],
+    "summary": "(CSE 332)",
+    "original_text": "Prerequisite: CSE 332.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse442",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 444": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 332",
+          "CSE 344"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 332",
+          "CSE 414"
+        ]
+      }
+    ],
+    "summary": "(CSE 332) AND (CSE 344 OR CSE 414)",
+    "original_text": "Prerequisite: CSE 332; and either CSE 344 or CSE 414.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse444",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 447": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 312",
+          "CSE 332"
+        ]
+      }
+    ],
+    "summary": "(CSE 312) AND (CSE 332); recommended: MATH 208 (not required); recommended: CSE 446 before or concurrently (not required)",
+    "original_text": "Prerequisite: CSE 312 and CSE 332; recommended: MATH 208; and CSE 446 is recommended before or concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse447",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 455": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 332"
+        ]
+      }
+    ],
+    "summary": "(CSE 332)",
+    "original_text": "Prerequisite: CSE 332.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse455",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 474": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143)",
+    "original_text": "Prerequisite: CSE 123 or CSE 143",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse474",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 475": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 271",
+          "E E 472"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 271",
+          "CSE 474"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 271",
+          "E E 474"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 369",
+          "E E 472"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 369",
+          "CSE 474"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 369",
+          "E E 474"
+        ]
+      }
+    ],
+    "summary": "(E E 271 OR CSE 369) AND (E E 472 OR CSE 474 OR E E 474)",
+    "original_text": "Prerequisite: E E 271 or CSE 369; and E E 472 or CSE 474/E E 474.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse475",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 480": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse480",
+    "checked_at": "2026-10-17"
+  },
+  "CSE 484": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 332",
+          "CSE 351"
+        ]
+      }
+    ],
+    "summary": "(CSE 332) AND (CSE 351)",
+    "original_text": "Prerequisite: CSE 332; CSE 351.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/cse.html#cse484",
+    "checked_at": "2026-10-17"
+  },
+  "E E 201": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 122"
+        ],
+        "concurrent_allowed": [
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123"
+        ],
+        "concurrent_allowed": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142"
+        ],
+        "concurrent_allowed": [
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ],
+        "concurrent_allowed": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 122 OR CSE 123 OR CSE 142 OR CSE 143); CSE 122, CSE 123, CSE 142, CSE 143 may be taken concurrently",
+    "original_text": "Prerequisite: CSE 122, CSE 123, CSE 142, or CSE 143, any of which may be taken concurrently",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee201",
+    "checked_at": "2026-10-17"
+  },
+  "E E 205": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126",
+          "PHYS 122"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "PHYS 142"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "PHYS 122"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "PHYS 142"
+        ]
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136) AND (PHYS 122 OR PHYS 142)",
+    "original_text": "Prerequisite: either MATH 126 or MATH 136; and either PHYS 122 or PHYS 142.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee205",
+    "checked_at": "2026-10-17"
+  },
+  "E E 215": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 136",
+          "PHYS 122"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "PHYS 142"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 207",
+          "PHYS 122"
+        ],
+        "concurrent_allowed": [
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 207",
+          "PHYS 142"
+        ],
+        "concurrent_allowed": [
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 307",
+          "PHYS 122"
+        ],
+        "concurrent_allowed": [
+          "MATH 307"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 307",
+          "PHYS 142"
+        ],
+        "concurrent_allowed": [
+          "MATH 307"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "AMATH 351",
+          "PHYS 122"
+        ],
+        "concurrent_allowed": [
+          "AMATH 351"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "AMATH 351",
+          "PHYS 142"
+        ],
+        "concurrent_allowed": [
+          "AMATH 351"
+        ]
+      }
+    ],
+    "summary": "(MATH 136 OR (MATH 126 AND MATH 207) OR (MATH 126 AND MATH 307) OR (MATH 126 AND AMATH 351)) AND (PHYS 122 OR PHYS 142); MATH 207, MATH 307, AMATH 351 may be taken concurrently",
+    "original_text": "Prerequisite: either MATH 136, or MATH 126 and either MATH 207, MATH 307, or AMATH 351, any of which may be taken concurrently; and either PHYS 122 or PHYS 142.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee215",
+    "checked_at": "2026-10-17"
+  },
+  "E E 241": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160"
+        ]
+      }
+    ],
+    "summary": "(CSE 122 OR CSE 123 OR CSE 142 OR CSE 143 OR CSE 160)",
+    "original_text": "Prerequisite: either CSE 122, CSE 123, CSE 142, CSE 143, or CSE 160.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee241",
+    "checked_at": "2026-10-17"
+  },
+  "E E 242": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 135",
+          "E E 241"
+        ],
+        "concurrent_allowed": [
+          "MATH 135"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 135",
+          "CSE 163"
+        ],
+        "concurrent_allowed": [
+          "MATH 135"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207",
+          "E E 241"
+        ],
+        "concurrent_allowed": [
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207",
+          "CSE 163"
+        ],
+        "concurrent_allowed": [
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 351",
+          "E E 241"
+        ],
+        "concurrent_allowed": [
+          "AMATH 351"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 351",
+          "CSE 163"
+        ],
+        "concurrent_allowed": [
+          "AMATH 351"
+        ]
+      }
+    ],
+    "summary": "(MATH 135 OR MATH 207 OR AMATH 351) AND (E E 241 OR CSE 163); MATH 135, MATH 207, AMATH 351 may be taken concurrently",
+    "original_text": "Prerequisite: either MATH 135, MATH 207, or AMATH 351, any of which may be taken concurrently; and either E E 241 or CSE 163.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee242",
+    "checked_at": "2026-10-17"
+  },
+  "E E 271": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 121 OR CSE 122 OR CSE 123 OR CSE 142 OR CSE 143)",
+    "original_text": "Prerequisite: either CSE 121, CSE 122, CSE 123, CSE 142, or CSE 143.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee271",
+    "checked_at": "2026-10-17"
+  },
+  "E E 280": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 215",
+          "PHYS 122"
+        ],
+        "concurrent_allowed": [
+          "E E 215"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 215",
+          "PHYS 142"
+        ],
+        "concurrent_allowed": [
+          "E E 215"
+        ]
+      }
+    ],
+    "summary": "(E E 215) AND (PHYS 122 OR PHYS 142); E E 215 may be taken concurrently; recommended: either Python programming or Matlab; and Linux (not required)",
+    "original_text": "Prerequisite: E E 215, which may be taken concurrently; and either PHYS 122 or PHYS 142; recommended: either Python programming or Matlab; and Linux.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee280",
+    "checked_at": "2026-10-17"
+  },
+  "E E 371": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 205",
+          "E E 271"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 205",
+          "CSE 369"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 215",
+          "E E 271"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 215",
+          "CSE 369"
+        ]
+      }
+    ],
+    "summary": "(E E 205 OR E E 215) AND (E E 271 OR CSE 369)",
+    "original_text": "Prerequisite: either E E 205 or E E 215; either E E 271 or CSE 369.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee371",
+    "checked_at": "2026-10-17"
+  },
+  "E E 393": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee393",
+    "checked_at": "2026-10-17"
+  },
+  "E E 397": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee397",
+    "checked_at": "2026-10-17"
+  },
+  "E E 398": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee398",
+    "checked_at": "2026-10-17"
+  },
+  "E E 406": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee406",
+    "checked_at": "2026-10-17"
+  },
+  "E E 418": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 136",
+          "E E 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 136",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 136",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 136",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 136",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "MATH 208",
+          "E E 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "MATH 208",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "MATH 208",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "MATH 208",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "MATH 208",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "AMATH 352",
+          "E E 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "AMATH 352",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "AMATH 352",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "AMATH 352",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 126",
+          "AMATH 352",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 136",
+          "E E 391"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 136",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 136",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 136",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 136",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "MATH 208",
+          "E E 391"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "MATH 208",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "MATH 208",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "MATH 208",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "MATH 208",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "AMATH 352",
+          "E E 391"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "AMATH 352",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "AMATH 352",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "AMATH 352",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 241",
+          "MATH 126",
+          "AMATH 352",
+          "STAT 390"
+        ]
+      }
+    ],
+    "summary": "(CSE 163 OR E E 241) AND (MATH 136 OR (MATH 126 AND MATH 208) OR (MATH 126 AND AMATH 352)) AND (E E 391 OR IND E 315 OR MATH 394 OR STAT 394 OR STAT 390)",
+    "original_text": "Prerequisite: CSE 163 or E E 241; either MATH 136, both MATH 126 and MATH 208, or both MATH 126 and AMATH 352; and either E E 391, IND E 315, MATH 394/STAT 394, or STAT 390.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee418",
+    "checked_at": "2026-10-17"
+  },
+  "E E 436": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 435"
+        ]
+      }
+    ],
+    "summary": "(E E 435); recommended: E E 331 and E E 361 (not required)",
+    "original_text": "Prerequisite: E E 435; recommended: E E 331 and E E 361.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee436",
+    "checked_at": "2026-10-17"
+  },
+  "E E 437": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 436"
+        ]
+      }
+    ],
+    "summary": "(E E 436); recommended: E E 331 and E E 361 (not required)",
+    "original_text": "Prerequisite: E E 436; recommended: E E 331 and E E 361.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee437",
+    "checked_at": "2026-10-17"
+  },
+  "E E 449": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 447"
+        ]
+      }
+    ],
+    "summary": "(E E 447)",
+    "original_text": "Prerequisite: E E 447.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee449",
+    "checked_at": "2026-10-17"
+  },
+  "E E 461": {
+    "any_of": [
+      {
+        "all_of": [
+          "BIOEN 460"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 460"
+        ]
+      }
+    ],
+    "summary": "(BIOEN 460 OR E E 460)",
+    "original_text": "Prerequisite: BIOEN 460/E E 460.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee461",
+    "checked_at": "2026-10-17"
+  },
+  "E E 474": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143)",
+    "original_text": "Prerequisite: CSE 123 or CSE 143",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee474",
+    "checked_at": "2026-10-17"
+  },
+  "E E 475": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 271",
+          "E E 472"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 271",
+          "CSE 474"
+        ]
+      },
+      {
+        "all_of": [
+          "E E 271",
+          "E E 474"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 369",
+          "E E 472"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 369",
+          "CSE 474"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 369",
+          "E E 474"
+        ]
+      }
+    ],
+    "summary": "(E E 271 OR CSE 369) AND (E E 472 OR CSE 474 OR E E 474)",
+    "original_text": "Prerequisite: E E 271 or CSE 369; and E E 472 or CSE 474/E E 474.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee475",
+    "checked_at": "2026-10-17"
+  },
+  "E E 478": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 476",
+          "E E 477"
+        ]
+      }
+    ],
+    "summary": "(E E 476) AND (E E 477); recommended: introduction to VLSI design and knowledge of application-specific integrated circuit (ASIC) design flows (not required)",
+    "original_text": "Prerequisite: E E 476 and E E 477; recommended: introduction to VLSI design and knowledge of application-specific integrated circuit (ASIC) design flows.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee478",
+    "checked_at": "2026-10-17"
+  },
+  "E E 497": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee497",
+    "checked_at": "2026-10-17"
+  },
+  "E E 498": {
+    "any_of": [
+      {
+        "all_of": [
+          "E E 497"
+        ]
+      }
+    ],
+    "summary": "(E E 497)",
+    "original_text": "Prerequisite: E E 497.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/ee.html#ee498",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 200": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ200",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 201": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 200"
+        ]
+      }
+    ],
+    "summary": "(ECON 200)",
+    "original_text": "Prerequisite: ECON 200.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ201",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 300": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 200",
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "ECON 200",
+          "MATH 134"
+        ]
+      }
+    ],
+    "summary": "(ECON 200) AND (MATH 124 OR MATH 134)",
+    "original_text": "Prerequisite: ECON 200; and either MATH 124 or MATH 134.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ300",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 301": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 201",
+          "ECON 300"
+        ],
+        "min_grades": {
+          "ECON 201": 2.0,
+          "ECON 300": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 201) AND (ECON 300); minimum grade 2.0 in ECON 201, ECON 300",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in ECON 201; and a minimum grade of 2.0 in ECON 300.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ301",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 382": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 300"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 300); minimum grade 2.0 in ECON 300",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in ECON 300.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ382",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 400": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 300",
+          "MATH 126"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0,
+          "MATH 126": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 300) AND (MATH 126); minimum grade 2.0 in ECON 300, MATH 126",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in ECON 300; and a minimum grade of 2.0 in MATH 126.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ400",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 401": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 301",
+          "MATH 126"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 301",
+          "MATH 129"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 301",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 301) AND (MATH 126 OR MATH 129 OR MATH 136); minimum grade 2.0 in ECON 301",
+    "original_text": "Prerequisite: minimum grade of 2.0 in ECON 301; either MATH 126, MATH 129, or MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ401",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 424": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 300",
+          "ECON 311"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "STAT 311"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "STAT 341"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "STAT 390"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "Q SCI 381"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 300) AND (ECON 311 OR STAT 311 OR STAT 341 OR STAT 390 OR Q SCI 381); minimum grade 2.0 in ECON 300",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in ECON 300; and either ECON 311, STAT 311, STAT 341, STAT 390, or Q SCI 381; recommended: MATH 208.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ424",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 481": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 300",
+          "MATH 126",
+          "ECON 382",
+          "STAT 311"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "MATH 126",
+          "ECON 382",
+          "STAT 390"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "MATH 126",
+          "ECON 382",
+          "Q SCI 381"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "MATH 126",
+          "ECON 482",
+          "STAT 311"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "MATH 126",
+          "ECON 482",
+          "STAT 390"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "MATH 126",
+          "ECON 482",
+          "Q SCI 381"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 300) AND (MATH 126) AND (ECON 382 OR ECON 482) AND (STAT 311 OR STAT 390 OR Q SCI 381); minimum grade 2.0 in ECON 300",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in ECON 300; MATH 126; ECON 382 or ECON 482; and either STAT 311, STAT 390, or Q SCI 381; recommended: MATH 208.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ481",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 482": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 300",
+          "ECON 311"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "STAT 311"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "STAT 390"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "Q SCI 381"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 300) AND (ECON 311 OR STAT 311 OR STAT 390 OR Q SCI 381); minimum grade 2.0 in ECON 300",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in ECON 300; and either ECON 311, STAT 311, STAT 390, or Q SCI 381.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ482",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 483": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 301",
+          "ECON 311"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 301",
+          "STAT 311"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 301",
+          "STAT 341"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 301",
+          "MATH 390"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 301",
+          "STAT 390"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 301",
+          "Q SCI 381"
+        ],
+        "min_grades": {
+          "ECON 301": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 301) AND (ECON 311 OR STAT 311 OR STAT 341 OR MATH 390 OR STAT 390 OR Q SCI 381); minimum grade 2.0 in ECON 301",
+    "original_text": "Prerequisite: minimum grade of 2.0 in ECON 301; either ECON 311/STAT 311, STAT 341, MATH 390/STAT 390, or Q SCI 381.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ483",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 484": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 482",
+          "MATH 126"
+        ]
+      }
+    ],
+    "summary": "(ECON 482) AND (MATH 126)",
+    "original_text": "Prerequisite: ECON 482; MATH 126.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ484",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 487": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 300",
+          "ECON 382"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0,
+          "ECON 382": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "ECON 300",
+          "ECON 482"
+        ],
+        "min_grades": {
+          "ECON 300": 2.0,
+          "ECON 482": 2.0
+        }
+      }
+    ],
+    "summary": "(ECON 300) AND (ECON 382 OR ECON 482); minimum grade 2.0 in ECON 300, ECON 382, ECON 482",
+    "original_text": "Prerequisite: minimum grade of 2.0 in ECON 300; minimum grade of 2.0 in either ECON 382 or ECON 482 (ECON 482 recommended).",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ487",
+    "checked_at": "2026-10-17"
+  },
+  "ECON 488": {
+    "any_of": [
+      {
+        "all_of": [
+          "ECON 482"
+        ]
+      }
+    ],
+    "summary": "(ECON 482)",
+    "original_text": "Prerequisite: ECON 482; recommended: MATH 126",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/econ.html#econ488",
+    "checked_at": "2026-10-17"
+  },
+  "EDPSY 490": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/edpsy.html#edpsy490",
+    "checked_at": "2026-10-17"
+  },
+  "ENGR 101": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/engr.html#engr101",
+    "checked_at": "2026-10-17"
+  },
+  "ENGR 321": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/engr.html#engr321",
+    "checked_at": "2026-10-17"
+  },
+  "ENGR 333": {
+    "any_of": [
+      {
+        "all_of": [
+          "ENGR 231"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 231"
+        ]
+      }
+    ],
+    "summary": "(ENGR 231 OR HCDE 231)",
+    "original_text": "Prerequisite: ENGR 231 or HCDE 231; recommended: English composition course.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/engr.html#engr333",
+    "checked_at": "2026-10-17"
+  },
+  "ENGR 490": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/engr.html#engr490",
+    "checked_at": "2026-10-17"
+  },
+  "GEOG 258": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/geog.html#geog258",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 302": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde302",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 303": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 302"
+        ]
+      }
+    ],
+    "summary": "(HCDE 302)",
+    "original_text": "Prerequisite: HCDE 302.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde303",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 308": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde308",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 310": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160"
+        ]
+      }
+    ],
+    "summary": "(CSE 121 OR CSE 122 OR CSE 123 OR CSE 142 OR CSE 160)",
+    "original_text": "Prerequisite: either CSE 121, CSE 122, CSE 123, CSE 142, or CSE 160.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde310",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 313": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde313",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 315": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde315",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 316": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde316",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 321": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde321",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 322": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde322",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 351": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 300",
+          "HCDE 318"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 303"
+        ],
+        "concurrent_allowed": [
+          "HCDE 303"
+        ]
+      }
+    ],
+    "summary": "((HCDE 300 AND HCDE 318) OR HCDE 303); HCDE 303 may be taken concurrently",
+    "original_text": "Prerequisite: either HCDE 300 and HCDE 318, or HCDE 303, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde351",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 410": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 121",
+          "HCDE 210",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 121",
+          "HCDE 303",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 121",
+          "INFO 360",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 121",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 122",
+          "HCDE 210",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 122",
+          "HCDE 303",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 122",
+          "INFO 360",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 122",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "HCDE 210",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "HCDE 303",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "INFO 360",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142",
+          "HCDE 210",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142",
+          "HCDE 303",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142",
+          "INFO 360",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 142",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "HCDE 210",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "HCDE 303",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "INFO 360",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "HCDE 210",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "HCDE 303",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "INFO 360",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "HCDE 210",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "HCDE 303",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "INFO 360",
+          "HCDE 310"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 310"
+        ]
+      }
+    ],
+    "summary": "(CSE 121 OR CSE 122 OR CSE 123 OR CSE 142 OR CSE 143 OR CSE 160 OR CSE 163) AND (HCDE 210 OR HCDE 303 OR INFO 360 OR (HCDE 300 AND HCDE 318)) AND (HCDE 310)",
+    "original_text": "Prerequisite: either CSE 121, CSE 122, CSE 123, CSE 142, CSE 143, CSE 160, or CSE 163; either HCDE 210, HCDE 303, INFO 360, or both HCDE 300 and HCDE 318; and HCDE 310",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde410",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 411": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 310",
+          "HCDE 210"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 310",
+          "HCDE 303"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 310",
+          "INFO 360"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 310",
+          "HCDE 300",
+          "HCDE 318"
+        ]
+      }
+    ],
+    "summary": "(HCDE 310) AND (HCDE 210 OR HCDE 303 OR INFO 360 OR (HCDE 300 AND HCDE 318))",
+    "original_text": "Prerequisite: HCDE 310; and either HCDE 210, HCDE 303, INFO 360, or both HCDE 300 and HCDE 318.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde411",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 417": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 313",
+          "HCDE 300",
+          "HCDE 318"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 313",
+          "HCDE 303"
+        ]
+      }
+    ],
+    "summary": "(HCDE 313) AND ((HCDE 300 AND HCDE 318) OR HCDE 303)",
+    "original_text": "Prerequisite: HCDE 313; and either HCDE 300 and HCDE 318, or HCDE 303.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde417",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 438": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 310",
+          "HCDE 300",
+          "HCDE 318"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 310",
+          "HCDE 303"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "HCDE 300",
+          "HCDE 318"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "HCDE 303"
+        ]
+      }
+    ],
+    "summary": "(HCDE 310 OR CSE 160) AND ((HCDE 300 AND HCDE 318) OR HCDE 303)",
+    "original_text": "Prerequisite: either HCDE 310 or CSE 160; and either HCDE 300 and HCDE 318, or HCDE 303.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde438",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 439": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 310",
+          "HCDE 300",
+          "HCDE 318"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 310",
+          "HCDE 303"
+        ]
+      }
+    ],
+    "summary": "(HCDE 310) AND ((HCDE 300 AND HCDE 318) OR HCDE 303)",
+    "original_text": "Prerequisite: HCDE 310; and either HCDE 300 and HCDE 318, or HCDE 303.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde439",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 492": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 315",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 351"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 315",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 451"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 315",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 303",
+          "HCDE 351"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 315",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 303",
+          "HCDE 451"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 316",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 351"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 316",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 300",
+          "HCDE 318",
+          "HCDE 451"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 316",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 303",
+          "HCDE 351"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 308",
+          "HCDE 310",
+          "HCDE 313",
+          "HCDE 316",
+          "HCDE 321",
+          "HCDE 322",
+          "HCDE 303",
+          "HCDE 451"
+        ]
+      }
+    ],
+    "summary": "(HCDE 308) AND (HCDE 310) AND (HCDE 313) AND (HCDE 315 OR HCDE 316) AND (HCDE 321) AND (HCDE 322) AND ((HCDE 300 AND HCDE 318) OR HCDE 303) AND (HCDE 351 OR HCDE 451)",
+    "original_text": "Prerequisite: HCDE 308; HCDE 310; HCDE 313; HCDE 315 or HCDE 316; HCDE 321; HCDE 322; either HCDE 300 and HCDE 318, or HCDE 303; and HCDE 351 or HCDE 451",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde492",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 493": {
+    "any_of": [
+      {
+        "all_of": [
+          "HCDE 492"
+        ]
+      }
+    ],
+    "summary": "(HCDE 492)",
+    "original_text": "Prerequisite: HCDE 492.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde493",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 496": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde496",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 497": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde497",
+    "checked_at": "2026-10-17"
+  },
+  "HCDE 499": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/hcde.html#hcde499",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 250": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde250",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 310": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 136",
+          "CSE 121"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "CSE 142"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 208",
+          "CSE 121"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 208",
+          "CSE 122"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 208",
+          "CSE 142"
+        ]
+      }
+    ],
+    "summary": "(MATH 136 OR MATH 208) AND (CSE 121 OR CSE 122 OR CSE 142)",
+    "original_text": "Prerequisite: either MATH 136 or MATH 208; and either CSE 121, CSE 122, or CSE 142.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde310",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 311": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 310",
+          "IND E 315"
+        ]
+      }
+    ],
+    "summary": "(IND E 310) AND (IND E 315)",
+    "original_text": "Prerequisite: IND E 310 and IND E 315.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde311",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 315": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 351"
+        ]
+      }
+    ],
+    "summary": "(MATH 135 OR MATH 136 OR MATH 207 OR AMATH 351)",
+    "original_text": "Prerequisite: either MATH 135, MATH 136, MATH 207, or AMATH 351.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde315",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 316": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 390"
+        ]
+      }
+    ],
+    "summary": "(IND E 315 OR STAT 341 OR STAT 390)",
+    "original_text": "Prerequisite: either IND E 315, STAT 341, or STAT 390.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde316",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 321": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 315"
+        ]
+      }
+    ],
+    "summary": "(IND E 315)",
+    "original_text": "Prerequisite: IND E 315",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde321",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 337": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde337",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 338": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 311",
+          "IND E 337"
+        ],
+        "concurrent_allowed": [
+          "IND E 311"
+        ]
+      }
+    ],
+    "summary": "(IND E 311) AND (IND E 337); IND E 311 may be taken concurrently",
+    "original_text": "Prerequisite: IND E 311, which may be taken concurrently; and IND E 337.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde338",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 351": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde351",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 412": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 311"
+        ]
+      }
+    ],
+    "summary": "(IND E 311)",
+    "original_text": "Prerequisite: IND E 311.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde412",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 427": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      }
+    ],
+    "summary": "(IND E 315 OR STAT 390 OR STAT 391)",
+    "original_text": "Prerequisite: either IND E 315, STAT 390, or STAT 391; recommended: basic programming skills; and experience with R programming language or Matlab.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde427",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 430": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 310",
+          "IND E 315",
+          "IND E 337"
+        ],
+        "concurrent_allowed": [
+          "IND E 337"
+        ]
+      }
+    ],
+    "summary": "(IND E 310) AND (IND E 315) AND (IND E 337); IND E 337 may be taken concurrently",
+    "original_text": "Prerequisite: IND E 310; IND E 315; and IND E 337, which may be taken concurrently; recommended: IND E 412.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde430",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 439": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 310"
+        ],
+        "concurrent_allowed": [
+          "IND E 310"
+        ]
+      }
+    ],
+    "summary": "(IND E 310); IND E 310 may be taken concurrently",
+    "original_text": "Prerequisite: IND E 310, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde439",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 455": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde455",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 491": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde491",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 494": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 316",
+          "IND E 338",
+          "IND E 351"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 316",
+          "IND E 338",
+          "IND E 351"
+        ]
+      }
+    ],
+    "summary": "(IND E 316 OR STAT 316) AND (IND E 338) AND (IND E 351)",
+    "original_text": "Prerequisite: IND E 316/STAT 316; IND E 338; and IND E 351.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde494",
+    "checked_at": "2026-10-17"
+  },
+  "IND E 495": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 494"
+        ]
+      }
+    ],
+    "summary": "(IND E 494)",
+    "original_text": "Prerequisite: IND E 494.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/inde.html#inde495",
+    "checked_at": "2026-10-17"
+  },
+  "M E 123": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me123",
+    "checked_at": "2026-10-17"
+  },
+  "M E 230": {
+    "any_of": [
+      {
+        "all_of": [
+          "A A 210"
+        ]
+      }
+    ],
+    "summary": "(A A 210)",
+    "original_text": "Prerequisite: A A 210.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me230",
+    "checked_at": "2026-10-17"
+  },
+  "M E 323": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 126",
+          "PHYS 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 126",
+          "PHYS 141"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 136",
+          "PHYS 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 142",
+          "MATH 136",
+          "PHYS 141"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 126",
+          "PHYS 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 126",
+          "PHYS 141"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 136",
+          "PHYS 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 143",
+          "MATH 136",
+          "PHYS 141"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 126",
+          "PHYS 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 126",
+          "PHYS 141"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 136",
+          "PHYS 121"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 145",
+          "MATH 136",
+          "PHYS 141"
+        ]
+      }
+    ],
+    "summary": "(CHEM 142 OR CHEM 143 OR CHEM 145) AND (MATH 126 OR MATH 136) AND (PHYS 121 OR PHYS 141)",
+    "original_text": "Prerequisite: either CHEM 142, CHEM 143, or CHEM 145; either MATH 126 or MATH 136; and either PHYS 121 or PHYS 141.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me323",
+    "checked_at": "2026-10-17"
+  },
+  "M E 331": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 333"
+        ]
+      },
+      {
+        "all_of": [
+          "CEE 342"
+        ]
+      }
+    ],
+    "summary": "(M E 333 OR CEE 342)",
+    "original_text": "Prerequisite: either M E 333 or CEE 342.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me331",
+    "checked_at": "2026-10-17"
+  },
+  "M E 333": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 301",
+          "M E 323",
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "M E 323",
+          "AMATH 351"
+        ]
+      }
+    ],
+    "summary": "(AMATH 301) AND (M E 323) AND (MATH 207 OR AMATH 351)",
+    "original_text": "Prerequisite: AMATH 301; M E 323; and either MATH 207 or AMATH 351.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me333",
+    "checked_at": "2026-10-17"
+  },
+  "M E 354": {
+    "any_of": [
+      {
+        "all_of": [
+          "MSE 170",
+          "CEE 220"
+        ]
+      }
+    ],
+    "summary": "(MSE 170) AND (CEE 220)",
+    "original_text": "Prerequisite: MSE 170, CEE 220.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me354",
+    "checked_at": "2026-10-17"
+  },
+  "M E 355": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 354"
+        ]
+      }
+    ],
+    "summary": "(M E 354)",
+    "original_text": "Prerequisite: M E 354.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me355",
+    "checked_at": "2026-10-17"
+  },
+  "M E 356": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 354"
+        ]
+      }
+    ],
+    "summary": "(M E 354)",
+    "original_text": "Prerequisite: M E 354.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me356",
+    "checked_at": "2026-10-17"
+  },
+  "M E 373": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 351",
+          "AMATH 352",
+          "E E 215",
+          "M E 230"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 351",
+          "MATH 208",
+          "E E 215",
+          "M E 230"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207",
+          "AMATH 352",
+          "E E 215",
+          "M E 230"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207",
+          "MATH 208",
+          "E E 215",
+          "M E 230"
+        ]
+      }
+    ],
+    "summary": "(AMATH 351 OR MATH 207) AND (AMATH 352 OR MATH 208) AND (E E 215) AND (M E 230)",
+    "original_text": "Prerequisite: either AMATH 351 or MATH 207; either AMATH 352 or MATH 208; E E 215; and M E 230.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me373",
+    "checked_at": "2026-10-17"
+  },
+  "M E 374": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 301",
+          "M E 373"
+        ]
+      }
+    ],
+    "summary": "(AMATH 301) AND (M E 373)",
+    "original_text": "Prerequisite: AMATH 301; M E 373.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me374",
+    "checked_at": "2026-10-17"
+  },
+  "M E 414": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me414",
+    "checked_at": "2026-10-17"
+  },
+  "M E 469": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 374"
+        ]
+      }
+    ],
+    "summary": "(M E 374)",
+    "original_text": "Prerequisite: M E 374.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me469",
+    "checked_at": "2026-10-17"
+  },
+  "M E 470": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 373"
+        ]
+      }
+    ],
+    "summary": "(M E 373)",
+    "original_text": "Prerequisite: M E 373.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me470",
+    "checked_at": "2026-10-17"
+  },
+  "M E 471": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 374"
+        ]
+      }
+    ],
+    "summary": "(M E 374)",
+    "original_text": "Prerequisite: M E 374.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me471",
+    "checked_at": "2026-10-17"
+  },
+  "M E 473": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 374"
+        ]
+      }
+    ],
+    "summary": "(M E 374)",
+    "original_text": "Prerequisite: M E 374.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me473",
+    "checked_at": "2026-10-17"
+  },
+  "M E 477": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 374"
+        ]
+      }
+    ],
+    "summary": "(M E 374)",
+    "original_text": "Prerequisite: M E 374.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me477",
+    "checked_at": "2026-10-17"
+  },
+  "M E 478": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 123",
+          "M E 374",
+          "MATH 208"
+        ]
+      },
+      {
+        "all_of": [
+          "M E 123",
+          "M E 374",
+          "AMATH 352"
+        ]
+      }
+    ],
+    "summary": "(M E 123) AND (M E 374) AND (MATH 208 OR AMATH 352)",
+    "original_text": "Prerequisite: M E 123; M E 374; and either MATH 208 or AMATH 352.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me478",
+    "checked_at": "2026-10-17"
+  },
+  "M E 480": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 123",
+          "AMATH 301"
+        ]
+      }
+    ],
+    "summary": "(M E 123) AND (AMATH 301)",
+    "original_text": "Prerequisite: M E 123; AMATH 301.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me480",
+    "checked_at": "2026-10-17"
+  },
+  "M E 493": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 123",
+          "M E 354"
+        ]
+      }
+    ],
+    "summary": "(M E 123) AND (M E 354)",
+    "original_text": "Prerequisite: M E 123 and M E 354.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me493",
+    "checked_at": "2026-10-17"
+  },
+  "M E 494": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 123",
+          "M E 354",
+          "M E 414"
+        ]
+      },
+      {
+        "all_of": [
+          "M E 123",
+          "M E 354",
+          "E E 414"
+        ]
+      },
+      {
+        "all_of": [
+          "M E 123",
+          "M E 354",
+          "M E 493"
+        ]
+      }
+    ],
+    "summary": "(M E 123) AND (M E 354) AND (M E 414 OR E E 414 OR M E 493)",
+    "original_text": "Prerequisite: M E 123; M E 354; either M E 414/E E 414 or M E 493; recommended: M E 355.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me494",
+    "checked_at": "2026-10-17"
+  },
+  "M E 495": {
+    "any_of": [
+      {
+        "all_of": [
+          "M E 494"
+        ]
+      }
+    ],
+    "summary": "(M E 494)",
+    "original_text": "Prerequisite: M E 494.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/meche.html#me495",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 120": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math120",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 124": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math124",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 125": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 124"
+        ],
+        "min_grades": {
+          "MATH 124": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 124); minimum grade 2.0 in MATH 124; alternatively score of 3 on AB or BC advanced placement test (not encoded)",
+    "original_text": "Prerequisite: either minimum grade of 2.0 in MATH 124, score of 3 on AB advanced placement test, or score of 3 on BC advanced placement test.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math125",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 126": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 125"
+        ],
+        "min_grades": {
+          "MATH 125": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 135"
+        ],
+        "min_grades": {
+          "MATH 135": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 125 OR MATH 135); minimum grade 2.0 in MATH 125, MATH 135; alternatively minimum score of 4 on BC advanced placement test (not encoded)",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 125, a minimum grade of 2.0 in MATH 135, or a minimum score of 4 on BC advanced placement test.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math126",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 134": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math134",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 135": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 134"
+        ],
+        "min_grades": {
+          "MATH 134": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 134); minimum grade 2.0 in MATH 134",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 134.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math135",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 136": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 135"
+        ],
+        "min_grades": {
+          "MATH 135": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 135); minimum grade 2.0 in MATH 135",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 135.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math136",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 200": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math200",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 207": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 125"
+        ],
+        "min_grades": {
+          "MATH 125": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 125); minimum grade 2.0 in MATH 125",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 125.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math207",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 208": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math208",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 209": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 207",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 207": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      }
+    ],
+    "summary": "((MATH 207 AND MATH 208) OR MATH 136); minimum grade 2.0 in MATH 207, MATH 208, MATH 136",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in both MATH 207 and MATH 208, or a minimum grade of 2.0 in MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math209",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 224": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126"
+        ],
+        "min_grades": {
+          "MATH 126": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136); minimum grade 2.0 in MATH 126, MATH 136",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 126 or MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math224",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 300": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126"
+        ],
+        "min_grades": {
+          "MATH 126": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136); minimum grade 2.0 in MATH 126, MATH 136",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 126 or MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math300",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 318": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 208": 2.7
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 208 OR MATH 136); minimum grade 2.7 in MATH 208; minimum grade 2.0 in MATH 136",
+    "original_text": "Prerequisite: either a minimum grade of 2.7 in MATH 208, or a minimum grade of 2.0 in MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math318",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 327": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 300"
+        ],
+        "min_grades": {
+          "MATH 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 334"
+        ],
+        "min_grades": {
+          "MATH 334": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 300 OR MATH 334); minimum grade 2.0 in MATH 300, MATH 334",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 300 or MATH 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math327",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 334": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 207",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 126": 3.0,
+          "MATH 207": 3.0,
+          "MATH 208": 3.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 207",
+          "MATH 308"
+        ],
+        "min_grades": {
+          "MATH 126": 3.0,
+          "MATH 207": 3.0,
+          "MATH 308": 3.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 307",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 126": 3.0,
+          "MATH 307": 3.0,
+          "MATH 208": 3.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 307",
+          "MATH 308"
+        ],
+        "min_grades": {
+          "MATH 126": 3.0,
+          "MATH 307": 3.0,
+          "MATH 308": 3.0
+        }
+      }
+    ],
+    "summary": "(MATH 136 OR (MATH 126 AND (MATH 207 OR MATH 307) AND (MATH 208 OR MATH 308))); minimum grade 2.0 in MATH 136; minimum grade 3.0 in MATH 126, MATH 207, MATH 307, MATH 208, MATH 308",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 136, or a minimum grade of 3.0 in MATH 126 and a minimum grade of 3.0 in either MATH 207 or MATH 307 and a minimum grade of 3.0 in either MATH 208 or MATH 308.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math334",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 335": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 334"
+        ],
+        "min_grades": {
+          "MATH 334": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 334); minimum grade 2.0 in MATH 334",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math335",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 336": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 335"
+        ],
+        "min_grades": {
+          "MATH 335": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 335); minimum grade 2.0 in MATH 335",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 335.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math336",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 381": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 121",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "CSE 121": 2.0,
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 121",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "CSE 121": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 122",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "CSE 122": 2.0,
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 122",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "CSE 122": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "CSE 123": 2.0,
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "CSE 123": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 142",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "CSE 142": 2.0,
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 142",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "CSE 142": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "CSE 143": 2.0,
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "CSE 143": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "AMATH 301": 2.0,
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "AMATH 301",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "AMATH 301": 2.0,
+          "MATH 208": 2.0
+        }
+      }
+    ],
+    "summary": "(CSE 121 OR CSE 122 OR CSE 123 OR CSE 142 OR CSE 143 OR AMATH 301) AND (MATH 136 OR MATH 208); minimum grade 2.0 in CSE 121, CSE 122, CSE 123, CSE 142, CSE 143, AMATH 301, MATH 136, MATH 208",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either CSE 121, CSE 122, CSE 123, CSE 142, CSE 143, or AMATH 301; and a minimum grade of 2.0 in either MATH 136 or MATH 208.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math381",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 394": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126"
+        ],
+        "min_grades": {
+          "MATH 126": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 126, or a minimum grade of 2.0 in MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math394",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 395": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 394"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 394 OR STAT 394 OR STAT 340); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 394/STAT 394, or a minimum grade of 2.0 in STAT 340.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math395",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 402": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 208",
+          "MATH 300"
+        ],
+        "min_grades": {
+          "MATH 208": 2.0,
+          "MATH 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "MATH 300"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0,
+          "MATH 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 334"
+        ],
+        "min_grades": {
+          "MATH 334": 2.0
+        }
+      }
+    ],
+    "summary": "((MATH 208 AND MATH 300) OR (MATH 136 AND MATH 300) OR MATH 334); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in both MATH 208 and MATH 300, a minimum grade of 2.0 in both MATH 136 and MATH 300, or a minimum grade of 2.0 in MATH 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math402",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 403": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 402"
+        ],
+        "min_grades": {
+          "MATH 402": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 402); minimum grade 2.0 in MATH 402",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 402.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math403",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 404": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 403"
+        ],
+        "min_grades": {
+          "MATH 403": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 403); minimum grade 2.0 in MATH 403",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 403.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math404",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 407": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "AMATH 352"
+        ],
+        "min_grades": {
+          "AMATH 352": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 136 OR MATH 208 OR AMATH 352); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 136, MATH 208, or AMATH 352.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math407",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 408": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 327",
+          "MATH 407"
+        ],
+        "min_grades": {
+          "MATH 327": 2.0,
+          "MATH 407": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 327",
+          "MATH 464"
+        ],
+        "min_grades": {
+          "MATH 327": 2.0,
+          "MATH 464": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 334",
+          "MATH 407"
+        ],
+        "min_grades": {
+          "MATH 334": 2.0,
+          "MATH 407": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 334",
+          "MATH 464"
+        ],
+        "min_grades": {
+          "MATH 334": 2.0,
+          "MATH 464": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 327 OR MATH 334) AND (MATH 407 OR MATH 464); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 327 or MATH 334; and a minimum grade of 2.0 in either MATH 407 or MATH 464.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math408",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 409": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 407",
+          "MATH 300"
+        ],
+        "min_grades": {
+          "MATH 407": 2.0,
+          "MATH 300": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 407",
+          "MATH 334"
+        ],
+        "min_grades": {
+          "MATH 407": 2.0,
+          "MATH 334": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 407) AND (MATH 300 OR MATH 334); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 407; and a minimum grade of 2.0 in either MATH 300 or MATH 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math409",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 424": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 327"
+        ],
+        "min_grades": {
+          "MATH 327": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 335"
+        ],
+        "min_grades": {
+          "MATH 335": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 327 OR MATH 335); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 327, or a minimum grade of 2.0 in MATH 335.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math424",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 425": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 136",
+          "MATH 335"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0,
+          "MATH 335": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "MATH 424"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0,
+          "MATH 424": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 208",
+          "MATH 335"
+        ],
+        "min_grades": {
+          "MATH 208": 2.0,
+          "MATH 335": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 208",
+          "MATH 424"
+        ],
+        "min_grades": {
+          "MATH 208": 2.0,
+          "MATH 424": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 136 OR MATH 208) AND (MATH 335 OR MATH 424); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 136 or MATH 208; and a minimum grade of 2.0 in either MATH 335 or MATH 424.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math425",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 426": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 425"
+        ],
+        "min_grades": {
+          "MATH 425": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 425); minimum grade 2.0 in MATH 425",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 425.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math426",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 427": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 327"
+        ],
+        "min_grades": {
+          "MATH 327": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 335"
+        ],
+        "min_grades": {
+          "MATH 335": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 327 OR MATH 335); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 327 or MATH 335.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math427",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 428": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 427"
+        ],
+        "min_grades": {
+          "MATH 427": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 427); minimum grade 2.0 in MATH 427",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 427.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math428",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 441": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 327"
+        ],
+        "min_grades": {
+          "MATH 327": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 335"
+        ],
+        "min_grades": {
+          "MATH 335": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 327 OR MATH 335); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 327 or MATH 335.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math441",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 442": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 334",
+          "MATH 441"
+        ],
+        "min_grades": {
+          "MATH 334": 2.0,
+          "MATH 441": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 208",
+          "MATH 224",
+          "MATH 441"
+        ],
+        "min_grades": {
+          "MATH 208": 2.0,
+          "MATH 224": 2.0,
+          "MATH 441": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 334 OR (MATH 208 AND MATH 224)) AND (MATH 441); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 334, or a minimum grade of 2.0 in both MATH 208 and MATH 224; and minimum grade of 2.0 in MATH 441.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math442",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 443": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 442"
+        ],
+        "min_grades": {
+          "MATH 442": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 442); minimum grade 2.0 in MATH 442",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 442.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math443",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 461": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 334"
+        ],
+        "min_grades": {
+          "MATH 334": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 300",
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 300": 2.0,
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 300",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 300": 2.0,
+          "MATH 208": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 334) OR (MATH 300 AND (MATH 136 OR MATH 208)); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 334, or a minimum grade of 2.0 in MATH 300 and a minimum grade of 2.0 in either MATH 136 or MATH 208.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math461",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 462": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 461"
+        ],
+        "min_grades": {
+          "MATH 461": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "CSE 421"
+        ],
+        "min_grades": {
+          "CSE 421": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 461 OR CSE 421); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 461 or CSE 421.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math462",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 464": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 126": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      }
+    ],
+    "summary": "((MATH 126 AND MATH 208) OR MATH 136); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in both MATH 126 and MATH 208, or a minimum grade of 2.0 in MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math464",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 465": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 464"
+        ],
+        "min_grades": {
+          "MATH 464": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 464); minimum grade 2.0 in MATH 464",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 464.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math465",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 491": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 394",
+          "STAT 395"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "STAT 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "MATH 395"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "MATH 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "MATH 396"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "MATH 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "STAT 396"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "STAT 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "STAT 395"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "STAT 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "MATH 395"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "MATH 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "MATH 396"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "MATH 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "STAT 396"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "STAT 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "STAT 395"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "STAT 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "MATH 395"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "MATH 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "MATH 396"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "MATH 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "STAT 396"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "STAT 396": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 394 OR STAT 394 OR STAT 340) AND (STAT 395 OR MATH 395 OR MATH 396 OR STAT 396); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 394/STAT 394 or STAT 340; and a minimum grade of 2.0 in either STAT 395/MATH 395 or MATH 396/STAT 396.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math491",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 492": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 491"
+        ],
+        "min_grades": {
+          "MATH 491": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 491"
+        ],
+        "min_grades": {
+          "STAT 491": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 491 OR STAT 491); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 491/STAT 491.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math492",
+    "checked_at": "2026-10-17"
+  },
+  "MATH 493": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 491"
+        ],
+        "min_grades": {
+          "MATH 491": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 491"
+        ],
+        "min_grades": {
+          "STAT 491": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 491 OR STAT 491); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 491/STAT 491.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/math.html#math493",
+    "checked_at": "2026-10-17"
+  },
+  "MSE 170": {
+    "any_of": [
+      {
+        "all_of": [
+          "CHEM 142"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 143"
+        ]
+      },
+      {
+        "all_of": [
+          "CHEM 145"
+        ]
+      }
+    ],
+    "summary": "(CHEM 142 OR CHEM 143 OR CHEM 145)",
+    "original_text": "Prerequisite: Either CHEM 142, CHEM 143, or CHEM 145.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/mse.html#mse170",
+    "checked_at": "2026-10-17"
+  },
+  "NEUSCI 499": {
+    "any_of": [
+      {
+        "all_of": [
+          "NEUSCI 301"
+        ]
+      }
+    ],
+    "summary": "(NEUSCI 301)",
+    "original_text": "Prerequisite: NEUSCI 301.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/neusci.html#neusci499",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 116": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 115"
+        ],
+        "min_grades": {
+          "PHYS 115": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 122"
+        ],
+        "min_grades": {
+          "PHYS 122": 1.7
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 142"
+        ],
+        "min_grades": {
+          "PHYS 142": 1.7
+        }
+      }
+    ],
+    "summary": "(PHYS 115 OR PHYS 122 OR PHYS 142) or AP Physics 2 score 4-5, or AP Physics C (E&M) score 4-5; minimum grade 1.7 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 1.7 in PHYS 115, PHYS 122, or PHYS 142, a score of 4 or 5 on Physics 2 advanced placement test, or a score of 4 or 5 on Physics C (Electricity and Magnetism) advanced placement test.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys116",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 119": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 116"
+        ],
+        "concurrent_allowed": [
+          "PHYS 116"
+        ]
+      }
+    ],
+    "summary": "(PHYS 116); PHYS 116 may be taken concurrently",
+    "original_text": "Prerequisite: PHYS 116, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys119",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 121": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 124"
+        ],
+        "concurrent_allowed": [
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 134"
+        ],
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      }
+    ],
+    "summary": "(MATH 124 OR MATH 134); MATH 124 or MATH 134 may be taken concurrently",
+    "original_text": "Prerequisite: either MATH 124 or MATH 134, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys121",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 122": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 121",
+          "MATH 125"
+        ],
+        "concurrent_allowed": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 121",
+          "MATH 134"
+        ],
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 141",
+          "MATH 125"
+        ],
+        "concurrent_allowed": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 141",
+          "MATH 134"
+        ],
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      }
+    ],
+    "summary": "(PHYS 121 OR PHYS 141) AND (MATH 125 OR MATH 134); MATH 125 or MATH 134 may be taken concurrently",
+    "original_text": "Prerequisite: either PHYS 121 or PHYS 141; and either MATH 125 or MATH 134, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys122",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 123": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 122",
+          "MATH 126"
+        ],
+        "concurrent_allowed": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 122",
+          "MATH 134"
+        ],
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 142",
+          "MATH 126"
+        ],
+        "concurrent_allowed": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 142",
+          "MATH 134"
+        ],
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      }
+    ],
+    "summary": "(PHYS 122 OR PHYS 142) AND (MATH 126 OR MATH 134); MATH 126 or MATH 134 may be taken concurrently",
+    "original_text": "Prerequisite: either PHYS 122 or PHYS 142; and either MATH 126 or MATH 134, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys123",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 141": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 124"
+        ],
+        "min_grades": {
+          "MATH 124": 2.5
+        },
+        "concurrent_allowed": [
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 134"
+        ],
+        "min_grades": {
+          "MATH 134": 2.5
+        },
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      }
+    ],
+    "summary": "(MATH 124 OR MATH 134) or AP Calculus AB score >= 4, or AP Calculus BC score >= 3; minimum grade 2.5 in each listed course; MATH 124 or MATH 134 may be taken concurrently; recommended: high school-level physics course",
+    "original_text": "Prerequisite: either a minimum grade of 2.5 in MATH 124, MATH 134, which may be taken concurrently, a minimum score of 4 on the AP Calculus AB exam, or a minimum score of 3 on the AP Calculus BC exam; recommended: high school-level physics course.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys141",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 142": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 141",
+          "MATH 125"
+        ],
+        "min_grades": {
+          "PHYS 141": 2.5
+        },
+        "concurrent_allowed": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 141",
+          "MATH 134"
+        ],
+        "min_grades": {
+          "PHYS 141": 2.5
+        },
+        "concurrent_allowed": [
+          "MATH 134"
+        ]
+      }
+    ],
+    "summary": "(PHYS 141) AND (MATH 125 OR MATH 134); minimum grade 2.5 in PHYS 141; MATH 125 or MATH 134 may be taken concurrently; recommended: high-school-level physics course",
+    "original_text": "Prerequisite: a minimum grade of 2.5 in PHYS 141; and MATH 125 or MATH 134, either of which may be taken concurrently; recommended: high-school-level physics course.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys142",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 143": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 142",
+          "MATH 126"
+        ],
+        "min_grades": {
+          "PHYS 142": 2.5
+        },
+        "concurrent_allowed": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 142",
+          "MATH 135"
+        ],
+        "min_grades": {
+          "PHYS 142": 2.5
+        },
+        "concurrent_allowed": [
+          "MATH 135"
+        ]
+      }
+    ],
+    "summary": "(PHYS 142) AND (MATH 126 OR MATH 135); minimum grade 2.5 in PHYS 142; MATH 126 or MATH 135 may be taken concurrently; recommended: high school-level physics course",
+    "original_text": "Prerequisite: a minimum grade of 2.5 in PHYS 142; and MATH 126 or MATH 135, either of which may be taken concurrently; recommended: high school-level physics course.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys143",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 224": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126",
+          "PHYS 123"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136",
+          "PHYS 123"
+        ]
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136) AND (PHYS 123)",
+    "original_text": "Prerequisite: either MATH 126 or MATH 136; and PHYS 123.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys224",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 225": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 227"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 207",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "MATH 207": 2.0,
+          "MATH 208": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 307",
+          "MATH 308"
+        ],
+        "min_grades": {
+          "MATH 307": 2.0,
+          "MATH 308": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "AMATH 351",
+          "AMATH 352"
+        ],
+        "min_grades": {
+          "AMATH 351": 2.0,
+          "AMATH 352": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 227 OR MATH 136 OR (MATH 207 AND MATH 208) OR (MATH 307 AND MATH 308) OR (AMATH 351 AND AMATH 352)); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either PHYS 227, MATH 136, both MATH 207 and MATH 208, both MATH 307 and MATH 308, or both AMATH 351 and AMATH 352.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys225",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 226": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 225",
+          "PHYS 227"
+        ],
+        "min_grades": {
+          "PHYS 225": 2.0,
+          "PHYS 227": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 225) AND (PHYS 227); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: minimum grade of 2.0 in PHYS 225 and PHYS 227",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys226",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 227": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 121",
+          "PHYS 122",
+          "PHYS 123",
+          "MATH 126"
+        ],
+        "min_grades": {
+          "PHYS 121": 2.0,
+          "PHYS 122": 2.0,
+          "PHYS 123": 2.0,
+          "MATH 126": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 121) AND (PHYS 122) AND (PHYS 123) AND (MATH 126); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 121; a minimum grade of 2.0 in PHYS 122; a minimum grade of 2.0 in PHYS 123; and a minimum grade of 2.0 in MATH 126.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys227",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 228": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 227"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 227); minimum grade 2.0 in PHYS 227",
+    "original_text": "Prerequisite: a minimum 2.0 grade in PHYS 227.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys228",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 231": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 123"
+        ],
+        "min_grades": {
+          "PHYS 123": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 123); minimum grade 2.0 in PHYS 123",
+    "original_text": "Prerequisite: a minimum 2.0 grade in PHYS 123.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys231",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 294": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys294",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 321": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 227",
+          "PHYS 228"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "MATH 207"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "AMATH 351"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "MATH 208"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "AMATH 352"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "MATH 209"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "AMATH 353"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "MATH 224"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "MATH 334"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "MATH 335"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 227",
+          "AMATH 401"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 227) AND (PHYS 228 OR MATH 207 OR AMATH 351 OR MATH 208 OR AMATH 352 OR MATH 209 OR AMATH 353 OR MATH 224 OR MATH 334 OR MATH 335 OR AMATH 401); minimum grade 2.0 in PHYS 227",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 227; and either PHYS 228, MATH 207, AMATH 351, MATH 208, AMATH 352, MATH 209, AMATH 353, MATH 224, MATH 334, MATH 335, or AMATH 401.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys321",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 322": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 321"
+        ],
+        "min_grades": {
+          "PHYS 321": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 321); minimum grade 2.0 in PHYS 321",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 321.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys322",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 323": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 322"
+        ],
+        "min_grades": {
+          "PHYS 322": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 322); minimum grade 2.0 in PHYS 322",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 322.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys323",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 324": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 225",
+          "PHYS 228"
+        ],
+        "min_grades": {
+          "PHYS 225": 2.0,
+          "PHYS 228": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 225) AND (PHYS 228); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 225; and a minimum grade of 2.0 in PHYS 228.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys324",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 325": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 324"
+        ]
+      },
+      {
+        "all_of": [
+          "B PHYS 324"
+        ]
+      }
+    ],
+    "summary": "(PHYS 324 OR B PHYS 324)",
+    "original_text": "Prerequisite: either PHYS 324 or B PHYS 324.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys325",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 328": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 224",
+          "PHYS 225"
+        ],
+        "min_grades": {
+          "PHYS 224": 2.0,
+          "PHYS 225": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 224) AND (PHYS 225); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 224; and a minimum grade of 2.0 in PHYS 225.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys328",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 329": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 228"
+        ],
+        "min_grades": {
+          "PHYS 228": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 228); minimum grade 2.0 in PHYS 228",
+    "original_text": "Prerequisite: minimum grade of 2.0 in PHYS 228.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys329",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 331": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 227",
+          "PHYS 321"
+        ],
+        "min_grades": {
+          "PHYS 227": 2.0
+        },
+        "concurrent_allowed": [
+          "PHYS 321"
+        ]
+      }
+    ],
+    "summary": "(PHYS 227) AND (PHYS 321); minimum grade 2.0 in PHYS 227; PHYS 321 may be taken concurrently",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 227; and PHYS 321, which may be taken concurrently.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys331",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 334": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 123"
+        ],
+        "min_grades": {
+          "PHYS 123": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 123); minimum grade 2.0 in PHYS 123",
+    "original_text": "Prerequisite: a minimum 2.0 grade in PHYS 123.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys334",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 335": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 334"
+        ],
+        "min_grades": {
+          "PHYS 334": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 334); minimum grade 2.0 in PHYS 334",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in PHYS 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys335",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 401": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 123"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 143"
+        ]
+      }
+    ],
+    "summary": "(PHYS 123 OR PHYS 143)",
+    "original_text": "Prerequisite: PHYS 123 or PHYS 143.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys401",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 402": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 123"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 143"
+        ]
+      }
+    ],
+    "summary": "(PHYS 123 OR PHYS 143)",
+    "original_text": "Prerequisite: PHYS 123 or PHYS 143.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys402",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 403": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 123"
+        ]
+      },
+      {
+        "all_of": [
+          "PHYS 143"
+        ]
+      }
+    ],
+    "summary": "(PHYS 123 OR PHYS 143)",
+    "original_text": "Prerequisite: PHYS 123 or PHYS 143.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys403",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 429": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 224",
+          "PHYS 225"
+        ]
+      }
+    ],
+    "summary": "(PHYS 224) AND (PHYS 225)",
+    "original_text": "Prerequisite: PHYS 224; PHYS 225.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys429",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 431": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 225",
+          "PHYS 334"
+        ]
+      }
+    ],
+    "summary": "(PHYS 225) AND (PHYS 334)",
+    "original_text": "Prerequisite: PHYS 225 and PHYS 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys431",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 432": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 225",
+          "PHYS 334"
+        ]
+      }
+    ],
+    "summary": "(PHYS 225) AND (PHYS 334)",
+    "original_text": "Prerequisite: PHYS 225 and PHYS 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys432",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 433": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 225",
+          "PHYS 334"
+        ]
+      }
+    ],
+    "summary": "(PHYS 225) AND (PHYS 334)",
+    "original_text": "Prerequisite: PHYS 225 and PHYS 334.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys433",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 434": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 334",
+          "AMATH 301"
+        ],
+        "min_grades": {
+          "AMATH 301": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "PHYS 334",
+          "ASTR 300"
+        ],
+        "min_grades": {
+          "ASTR 300": 2.0
+        }
+      }
+    ],
+    "summary": "(PHYS 334) AND (AMATH 301 OR ASTR 300); minimum grade 2.0 in AMATH 301, ASTR 300",
+    "original_text": "Prerequisite: PHYS 334; and a minimum grade of 2.0 in either AMATH 301 or ASTR 300.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys434",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 494": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys494",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 495": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys495",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 496": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys496",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 498": {
+    "any_of": [
+      {
+        "all_of": [
+          "PHYS 123"
+        ]
+      }
+    ],
+    "summary": "(PHYS 123); recommended: PHYS 224, PHYS 225, PHYS 227",
+    "original_text": "Prerequisite: PHYS 123; recommended: PHYS 224; PHYS 225; and PHYS 227.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys498",
+    "checked_at": "2026-10-17"
+  },
+  "PHYS 499": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/phys.html#phys499",
+    "checked_at": "2026-10-17"
+  },
+  "Q SCI 291": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/quantsci.html#qsci291",
+    "checked_at": "2026-10-17"
+  },
+  "Q SCI 292": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 291"
+        ]
+      }
+    ],
+    "summary": "(MATH 124 OR Q SCI 291) or AP Math (AB or BC) score >= 3",
+    "original_text": "Prerequisite: either MATH 124, Q SCI 291, or a minimum score of 3 on the AP MATH test (AB or BC).",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/quantsci.html#qsci292",
+    "checked_at": "2026-10-17"
+  },
+  "Q SCI 381": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 120"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 134"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 190"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 291"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 292"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CSSS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 290"
+        ]
+      }
+    ],
+    "summary": "(MATH 120 OR MATH 124 OR MATH 125 OR MATH 126 OR MATH 134 OR MATH 135 OR MATH 136 OR QMETH 201 OR Q SCI 190 OR Q SCI 291 OR Q SCI 292 OR STAT 220 OR STAT 221 OR CSSS 221 OR SOC 221 OR STAT 290)",
+    "original_text": "Prerequisite: either MATH 120, MATH 124, MATH 125, MATH 126, MATH 134, MATH 135, MATH 136, QMETH 201, Q SCI 190, Q SCI 291, Q SCI 292, STAT 220, STAT 221/CSSS 221/SOC 221, or STAT 290.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/quantsci.html#qsci381",
+    "checked_at": "2026-10-17"
+  },
+  "Q SCI 403": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 381",
+          "Q SCI 482"
+        ]
+      }
+    ],
+    "summary": "(STAT 311 OR STAT 341 OR STAT 390 OR STAT 391 OR (Q SCI 381 AND Q SCI 482))",
+    "original_text": "Prerequisite: either STAT 311, STAT 341, STAT 390, STAT 391, or Q SCI 381 and Q SCI 482.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/quantsci.html#qsci403",
+    "checked_at": "2026-10-17"
+  },
+  "QMETH 201": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 112"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 134"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 145"
+        ]
+      }
+    ],
+    "summary": "(MATH 112 OR MATH 124 OR MATH 125 OR MATH 134 OR MATH 145)",
+    "original_text": "Prerequisite: either MATH 112, MATH 124, MATH 125, MATH 134, or MATH 145.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/qmeth.html#qmeth201",
+    "checked_at": "2026-10-17"
+  },
+  "SOC 221": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/soc.html#soc221",
+    "checked_at": "2026-10-17"
+  },
+  "SOC 225": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/soc.html#soc225",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 220": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat220",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 221": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat221",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 302": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 381"
+        ]
+      }
+    ],
+    "summary": "(STAT 290 OR STAT 311 OR STAT 390 OR STAT 391 OR Q SCI 381); recommended: experience with R programming language",
+    "original_text": "Prerequisite: either STAT 290, STAT 311, STAT 390, STAT 391, or Q SCI 381; recommended: experience with R programming language.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat302",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 303": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat303",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 311": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 220"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 221"
+        ]
+      },
+      {
+        "all_of": [
+          "CS&SS 221"
+        ]
+      },
+      {
+        "all_of": [
+          "SOC 221"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 290"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 120"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 124"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 134"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "QMETH 201"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 190"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 291"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 292"
+        ]
+      }
+    ],
+    "summary": "(STAT 220 OR STAT 221 OR CS&SS 221 OR SOC 221 OR STAT 290 OR MATH 120 OR MATH 124 OR MATH 125 OR MATH 126 OR MATH 134 OR MATH 135 OR MATH 136 OR QMETH 201 OR Q SCI 190 OR Q SCI 291 OR Q SCI 292)",
+    "original_text": "Prerequisite: either STAT 220, STAT 221/CS&SS 221/SOC 221, STAT 290, MATH 120, MATH 124, MATH 125, MATH 126, MATH 134, MATH 135, MATH 136, QMETH 201, Q SCI 190, Q SCI 291, or Q SCI 292.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat311",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 316": {
+    "any_of": [
+      {
+        "all_of": [
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 390"
+        ]
+      }
+    ],
+    "summary": "(IND E 315 OR STAT 341 OR STAT 390)",
+    "original_text": "Prerequisite: either IND E 315, STAT 341, or STAT 390.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat316",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 341": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 340",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "STAT 390"
+        ]
+      }
+    ],
+    "summary": "(STAT 340 OR MATH 394 OR STAT 394) AND (STAT 311 OR STAT 390)",
+    "original_text": "Prerequisite: STAT 340 or MATH 394/STAT 394; and STAT 311 or STAT 390.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat341",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 342": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      }
+    ],
+    "summary": "(STAT 341)",
+    "original_text": "Prerequisite: STAT 341.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat342",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 390": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ]
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136)",
+    "original_text": "Prerequisite: either MATH 126 or MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat390",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 391": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 312"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 394"
+        ]
+      }
+    ],
+    "summary": "(CSE 312 OR MATH 394 OR STAT 394)",
+    "original_text": "Prerequisite: either CSE 312 or MATH 394/STAT 394.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat391",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 394": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 126"
+        ],
+        "min_grades": {
+          "MATH 126": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 136"
+        ],
+        "min_grades": {
+          "MATH 136": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 126 OR MATH 136); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 126, or a minimum grade of 2.0 in MATH 136.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat394",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 395": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 394"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 394 OR STAT 394 OR STAT 340); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: either a minimum grade of 2.0 in MATH 394/STAT 394, or a minimum grade of 2.0 in STAT 340.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat395",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 403": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "Q SCI 381",
+          "Q SCI 482"
+        ]
+      }
+    ],
+    "summary": "(STAT 311 OR STAT 341 OR STAT 390 OR STAT 391 OR (Q SCI 381 AND Q SCI 482))",
+    "original_text": "Prerequisite: either STAT 311, STAT 341, STAT 390, STAT 391, or Q SCI 381 and Q SCI 482.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat403",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 416": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 123",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 143",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 160",
+          "Q SCI 381"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 311"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 390"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 391"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "IND E 315"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 394"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "STAT 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "MATH 395"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163",
+          "Q SCI 381"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 143 OR CSE 160 OR CSE 163) AND (STAT 311 OR STAT 390 OR STAT 391 OR IND E 315 OR MATH 394 OR STAT 394 OR STAT 395 OR MATH 395 OR Q SCI 381)",
+    "original_text": "Prerequisite: either CSE 123, CSE 143, CSE 160, or CSE 163; and either STAT 311, STAT 390, STAT 391, IND E 315, MATH 394/STAT 394, STAT 395/MATH 395, or Q SCI 381.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat416",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 423": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 342",
+          "MATH 208"
+        ],
+        "concurrent_allowed": [
+          "STAT 342"
+        ]
+      }
+    ],
+    "summary": "(STAT 342) AND (MATH 208); STAT 342 may be taken concurrently",
+    "original_text": "Prerequisite: STAT 342, which may be taken concurrently; and MATH 208.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat423",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 424": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 342",
+          "STAT 423"
+        ]
+      }
+    ],
+    "summary": "(STAT 342) AND (STAT 423)",
+    "original_text": "Prerequisite: STAT 342 and STAT 423.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat424",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 425": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      }
+    ],
+    "summary": "(STAT 341 OR STAT 391)",
+    "original_text": "Prerequisite: STAT 341 or STAT 391.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat425",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 435": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 341"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 391"
+        ]
+      }
+    ],
+    "summary": "(STAT 341 OR STAT 391); recommended: MATH 208",
+    "original_text": "Prerequisite: either STAT 341or STAT 391; recommended: MATH 208.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat435",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 451": {
+    "any_of": [
+      {
+        "all_of": [
+          "CSE 123"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 163"
+        ]
+      },
+      {
+        "all_of": [
+          "STAT 302"
+        ]
+      }
+    ],
+    "summary": "(CSE 123 OR CSE 163 OR STAT 302)",
+    "original_text": "Prerequisite: either CSE 123, CSE 163, or STAT 302.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat451",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 491": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 394",
+          "STAT 395"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "STAT 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "MATH 395"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "MATH 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "MATH 396"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "MATH 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "MATH 394",
+          "STAT 396"
+        ],
+        "min_grades": {
+          "MATH 394": 2.0,
+          "STAT 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "STAT 395"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "STAT 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "MATH 395"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "MATH 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "MATH 396"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "MATH 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 394",
+          "STAT 396"
+        ],
+        "min_grades": {
+          "STAT 394": 2.0,
+          "STAT 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "STAT 395"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "STAT 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "MATH 395"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "MATH 395": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "MATH 396"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "MATH 396": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 340",
+          "STAT 396"
+        ],
+        "min_grades": {
+          "STAT 340": 2.0,
+          "STAT 396": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 394 OR STAT 394 OR STAT 340) AND (STAT 395 OR MATH 395 OR MATH 396 OR STAT 396); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in either MATH 394/STAT 394 or STAT 340; and a minimum grade of 2.0 in either STAT 395/MATH 395 or MATH 396/STAT 396.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat491",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 492": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 491"
+        ],
+        "min_grades": {
+          "MATH 491": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 491"
+        ],
+        "min_grades": {
+          "STAT 491": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 491 OR STAT 491); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 491/STAT 491.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat492",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 493": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 491"
+        ],
+        "min_grades": {
+          "MATH 491": 2.0
+        }
+      },
+      {
+        "all_of": [
+          "STAT 491"
+        ],
+        "min_grades": {
+          "STAT 491": 2.0
+        }
+      }
+    ],
+    "summary": "(MATH 491 OR STAT 491); minimum grade 2.0 in each listed course",
+    "original_text": "Prerequisite: a minimum grade of 2.0 in MATH 491/STAT 491.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat493",
+    "checked_at": "2026-10-17"
+  },
+  "STAT 496": {
+    "any_of": [
+      {
+        "all_of": [
+          "STAT 424",
+          "STAT 435"
+        ]
+      }
+    ],
+    "summary": "(STAT 424) AND (STAT 435)",
+    "original_text": "Prerequisite: STAT 424 and STAT 435.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/stat.html#stat496",
+    "checked_at": "2026-10-17"
   }
 }

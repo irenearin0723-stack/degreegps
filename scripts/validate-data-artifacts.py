@@ -31,6 +31,9 @@ def normalized(value):
         return str(value).lower()
     return str(value)
 
+# CSV columns that hold a JSON field serialized as JSON (documented in data/target_courses/README.md).
+JSON_ENCODED_COLUMNS = {('sections', 'registration_rules_json'): 'registration_rules'}
+
 for name in ['courses', 'sections', 'info_winter_inventory']:
     rows = load_csv(root / 'target_courses' / (name + '.csv'))
     records = load_json(root / 'target_courses' / (name + '.json'))
@@ -38,6 +41,14 @@ for name in ['courses', 'sections', 'info_winter_inventory']:
     mismatches = []
     for index, (row, record) in enumerate(zip(rows, records)):
         for key, value in row.items():
+            field = JSON_ENCODED_COLUMNS.get((name, key))
+            if field:
+                try:
+                    if (json.loads(value) if value else []) != (record.get(field) or []):
+                        mismatches.append((index, key))
+                except json.JSONDecodeError:
+                    mismatches.append((index, key))
+                continue
             if normalized(record.get(key)) != value:
                 try:
                     equal = float(value) == float(record[key])
@@ -72,7 +83,7 @@ for course_id, rule in rules.items():
 major = load_json(root / 'major_requirements/major_requirements.json')
 source_ids = {row['source_id'] for row in major['source_registry']}
 rule_ids = {row['rule_id'] for row in major['requirements']}
-for path in (root / 'major_requirements').glob('*.csv'):
+for path in sorted((root / 'major_requirements').glob('*.csv')):
     rows = load_csv(path)
     check(path.name + ': readable nonempty CSV', bool(rows))
     if path.name == 'requirement_groups.csv':
@@ -83,16 +94,16 @@ for path in (root / 'major_requirements').glob('*.csv'):
         check(path.name + ': registry IDs preserved', {r['source_id'] for r in rows} == source_ids)
 
 workbooks = []
-for path in root.rglob('*.xlsx'):
+for path in sorted(root.rglob('*.xlsx'), key=lambda p: p.as_posix()):
     with zipfile.ZipFile(path) as archive:
-        check(str(path) + ': ZIP CRC integrity', archive.testzip() is None)
+        check(path.as_posix() + ': ZIP CRC integrity', archive.testzip() is None)
         sheets = [name for name in archive.namelist() if name.startswith('xl/worksheets/') and name.endswith('.xml')]
         formula_errors = 0
         for name in sheets:
             sheet = ET.fromstring(archive.read(name))
             formula_errors += sum(cell.get('t') == 'e' for cell in sheet.iter('{http://schemas.openxmlformats.org/spreadsheetml/2006/main}c'))
-        check(str(path) + ': no stored Excel error cells', formula_errors == 0)
-        workbooks.append({'path': str(path), 'worksheet_xml_count': len(sheets), 'stored_error_cells': formula_errors})
+        check(path.as_posix() + ': no stored Excel error cells', formula_errors == 0)
+        workbooks.append({'path': path.as_posix(), 'worksheet_xml_count': len(sheets), 'stored_error_cells': formula_errors})
 
 result = {'passed': len(checks), 'failed': len(failures), 'failures': failures, 'workbooks': workbooks,
           'scope': 'CSV parity, prerequisite semantics, references, XLSX structural integrity; no full spreadsheet calculation or degree-audit engine.'}

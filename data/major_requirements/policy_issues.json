@@ -80,5 +80,1348 @@
     ],
     "status": "documented",
     "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CS_DS_CHECKLIST_NON_UW",
+    "program_id": "CS",
+    "issue": "The Allen School links the CS and CS Data Science Option checklists (CS__Fall23.pdf, CS_DS_degreq_fall23.pdf) and all prior-year checklists on s3-us-west-2.amazonaws.com, a non-UW host.",
+    "resolution": "Not used. CS_DS rules come from the General Catalog and the Allen School HTML pages. Checklist-only details (general education credits, foreign language, cumulative-GPA wording, direct-to-major prerequisite exemption) are not encoded for CS_DS.",
+    "source_ids": [
+      "CS_DS_DEGREE_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CS_DS_CREDIT_RANGE",
+    "program_id": "CS",
+    "issue": "The Data Science credential heading repeats the standard 77-82 major credits, while its additional requirements say the option increases total major requirements to 80-87 credits.",
+    "resolution": "published_major_credit_range is set to [80, 87] as descriptive metadata. Enforce named rules rather than a total.",
+    "source_ids": [
+      "CS_DS_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CS_DS_GPA_METRIC",
+    "program_id": "CS",
+    "issue": "Catalog requires a minimum 2.00 cumulative GPA in all CSE courses; the existing CS profile's CS_GPA uses metric cumulative_gpa from the 2023 checklist. The CompE checklist also states a 2.0 cumulative GPA.",
+    "resolution": "CS_DS_CSE_GPA and CMPE_CSE_GPA use major_gpa computed over all CSE courses; CMPE_CUMULATIVE_GPA is added from the UW-hosted CompE checklist. Consider aligning the standard CS profile.",
+    "source_ids": [
+      "CS_DS_CATALOG",
+      "CMPE_CATALOG",
+      "CMPE_CHECKLIST"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CS_DS_STAT_DOUBLE_MAJOR",
+    "program_id": "CS",
+    "issue": "For Stat/CSE double majors, STAT 435 can count as a CSE core course in place of CSE 446 (no credit for both), and STAT 303 can replace SOC 225 in the Data Science option.",
+    "resolution": "Not encoded as automatic alternatives. Return needs_review when STAT 435 or STAT 303 is presented in place of the required course.",
+    "source_ids": [
+      "CS_DS_DEGREE_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_SYSTEMS_FOOTNOTES",
+    "program_id": "CMPE",
+    "issue": "The CE Systems Electives list shows 'CSE/EE 474 OR CSE 466 *' and 'CSE/EE 470 OR CSE 471 **' but the footnotes are not defined on the page. CSE 466, CSE 467 and CSE 471 are not in the current UW Course Catalog; CSE 466/467 list CSE 352 as a prerequisite, which also is not current.",
+    "resolution": "All published IDs kept in cmpe_systems_electives; each OR pair counts for at most one slot. Treat legacy-course credit as needs_review.",
+    "source_ids": [
+      "CMPE_COURSE_LISTS",
+      "CMPE_CRSCAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_NATURAL_SCIENCE_LIST",
+    "program_id": "CMPE",
+    "issue": "The CE approved natural science list includes IDs not found in the current course catalog: BIOL 325, 333, 409, 415, 437, 455, 472; CHEM 144; PHYS 315, 424, 425, 426, 460; ESS 403, 413, 415, 424, 437, 458, 464, 466, 471; ATMOS 460. ASTR 480 is listed twice. The Atmospheric Sciences prefix is ATMOS in the current catalog. PHYS 116/119 carries 'no credit for both 116 and 123'.",
+    "resolution": "Pool keeps the published list (deduplicated). Petition-based courses (other graded 400-level CHEM; courses requiring PHYS 121/CHEM 142/145/BIOL 180) are not encoded and need adviser review.",
+    "source_ids": [
+      "CMPE_COURSE_LISTS",
+      "CMPE_CRSCAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CSE_SENIOR_ELECTIVES_PARTIAL",
+    "program_id": "CMPE",
+    "issue": "The CSE Senior Electives list includes open-ended categories (any graded 400-level CSE majors course; any graded 400-level E E majors course with exceptions; graded CSE 490s) and outdated entries: MATH 307 (retired; page says it stops counting once it becomes MATH 207), MATH 414/415 Number Theory (MATH 415 is now a study-abroad course; MATH 414 not in catalog), INFO 444 (renumbered INFO 464), and E E 341, GEOG 460, GEOG 463, INFO 446, INFO 454, MATH 435, MATH 436, MATH 466 not in the current catalog. Credit values on the page differ from the current catalog for several MATH courses (3 vs 4).",
+    "resolution": "cmpe_cse_electives and cs_ds_cse_electives are complete:false. MATH 307, MATH 415 and INFO 444 are omitted; other listed IDs retained. Unlisted courses are unknown, not ineligible. Use catalog credits.",
+    "source_ids": [
+      "CMPE_COURSE_LISTS",
+      "CMPE_CRSCAT",
+      "CS_DS_COURSE_LISTS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_CS_CAPSTONE_OFFERINGS",
+    "program_id": "CMPE",
+    "issue": "Capstones are offering-specific (e.g., CSE 481 and CSE 482 sections vary by quarter; Spring 2027 is TBA).",
+    "resolution": "Capstone pools list course numbers observed for 2024-25 to 2026-27 with approval_required; verify each offering.",
+    "source_ids": [
+      "CMPE_CAPSTONES",
+      "CS_DS_CAPSTONES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_ENGINEERING_40",
+    "program_id": "CMPE",
+    "issue": "The rule bringing CSE + College of Engineering credits to 40 (excluding Fundamentals) depends on College of Engineering course membership, which no UW source enumerates as a list.",
+    "resolution": "Encoded as manual_review (CMPE_ENGINEERING_CREDITS) with requires_advisor_confirmation.",
+    "source_ids": [
+      "CMPE_CATALOG",
+      "CMPE_CHECKLIST"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_CATALOG_VS_CHECKLIST",
+    "program_id": "CMPE",
+    "issue": "Catalog and the 12/2024 CompE checklist differ in detail: catalog requires 2.0 minimum grades in math and fundamentals and a 2.00 GPA in CSE courses; checklist states only a 2.0 cumulative GPA. Checklist credits MATH 208 at 3 (current catalog: 4) and CSE 480 at 2 (catalog course is 1-3 variable). The checklist omits the RSN line.",
+    "resolution": "Catalog values used for grades and GPA; checklist cumulative GPA added as a separate rule. Credits from the course catalog take precedence.",
+    "source_ids": [
+      "CMPE_CATALOG",
+      "CMPE_CHECKLIST",
+      "CMPE_CRSCAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_DOUBLE_COUNT_MATH_SCIENCE",
+    "program_id": "CMPE",
+    "issue": "Computer Engineering majors may not use the same course to satisfy Math/Science electives and CE or free electives (e.g., STAT 391 appears on both the CSE core list and the CE math list).",
+    "resolution": "Allocate each such course to one bucket only; flag for review when a course is a candidate for both.",
+    "source_ids": [
+      "CMPE_COURSE_LISTS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_CS_PETITIONS",
+    "program_id": "CMPE",
+    "issue": "Allen School petition guidance: E E 271 can replace CSE 369; CSE 414 taken before admission may substitute for CSE 344; certain PhD breadth 500-level courses may count as core; MATH 336 may support taking CSE 431 instead of CSE 311.",
+    "resolution": "Not auto-applied; return needs_review.",
+    "source_ids": [
+      "CMPE_DEGREE_REQS",
+      "CMPE_COURSE_LISTS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_CS_JOINT_LISTED",
+    "program_id": "CMPE",
+    "issue": "CSE 371/E E 371, CSE 469/E E 469, CSE 470/E E 470, CSE 474/E E 474, MATH 394/STAT 394, MATH 395/STAT 395, MATH 396/STAT 396, MATH 491/STAT 491 are joint-listed.",
+    "resolution": "Both IDs are included in rules and pools; normalize aliases before distinct-course or credit counting.",
+    "source_ids": [
+      "CMPE_COURSE_LISTS",
+      "CMPE_CRSCAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "CMPE_NO_DOUBLE_DEGREE",
+    "program_id": "CMPE",
+    "issue": "No double majors/degrees between CS and CE; none between ACMS and CS/CE starting spring 2024; no double degrees between any Allen School major and Electrical & Computer Engineering; CE cannot double major with other Engineering degrees.",
+    "resolution": "Recorded for planning; not encoded as rules.",
+    "source_ids": [
+      "CMPE_DEGREE_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_OPTION_NAME",
+    "program_id": "ACMS",
+    "issue": "The General Catalog names the fourth option 'Scientific Computing and Numerical Analysis'; the ACMS department site names it 'Scientific Computing and Numerical Algorithms'.",
+    "resolution": "Profile uses the catalog name; requirements on both sources match.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_SCNA_PAGE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_PRE_SPRING_2024",
+    "program_id": "ACMS",
+    "issue": "Students admitted to ACMS before Spring 2024 follow different department requirements (e.g. third-level core MATH 381, STAT 390, AMATH 383; older option pages without -0), and the discontinued Biological and Life Sciences, Engineering and Physical Sciences, Social and Behavioral Sciences and Mathematical Economics options remain for current majors only.",
+    "resolution": "Only the current catalog options are encoded. Match the student's admission term before selecting a profile; earlier cohorts need separate profiles.",
+    "source_ids": [
+      "ACMS_PROGRAM_CORE",
+      "ACMS_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_ADMISSION_GPA",
+    "program_id": "ACMS",
+    "issue": "Admission requires a minimum 3.00 cumulative GPA in courses required for admission; this GPA scope is not one of the allowed min_gpa metrics.",
+    "resolution": "Encoded as manual_review (ACMS_*_ADMISSION_GPA). Admission is capacity constrained; meeting minima does not guarantee admission.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_ADMISSIONS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_INPUT_OPTION_ADMISSION",
+    "program_id": "ACMS",
+    "issue": "The provided catalog extract had credential_admission_requirements_text null and said 'additional option credential course requirement specified below'.",
+    "resolution": "The live catalog credential sections state the option course (MATH 394/STAT 394 for DSS and MEQF, MATH 300 for DMA, AMATH 352 for SCNA, minimum 2.0); the ACMS admissions page agrees.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_ADMISSIONS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_DSS_ELECTIVE_COUNT",
+    "program_id": "ACMS",
+    "issue": "Catalog: DSS electives minimum 9 credits. Department page: 'Option electives (3 courses, 9-14 credits)'.",
+    "resolution": "Enforce the 9-credit catalog minimum; flag plans with fewer than three elective courses for advisor confirmation.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_DSS_PAGE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_DSS_STAT421",
+    "program_id": "ACMS",
+    "issue": "Department DSS page lists 'STAT/IND E 316 or STAT 421' for one statistics item and asks students taking STAT 421 to email advising so it can be added to DARS; the catalog lists only IND E 316/STAT 316.",
+    "resolution": "STAT 421 is not encoded in ACMS_DSS_STATISTICS_TWO or the elective pool; treat as an advisor-approved exception.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_DSS_PAGE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_DSS_ELECTIVE_SCOPE",
+    "program_id": "ACMS",
+    "issue": "Catalog DSS electives may be 'any combination of the courses listed in requirements #1 through #4', which literally includes the unused introductory alternatives (e.g. STAT 290/STAT 311, STAT 302/AMATH 301). The pre-Spring 2024 department page prohibited STAT 311 as an elective.",
+    "resolution": "Pool includes all courses named in requirements 1-4 as written; confirm with an adviser before counting a lower-division or introductory alternative as an elective.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_DSS_PAGE",
+      "ACMS_PROGRAM_CORE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_MEQF_ELECTIVE_SCOPE",
+    "program_id": "ACMS",
+    "issue": "Catalog MEQF electives: courses listed in requirement #2 (sequences) or the approved list. Department page: 'Any course listed above can be an elective, unless it is used towards a requirement', which would also admit the unused one of STAT 390/CFRM 410.",
+    "resolution": "Pool follows the catalog (sequence courses plus department pre-approved list); STAT 390/CFRM 410 extras require advisor confirmation.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_MEQF_PAGE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_DMA_CSE416",
+    "program_id": "ACMS",
+    "issue": "DMA elective list includes CSE 416 with a note to email advising so it can be added to DARS; the course catalog lists CSE 416 jointly with STAT 416.",
+    "resolution": "CSE 416 and STAT 416 are in acms_dma_electives; DARS may not count them automatically.",
+    "source_ids": [
+      "ACMS_DMA_PAGE",
+      "ACMS_CRSCAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_SCNA_OTHER_SCIENCE",
+    "program_id": "ACMS",
+    "issue": "Catalog: 'one of PHYS 122, PHYS 123, CHEM 142, CHEM 152, or BIOL 180' (5 credits). Department page groups 'PHYS 122/123 (5,5)' and 'CHEM 142/152 (5,5)', which could be read as pairs.",
+    "resolution": "Encoded per the catalog as one course; the section header '1 of the following courses, 5 credits' on the department page agrees.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_SCNA_PAGE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_MATH_334_EXCUSAL",
+    "program_id": "ACMS",
+    "issue": "ACMS graduation page: students who complete MATH 334, 335, 336 are excused from MATH 324/326, MATH 327/328, MATH 309, MATH 427 and MATH 300. The note references legacy courses and is not in the catalog.",
+    "resolution": "Not encoded; MATH 300 (DMA, MEQF) and MATH 327 (MEQF) remain required. Confirm the excusal with an adviser.",
+    "source_ids": [
+      "ACMS_GRADUATION",
+      "ACMS_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_CREDIT_RANGES",
+    "program_id": "ACMS",
+    "issue": "Published group credit ranges do not always match course-catalog credits (e.g. DMA core stated as 10 credits but MATH 300 + CSE 373 + CSE 417 = 4+4+3 = 11; DSS scientific computing and optimization stated as 6-8 credits while AMATH 481/482 are 5 and MATH 407/464 are 4; department pages show older credit values such as MATH 464 (3)).",
+    "resolution": "Preserve published ranges as descriptive metadata only; enforce course counts and the explicit credit minima (DMA breadth 30, electives 9/15/9/10).",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_CRSCAT",
+      "ACMS_DSS_PAGE",
+      "ACMS_DMA_PAGE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_DOUBLE_DEGREE",
+    "program_id": "ACMS",
+    "issue": "Catalog restricts double degrees with AMATH, CFRM, STAT, MATH (BA and BS) and CS; the department page states 'no doubles' with MATH, AMATH, CFRM, STAT, C SCI or CSE, which may also cover double majors.",
+    "resolution": "Encoded as manual_review ACMS_*_DOUBLE_DEGREE_RESTRICTION; confirm whether a double major (not only double degree) is barred.",
+    "source_ids": [
+      "ACMS_CATALOG",
+      "ACMS_PROGRAM_CORE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ACMS_EFFECTIVE_DATE",
+    "program_id": "ACMS",
+    "issue": "Department pages mark the current option requirements 'effective Spring 2024 application cycle'; the catalog gives no effective date.",
+    "resolution": "effective_from left null; use admission term to choose profiles.",
+    "source_ids": [
+      "ACMS_PROGRAM_CORE",
+      "ACMS_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "STAT_DS_DATABASE_LIST",
+    "program_id": "STAT",
+    "issue": "Catalog Data Science database list is CSE 344, CSE 414 or INFO 330; department page lists CSE 414, CSE 444 or INFO 330.",
+    "resolution": "Encode the catalog list. Return needs_review for CSE 444 or a CSE 344 plan until a Statistics adviser confirms.",
+    "source_ids": [
+      "STAT_CATALOG",
+      "STAT_MAJOR_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "STAT_PROGRAMMING_LIST",
+    "program_id": "STAT",
+    "issue": "Catalog computing requires one of CSE 122/142/160 plus one of CSE 123/143/163; department page core lists STAT 302 and either CSE 163 or CSE 123, without CSE 143 or the first course.",
+    "resolution": "Encode the catalog. Treat CSE 143 as catalog-approved but confirm for the student's entry year.",
+    "source_ids": [
+      "STAT_CATALOG",
+      "STAT_MAJOR_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "STAT_ENTRY_YEAR",
+    "program_id": "STAT",
+    "issue": "Option/track structure applies to students enrolling in 2024 and after; students enrolled before or in 2023 follow 22-23 PDF requirements and elective list (AMATH 490 also accepted Spring 2024 for that group).",
+    "resolution": "Use these profiles only for 2024+ entrants. Pre-2024 requirements are not encoded.",
+    "source_ids": [
+      "STAT_MAJOR_REQS",
+      "STAT_LEGACY_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "STAT_ELECTIVE_RULES",
+    "program_id": "STAT",
+    "issue": "Catalog defers electives to the department list. Department requires each elective to be at least 3 credits and allows the general or computing list; STAT 498 is variable credit (1-5); STAT 529/534 are graduate joint-listed courses named only under STAT.",
+    "resolution": "Encode the department lists as complete pools; check credits per elective and confirm STAT 498 topics and BIOST/CS&SS-prefixed registrations with an adviser.",
+    "source_ids": [
+      "STAT_CATALOG",
+      "STAT_MAJOR_REQS",
+      "STAT_CRSCAT_STAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "STAT_INTERDISCIPLINARY",
+    "program_id": "STAT",
+    "issue": "Applied Statistics interdisciplinary courses are an advisor-approved coherent three-course sequence (300-level or higher, another department); department examples are illustrative.",
+    "resolution": "Return needs_review; example pool stat_app_interdisciplinary_examples is not a whitelist.",
+    "source_ids": [
+      "STAT_CATALOG",
+      "STAT_MAJOR_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "STAT_CREDIT_ARITHMETIC",
+    "program_id": "STAT",
+    "issue": "Catalog states Probability (3 credits) but MATH 394/STAT 394 is 4 credits; Mathematics (18-21 credits) is below the 23 credits of MATH 124-126 + 208 + 224. Published sub-ranges do not match current course credits.",
+    "resolution": "Treat published credit ranges as descriptive; enforce named courses only.",
+    "source_ids": [
+      "STAT_CATALOG",
+      "STAT_CRSCAT_STAT",
+      "STAT_CRSCAT_MATH"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "STAT_OPTION_OVERLAP",
+    "program_id": "STAT",
+    "issue": "Mathematical Statistics sequence courses (MATH/STAT 395, 491, 492, 493, MATH 300) also appear on the general elective list. Option credits are stated as 9 + 9 minimum, implying no reuse, but no explicit rule is published.",
+    "resolution": "Do not reuse a sequence course as an elective in planning; flag for adviser confirmation.",
+    "source_ids": [
+      "STAT_CATALOG",
+      "STAT_MAJOR_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "AMATH_DS_SOCIETY_LIST",
+    "program_id": "AMATH",
+    "issue": "Catalog Society and Data is INFO 351 or SOC 225; department option page lists INFO 351, 352, 353, or 354 or SOC 225.",
+    "resolution": "Encode the catalog list; return needs_review for INFO 352-354 until an AMATH adviser confirms.",
+    "source_ids": [
+      "AMATH_DS_CATALOG",
+      "AMATH_DS_OPTION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "AMATH_DS_CREDITS",
+    "program_id": "AMATH",
+    "issue": "Published 54-58 major credits; option 26-30 credits with Data Science 23-25 and Society and Data 3-5. No separate elective credit floor like the standard 27-credit rule.",
+    "resolution": "Enforce named groups only; keep the range as descriptive metadata. Standard AMATH pools (amath_*) are not reused because the lists differ.",
+    "source_ids": [
+      "AMATH_DS_CATALOG",
+      "AMATH_DS_OPTION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_OPTIONS_NOT_ENCODED",
+    "program_id": "MATH",
+    "issue": "The BA Philosophy option (68-76 credits) and BA Teacher Preparation option (51-61 credits) are in the catalog but are not encoded.",
+    "resolution": "Only standard BS and standard BA profiles exist. Students in those options need a separate profile or advisor review.",
+    "source_ids": [
+      "MATH_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_BA_CORE_STRUCTURE",
+    "program_id": "MATH",
+    "issue": "The flattened catalog input lists MATH 200, 224, 300 as a third 'complete one of' alternative for the BA core. The catalog HTML (item 1.b) and the department BA page make MATH 200, 224, 300 required in addition to one calculus set; the 28-36 core credit range confirms this.",
+    "resolution": "Encoded MATH_BA_FOUNDATIONS as a separate all_of rule.",
+    "source_ids": [
+      "MATH_CATALOG",
+      "MATH_BA_DEPT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_BS_CREDIT_RANGE",
+    "program_id": "MATH",
+    "issue": "Catalog states 70-88 credits for the BS; the department BS page states 74-88.",
+    "resolution": "published_major_credit_range uses the catalog value. Ranges are descriptive only.",
+    "source_ids": [
+      "MATH_CATALOG",
+      "MATH_BS_DEPT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_ELECTIVE_LISTS",
+    "program_id": "MATH",
+    "issue": "The catalog defers BS electives to 'a list maintained by the Department'. The department pages publish exclusions rather than an explicit list. MATH 303, 315, 415 (study abroad, individually evaluated) and 496 (honors senior thesis / problem seminar) are not clearly included or excluded.",
+    "resolution": "Pools are derived from the course catalog minus published exclusions, marked complete=false; uncertain courses are omitted and rules return partial_pool/needs_review.",
+    "source_ids": [
+      "MATH_CATALOG",
+      "MATH_BS_DEPT",
+      "MATH_BA_DEPT",
+      "MATH_COURSES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_BA_EXCLUSION_DIFF",
+    "program_id": "MATH",
+    "issue": "BA elective exclusions differ: catalog excludes MATH 300, 398, 399, 497, 498, 499; the department page adds MATH 382, 397 plus CR/NC, independent study, research, seminars and internships, and limits algebra credit to one of MATH 411/412 or MATH 402/403.",
+    "resolution": "Pools use the union of exclusions; the algebra limit is in MATH_BA_ELECTIVE_RESTRICTIONS (manual review).",
+    "source_ids": [
+      "MATH_CATALOG",
+      "MATH_BA_DEPT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_ELECTIVE_CAPS",
+    "program_id": "MATH",
+    "issue": "No more than two MATH 380/480 courses; BS non-MATH electives limited to two from one department with email approval. These caps cannot be expressed in the rule schema.",
+    "resolution": "Encoded as manual_review ELECTIVE_RESTRICTIONS rules; non-MATH pool has approval_required.",
+    "source_ids": [
+      "MATH_CATALOG",
+      "MATH_BS_DEPT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_BS_SEQUENCE_EDGE_CASES",
+    "program_id": "MATH",
+    "issue": "The BS sequence rule is enumerated as 20 branches. Not stated: whether a three-quarter sequence may be used partially as a two-quarter sequence; how Concepts of Analysis applies for students who completed MATH 334-336 instead of MATH 424. STAT 491/492/493 aliases and the MATH 336-for-MATH 427 substitution require explicit normalization.",
+    "resolution": "Branches use MATH IDs only; normalize joint-listed STAT aliases and approved substitutions before evaluation; confirm edge cases with Math advising.",
+    "source_ids": [
+      "MATH_CATALOG",
+      "MATH_BS_DEPT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_ADMISSION_HONORS_PATH",
+    "program_id": "MATH",
+    "issue": "The department declaration page lists 'MATH 134, 135, 136' as an alternative Standard Entry set; the catalog lists only MATH 124, 125, 126, 200 (or 300), 208. The page wording is ambiguous about whether MATH 208 and MATH 200/300 are still required with the honors set.",
+    "resolution": "Not encoded; honors-calculus students need advisor confirmation of declaration eligibility.",
+    "source_ids": [
+      "MATH_CATALOG",
+      "MATH_DECLARATION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_REQUIREMENT_VERSION",
+    "program_id": "MATH",
+    "issue": "Department pages apply these requirements to students admitted to the major Winter 2026 or later, with separate pages for Winter 2022-Autumn 2025 and archived earlier versions. MATH 200 is newly required, with a substitution allowance for some students declared before Autumn 2026.",
+    "resolution": "effective_from left null (catalog states none). Confirm the student's admission quarter; older requirement versions are not encoded.",
+    "source_ids": [
+      "MATH_DEPT_REQUIREMENTS",
+      "MATH_BS_DEPT",
+      "MATH_BA_DEPT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_BA_TO_BS_SWITCH",
+    "program_id": "MATH",
+    "issue": "Requirements overview says BA majors may switch to BS after MATH 424 with 2.0+; the declaration page says MATH 327 and MATH 424 with 2.0+ (not in progress).",
+    "resolution": "Not encoded as a rule; treat option change as advisor-managed.",
+    "source_ids": [
+      "MATH_DEPT_REQUIREMENTS",
+      "MATH_DECLARATION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_GPA_METRIC",
+    "program_id": "MATH",
+    "issue": "'Minimum 2.00 cumulative GPA in all mathematics courses at the University, including course repeats' is mapped to metric major_gpa.",
+    "resolution": "Backend must compute major_gpa over all UW MATH attempts including repeats.",
+    "source_ids": [
+      "MATH_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "MATH_GENERAL_ED",
+    "program_id": "MATH",
+    "issue": "College of Arts and Sciences general education credit amounts were not part of the catalog program text and were not retrieved.",
+    "resolution": "GENERAL_ED rules are manual_review / not_encoded.",
+    "source_ids": [
+      "MATH_UW_GENED"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_PROFILE_YEAR",
+    "program_id": "ECE",
+    "issue": "Department page splits requirements by admit cohort: 73-80 credits (39 Advanced ECE Elective credits, capstone separate) for Autumn 2025+ admits; 66-69 credits (36 elective credits including capstone) for earlier admits. The General Catalog shows only the 73-80 version.",
+    "resolution": "Two profiles encoded. Select by the student's ECE start quarter; confirm in DARS.",
+    "source_ids": [
+      "ECE_CATALOG",
+      "ECE_DEGREE_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_PROF_ISSUES_CREDITS",
+    "program_id": "ECE",
+    "issue": "Catalog and July 2025 PDF state Professional issues 1-5 credits; department page states 1-4 credits.",
+    "resolution": "Encoded as one course from the approved list (E E 397, 398, 406, 418) without a credit target.",
+    "source_ids": [
+      "ECE_CATALOG",
+      "ECE_DEGREE_REQS",
+      "ECE_PLAN_2025"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_MATH_RANGE",
+    "program_id": "ECE",
+    "issue": "Catalog states Mathematics 15-23 credits; department page states 15-21.",
+    "resolution": "Encoded by named courses only; the range is descriptive.",
+    "source_ids": [
+      "ECE_CATALOG",
+      "ECE_DEGREE_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_ELECTIVE_CAPS",
+    "program_id": "ECE",
+    "issue": "Seminar (2 credits), E E 499 (6 or 10), ENGR 321 (4) and combined E E 499 + ENGR 321 caps, E E 490 exclusion and the 4-credit graduate-course petition cannot be expressed in the supported logic shapes.",
+    "resolution": "Kept as manual_review ADV_ELECTIVE_CAPS rules; the elective credit total must apply caps before returning met.",
+    "source_ids": [
+      "ECE_CATALOG",
+      "ECE_DEGREE_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_ELECTIVE_POOL_SNAPSHOT",
+    "program_id": "ECE",
+    "issue": "The Advanced ECE Elective rule is category-based (300/400-level E E). The pool enumerates the current E E course catalog; new or retired courses change it. Exclusion of E E 393 (used for technical communication) and treatment of a second capstone or joint-listed CSE/BIOEN/CHEM E/MSE registrations are not stated explicitly.",
+    "resolution": "Pool marked complete for the 2026-10-17 catalog snapshot. Confirm joint-listed registrations, second capstones and E E 393 double use with ECE advising.",
+    "source_ids": [
+      "ECE_DEGREE_REQS",
+      "ECE_EE_COURSES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_ADMISSION_DIFFERENCES",
+    "program_id": "ECE",
+    "issue": "Department admissions page differs from the catalog: adds CSE 143 to the application programming list and AMATH 351 as an alternative to MATH 207; lists STAT 220 (and omits CSE 143) in its ENGRUD one-course list, whereas the College of Engineering list includes CSE 143 and omits STAT 220; omits honors PHYS 141/142 for applicants.",
+    "resolution": "ENGRUD list taken from the College of Engineering page that the catalog references; CSE 143 and AMATH 351 included with notes. Confirm STAT 220 with ECE/College advising.",
+    "source_ids": [
+      "ECE_CATALOG",
+      "ECE_ADMISSIONS",
+      "ECE_COE_PLACEMENT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_NSC_LIST",
+    "program_id": "ECE",
+    "issue": "Additional NSc approved list is category-based and includes 'department-approved alternative'.",
+    "resolution": "NSc total encoded as partial_pool with selector text; unlisted NSc courses need advisor review.",
+    "source_ids": [
+      "ECE_DEGREE_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_PATHWAYS",
+    "program_id": "ECE",
+    "issue": "BSECE pathways are optional guides, not requirements.",
+    "resolution": "Not encoded as rules; available for recommendation only.",
+    "source_ids": [
+      "ECE_PATHWAYS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECE_GENERAL_ED_LISTS",
+    "program_id": "ECE",
+    "issue": "English composition, W, DIV, A&H and SSc University lists are not imported.",
+    "resolution": "Kept as manual_review requiring profile match.",
+    "source_ids": [
+      "ECE_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_TWO_CREDENTIALS",
+    "program_id": "HCDE",
+    "issue": "The catalog lists two HCDE credentials with identical completion requirements. The plain BS uses the Autumn 2026+ admission lists; the General Option list adds MATH 120, PHYS 114-116, PSYCH 202 and omits BIOL 161/162. The FAQ says the General Option tracks students admitted under the former course lists. The input JSON had an empty completion text for the plain BS; the live catalog page was used.",
+    "resolution": "Select the General Option profile only for students the department placed in it; use the standard profile for Autumn 2026+ entrants.",
+    "source_ids": [
+      "HCDE_CATALOG_BS",
+      "HCDE_CATALOG_GENERAL",
+      "HCDE_FAQ"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_GO_NSC_PLACEMENT",
+    "program_id": "HCDE",
+    "issue": "The FAQ says General Option students may count MATH 120, PHYS 114-119 and PSYCH 202 toward math and science requirements but does not say which list. They were placed as math (MATH 120) and sciences (PHYS, PSYCH) following the pre-2024 page.",
+    "resolution": "Confirm the category with the HCDE adviser before relying on these courses.",
+    "source_ids": [
+      "HCDE_FAQ",
+      "HCDE_PRE2024"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_PRE2024_NOT_ENCODED",
+    "program_id": "HCDE",
+    "issue": "Students admitted before Autumn 2024 follow different requirements (41 core, 25 electives, 4 experiential credits, 88 gen-ed credits). The current catalog does not publish them.",
+    "resolution": "Not encoded. Match the student's admission term before choosing a profile.",
+    "source_ids": [
+      "HCDE_REQ_INDEX",
+      "HCDE_PRE2024"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_WRITING_DIFF",
+    "program_id": "HCDE",
+    "issue": "Catalog: Writing 4 credits met by major coursework. Department page: 7 W credits, 5 met by HCDE 313, HCDE 417/419 count as W from Autumn 2025.",
+    "resolution": "Kept as manual review in the general education rule.",
+    "source_ids": [
+      "HCDE_CATALOG_BS",
+      "HCDE_REQ_2024"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_ADMISSION_LIST_DIFF",
+    "program_id": "HCDE",
+    "issue": "The department admissions page lists only MATH 124-126 (or Q SCI 291/292) and non-honors CHEM/PHYS, adding that honors/accelerated series may also apply. The catalog lists MATH 134-136, CHEM 143/145/153/155/165 and PHYS 141-143 explicitly.",
+    "resolution": "Catalog lists encoded.",
+    "source_ids": [
+      "HCDE_CATALOG_BS",
+      "HCDE_ADMISSIONS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_ELECTIVE_ALLOCATION",
+    "program_id": "HCDE",
+    "issue": "Courses in the Engineering Electives list above 15 credits may count toward Systems and Society. HCDE 315/316 count as Engineering Electives only if not used for the core. HCDE 497 counts for only one of Experiential Learning and Systems and Society. Apart from W and DIV, a course counts toward only one requirement.",
+    "resolution": "Not machine-allocated. Systems and Society rule is marked requires_advisor_confirmation; overlap rule is manual review.",
+    "source_ids": [
+      "HCDE_REQ_2024"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_SUBSTITUTION_FORM",
+    "program_id": "HCDE",
+    "issue": "The course substitution petition links to a non-UW host (goo.gl / Google Forms).",
+    "resolution": "Not used. Unlisted courses are unknown, not automatically ineligible.",
+    "source_ids": [
+      "HCDE_REQ_2024"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_DOUBLE_DEGREE",
+    "program_id": "HCDE",
+    "issue": "HCDE majors may not earn a double degree with the BS in Informatics (any option) or the Bachelor of Design in Interaction Design.",
+    "resolution": "Recorded only; not a course rule. Flag when planning HCDE with INFO.",
+    "source_ids": [
+      "HCDE_CATALOG_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "HCDE_DTC_APPROVED_LIST",
+    "program_id": "HCDE",
+    "issue": "Engineering Undeclared placement requires one course from the College of Engineering approved list, which was not imported.",
+    "resolution": "Placement rule is manual review (requires_advisor_confirmation).",
+    "source_ids": [
+      "HCDE_CATALOG_BS",
+      "HCDE_CATALOG_GENERAL"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_DTC_APPROVED_LIST",
+    "program_id": "ISE",
+    "issue": "Engineering Undeclared placement requires one course from the College of Engineering approved list, which was not imported.",
+    "resolution": "Placement rule is manual review (requires_advisor_confirmation).",
+    "source_ids": [
+      "ISE_CATALOG_ADMISSION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_DS_CORE_CONFLICT",
+    "program_id": "ISE",
+    "issue": "Catalog Data Science core lists SOC 225, INFO 350 or HCDE 410 and allows CSE 160 as the programming choice. The department option page lists INFO 351 instead of INFO 350 and omits CSE 160.",
+    "resolution": "Catalog encoded. The data and society rule requires advisor confirmation.",
+    "source_ids": [
+      "ISE_CATALOG_DS",
+      "ISE_DS_OPTION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_DS_REPLACES_ELECTIVES",
+    "program_id": "ISE",
+    "issue": "The Data Science credential lists option credits (18-24) and does not list the Advanced IE Topics or 16 technical elective credits. The 87-93 major range matches 69 shared credits plus 18-24 option credits.",
+    "resolution": "Encoded per catalog: DS profile has no advanced-topic or technical-elective rule. IND E 427 is required. Confirm with the ISE adviser.",
+    "source_ids": [
+      "ISE_CATALOG_DS",
+      "ISE_CATALOG_BSIE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_DS_AREAS",
+    "program_id": "ISE",
+    "issue": "'At least one class from two of three areas' cannot be expressed with the allowed logic types. Area lists come from the department page; the catalog says see adviser.",
+    "resolution": "Area pools encoded; area rule is manual review with an action.",
+    "source_ids": [
+      "ISE_CATALOG_DS",
+      "ISE_DS_OPTION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_TECH_ELECTIVE_POOL",
+    "program_id": "ISE",
+    "issue": "The technical elective list includes all IND E graduate courses (IND E 5XX) and a request form for other courses. Its text also mentions a legacy '37 credits' minimum.",
+    "resolution": "Pool marked complete=false; rule partial_pool. Unlisted courses are unknown.",
+    "source_ids": [
+      "ISE_TECH_ELECTIVES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_DEPT_PAGE_DIFF",
+    "program_id": "ISE",
+    "issue": "The department degree page lists MATH 207/208 at 3 credits, names 4 free elective credits and groups production and advanced topics as 8 credits. It also accepts MATH 307/308 numbers.",
+    "resolution": "Catalog course structure encoded; credit values are not enforced per course.",
+    "source_ids": [
+      "ISE_DEGREE_REQS",
+      "ISE_CATALOG_BSIE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_ADMISSION_TIMING",
+    "program_id": "ISE",
+    "issue": "CHEM 152/153/155, PHYS 123/143 and CEE 220 or M E 230 must be complete with 2.0 before autumn quarter, not by the April 5 deadline.",
+    "resolution": "Encoded as admission rules with timing in notes.",
+    "source_ids": [
+      "ISE_CATALOG_ADMISSION"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ISE_NAMING",
+    "program_id": "ISE",
+    "issue": "The catalog major and degree are 'Industrial Engineering'; the department is Industrial & Systems Engineering.",
+    "resolution": "Program name uses the catalog name; program_id ISE.",
+    "source_ids": [
+      "ISE_CATALOG_BSIE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_TEACHER_PREP_NOT_ENCODED",
+    "program_id": "PHYS",
+    "issue": "The catalog's fourth option, BS Physics: Teacher Preparation (PHYS 407-409 Physics by Inquiry, teaching practicum), is not encoded in this dataset.",
+    "resolution": "Out of scope for this task. Students in that option need a separate profile; do not evaluate them against these profiles.",
+    "source_ids": [
+      "PHYS_CATALOG",
+      "PHYS_DEPT_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_BIO_CLOSED",
+    "program_id": "PHYS",
+    "issue": "Department requirements page says the Biological Physics track is no longer accepting new students as of Spring 2024, while the General Catalog still lists the Biophysics option.",
+    "resolution": "Profile retained from the catalog for continuing students only. Do not recommend it to new or prospective majors without adviser confirmation.",
+    "source_ids": [
+      "PHYS_CATALOG_BIO",
+      "PHYS_DEPT_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_CAPSTONE_LIST",
+    "program_id": "PHYS",
+    "issue": "Catalog capstone list for Comprehensive and Applied is PHYS 401, 402, 403, 494, 495, 496, 498, 499, ASTR 481, ASTR 499. Department page lists PHYS 494-496, PHYS 485-487 (honors seminar), PHYS 499/ASTR 499, ASTR 481, plus PHYS 498 for Applied only, and omits PHYS 401-403; the capstone-options page does list PHYS 401-403 and PHYS 498 for both tracks.",
+    "resolution": "Rules use the catalog list. PHYS 485-487 credits and out-of-department activities return needs_review (UFA petition).",
+    "source_ids": [
+      "PHYS_CATALOG_COMP",
+      "PHYS_CATALOG_APP",
+      "PHYS_DEPT_REQS",
+      "PHYS_CAPSTONE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_LAB_LIST",
+    "program_id": "PHYS",
+    "issue": "Department page adds PHYS 417 (Neural Network Methods) to the advanced-lab list for all tracks ('lab OR elective'), and allows petitions to substitute other advanced labs for ASTR 480; the catalog list does not include PHYS 417.",
+    "resolution": "Advanced-lab rules use the catalog list. PHYS 417 is in the elective pool; using it as a lab returns needs_review.",
+    "source_ids": [
+      "PHYS_CATALOG_COMP",
+      "PHYS_CATALOG_APP",
+      "PHYS_DEPT_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_ASTR_CAP",
+    "program_id": "PHYS",
+    "issue": "Comprehensive 'three courses' group: catalog writes 'ASTR 321 (or ASTR 323), ASTR 322' (321 and 323 one slot); department page says at most two of ASTR 321, 322, 323 may be used.",
+    "resolution": "Encoded as three courses from the union plus a rule requiring at least one PHYS course (equivalent to the two-ASTR cap). A student counting both ASTR 321 and ASTR 323 needs review under the catalog wording.",
+    "source_ids": [
+      "PHYS_CATALOG_COMP",
+      "PHYS_DEPT_REQS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_MATH_PATH",
+    "program_id": "PHYS",
+    "issue": "The core mathematics course options depend on the calculus path (MATH 124-126 vs 134-136); the rule shapes cannot couple two rules.",
+    "resolution": "MATH_CORE_COURSE uses the union list with path notes. Backend must reject MATH 334 as the core course for 124-126 students and MATH 207/208/AMATH 351/352 for 134-136 students.",
+    "source_ids": [
+      "PHYS_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_SLOT_ALTERNATIVES",
+    "program_id": "PHYS",
+    "issue": "Many requirements list 'X (or Y)' alternatives for one slot (e.g. MATH 208 or AMATH 352, ASTR 480 or 481, CHEM 223/237/335). choose_courses counts distinct course IDs, so taking both members could be over-counted; these pairs are not joint-listed in the course catalog.",
+    "resolution": "Backend should normalize each 'or' group to one slot before counting; notes on each rule list the groups.",
+    "source_ids": [
+      "PHYS_CATALOG",
+      "PHYS_COURSES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_ELECTIVE_CAPS",
+    "program_id": "PHYS",
+    "issue": "Applied electives allow at most one Applied-only lab and at most one Applied-only introductory science course; 'no class may be used to satisfy multiple requirements'. min_credits cannot express these caps.",
+    "resolution": "PHYS_APP_ELECTIVES is requires_advisor_confirmation; pool selector lists the capped groups. Exclude courses allocated to other rules before summing elective credits.",
+    "source_ids": [
+      "PHYS_ELECTIVES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_ELECTIVE_OPEN",
+    "program_id": "PHYS",
+    "issue": "Approved elective list is open-ended: further courses by UFA petition and physics graduate courses with instructor and UFA permission.",
+    "resolution": "An unlisted elective is unknown, not ineligible; return needs_review.",
+    "source_ids": [
+      "PHYS_ELECTIVES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_PREFIX_NORMALIZATION",
+    "program_id": "PHYS",
+    "issue": "Department elective list uses legacy/informal prefixes (Atm S, EE, ME, Chem E, N SCI). The course catalog now lists atmospheric sciences as ATMOS. The list's EE 487 links to the ee485 anchor and N SCI 301 links to the nsci302 anchor; labels/titles match E E 487 (Introduction to Photonics) and N SCI 301 (Naval Ship Systems I).",
+    "resolution": "Encoded with current Time Schedule prefixes (ATMOS, E E, M E, CHEM E, A A, N SCI) and the course numbers in the labels. Old ATM S transcript entries need alias mapping.",
+    "source_ids": [
+      "PHYS_ELECTIVES",
+      "PHYS_COURSES"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_COURSE_IDS",
+    "program_id": "PHYS",
+    "issue": "Course IDs named by official Physics sources but not found in the current UW course catalog (crscat) on 2026-10-17: BIOL 114, CHEM 335, CHEM 336, ENGR 360, ESS 155, ESS 205, ESS 211, ESS 415, ESS 471, ESS 472, MSE 473, OCEAN 115, P BIO 499.",
+    "resolution": "Kept in rules/pools because the official source lists them (they may appear on older transcripts). They cannot be planned for now; confirm with the department.",
+    "source_ids": [
+      "PHYS_COURSES",
+      "PHYS_ELECTIVES",
+      "PHYS_CATALOG_BIO"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_SUBSTITUTIONS",
+    "program_id": "PHYS",
+    "issue": "Department-documented substitutions are not encoded: ASTR 300/427 or petitioned courses for AMATH 301 (Applied); CHEM 457 plus an upper-division physics course for PHYS 328 (Biophysics); other advanced labs for ASTR 480; out-of-department research for the capstone.",
+    "resolution": "Require UFA approval recorded in DARS; return needs_review.",
+    "source_ids": [
+      "PHYS_DEPT_REQS",
+      "PHYS_CAPSTONE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_PRE_AUT2021",
+    "program_id": "PHYS",
+    "issue": "Department links a separate requirements PDF for students who entered before Autumn 2021; it was not imported. Catalog and department pages give no effective date for current requirements.",
+    "resolution": "Match the student's requirement year before evaluating; these profiles reflect current requirements only.",
+    "source_ids": [
+      "PHYS_DEPT_REQS",
+      "PHYS_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "PHYS_NON_UW_LINKS",
+    "program_id": "PHYS",
+    "issue": "Department pages link to non-UW hosts (DRiP site on sites.google.com, a Google Form for learning-assistant applications). These were not used.",
+    "resolution": "No requirement data depends on them.",
+    "source_ids": [
+      "PHYS_CAPSTONE"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_OPTIONS_NOT_ENCODED",
+    "program_id": "ECON",
+    "issue": "The catalog program UG-ECON-MAJOR also offers BA Economics: International Economics, BS Economics: Financial Economics and BS Economics: Strategy. These options are not encoded in this dataset.",
+    "resolution": "Do not evaluate students in those options against the standard BA/BS profiles. Add separate profiles from ECON_CATALOG before supporting them.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_MAJORS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_STAT_SUBSTITUTES",
+    "program_id": "ECON",
+    "issue": "Statistics lists differ by source. BA catalog names STAT 311 only; BS/DS catalog admission accepts STAT 311, STAT 341 or STAT 390. Department BA/BS pages list Q SCI 381 and STAT 390 as substitutes (BS page omits STAT 341) and accept CSE 312/PSYCH 318 only for students also pursuing CS/Psychology; DS department page lists STAT 311, 341, 390 or Q SCI 381.",
+    "resolution": "Encode catalog courses as satisfying; route department-only substitutes to manual_review. Confirm in the student's degree audit.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_BA",
+      "ECON_DEPT_BS",
+      "ECON_DEPT_DS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_BA_382_SUBSTITUTION",
+    "program_id": "ECON",
+    "issue": "Catalog requires ECON 382 for the BA. Department BA page allows a higher-level econometrics course; its text lists ECON 424, 482, 483 or 484 while its chart and footnote list only ECON 424/482/483, and the audit adjustment requires emailing econadv@uw.edu. An extra ECON course may then be needed to reach 50 ECON credits.",
+    "resolution": "ECON 382 satisfies the rule directly; any substitution returns needs_review. The 50-credit ECON rule enforces the extra-course consequence.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_BA"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_BS_SLOT_ALLOCATION",
+    "program_id": "ECON",
+    "issue": "The BS requires six distinct 400-level courses across 3a (ECON 400/401), 3b (ECON 424/482/483), 3c (theory/methods list; a course not used for 3a or 3b may be used) and three additional courses. Department page phrases this as 15 Theory & Methods credits plus 15 additional 400-level credits.",
+    "resolution": "Allocate distinct courses across allocation_group econ_bs_six_400_slots; 3c pool is the union of the catalog 3c list and the 3a/3b courses.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_JOINT_LISTED",
+    "program_id": "ECON",
+    "issue": "ECON 409 is joint-listed with POL S 409, ECON 447 with GWSS 447, and ECON 452 with POL S 416. Requirements are stated as ECON courses / ECON-prefix credits; whether the non-ECON registration counts is not stated on any checked UW page.",
+    "resolution": "Only ECON IDs are pool members; aliases are recorded in joint_listed_aliases and return needs_review.",
+    "source_ids": [
+      "ECON_CRSCAT",
+      "ECON_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_VARIABLE_REPEATABLE",
+    "program_id": "ECON",
+    "issue": "ECON 406 and ECON 409 are repeatable (5, max. 10); ECON 415 Study Abroad is 3-5 credits (max. 10). Sources state upper-division requirements both as course counts and credit totals (25/30 credits) and do not say whether a repeat or a partial-credit ECON 415 counts as a full course.",
+    "resolution": "Flag these courses for advisor review when they are needed to reach the course count.",
+    "source_ids": [
+      "ECON_CRSCAT",
+      "ECON_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_RESIDENCE",
+    "program_id": "ECON",
+    "issue": "ECON 300 and ECON 301 (and ECON 382 for the BA) must be taken in residence through UW Seattle; 15 (BA) or 20 (BS, DS) credits of 400-level ECON must be in residence at UW Seattle.",
+    "resolution": "Encoded as manual_review; transfer and residence status are not determinable from course IDs.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_BA",
+      "ECON_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_OPTION_DECLARATION",
+    "program_id": "ECON",
+    "issue": "Catalog: Data Science option students apply at application to the major, and non-option BS students may petition with the decision made on course capacity. Department Majors page: a student admitted to the BA or BS may declare an option of the same degree without an additional application.",
+    "resolution": "Treat Data Science option entry as requires_advisor_confirmation; do not assume automatic entry.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_MAJORS",
+      "ECON_DEPT_DS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_ADMISSION_SUBSET_GPA",
+    "program_id": "ECON",
+    "issue": "Admission requires a 2.50 GPA over a subset of entrance courses (BA: four named courses; BS: four of six, with calculus 'at the level of MATH 124, or first calculus course taken') and a personal statement and RTW essay; admission is capacity-constrained.",
+    "resolution": "Encoded as manual_review; eligibility never implies admission.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_PROFILE_YEAR",
+    "program_id": "ECON",
+    "issue": "Neither the catalog nor department pages give an effective year for these requirements (department notes STEM designation starting Autumn 2020). Continuation policy is referenced but not published in detail.",
+    "resolution": "Match the student's requirement profile in the degree audit before declaring progress. Continuation policy not encoded.",
+    "source_ids": [
+      "ECON_CATALOG",
+      "ECON_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ECON_DS_DEGREE_TOTAL_SOURCE",
+    "program_id": "ECON",
+    "issue": "The 180-credit degree total and College of Arts and Sciences requirement are stated on the department BA and BS pages; the DS option page and catalog input do not restate it.",
+    "resolution": "DS degree total marked requires_advisor_confirmation; sourced from the BS department page.",
+    "source_ids": [
+      "ECON_DEPT_BS",
+      "ECON_DEPT_DS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_BIOMECHANICS_NOT_ENCODED",
+    "program_id": "ME",
+    "issue": "The Biomechanics option (M E 411, M E 419, 6+ credits of biomechanics electives, remaining supporting electives; 19 credits) is in the catalog but is not encoded as a profile.",
+    "resolution": "Out of scope for this package. Use the catalog text and department approved lists if a Biomechanics profile is needed.",
+    "source_ids": [
+      "ME_CATALOG",
+      "ME_DEPT_OPTIONS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_EE414_JOINT_LISTING",
+    "program_id": "ME",
+    "issue": "Catalog allows 'M E 493 (or M E 414/E E 414)' as if joint-listed, but the current course catalog lists M E 414 alone and has no E E 414 entry.",
+    "resolution": "Accept any of the three IDs in the intro design rule; confirm an E E 414 transcript entry with an adviser.",
+    "source_ids": [
+      "ME_CATALOG",
+      "ME_CRSCAT",
+      "ME_EE_CRSCAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_ELECTIVE_LIST_DRIFT",
+    "program_id": "ME",
+    "issue": "The department approved ME option list includes M E 406 and M E 442, which are not in the current course catalog. The current catalog also has 400-level M E courses that are not on the department list (M E 409, 415, 416, 417, 459, 496).",
+    "resolution": "Use the department list as published; do not treat unlisted M E 400-level courses as approved. Confirm with ME advising.",
+    "source_ids": [
+      "ME_DEPT_REQ",
+      "ME_CRSCAT"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_ELECTIVE_CAPS",
+    "program_id": "ME",
+    "issue": "ME option credits have caps that a pool sum cannot express directly: M E 499 graded max 6, ENGR 321 max 4, one M E 419 seminar credit, up to 3 non-ME engineering credits by petition.",
+    "resolution": "Pool carries credit_caps; petitioned substitutions return needs_review.",
+    "source_ids": [
+      "ME_DEPT_REQ"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_MECHATRONICS_AMATH402",
+    "program_id": "ME",
+    "issue": "The department Mechatronics page lists AMATH 402 as an elective; the catalog option list (M E 469, 470, 478, 480, PHYS 334, PHYS 335) does not.",
+    "resolution": "Encode the catalog list. Treat AMATH 402 as needs_review substitution.",
+    "source_ids": [
+      "ME_CATALOG",
+      "ME_DEPT_MECHATRONICS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_MECHATRONICS_DESIGN",
+    "program_id": "ME",
+    "issue": "The Mechatronics page shows M E 493 in the option's schedule; the catalog allows M E 493 or M E 414/E E 414 for every BSME profile.",
+    "resolution": "Keep the catalog choice; confirm with ME advising whether Mechatronics students may use M E 414.",
+    "source_ids": [
+      "ME_CATALOG",
+      "ME_DEPT_MECHATRONICS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_MECHATRONICS_SELECTION",
+    "program_id": "ME",
+    "issue": "Mechatronics option selection criteria are posted only on a login-only ME Undergraduate Canvas page.",
+    "resolution": "Encoded as manual_review admission rule; not retrieved.",
+    "source_ids": [
+      "ME_DEPT_MECHATRONICS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_COE_APPROVED_COURSE",
+    "program_id": "ME",
+    "issue": "The Engineering Undeclared placement path requires one course from a College of Engineering approved list, which was not imported (applies to ME and AA).",
+    "resolution": "Encoded as manual_review.",
+    "source_ids": [
+      "ME_CATALOG",
+      "AA_CATALOG"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "AA_WRITING_CREDITS",
+    "program_id": "AA",
+    "issue": "Catalog says writing is 7 credits met by coursework in the major; department page says 9 additional writing credits are built into A&A core courses.",
+    "resolution": "Both are met by required core courses; report the catalog figure and do not block on the difference.",
+    "source_ids": [
+      "AA_CATALOG",
+      "AA_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "AA_NSC_LIST",
+    "program_id": "AA",
+    "issue": "Catalog requires 3-12 additional NSc credits to reach 51 from a department-approved list; the list is on a login-only Canvas page. Department page shows CSE 160, M E 123 or other NSc (5).",
+    "resolution": "Encoded as manual_review.",
+    "source_ids": [
+      "AA_CATALOG",
+      "AA_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "AA_TECH_ELECTIVE_CAPS",
+    "program_id": "AA",
+    "issue": "Technical elective caps and approvals (A A 499 + ENGR 321 combined max 6; A A 498 pre-approval; 3 credits from another engineering area with approval) come partly from the department page.",
+    "resolution": "Pool carries combined_credit_caps and approval_required_courses; approvals return needs_review.",
+    "source_ids": [
+      "AA_CATALOG",
+      "AA_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "issue_id": "ME_AA_OLD_MATH_NUMBERS",
+    "program_id": "ME",
+    "issue": "MATH 307, 308, 309 and 324 were renumbered MATH 207, 208, 209 and 224 in autumn 2021; department pages accept either number. Applies to ME and AA.",
+    "resolution": "Old numbers are included in the choose lists with a note.",
+    "source_ids": [
+      "ME_DEPT_REQ",
+      "AA_DEPT_BS"
+    ],
+    "status": "documented",
+    "checked_at": "2026-10-17"
   }
 ]

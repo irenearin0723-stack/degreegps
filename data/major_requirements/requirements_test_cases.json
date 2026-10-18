@@ -1,5 +1,5 @@
 {
-  "execution_status": "Two AMATH credit/category fixtures and dataset integrity checks executed. Remaining fixtures specify backend acceptance behavior and have not been run against the application.",
+  "execution_status": "Two AMATH credit/category fixtures and dataset integrity checks executed. Remaining fixtures specify backend acceptance behavior and have not been run against the application. Fixtures for the 2026-10-17 full-depth majors (CMPE, ACMS, STAT, MATH, ECE, HCDE, ISE, PHYS, ECON, ME, AA and the CS/AMATH Data Science options) were derived from the encoded rules and have not been executed.",
   "fixtures": [
     {
       "case_id": "AMATH_6_COURSES_24_CREDITS",
@@ -209,6 +209,1230 @@
         "candidate_matches_both": true,
         "approved_double_counting": "needs_review"
       }
+    },
+    {
+      "case_id": "CMPE_SEVEN_SLOTS_DISTINCT",
+      "program_id": "CMPE",
+      "completed_courses": [
+        "CSE 474",
+        "CSE 451",
+        "CSE 461"
+      ],
+      "expected": {
+        "CMPE_REQUIRED_ONE": "met",
+        "CMPE_SYSTEMS_ELECTIVES": "unmet",
+        "CMPE_CORE_TWO": "unmet"
+      },
+      "reason": "CSE 474 fills the one-of slot; the systems slots need three additional distinct courses in allocation group cmpe_core_elective_slots."
+    },
+    {
+      "case_id": "CMPE_FUNDAMENTALS_NOT_CORE",
+      "program_id": "CMPE",
+      "completed_courses": [
+        "CSE 369",
+        "E E 371"
+      ],
+      "expected": {
+        "CMPE_DIGITAL_CIRCUITS": "met",
+        "CMPE_CORE_TWO_matches": 0,
+        "cmpe_core_elective_credits": 0
+      },
+      "reason": "E E 371 is joint-listed with CSE 371; CSE 369 and CSE/E E 371 are CE fundamentals and are excluded from the CE core and elective buckets."
+    },
+    {
+      "case_id": "CS_DS_OPTION_COURSES",
+      "program_id": "CS_DS",
+      "profile_id": "cs_data_science_catalog_2026_10_17",
+      "completed": [
+        [
+          "CSE 421",
+          3
+        ],
+        [
+          "CSE 442",
+          4
+        ],
+        [
+          "CSE 444",
+          4
+        ],
+        [
+          "CSE 446",
+          4
+        ],
+        [
+          "CSE 447",
+          4
+        ],
+        [
+          "SOC 225",
+          5
+        ]
+      ],
+      "expected": {
+        "CS_DS_REQUIRED_CORE": "met",
+        "CS_DS_SOCIETY": "met",
+        "CS_DS_ELECTIVE": "met",
+        "CS_DS_CORE_400": "met",
+        "seven_distinct_slots": "unmet",
+        "cs_ds_core_elective_credits": 19
+      },
+      "reason": "Five core courses fill only five of seven slots; SOC 225 credits do not count toward the 33-credit core/elective bucket."
+    },
+    {
+      "case_id": "CS_DS_STAT_SUBSTITUTION",
+      "program_id": "CS_DS",
+      "profile_id": "cs_data_science_catalog_2026_10_17",
+      "completed_courses": [
+        "STAT 435",
+        "STAT 303"
+      ],
+      "expected": {
+        "CS_DS_REQUIRED_CORE": "unmet",
+        "CS_DS_SOCIETY": "unmet",
+        "substitution_status": "needs_review"
+      },
+      "reason": "Stat/CSE double-major substitutions are documented but not auto-applied."
+    },
+    {
+      "case_id": "ACMS_DSS_STATISTICS_SAME_ITEM",
+      "program_id": "ACMS_DSS",
+      "profile_id": "acms_dss_catalog_2026_10_17",
+      "completed_courses": [
+        "STAT 391",
+        "STAT 425",
+        "STAT 403"
+      ],
+      "grades": {
+        "STAT 391": 3.0,
+        "STAT 425": 3.0,
+        "STAT 403": 3.0
+      },
+      "expected": {
+        "ACMS_DSS_STAT_391": "met",
+        "ACMS_DSS_STATISTICS_TWO": "unmet"
+      },
+      "reason": "STAT 425 and STAT 403 belong to the same item; two different items are required."
+    },
+    {
+      "case_id": "ACMS_DSS_STATISTICS_JOINT_ALIAS",
+      "program_id": "ACMS_DSS",
+      "profile_id": "acms_dss_catalog_2026_10_17",
+      "completed_courses": [
+        "BIOST 425",
+        "IND E 316"
+      ],
+      "grades": {
+        "BIOST 425": 2.5,
+        "IND E 316": 2.5
+      },
+      "expected": {
+        "ACMS_DSS_STATISTICS_TWO": "met"
+      },
+      "reason": "Joint-listed alias IDs satisfy their items without normalization."
+    },
+    {
+      "case_id": "ACMS_DMA_TEN_BREADTH_NO_EXTRA",
+      "program_id": "ACMS_DMA",
+      "profile_id": "acms_dma_catalog_2026_10_17",
+      "completed": [
+        [
+          "MATH 407",
+          4
+        ],
+        [
+          "MATH 409",
+          4
+        ],
+        [
+          "MATH 461",
+          4
+        ],
+        [
+          "MATH 462",
+          4
+        ],
+        [
+          "MATH 318",
+          4
+        ],
+        [
+          "MATH 381",
+          4
+        ],
+        [
+          "AMATH 383",
+          3
+        ],
+        [
+          "MATH 394",
+          4
+        ],
+        [
+          "STAT 395",
+          4
+        ],
+        [
+          "CSE 414",
+          4
+        ]
+      ],
+      "grades": {
+        "MATH 407": 3.0,
+        "MATH 409": 3.0,
+        "MATH 461": 3.0,
+        "MATH 462": 3.0,
+        "MATH 318": 3.0,
+        "MATH 381": 3.0,
+        "AMATH 383": 3.0,
+        "MATH 394": 3.0,
+        "STAT 395": 3.0,
+        "CSE 414": 3.0
+      },
+      "expected": {
+        "ACMS_DMA_BREADTH": "met",
+        "ACMS_DMA_BREADTH_CREDITS": "met",
+        "breadth_credits": 39,
+        "ACMS_DMA_ELECTIVES": "unmet",
+        "elective_credits": 0
+      },
+      "reason": "Ten breadth courses are all allocated to breadth, leaving no credits for the 15-credit elective bucket."
+    },
+    {
+      "case_id": "ACMS_MEQF_SEQUENCE_STOCHASTIC_ALIAS",
+      "program_id": "ACMS_MEQF",
+      "profile_id": "acms_meqf_catalog_2026_10_17",
+      "completed_courses": [
+        "STAT 491",
+        "MATH 493"
+      ],
+      "grades": {
+        "STAT 491": 3.2,
+        "MATH 493": 3.0
+      },
+      "expected": {
+        "ACMS_MEQF_SEQUENCE": "met"
+      },
+      "reason": "MATH/STAT 491 plus MATH/STAT 493 is the stochastic processes sequence."
+    },
+    {
+      "case_id": "ACMS_MEQF_SEQUENCE_MIXED",
+      "program_id": "ACMS_MEQF",
+      "profile_id": "acms_meqf_catalog_2026_10_17",
+      "completed_courses": [
+        "MATH 408",
+        "MATH 491"
+      ],
+      "grades": {
+        "MATH 408": 3.0,
+        "MATH 491": 3.0
+      },
+      "expected": {
+        "ACMS_MEQF_SEQUENCE": "unmet"
+      },
+      "reason": "Courses from two different sequences do not complete one sequence."
+    },
+    {
+      "case_id": "ACMS_SCNA_EXTRA_MODELING_ELECTIVE",
+      "program_id": "ACMS_SCNA",
+      "profile_id": "acms_scna_catalog_2026_10_17",
+      "completed": [
+        [
+          "AMATH 383",
+          3
+        ],
+        [
+          "MATH 381",
+          4
+        ],
+        [
+          "AMATH 401",
+          4
+        ]
+      ],
+      "grades": {
+        "AMATH 383": 3.0,
+        "MATH 381": 3.0,
+        "AMATH 401": 3.0
+      },
+      "expected": {
+        "ACMS_SCNA_MODELING": "met",
+        "elective_credits": 8,
+        "ACMS_SCNA_ELECTIVES": "unmet"
+      },
+      "reason": "One modeling course satisfies MODELING; the other plus AMATH 401 count toward the 10-credit elective minimum. With AMATH 383 allocated to MODELING the elective bucket holds MATH 381 + AMATH 401 = 8 credits (< 10); either allocation is below 10."
+    },
+    {
+      "case_id": "ACMS_SCNA_ADMISSION_LOW_GRADE",
+      "program_id": "ACMS_SCNA",
+      "profile_id": "acms_scna_catalog_2026_10_17",
+      "completed_courses": [
+        "MATH 124",
+        "MATH 125",
+        "MATH 126",
+        "MATH 208",
+        "CSE 123",
+        "AMATH 352"
+      ],
+      "grades": {
+        "MATH 124": 3.5,
+        "MATH 125": 3.4,
+        "MATH 126": 3.3,
+        "MATH 208": 3.6,
+        "CSE 123": 3.8,
+        "AMATH 352": 1.9
+      },
+      "expected": {
+        "ACMS_SCNA_ADMISSION_CALCULUS": "met",
+        "ACMS_SCNA_ADMISSION_PROGRAMMING": "met",
+        "ACMS_SCNA_ADMISSION_OPTION_COURSE": "unmet",
+        "ACMS_SCNA_ADMISSION_GPA": "needs_review"
+      },
+      "reason": "AMATH 352 below the 2.0 minimum fails the option admission course."
+    },
+    {
+      "case_id": "STAT_DS_FOUR_ELECTIVES_NEEDED",
+      "program_id": "STAT_DS",
+      "completed": [
+        [
+          "CSE 373",
+          4
+        ],
+        [
+          "STAT 403",
+          4
+        ],
+        [
+          "STAT 421",
+          4
+        ]
+      ],
+      "grades": {
+        "CSE 373": 3.0,
+        "STAT 403": 3.0,
+        "STAT 421": 3.0
+      },
+      "expected": {
+        "STAT_DS_COMPUTING_ELECTIVE": "met",
+        "STAT_DS_ELECTIVES": "unmet"
+      },
+      "reason": "Computing elective and three general electives share allocation group stat_ds_elective_slots; three courses cannot fill four slots."
+    },
+    {
+      "case_id": "STAT_DS_DATABASE_CSE444",
+      "program_id": "STAT_DS",
+      "completed_courses": [
+        "CSE 444"
+      ],
+      "expected": {
+        "STAT_DS_DATABASE": "needs_review"
+      },
+      "reason": "CSE 444 is on the department list but not the catalog list; rule requires advisor confirmation."
+    },
+    {
+      "case_id": "STAT_MS_JOINT_SEQUENCE",
+      "program_id": "STAT_MATH",
+      "completed_courses": [
+        "MATH 395",
+        "STAT 491",
+        "MATH 493"
+      ],
+      "grades": {
+        "MATH 395": 3.0,
+        "STAT 491": 3.0,
+        "MATH 493": 3.0
+      },
+      "expected": {
+        "STAT_MS_MATH_SEQUENCE": "met"
+      },
+      "reason": "Joint-listed IDs from either prefix satisfy the 395/491/493 sequence."
+    },
+    {
+      "case_id": "STAT_MS_SEQUENCE_MISSING_491",
+      "program_id": "STAT_MATH",
+      "completed_courses": [
+        "STAT 395",
+        "STAT 492",
+        "STAT 493"
+      ],
+      "grades": {
+        "STAT 395": 3.0,
+        "STAT 492": 3.0,
+        "STAT 493": 3.0
+      },
+      "expected": {
+        "STAT_MS_MATH_SEQUENCE": "unmet"
+      },
+      "reason": "Neither sequence branch is complete without MATH/STAT 491."
+    },
+    {
+      "case_id": "STAT_APP_CSE123_ONLY",
+      "program_id": "STAT_APP",
+      "completed_courses": [
+        "CSE 123"
+      ],
+      "grades": {
+        "CSE 123": 3.0
+      },
+      "expected": {
+        "STAT_APP_PROGRAMMING_INTRO": "met",
+        "STAT_APP_PROGRAMMING_INTERMEDIATE": "met",
+        "STAT_APP_INTERDISCIPLINARY": "needs_review"
+      },
+      "reason": "Catalog: CSE 123 satisfies the CSE 122 requirement; interdisciplinary sequence is manual review."
+    },
+    {
+      "case_id": "STAT_APP_LOW_GRADE",
+      "program_id": "STAT_APP",
+      "completed": [
+        [
+          "STAT 311",
+          5
+        ]
+      ],
+      "grades": {
+        "STAT 311": 1.9
+      },
+      "expected": {
+        "STAT_APP_INTRO_STATISTICS": "unmet"
+      },
+      "reason": "Minimum 2.0 grade in all courses used for the major."
+    },
+    {
+      "case_id": "AMATH_DS_REQUIRED_PARTIAL",
+      "program_id": "AMATH_DS",
+      "completed": [
+        [
+          "AMATH 483",
+          5
+        ],
+        [
+          "CFRM 410",
+          3
+        ]
+      ],
+      "expected": {
+        "AMATH_DS_REQUIRED": "unmet"
+      },
+      "reason": "AMATH 483, CFRM 410 and CFRM 420 are all required."
+    },
+    {
+      "case_id": "AMATH_DS_JOINT_416_AND_INFO352",
+      "program_id": "AMATH_DS",
+      "completed_courses": [
+        "STAT 416",
+        "INFO 352"
+      ],
+      "expected": {
+        "AMATH_DS_MACHINE_LEARNING": "met",
+        "AMATH_DS_SOCIETY": "needs_review"
+      },
+      "reason": "STAT 416 is joint-listed with CSE 416; INFO 352 appears only on the department page."
+    },
+    {
+      "case_id": "MATH_BS_TWO_THREE_QTR",
+      "program_id": "MATH_BS",
+      "profile_id": "math_bs_catalog_2026_10_17",
+      "completed_courses": [
+        "MATH 402",
+        "MATH 403",
+        "MATH 404",
+        "MATH 441",
+        "MATH 442",
+        "MATH 443"
+      ],
+      "expected": {
+        "MATH_BS_SEQUENCES": "met"
+      },
+      "reason": "Modern Algebra and Topology & Geometry are two three-quarter sequences."
+    },
+    {
+      "case_id": "MATH_BS_NO_CORE_AREA",
+      "program_id": "MATH_BS",
+      "profile_id": "math_bs_catalog_2026_10_17",
+      "completed_courses": [
+        "MATH 461",
+        "MATH 462",
+        "MATH 464",
+        "MATH 465",
+        "MATH 491",
+        "MATH 492"
+      ],
+      "expected": {
+        "MATH_BS_SEQUENCES": "unmet"
+      },
+      "reason": "Three two-quarter sequences but none from Modern Algebra, Concepts of Analysis, Complex Analysis or Topology & Geometry."
+    },
+    {
+      "case_id": "MATH_BS_ANALYSIS_FIVE",
+      "program_id": "MATH_BS",
+      "profile_id": "math_bs_catalog_2026_10_17",
+      "completed_courses": [
+        "MATH 424",
+        "MATH 425",
+        "MATH 426",
+        "MATH 407",
+        "MATH 408",
+        "MATH 409"
+      ],
+      "expected": {
+        "MATH_BS_SEQUENCES": "met",
+        "MATH_BS_ADVANCED_COURSES": "unmet"
+      },
+      "reason": "MATH 424 counts as the first Concepts of Analysis course; five new sequence courses do not reach the 11-course total."
+    },
+    {
+      "case_id": "MATH_BA_420_NOT_400",
+      "program_id": "MATH_BA",
+      "profile_id": "math_ba_catalog_2026_10_17",
+      "completed": [
+        [
+          "MATH 420",
+          4
+        ],
+        [
+          "MATH 402",
+          4
+        ],
+        [
+          "MATH 403",
+          4
+        ],
+        [
+          "MATH 301",
+          4
+        ],
+        [
+          "MATH 318",
+          4
+        ],
+        [
+          "MATH 340",
+          4
+        ],
+        [
+          "MATH 381",
+          4
+        ]
+      ],
+      "expected": {
+        "MATH_BA_ELECTIVES_400": "unmet",
+        "MATH_BA_ELECTIVE_CREDITS": 28
+      },
+      "reason": "MATH 420 cannot count toward the three 400-level electives, leaving only two."
+    },
+    {
+      "case_id": "MATH_BA_SEVEN_ELECTIVES",
+      "program_id": "MATH_BA",
+      "profile_id": "math_ba_catalog_2026_10_17",
+      "completed": [
+        [
+          "MATH 402",
+          4
+        ],
+        [
+          "MATH 403",
+          4
+        ],
+        [
+          "MATH 427",
+          4
+        ],
+        [
+          "MATH 420",
+          4
+        ],
+        [
+          "MATH 301",
+          4
+        ],
+        [
+          "MATH 318",
+          4
+        ],
+        [
+          "MATH 381",
+          4
+        ]
+      ],
+      "expected": {
+        "MATH_BA_ELECTIVES_400": "met",
+        "MATH_BA_ELECTIVES_ADDITIONAL": "met",
+        "MATH_BA_ELECTIVE_CREDITS": 28,
+        "MATH_BA_ELECTIVE_RESTRICTIONS": "needs_review"
+      },
+      "reason": "Three 400-level courses plus four more distinct courses (MATH 420 fills a 300/400 slot) give 28 credits; caps still need manual review."
+    },
+    {
+      "case_id": "ECE_400_LEVEL_SHORT",
+      "program_id": "ECE",
+      "completed": [
+        [
+          "E E 331",
+          4
+        ],
+        [
+          "E E 332",
+          5
+        ],
+        [
+          "E E 333",
+          5
+        ],
+        [
+          "E E 342",
+          4
+        ],
+        [
+          "E E 344",
+          4
+        ],
+        [
+          "E E 371",
+          5
+        ],
+        [
+          "E E 398",
+          1
+        ],
+        [
+          "E E 416",
+          4
+        ],
+        [
+          "E E 418",
+          4
+        ],
+        [
+          "E E 447",
+          4
+        ]
+      ],
+      "expected": {
+        "ECE_PROFESSIONAL_ISSUES": "met",
+        "advanced_elective_credits": 40,
+        "ECE_ADV_ELECTIVE_CREDITS": "met",
+        "advanced_400_ee_credits": 12,
+        "ECE_ADV_ELECTIVE_400": "unmet"
+      },
+      "reason": "39 Advanced ECE Elective credits are reached, but only 12 credits are 400-level E E (20 required)."
+    },
+    {
+      "case_id": "ECE_CAPSTONE_NOT_ELECTIVE",
+      "program_id": "ECE",
+      "completed": [
+        [
+          "E E 475",
+          5
+        ],
+        [
+          "E E 436",
+          5
+        ]
+      ],
+      "grades": {
+        "E E 475": 3.0,
+        "E E 436": 3.0
+      },
+      "expected": {
+        "ECE_CAPSTONE": "met",
+        "advanced_elective_credits": 0,
+        "ECE_PRE25_CAPSTONE": "met",
+        "pre25_advanced_elective_credits": 10
+      },
+      "reason": "E E 475 satisfies the capstone. Capstones are excluded from Advanced ECE Electives in the current profile but count in the pre-Autumn 2025 profile; E E 436 alone would not complete the 436/437 sequence."
+    },
+    {
+      "case_id": "ECE_CORE_LOW_GRADE",
+      "program_id": "ECE",
+      "completed": [
+        [
+          "E E 201",
+          2
+        ],
+        [
+          "E E 215",
+          4
+        ],
+        [
+          "E E 241",
+          2
+        ],
+        [
+          "E E 242",
+          5
+        ],
+        [
+          "E E 271",
+          5
+        ],
+        [
+          "E E 280",
+          4
+        ]
+      ],
+      "grades": {
+        "E E 201": 3.0,
+        "E E 215": 3.0,
+        "E E 241": 3.0,
+        "E E 242": 1.9,
+        "E E 271": 3.0,
+        "E E 280": 3.0
+      },
+      "expected": {
+        "ECE_CORE": "unmet",
+        "ECE_CORE_DATA_PROGRAMMING": "met"
+      },
+      "reason": "Each ECE core course requires a minimum 2.0 grade."
+    },
+    {
+      "case_id": "ECE_ADM_HONORS_CALC_WAIVER",
+      "program_id": "ECE",
+      "completed_courses": [
+        "MATH 134",
+        "MATH 135",
+        "MATH 136"
+      ],
+      "expected": {
+        "ECE_ADM_CCA_CALCULUS": "met",
+        "ECE_ADM_CCA_DIFFEQ": "met"
+      },
+      "reason": "MATH 207 is not required for application when MATH 135 was completed (grades assumed >= 2.0)."
+    },
+    {
+      "case_id": "HCDE_STD_MATH120_NOT_NSC",
+      "program_id": "HCDE",
+      "profile_id": "hcde_standard_catalog_2026_10_17",
+      "completed": [
+        [
+          "MATH 120",
+          5
+        ]
+      ],
+      "expected": {
+        "HCDE_STD_NSC_MATH": "unmet"
+      },
+      "reason": "MATH 120 is not on the Autumn 2024+ math list for the standard profile."
+    },
+    {
+      "case_id": "HCDE_STD_ENG_FUND_NO_PROGRAMMING",
+      "program_id": "HCDE",
+      "profile_id": "hcde_standard_catalog_2026_10_17",
+      "completed": [
+        [
+          "CSE 163",
+          4
+        ],
+        [
+          "CSE 373",
+          4
+        ],
+        [
+          "A A 210",
+          4
+        ]
+      ],
+      "expected": {
+        "HCDE_STD_ENGINEERING_FUNDAMENTALS": "met",
+        "HCDE_STD_ENGINEERING_FUNDAMENTALS_PROGRAMMING": "unmet"
+      },
+      "reason": "12 list credits but none of CSE 121/122/123/142/160."
+    },
+    {
+      "case_id": "HCDE_GEN_MATH120_COUNTS",
+      "program_id": "HCDE_GENERAL",
+      "profile_id": "hcde_general_option_catalog_2026_10_17",
+      "completed": [
+        [
+          "MATH 120",
+          5
+        ]
+      ],
+      "expected": {
+        "HCDE_GEN_NSC_MATH": "met"
+      },
+      "reason": "The General Option allows MATH 120 toward math requirements."
+    },
+    {
+      "case_id": "HCDE_GEN_CORE_WITH_316",
+      "program_id": "HCDE_GENERAL",
+      "profile_id": "hcde_general_option_catalog_2026_10_17",
+      "completed_courses": [
+        "HCDE 302",
+        "HCDE 303",
+        "HCDE 308",
+        "HCDE 310",
+        "HCDE 313",
+        "HCDE 316",
+        "HCDE 321",
+        "HCDE 322",
+        "HCDE 351",
+        "HCDE 492",
+        "HCDE 493"
+      ],
+      "expected": {
+        "HCDE_GEN_CORE": "met",
+        "HCDE_GEN_CORE_DESIGN_CHOICE": "met"
+      }
+    },
+    {
+      "case_id": "ISE_STD_JOINT_LISTED",
+      "program_id": "ISE",
+      "profile_id": "ise_standard_catalog_2026_10_17",
+      "completed_courses": [
+        "STAT 316",
+        "HCDE 455"
+      ],
+      "expected": {
+        "ISE_STD_IE_CORE_DOE": "met",
+        "ISE_STD_ADVANCED_IE_TOPICS": "met"
+      },
+      "reason": "Joint-listed IDs satisfy the same requirement."
+    },
+    {
+      "case_id": "ISE_STD_TECH_12",
+      "program_id": "ISE",
+      "profile_id": "ise_standard_catalog_2026_10_17",
+      "completed": [
+        [
+          "CSE 373",
+          4
+        ],
+        [
+          "CSE 414",
+          4
+        ],
+        [
+          "MATH 407",
+          3
+        ]
+      ],
+      "expected": {
+        "ISE_STD_TECHNICAL_ELECTIVES": "unmet"
+      },
+      "reason": "11 credits is below the 16-credit minimum."
+    },
+    {
+      "case_id": "ISE_DS_CORE_CATALOG",
+      "program_id": "ISE_DS",
+      "profile_id": "ise_data_science_catalog_2026_10_17",
+      "completed_courses": [
+        "CSE 160",
+        "IND E 427",
+        "INFO 350"
+      ],
+      "expected": {
+        "ISE_DS_DS_PROGRAMMING": "met",
+        "ISE_DS_DS_ANALYTICS": "met",
+        "ISE_DS_DS_SOCIETY": "met"
+      },
+      "reason": "Catalog lists CSE 160 and INFO 350; department page differs (see ISE_DS_CORE_CONFLICT)."
+    },
+    {
+      "case_id": "ISE_DS_ELECTIVES_ONE_AREA",
+      "program_id": "ISE_DS",
+      "profile_id": "ise_data_science_catalog_2026_10_17",
+      "completed": [
+        [
+          "CSE 414",
+          4
+        ],
+        [
+          "INFO 430",
+          5
+        ]
+      ],
+      "expected": {
+        "ISE_DS_DS_ELECTIVE_CREDITS": "met",
+        "ISE_DS_DS_ELECTIVE_AREAS": "needs_review"
+      },
+      "reason": "9 credits meets the minimum but both courses are in data management; the area rule is manual review (would not be satisfied)."
+    },
+    {
+      "case_id": "PHYS_COMP_THREE_ASTR",
+      "program_id": "PHYS_COMP",
+      "profile_id": "phys_comprehensive_catalog_2026_10_17",
+      "completed_courses": [
+        "ASTR 321",
+        "ASTR 322",
+        "ASTR 323"
+      ],
+      "expected": {
+        "PHYS_COMP_MORE_PHYSICS": "met",
+        "PHYS_COMP_MORE_PHYSICS_PHYS_MIN": "unmet",
+        "more_physics_group": "unmet"
+      },
+      "reason": "At most two ASTR courses may count toward the three-course group; at least one PHYS course is required."
+    },
+    {
+      "case_id": "PHYS_COMP_CAPSTONE_TWO_SEMINARS",
+      "program_id": "PHYS_COMP",
+      "profile_id": "phys_comprehensive_catalog_2026_10_17",
+      "completed": [
+        [
+          "PHYS 494",
+          1
+        ],
+        [
+          "PHYS 495",
+          1
+        ]
+      ],
+      "expected": {
+        "PHYS_COMP_CAPSTONE": "unmet",
+        "capstone_credits": 2
+      },
+      "reason": "Capstone needs a minimum of 3 credits from the listed courses."
+    },
+    {
+      "case_id": "PHYS_APP_MATH_DISTINCT",
+      "program_id": "PHYS_APP",
+      "profile_id": "phys_applied_catalog_2026_10_17",
+      "completed_courses": [
+        "MATH 124",
+        "MATH 125",
+        "MATH 126",
+        "MATH 208",
+        "MATH 209"
+      ],
+      "expected": {
+        "PHYS_APP_CALCULUS": "met",
+        "PHYS_APP_MATH_CORE_COURSE": "met",
+        "PHYS_APP_MATH_ADDITIONAL": "unmet"
+      },
+      "reason": "One course is allocated to the core math slot; only one remains for the two-course additional math group (shared allocation_group)."
+    },
+    {
+      "case_id": "PHYS_APP_ELECTIVES_8_CREDITS",
+      "program_id": "PHYS_APP",
+      "profile_id": "phys_applied_catalog_2026_10_17",
+      "completed": [
+        [
+          "A A 302",
+          4
+        ],
+        [
+          "E E 487",
+          4
+        ]
+      ],
+      "grades": {
+        "A A 302": 3.0,
+        "E E 487": 3.0
+      },
+      "expected": {
+        "PHYS_APP_ELECTIVES": "unmet",
+        "elective_credits": 8
+      },
+      "reason": "Applied electives need at least 9 credits."
+    },
+    {
+      "case_id": "PHYS_BIO_HONORS_CHEM_MIX",
+      "program_id": "PHYS_BIO",
+      "profile_id": "phys_biophysics_catalog_2026_10_17",
+      "completed_courses": [
+        "CHEM 145",
+        "CHEM 152",
+        "CHEM 165"
+      ],
+      "grades": {
+        "CHEM 145": 3.0,
+        "CHEM 152": 2.5,
+        "CHEM 165": 3.2
+      },
+      "expected": {
+        "PHYS_BIO_CHEMISTRY": "met"
+      },
+      "reason": "Each slot accepts the regular or honors version independently."
+    },
+    {
+      "case_id": "PHYS_BIO_LOW_GRADE_BIOLOGY",
+      "program_id": "PHYS_BIO",
+      "profile_id": "phys_biophysics_catalog_2026_10_17",
+      "completed": [
+        [
+          "BIOL 180",
+          5
+        ],
+        [
+          "BIOL 200",
+          5
+        ]
+      ],
+      "grades": {
+        "BIOL 180": 1.9,
+        "BIOL 200": 3.0
+      },
+      "expected": {
+        "PHYS_BIO_BIOLOGY": "unmet"
+      },
+      "reason": "Each course used for the major needs a numerical grade of at least 2.0."
+    },
+    {
+      "case_id": "ECON_BS_SIX_SLOTS_MET",
+      "program_id": "ECON_BS",
+      "profile_id": "econ_bs_catalog_2026_10_17",
+      "completed_courses": [
+        "ECON 400",
+        "ECON 401",
+        "ECON 482",
+        "ECON 443",
+        "ECON 471",
+        "ECON 472"
+      ],
+      "expected": {
+        "ECON_BS_MICRO_MACRO_400": "met",
+        "ECON_BS_ECONOMETRICS": "met",
+        "ECON_BS_THEORY_METHODS": "met",
+        "ECON_BS_ADDITIONAL_400": "met",
+        "ECON_BS_UPPER_DIVISION_TOTAL": "met"
+      },
+      "reason": "ECON 400 fills 3a, ECON 482 fills 3b, ECON 401 (not used for 3a) fills 3c, three other 400-level courses fill the additional slots."
+    },
+    {
+      "case_id": "ECON_BS_EXCLUDED_499",
+      "program_id": "ECON_BS",
+      "profile_id": "econ_bs_catalog_2026_10_17",
+      "completed_courses": [
+        "ECON 400",
+        "ECON 482",
+        "ECON 404",
+        "ECON 443",
+        "ECON 471",
+        "ECON 499"
+      ],
+      "expected": {
+        "ECON_BS_THEORY_METHODS": "met",
+        "ECON_BS_ADDITIONAL_400": "unmet",
+        "ECON_BS_UPPER_DIVISION_TOTAL": "unmet"
+      },
+      "reason": "ECON 499 may not be applied, leaving only two additional 400-level courses after 3a-3c are allocated."
+    },
+    {
+      "case_id": "ECON_DS_CORE_400_AND_DATA",
+      "program_id": "ECON_BS_DS",
+      "profile_id": "econ_bs_data_science_catalog_2026_10_17",
+      "completed_courses": [
+        "ECON 401",
+        "ECON 487",
+        "ECON 488",
+        "ECON 481",
+        "ECON 482",
+        "ECON 484",
+        "CSE 163",
+        "INFO 351",
+        "AMATH 352"
+      ],
+      "expected": {
+        "ECON_DS_MICRO_MACRO_400": "met",
+        "ECON_DS_APPLIED_ECONOMETRICS": "met",
+        "ECON_DS_CAUSAL_INFERENCE": "met",
+        "ECON_DS_PROGRAMMING": "met",
+        "ECON_DS_DATA_SOCIETY": "met",
+        "ECON_DS_DATA_SCIENCE_ECON": "met",
+        "ECON_DS_LINEAR_ALGEBRA": "met"
+      }
+    },
+    {
+      "case_id": "ECON_DS_482_NOT_APPLIED_ECONOMETRICS",
+      "program_id": "ECON_BS_DS",
+      "profile_id": "econ_bs_data_science_catalog_2026_10_17",
+      "completed_courses": [
+        "ECON 400",
+        "ECON 482",
+        "ECON 488"
+      ],
+      "expected": {
+        "ECON_DS_APPLIED_ECONOMETRICS": "unmet",
+        "ECON_DS_DATA_SCIENCE_ECON": "unmet"
+      },
+      "reason": "The DS option lists ECON 424, 483 or 487 for this slot; ECON 482 belongs to the data science sequence, which also needs ECON 481 and 484."
+    },
+    {
+      "case_id": "ECON_BA_LOW_CORE_GRADE",
+      "program_id": "ECON_BA",
+      "profile_id": "econ_ba_catalog_2026_10_17",
+      "completed": [
+        [
+          "ECON 200",
+          5
+        ],
+        [
+          "ECON 201",
+          5
+        ],
+        [
+          "ECON 300",
+          5
+        ],
+        [
+          "ECON 301",
+          5
+        ]
+      ],
+      "grades": {
+        "ECON 200": 3.0,
+        "ECON 201": 3.0,
+        "ECON 300": 1.9,
+        "ECON 301": 2.5
+      },
+      "expected": {
+        "ECON_BA_CORE_ECON": "unmet"
+      },
+      "reason": "Minimum 2.0 grade in ECON 300 is required."
+    },
+    {
+      "case_id": "ECON_BA_482_FOR_382",
+      "program_id": "ECON_BA",
+      "profile_id": "econ_ba_catalog_2026_10_17",
+      "completed_courses": [
+        "ECON 482"
+      ],
+      "expected": {
+        "ECON_BA_ECONOMETRICS": "needs_review"
+      },
+      "reason": "ECON 382 substitution by a higher-level econometrics course is department-adjusted and requires advising confirmation."
+    },
+    {
+      "case_id": "ME_STD_ELECTIVES_18_CREDITS",
+      "program_id": "ME",
+      "profile_id": "me_standard_catalog_2026_10_17",
+      "completed": [
+        [
+          "M E 471",
+          4
+        ],
+        [
+          "M E 473",
+          4
+        ],
+        [
+          "M E 470",
+          3
+        ],
+        [
+          "M E 460",
+          3
+        ],
+        [
+          "M E 440",
+          3
+        ],
+        [
+          "M E 419",
+          1
+        ]
+      ],
+      "expected": {
+        "ME_STD_OPTION_ELECTIVE_CREDITS": "unmet",
+        "option_elective_credits": 18
+      },
+      "reason": "Six approved courses total 18 credits, one short of 19."
+    },
+    {
+      "case_id": "ME_STD_499_CAP",
+      "program_id": "ME",
+      "profile_id": "me_standard_catalog_2026_10_17",
+      "completed": [
+        [
+          "M E 499",
+          8
+        ],
+        [
+          "M E 471",
+          4
+        ],
+        [
+          "M E 478",
+          4
+        ],
+        [
+          "M E 470",
+          3
+        ]
+      ],
+      "expected": {
+        "raw_pool_credits": 19,
+        "applicable_option_elective_credits": 17,
+        "ME_STD_OPTION_ELECTIVE_CREDITS": "unmet"
+      },
+      "reason": "Only 6 graded M E 499 credits may count."
+    },
+    {
+      "case_id": "ME_MECH_COMPLETE_OPTION",
+      "program_id": "ME_MECH",
+      "profile_id": "me_mechatronics_catalog_2026_10_17",
+      "completed_courses": [
+        "M E 471",
+        "M E 473",
+        "M E 477",
+        "M E 470",
+        "PHYS 334"
+      ],
+      "expected": {
+        "ME_MECH_OPTION_CORE": "met",
+        "ME_MECH_OPTION_ELECTIVES": "met"
+      }
+    },
+    {
+      "case_id": "ME_MECH_AMATH402_SUBSTITUTE",
+      "program_id": "ME_MECH",
+      "profile_id": "me_mechatronics_catalog_2026_10_17",
+      "completed_courses": [
+        "M E 471",
+        "M E 473",
+        "M E 477",
+        "M E 469",
+        "AMATH 402"
+      ],
+      "expected": {
+        "ME_MECH_OPTION_CORE": "met",
+        "ME_MECH_OPTION_ELECTIVES": "unmet",
+        "substitution_status": "needs_review"
+      },
+      "reason": "AMATH 402 is on the department page but not in the catalog option list."
+    },
+    {
+      "case_id": "AA_TECH_499_ENGR321_CAP",
+      "program_id": "AA",
+      "profile_id": "aa_standard_catalog_2026_10_17",
+      "completed": [
+        [
+          "A A 499",
+          5
+        ],
+        [
+          "ENGR 321",
+          4
+        ],
+        [
+          "A A 461",
+          3
+        ],
+        [
+          "A A 462",
+          3
+        ]
+      ],
+      "expected": {
+        "raw_pool_credits": 15,
+        "applicable_tech_elective_credits": 12,
+        "AA_TECH_ELECTIVE_CREDITS": "unmet"
+      },
+      "reason": "A A 499 and ENGR 321 combined may contribute at most 6 credits."
+    },
+    {
+      "case_id": "AA_MIXED_CAPSTONE",
+      "program_id": "AA",
+      "profile_id": "aa_standard_catalog_2026_10_17",
+      "completed_courses": [
+        "A A 410",
+        "A A 421"
+      ],
+      "expected": {
+        "AA_CAPSTONE": "unmet"
+      },
+      "reason": "Capstone must be A A 410+411 or A A 420+421."
     }
   ]
 }

@@ -31,6 +31,17 @@ The current INFO General Catalog and Winter 2027 schedule use INFO 280 (four cre
 
 Published credit ranges are descriptive, not a maximum allowed number of credits. Never add admission, core and general education totals without accounting for documented overlap. Unknown values are null. All source URLs and review dates are retained.
 
+## 2026-10-17 expansion: all UW Seattle majors
+
+Sources: official University of Washington sites only (www.washington.edu General Catalog and course catalog, and department sites on washington.edu / uw.edu). Non-UW files linked from UW pages (amazonaws checklists, Google forms/sites, login-only Canvas pages) were not used; each such gap is a documented issue.
+
+- program_catalog.json / program_catalog.csv: every undergraduate major in the General Catalog program pages (112 majors, 222 degree/option credentials). Each record keeps the official admission and completion requirement text, credit range (or the 180-credit degree total for engineering pages), the institutional major code from the catalog program ID (for example UG-C SCI-MAJOR gives C SCI), and source anchors. `detail_level` is `full_requirement_profiles` when `requirement_program_ids` links to encoded profiles in major_requirements.json, otherwise `catalog_summary` (text only, not encoded as rules).
+- major_requirements.json gained 27 profiles (590 rules, 56 pools, 93 sources) for 11 majors: Computer Engineering (CMPE), ACMS (four options), Statistics (three options), Mathematics (BS, BA), Electrical and Computer Engineering (catalog profile and the pre-Autumn 2025 department profile), HCDE (standard and General Option), Industrial and Systems Engineering (standard and Data Science), Physics (Comprehensive, Applied, Biophysics), Economics (BS, BS Data Science, BA), Mechanical Engineering (standard and Mechatronics) and Aeronautics and Astronautics; plus the Data Science options of CS (CS_DS) and Applied Mathematics (AMATH_DS).
+- Every profile has a unique `program_id`. Option profiles carry `parent_program_id` (for example STAT_DS has parent STAT), `option` and `catalog_program_id`. Issues use the parent program family as `program_id`.
+- policy_issues.json gained 112 documented gaps (catalog vs department disagreements, unretrievable lists, rules the logic types cannot express); requirements_test_cases.json gained 54 fixtures derived from the encoded rules (not executed).
+- requirement_groups.csv, requirement_course_map.csv and policy_sources.csv mirror the new rules, course candidates and sources. Course-map rows for the new profiles use `winter_2027_status` `not_collected` unless the course already had Winter 2027 evidence.
+- Not encoded: the Philosophy and Teacher Preparation Mathematics options, Physics Teacher Preparation, ME Biomechanics, Economics International/Financial/Strategy options, pre-2024 curricula, and the remaining ~98 majors (catalog_summary only). UW_Three_Majors.xlsx was not regenerated and still covers only CS, AMATH and INFO.
+
 ## Refresh
 
 Recheck each official source before changing a profile. Record the new snapshot date and changed rule IDs. Refresh the actual Time Schedule separately from degree requirements. Preserve older profiles when requirements change.

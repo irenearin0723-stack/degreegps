@@ -17,7 +17,8 @@ export const ImportedPrerequisiteSchema = z.object({
 export const ImportedCourseSchema = z.object({
   course_id: CourseIdSchema, course_name: z.string().min(1),
   credits: z.number().positive().nullable(), credits_min: z.number().positive(), credits_max: z.number().positive(),
-  term: z.literal('Winter 2027'), offering_status: z.enum(['listed', 'not_listed']),
+  // not_collected: the Winter 2027 Time Schedule was not checked for this course (distinct from not_listed).
+  term: z.literal('Winter 2027'), offering_status: z.enum(['listed', 'not_listed', 'not_collected']),
   lecture_sections: z.string(), prerequisite_summary: z.string(), category: z.string().min(1),
   description: z.string(), skills: z.string(), verification_notes: z.string(),
   catalog_url: OfficialUrlSchema, schedule_url: OfficialUrlSchema, checked_at: z.iso.date(),
@@ -32,7 +33,16 @@ export const CATEGORY_MAP = {
   info_elective: 'elective', info_society_choice: 'elective', info_core: 'major',
   info_capstone: 'major', info_software_choice: 'elective', info_research: 'elective',
   info_foundation: 'major', info_experiential: 'elective',
+  // Courses named by the full-depth major profiles added 2026-10-17 (<dept>_core = required by a rule, <dept>_choice = one of a short list).
+  cs_choice: 'elective', math_core: 'math', math_choice: 'math', amath_choice: 'math',
+  stat_core: 'math', stat_choice: 'math', ece_core: 'major', ece_choice: 'elective',
+  me_core: 'major', me_choice: 'elective', aa_core: 'major', aa_choice: 'elective',
+  ise_core: 'major', ise_choice: 'elective', hcde_core: 'major', hcde_choice: 'elective',
+  phys_core: 'major', phys_choice: 'elective', econ_core: 'major', econ_choice: 'elective',
+  acms_core: 'major', acms_choice: 'elective', info_choice: 'elective',
+  support_core: 'other', support_choice: 'elective',
 } as const;
+const UNENCODED_PREREQUISITES = new Set(['non_course_only', 'too_complex']);
 /** These are application ranking labels, never official degree-requirement membership. */
 function ranking(course: z.infer<typeof ImportedCourseSchema>) {
   const text = `${course.course_name} ${course.skills}`.toLowerCase();
@@ -53,7 +63,8 @@ export function importCourse(raw: unknown, rawPrerequisites: unknown) {
   return CourseSchema.parse({ course_id: row.course_id, title: row.course_name, credits: row.credits,
     category, source_category: row.category,
     prerequisite_groups: null,
-    prerequisite_alternatives: rule.any_of.map(branch => ({ all_of: branch.all_of.map(id => ({
+    // Prerequisites that are non-course-only or too complex to encode stay unknown; an empty branch would read as "met".
+    prerequisite_alternatives: UNENCODED_PREREQUISITES.has(String(rule.catalog_prerequisite_status)) ? undefined : rule.any_of.map(branch => ({ all_of: branch.all_of.map(id => ({
       course_id: id, minimum_grade: branch.min_grades?.[id] ?? null,
       concurrent_allowed: branch.concurrent_allowed?.includes(id) ?? false,
     })) })),

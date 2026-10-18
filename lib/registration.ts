@@ -31,7 +31,8 @@ export function importRegistration(input: unknown, files: Record<string, string>
   if (new Set(rows.map(r => `${r.term}:${r.sln}`)).size !== rows.length ||
       new Set(evidence.map(r => `${r.term}:${r.sln}`)).size !== evidence.length ||
       rows.length !== registration.counts.sections || rows.length !== evidence.length ||
-      courses.length !== registration.counts.courses_in_catalog ||
+      // The catalog may grow after the registration review; it must still contain every reviewed course.
+      courses.length < registration.counts.courses_in_catalog ||
       evidence.filter(s => s.evidence_level === 'detailed_SLN_notes').length !== registration.counts.detailed_SLN_notes_reviewed)
     throw new Error('Registration rules count/key mismatch');
   return evidence.map(section => {
@@ -55,16 +56,26 @@ export function majorLabels(major: string): Set<string> {
   };
   return new Set(major.split('+').map(m => labels[m.trim().toLowerCase()]).filter(Boolean));
 }
-/** Application major → UW institutional major codes used in SLN Notes. CS never implies CMP E. */
+/**
+ * Application major → UW institutional major codes used in SLN Notes. CS never implies CMP E.
+ * Codes come from General Catalog program IDs (e.g. UG-C SCI-MAJOR, UG-ECENG-MAJOR); see
+ * data/major_requirements/program_catalog.json.
+ */
 export function institutionalMajorCodes(major: string): Set<string> {
   const codes: Record<string, string> = {
     cs: 'C SCI', cse: 'C SCI', 'computer science': 'C SCI', 'c sci': 'C SCI',
     'computer engineering': 'CMP E', 'cmp e': 'CMP E',
-    ece: 'ECE', 'electrical and computer engineering': 'ECE', 'electrical engineering': 'E E', 'e e': 'E E',
+    ece: 'ECENG', eceng: 'ECENG', 'electrical and computer engineering': 'ECENG', 'electrical engineering': 'E E', 'e e': 'E E',
     amath: 'AMATH', 'applied mathematics': 'AMATH', 'applied math': 'AMATH',
     acms: 'ACMS', 'applied and computational mathematical sciences': 'ACMS',
-    cfrm: 'CFRM', 'computational finance': 'CFRM',
+    cfrm: 'CFRM', 'computational finance': 'CFRM', 'computational finance and risk management': 'CFRM',
     info: 'INFO', informatics: 'INFO',
+    stat: 'STAT', statistics: 'STAT', math: 'MATH', mathematics: 'MATH',
+    phys: 'PHYS', physics: 'PHYS', econ: 'ECON', economics: 'ECON',
+    hcde: 'HCDE', 'human centered design and engineering': 'HCDE',
+    ise: 'IND E', 'ind e': 'IND E', 'industrial and systems engineering': 'IND E', 'industrial engineering': 'IND E',
+    me: 'M E', 'm e': 'M E', 'mechanical engineering': 'M E',
+    'a a': 'A A', 'aeronautics and astronautics': 'A A', 'aeronautical and astronautical engineering': 'A A',
   };
   return new Set(major.split('+').map(m => codes[m.trim().toLowerCase()]).filter(Boolean));
 }

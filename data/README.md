@@ -12,7 +12,9 @@ Superseded data, kept for provenance and never loaded by the app. See archive/RE
 
 ## major_requirements
 
-CS, AMATH and INFO degree requirements, course-to-requirement mappings, policy sources, documented issues and acceptance fixtures. Start with major_requirements/MAJOR_REQUIREMENTS_README.md. Validated by scripts, not yet used by the planner.
+`program_catalog.json`: every UW Seattle undergraduate major from the official General Catalog (112 majors), with requirement text and links to encoded profiles. `major_requirements.json`: encoded requirement profiles for 14 majors (CS, AMATH, INFO, Computer Engineering, ACMS, Statistics, Mathematics, ECE, HCDE, ISE, Physics, Economics, ME, A&A, with their options), course-to-requirement mappings, policy sources, documented issues and acceptance fixtures. Start with major_requirements/MAJOR_REQUIREMENTS_README.md. Validated by scripts, not yet used by the planner.
+
+`target_courses/courses.json` also holds 281 course records (2026-10-17) for courses those profiles require or offer as a short choice, from the official course catalog. Their Winter 2027 `offering_status` is `not_collected` because the Time Schedule requires UW NetID sign-in, so the planner never treats them as offered.
 
 ## career_paths.json
 

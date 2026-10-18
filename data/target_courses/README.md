@@ -40,6 +40,8 @@ Course IDs contain spaces, such as `CSE 332`. CSV is UTF-8, comma-separated, wit
 
 `offering_status` is `listed` or `not_listed` for Winter 2027. `not_listed` means absent from the inspected department schedule snapshot, not permanently unavailable. Do not schedule those courses in this term by default.
 
+`not_collected` (added 2026-10-17) marks the 281 records added for the expanded major profiles (categories such as `stat_core`, `ece_choice`, `support_core`). Their titles, credits, descriptions and prerequisites come from the official course catalog, but the Winter 2027 Time Schedule requires UW NetID sign-in and was not checked, so their offering is unknown, which is different from `not_listed`. Their prerequisites keep `original_text`; conditions that are not courses (placement or AP scores, permission, standing, recommendations) are listed in `verification_notes`. Catalog courses without a numeric credit value (variable `*` research courses and AP-only credit) are not records and are listed in external_prerequisites.json.
+
 `credits` on a course is its catalog credit value; lecture credit values match in this batch. A quiz section has zero **additional** credits. Do not add course credits again for each quiz.
 
 `category` and `skills` are team mappings based on catalog content, not official graduation-audit classifications or evidence of a student's proficiency. List fields in CSV use `|` separators. Paraphrased descriptions and prerequisite summaries preserve the checked facts; `original_text` is supplied only for the three original sample rules.
