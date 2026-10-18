@@ -1,0 +1,17 @@
+# Backup only: select the actual Free plan, not a trial or a paid plan.
+[build]
+  command = "npm run build:free"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  DEGREEGPS_FREE_DEMO = "true"
+  NEXT_PUBLIC_FREE_DEMO = "true"
+  NEXT_PUBLIC_API_BASE_URL = ""
+  NEXT_PUBLIC_USE_MOCK_DATA = "false"
+  NEXT_PUBLIC_USE_MOCK_TRANSCRIPT = "false"
+  AI_RATE_PER_MINUTE = "0"
+  AI_RATE_PER_DAY = "0"
+  AI_RATE_GLOBAL_PER_DAY = "0"
+
+# Let Netlify's Next.js integration preserve routes/functions; no SPA catch-all rewrite.

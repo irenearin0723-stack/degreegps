@@ -1,0 +1,203 @@
+{
+  "schema_version": "2.0.0",
+  "description": "Synthetic mock-only rules; never used by the real planning endpoint.",
+  "courses": [
+    {
+      "course_id": "CSE 123",
+      "title": "Computer programming foundations (illustrative)",
+      "credits": null,
+      "category": "major",
+      "prerequisite_groups": [],
+      "offered_terms": [
+        "winter",
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "eligible_majors": [
+        "*"
+      ],
+      "source_url": null,
+      "verified_at": null,
+      "data_status": "sample",
+      "tracks": [
+        "swe",
+        "ml",
+        "data",
+        "systems"
+      ],
+      "foundation_priority": 10
+    },
+    {
+      "course_id": "MATH 126",
+      "title": "Calculus foundations (illustrative)",
+      "credits": null,
+      "category": "math",
+      "prerequisite_groups": [],
+      "offered_terms": [
+        "winter",
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "eligible_majors": [
+        "*"
+      ],
+      "source_url": null,
+      "verified_at": null,
+      "data_status": "sample",
+      "tracks": [
+        "ml",
+        "data"
+      ],
+      "foundation_priority": 9
+    },
+    {
+      "course_id": "CSE 311",
+      "title": "Discrete foundations (illustrative)",
+      "credits": null,
+      "category": "major",
+      "prerequisite_groups": [
+        {
+          "any_of": [
+            {
+              "course_id": "CSE 123",
+              "minimum_grade": null,
+              "concurrent_allowed": false
+            }
+          ]
+        }
+      ],
+      "offered_terms": [
+        "winter",
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "eligible_majors": [
+        "*"
+      ],
+      "source_url": null,
+      "verified_at": null,
+      "data_status": "sample",
+      "tracks": [
+        "swe",
+        "ml",
+        "systems"
+      ],
+      "foundation_priority": 8
+    },
+    {
+      "course_id": "AMATH 301",
+      "title": "Scientific computing (illustrative)",
+      "credits": null,
+      "category": "math",
+      "prerequisite_groups": [
+        {
+          "any_of": [
+            {
+              "course_id": "MATH 126",
+              "minimum_grade": null,
+              "concurrent_allowed": false
+            }
+          ]
+        }
+      ],
+      "offered_terms": [
+        "winter",
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "eligible_majors": [
+        "*"
+      ],
+      "source_url": null,
+      "verified_at": null,
+      "data_status": "sample",
+      "tracks": [
+        "ml",
+        "data"
+      ],
+      "foundation_priority": 7
+    },
+    {
+      "course_id": "CSE 332",
+      "title": "Data structures (illustrative)",
+      "credits": null,
+      "category": "major",
+      "prerequisite_groups": [
+        {
+          "any_of": [
+            {
+              "course_id": "CSE 311",
+              "minimum_grade": null,
+              "concurrent_allowed": false
+            }
+          ]
+        }
+      ],
+      "offered_terms": [
+        "winter",
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "eligible_majors": [
+        "*"
+      ],
+      "source_url": null,
+      "verified_at": null,
+      "data_status": "sample",
+      "tracks": [
+        "swe",
+        "ml",
+        "systems"
+      ],
+      "foundation_priority": 6
+    },
+    {
+      "course_id": "CSE 446",
+      "title": "Machine learning (illustrative)",
+      "credits": null,
+      "category": "major",
+      "prerequisite_groups": [
+        {
+          "any_of": [
+            {
+              "course_id": "AMATH 301",
+              "minimum_grade": null,
+              "concurrent_allowed": false
+            }
+          ]
+        },
+        {
+          "any_of": [
+            {
+              "course_id": "CSE 332",
+              "minimum_grade": null,
+              "concurrent_allowed": false
+            }
+          ]
+        }
+      ],
+      "offered_terms": [
+        "winter",
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "eligible_majors": [
+        "*"
+      ],
+      "source_url": null,
+      "verified_at": null,
+      "data_status": "sample",
+      "tracks": [
+        "ml",
+        "data"
+      ],
+      "foundation_priority": 5
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "scope": "Fictional inputs; validates dataset semantics, not the team backend or registration eligibility.",
+  "cases": [
+    {
+      "case_id": "simple_met",
+      "kind": "prerequisite",
+      "course_id": "CSE 332",
+      "completed_courses": [
+        "CSE 311"
+      ],
+      "grades": {},
+      "expected": "met"
+    },
+    {
+      "case_id": "simple_missing",
+      "kind": "prerequisite",
+      "course_id": "CSE 332",
+      "completed_courses": [],
+      "grades": {},
+      "expected": "unmet"
+    },
+    {
+      "case_id": "alternative_math126",
+      "kind": "prerequisite",
+      "course_id": "AMATH 352",
+      "completed_courses": [
+        "MATH 126"
+      ],
+      "grades": {},
+      "expected": "met"
+    },
+    {
+      "case_id": "alternative_math136",
+      "kind": "prerequisite",
+      "course_id": "AMATH 352",
+      "completed_courses": [
+        "MATH 136"
+      ],
+      "grades": {},
+      "expected": "met"
+    },
+    {
+      "case_id": "grade_at_threshold",
+      "kind": "prerequisite",
+      "course_id": "CSE 311",
+      "completed_courses": [
+        "CSE 123",
+        "MATH 126"
+      ],
+      "grades": {
+        "CSE 123": 2,
+        "MATH 126": 2
+      },
+      "expected": "met"
+    },
+    {
+      "case_id": "grade_below_threshold",
+      "kind": "prerequisite",
+      "course_id": "CSE 311",
+      "completed_courses": [
+        "CSE 123",
+        "MATH 126"
+      ],
+      "grades": {
+        "CSE 123": 1.9,
+        "MATH 126": 3
+      },
+      "expected": "unmet"
+    },
+    {
+      "case_id": "grade_missing",
+      "kind": "prerequisite",
+      "course_id": "CSE 331",
+      "completed_courses": [
+        "CSE 123"
+      ],
+      "grades": {},
+      "expected": "needs_grade_confirmation"
+    },
+    {
+      "case_id": "ml_all_groups",
+      "kind": "prerequisite",
+      "course_id": "CSE 446",
+      "completed_courses": [
+        "CSE 332",
+        "MATH 208",
+        "CSE 312"
+      ],
+      "grades": {},
+      "expected": "met"
+    },
+    {
+      "case_id": "ml_missing_probability",
+      "kind": "prerequisite",
+      "course_id": "CSE 446",
+      "completed_courses": [
+        "CSE 332",
+        "MATH 208"
+      ],
+      "grades": {},
+      "expected": "unmet"
+    },
+    {
+      "case_id": "data_alternative",
+      "kind": "prerequisite",
+      "course_id": "AMATH 482",
+      "completed_courses": [
+        "AMATH 301",
+        "MATH 208"
+      ],
+      "grades": {},
+      "expected": "met"
+    },
+    {
+      "case_id": "not_listed",
+      "kind": "term_filter",
+      "course_id": "AMATH 481",
+      "expected": false
+    },
+    {
+      "case_id": "tentative_quiz",
+      "kind": "section_filter",
+      "sln": "12953",
+      "expected": "tentative"
+    },
+    {
+      "case_id": "time_conflict",
+      "kind": "time_overlap",
+      "slns": [
+        "12890",
+        "10218"
+      ],
+      "expected": true
+    },
+    {
+      "case_id": "adjacent_lectures",
+      "kind": "time_overlap",
+      "slns": [
+        "12866",
+        "10217"
+      ],
+      "expected": false
+    },
+    {
+      "case_id": "info_340_concurrent_163",
+      "kind": "prerequisite",
+      "course_id": "INFO 340",
+      "completed_courses": [
+        "INFO 201"
+      ],
+      "concurrent_courses": [
+        "CSE 163"
+      ],
+      "grades": {
+        "INFO 201": 2
+      },
+      "expected": "met"
+    },
+    {
+      "case_id": "info_340_concurrent_123_not_allowed",
+      "kind": "prerequisite",
+      "course_id": "INFO 340",
+      "completed_courses": [
+        "INFO 201"
+      ],
+      "concurrent_courses": [
+        "CSE 123"
+      ],
+      "grades": {
+        "INFO 201": 3
+      },
+      "expected": "unmet"
+    },
+    {
+      "case_id": "info_340_grade_missing",
+      "kind": "prerequisite",
+      "course_id": "INFO 340",
+      "completed_courses": [
+        "INFO 201",
+        "CSE 163"
+      ],
+      "grades": {},
+      "expected": "needs_grade_confirmation"
+    },
+    {
+      "case_id": "info_430_low_grade",
+      "kind": "prerequisite",
+      "course_id": "INFO 430",
+      "completed_courses": [
+        "INFO 330"
+      ],
+      "grades": {
+        "INFO 330": 1.9
+      },
+      "expected": "unmet"
+    },
+    {
+      "case_id": "info_490_three_of_four",
+      "kind": "prerequisite",
+      "course_id": "INFO 490",
+      "completed_courses": [
+        "INFO 300",
+        "INFO 360",
+        "INFO 380"
+      ],
+      "grades": {},
+      "expected": "met"
+    },
+    {
+      "case_id": "info_490_two_of_four",
+      "kind": "prerequisite",
+      "course_id": "INFO 490",
+      "completed_courses": [
+        "INFO 300",
+        "INFO 360"
+      ],
+      "grades": {},
+      "expected": "unmet"
+    },
+    {
+      "case_id": "info_370_missing_statistics",
+      "kind": "prerequisite",
+      "course_id": "INFO 370",
+      "completed_courses": [
+        "INFO 201",
+        "CSE 163"
+      ],
+      "grades": {},
+      "expected": "unmet"
+    },
+    {
+      "case_id": "info_370_all_groups",
+      "kind": "prerequisite",
+      "course_id": "INFO 370",
+      "completed_courses": [
+        "INFO 201",
+        "CSE 163",
+        "STAT 221"
+      ],
+      "grades": {},
+      "expected": "met"
+    }
+  ],
+  "info_validation": "Eight added prerequisite cases executed against the dataset helper. This does not run the application backend."
+}

@@ -2,7 +2,7 @@
 
 import {FormEvent,useState} from 'react';
 import {ArrowUp,BookOpen,ShieldCheck,Sparkles,X} from 'lucide-react';
-import type {PlanResponse} from '../types/plan';
+import type {PlanResponse} from '../types/ui-plan';
 
 const answers:Record<string,string>={
  'Why is CSE 332 in this plan?':'CSE 332 is shown as a tentative next step because data structures and parallelism support both technical interviews and stronger ML systems work. DegreeGPS would verify its prerequisites and quarter availability before marking it Validated.',

@@ -2,9 +2,9 @@
 
 import {useState} from 'react';
 import {ArrowLeft,ArrowRight,BookOpenCheck,BrainCircuit,Check,FileText,GraduationCap,ShieldCheck,Sparkles,Target} from 'lucide-react';
-import type {PlanRequest} from '../types/plan';
+import type {PlanRequest} from '../types/ui-plan';
 
-export const demoRequest:PlanRequest={majors:['Computer Science','Applied Mathematics'],completed_courses:['CSE 123','MATH 126','MATH 207'],in_progress_courses:['CSE 311','CSE 351','INFO 201'],target_role:'AI / Machine Learning Intern',target_summer:2027,max_courses_per_term:3,start_term:'autumn',start_year:2026,horizon_terms:4};
+export const demoRequest:PlanRequest={goal_draft:{type:'internship',track:'ml',deadline:{term:'summer',year:2027},notes:'I want a balanced route to an ML internship with a portfolio project.',career_hours_per_week:6,intensity:'balanced'},majors:['Computer Science','Applied Mathematics'],completed_courses:['CSE 123','MATH 126','MATH 207'],in_progress_courses:['CSE 311','CSE 351','INFO 201'],target_role:'AI / Machine Learning Intern',target_summer:2027,max_courses_per_term:3,start_term:'autumn',start_year:2026,graduation_term:'spring',graduation_year:2029,horizon_terms:8};
 const steps=['Student','Transcript','Goal','DegreeGPS'];
 
 export function DemoTour({onExit,onGenerate}:{onExit:()=>void;onGenerate:(request:PlanRequest)=>void}){

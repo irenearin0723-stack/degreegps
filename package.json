@@ -1,24 +1,23 @@
 {
   "name": "degreegps",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "DegreeGPS academic and career planning platform",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "check": "node scripts/check-contract.mjs && tsc --noEmit",
-    "check:mock": "node scripts/check-contract.mjs",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.468.0",
-    "next": "^15.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.7.0"
+    "check": "npm run typecheck && npm run validate:data && npm test && npm run check:mock",
+    "check:mock": "node --conditions=react-server --import tsx scripts/check-contract.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=react-server --import tsx --test tests/*.test.ts",
+    "validate:data": "node --conditions=react-server --import tsx scripts/validate-data.ts",
+    "validate:data:artifacts": "python3 scripts/validate-data-artifacts.py",
+    "verify:http": "node --import tsx scripts/verify-http.ts",
+    "build:index": "node --env-file-if-exists=.env.local --conditions=react-server --import tsx scripts/build-index.ts",
+    "build:free": "node scripts/build-free.mjs",
+    "check:serverless": "node scripts/check-serverless-bundle.mjs",
+    "verify:deployment": "node scripts/verify-deployment.mjs"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
@@ -26,6 +25,24 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "tsx": "^4.20.0",
+    "pdf-lib": "^1.17.1"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.0.0",
+    "openai": "^6.0.0",
+    "pdf-parse": "^2.4.5",
+    "server-only": "^0.0.1"
   }
 }

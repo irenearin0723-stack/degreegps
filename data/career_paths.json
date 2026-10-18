@@ -1,0 +1,404 @@
+{
+  "schema_version": "2.0.0",
+  "paths": [
+    {
+      "type": "internship",
+      "track": "swe",
+      "skills": [
+        "Programming",
+        "Testing",
+        "Data structures"
+      ],
+      "projects": [
+        "Build and test a small API with a documented client"
+      ],
+      "actions": [
+        "Identify skill gaps and research current internship openings; verify real deadlines",
+        "Prepare resume, GitHub, and one scoped portfolio project",
+        "Submit suitable applications and track responses",
+        "Practice interviews and explain project decisions"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "internship",
+      "track": "ml",
+      "skills": [
+        "Python",
+        "Linear algebra",
+        "Model evaluation"
+      ],
+      "projects": [
+        "Evaluate a baseline model on a public, non-sensitive dataset"
+      ],
+      "actions": [
+        "Identify skill gaps and research current internship openings; verify real deadlines",
+        "Prepare resume, GitHub, and one scoped portfolio project",
+        "Submit suitable applications and track responses",
+        "Practice interviews and explain project decisions"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "internship",
+      "track": "data",
+      "skills": [
+        "Statistics",
+        "SQL",
+        "Data cleaning"
+      ],
+      "projects": [
+        "Create a reproducible public-data analysis"
+      ],
+      "actions": [
+        "Identify skill gaps and research current internship openings; verify real deadlines",
+        "Prepare resume, GitHub, and one scoped portfolio project",
+        "Submit suitable applications and track responses",
+        "Practice interviews and explain project decisions"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "internship",
+      "track": "systems",
+      "skills": [
+        "Operating systems concepts",
+        "Networking",
+        "Performance measurement"
+      ],
+      "projects": [
+        "Measure and explain a small concurrent program"
+      ],
+      "actions": [
+        "Identify skill gaps and research current internship openings; verify real deadlines",
+        "Prepare resume, GitHub, and one scoped portfolio project",
+        "Submit suitable applications and track responses",
+        "Practice interviews and explain project decisions"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "internship",
+      "track": "hci",
+      "skills": [
+        "User research",
+        "Accessible prototyping",
+        "Usability evaluation"
+      ],
+      "projects": [
+        "Prototype an accessible workflow and document consent-based feedback"
+      ],
+      "actions": [
+        "Identify skill gaps and research current internship openings; verify real deadlines",
+        "Prepare resume, GitHub, and one scoped portfolio project",
+        "Submit suitable applications and track responses",
+        "Practice interviews and explain project decisions"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "research",
+      "track": "swe",
+      "skills": [
+        "Programming",
+        "Testing",
+        "Data structures"
+      ],
+      "projects": [
+        "Build and test a small API with a documented client"
+      ],
+      "actions": [
+        "Identify research questions and potential labs; verify actual opportunities",
+        "Read introductory papers and build foundational knowledge",
+        "Complete a reproducible mini-project and prepare a research resume",
+        "Draft personalized professor outreach and track respectful follow-ups"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "research",
+      "track": "ml",
+      "skills": [
+        "Python",
+        "Linear algebra",
+        "Model evaluation"
+      ],
+      "projects": [
+        "Evaluate a baseline model on a public, non-sensitive dataset"
+      ],
+      "actions": [
+        "Identify research questions and potential labs; verify actual opportunities",
+        "Read introductory papers and build foundational knowledge",
+        "Complete a reproducible mini-project and prepare a research resume",
+        "Draft personalized professor outreach and track respectful follow-ups"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "research",
+      "track": "data",
+      "skills": [
+        "Statistics",
+        "SQL",
+        "Data cleaning"
+      ],
+      "projects": [
+        "Create a reproducible public-data analysis"
+      ],
+      "actions": [
+        "Identify research questions and potential labs; verify actual opportunities",
+        "Read introductory papers and build foundational knowledge",
+        "Complete a reproducible mini-project and prepare a research resume",
+        "Draft personalized professor outreach and track respectful follow-ups"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "research",
+      "track": "systems",
+      "skills": [
+        "Operating systems concepts",
+        "Networking",
+        "Performance measurement"
+      ],
+      "projects": [
+        "Measure and explain a small concurrent program"
+      ],
+      "actions": [
+        "Identify research questions and potential labs; verify actual opportunities",
+        "Read introductory papers and build foundational knowledge",
+        "Complete a reproducible mini-project and prepare a research resume",
+        "Draft personalized professor outreach and track respectful follow-ups"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "research",
+      "track": "hci",
+      "skills": [
+        "User research",
+        "Accessible prototyping",
+        "Usability evaluation"
+      ],
+      "projects": [
+        "Prototype an accessible workflow and document consent-based feedback"
+      ],
+      "actions": [
+        "Identify research questions and potential labs; verify actual opportunities",
+        "Read introductory papers and build foundational knowledge",
+        "Complete a reproducible mini-project and prepare a research resume",
+        "Draft personalized professor outreach and track respectful follow-ups"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "projects",
+      "track": "swe",
+      "skills": [
+        "Programming",
+        "Testing",
+        "Data structures"
+      ],
+      "projects": [
+        "Build and test a small API with a documented client"
+      ],
+      "actions": [
+        "Identify skill gaps and choose a learning path",
+        "Scope and build a small project with measurable goals",
+        "Document tests, decisions, and limitations",
+        "Publish a portfolio and reflect on next steps"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "projects",
+      "track": "ml",
+      "skills": [
+        "Python",
+        "Linear algebra",
+        "Model evaluation"
+      ],
+      "projects": [
+        "Evaluate a baseline model on a public, non-sensitive dataset"
+      ],
+      "actions": [
+        "Identify skill gaps and choose a learning path",
+        "Scope and build a small project with measurable goals",
+        "Document tests, decisions, and limitations",
+        "Publish a portfolio and reflect on next steps"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "projects",
+      "track": "data",
+      "skills": [
+        "Statistics",
+        "SQL",
+        "Data cleaning"
+      ],
+      "projects": [
+        "Create a reproducible public-data analysis"
+      ],
+      "actions": [
+        "Identify skill gaps and choose a learning path",
+        "Scope and build a small project with measurable goals",
+        "Document tests, decisions, and limitations",
+        "Publish a portfolio and reflect on next steps"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "projects",
+      "track": "systems",
+      "skills": [
+        "Operating systems concepts",
+        "Networking",
+        "Performance measurement"
+      ],
+      "projects": [
+        "Measure and explain a small concurrent program"
+      ],
+      "actions": [
+        "Identify skill gaps and choose a learning path",
+        "Scope and build a small project with measurable goals",
+        "Document tests, decisions, and limitations",
+        "Publish a portfolio and reflect on next steps"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "projects",
+      "track": "hci",
+      "skills": [
+        "User research",
+        "Accessible prototyping",
+        "Usability evaluation"
+      ],
+      "projects": [
+        "Prototype an accessible workflow and document consent-based feedback"
+      ],
+      "actions": [
+        "Identify skill gaps and choose a learning path",
+        "Scope and build a small project with measurable goals",
+        "Document tests, decisions, and limitations",
+        "Publish a portfolio and reflect on next steps"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "explore",
+      "track": "swe",
+      "skills": [
+        "Programming",
+        "Testing",
+        "Data structures"
+      ],
+      "projects": [
+        "Build and test a small API with a documented client"
+      ],
+      "actions": [
+        "Compare several directions using introductory resources",
+        "Try two short projects across different tracks",
+        "Talk with advisers or practitioners about interests",
+        "Reevaluate preferences and select a next learning goal"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "explore",
+      "track": "ml",
+      "skills": [
+        "Python",
+        "Linear algebra",
+        "Model evaluation"
+      ],
+      "projects": [
+        "Evaluate a baseline model on a public, non-sensitive dataset"
+      ],
+      "actions": [
+        "Compare several directions using introductory resources",
+        "Try two short projects across different tracks",
+        "Talk with advisers or practitioners about interests",
+        "Reevaluate preferences and select a next learning goal"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "explore",
+      "track": "data",
+      "skills": [
+        "Statistics",
+        "SQL",
+        "Data cleaning"
+      ],
+      "projects": [
+        "Create a reproducible public-data analysis"
+      ],
+      "actions": [
+        "Compare several directions using introductory resources",
+        "Try two short projects across different tracks",
+        "Talk with advisers or practitioners about interests",
+        "Reevaluate preferences and select a next learning goal"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "explore",
+      "track": "systems",
+      "skills": [
+        "Operating systems concepts",
+        "Networking",
+        "Performance measurement"
+      ],
+      "projects": [
+        "Measure and explain a small concurrent program"
+      ],
+      "actions": [
+        "Compare several directions using introductory resources",
+        "Try two short projects across different tracks",
+        "Talk with advisers or practitioners about interests",
+        "Reevaluate preferences and select a next learning goal"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "explore",
+      "track": "hci",
+      "skills": [
+        "User research",
+        "Accessible prototyping",
+        "Usability evaluation"
+      ],
+      "projects": [
+        "Prototype an accessible workflow and document consent-based feedback"
+      ],
+      "actions": [
+        "Compare several directions using introductory resources",
+        "Try two short projects across different tracks",
+        "Talk with advisers or practitioners about interests",
+        "Reevaluate preferences and select a next learning goal"
+      ],
+      "data_status": "recommended"
+    },
+    {
+      "type": "explore",
+      "track": "undecided",
+      "skills": [
+        "Problem framing",
+        "Technical communication",
+        "Foundational programming"
+      ],
+      "projects": [
+        "Try a data notebook and a small interactive prototype"
+      ],
+      "actions": [
+        "Compare several directions using introductory resources",
+        "Try two short projects across different tracks",
+        "Talk with advisers or practitioners about interests",
+        "Reevaluate preferences and select a next learning goal"
+      ],
+      "data_status": "recommended"
+    }
+  ]
+}

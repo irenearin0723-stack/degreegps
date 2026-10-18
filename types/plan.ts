@@ -1,123 +1,119 @@
-/**
- * DegreeGPS shared API contract — v1.0.0.
- *
- * IMPORTANT: Names are snake_case to exactly match API JSON.
- * Do not silently rename keys in the frontend or backend.
- * This file defines types, not runtime validation.
- */
-
-export type AcademicTerm = 'autumn' | 'winter' | 'spring' | 'summer';
-
-export type CourseCategory =
-  | 'major'
-  | 'math'
-  | 'elective'
-  | 'general_education'
-  | 'other';
-
-export interface PlanRequest {
-  /** Examples: ['Computer Science', 'Applied Mathematics']. */
-  majors: string[];
-  /** Canonical codes, e.g. 'CSE 123'. No duplicates. */
-  completed_courses: string[];
-  in_progress_courses: string[];
-  /** Free text at MVP stage; e.g. 'ML Engineer Intern'. */
-  target_role: string;
-  /** Calendar year of the desired summer internship (e.g. 2027). */
-  target_summer: number;
-  /** Maximum courses per quarter, inclusive; range 1–5. */
-  max_courses_per_term: number;
-  start_term: AcademicTerm;
-  start_year: number;
-  /** Number of consecutive quarters, including summers; range 1–8. */
-  horizon_terms: number;
-}
-
-export interface PlannedCourse {
-  code: string;
-  title: string;
-  /** Null means credits have not been verified. Do not render as 0. */
-  credits: number | null;
-  category: CourseCategory;
-  status: 'planned' | 'in_progress';
-  /** Explanation for why this course appears in the suggested path. */
-  rationale: string;
-  /** Every ID must appear in PlanResponse.sources. Can be []. */
-  source_ids: string[];
-}
-
-export interface QuarterPlan {
-  /** Format: YYYY-term; e.g. '2027-winter'. */
-  id: string;
-  year: number;
-  term: AcademicTerm;
-  /** May be empty during summer. */
-  courses: PlannedCourse[];
-  notes: string;
-}
-
-export interface CareerMilestone {
-  id: string;
-  /** Must match a QuarterPlan.id. */
-  quarter_id: string;
-  title: string;
-  description: string;
-  action_items: string[];
-  status: 'not_started' | 'in_progress' | 'done';
-}
-
-export interface RecommendedSkill {
-  name: string;
-  reason: string;
-  priority: 'now' | 'next' | 'later';
-}
-
-export interface RecommendedProject {
-  title: string;
-  description: string;
-  skills: string[];
-}
-
-export interface PlanWarning {
-  code: string;
-  severity: 'info' | 'warning' | 'blocking';
-  message: string;
-  /** Codes (not quarter IDs) to highlight; can be []. */
-  affected_course_codes: string[];
-}
-
-export interface PlanSource {
-  id: string;
-  title: string;
-  /** Null means no verified link is available. Never invent a URL. */
-  url: string | null;
-  kind: 'official' | 'third_party' | 'mock';
-  /** ISO-8601 time or null if unknown. */
-  retrieved_at: string | null;
-}
-
-export interface PlanResponse {
-  schema_version: '1.0.0';
-  plan_id: string;
-  /** 'mock' responses are demo-only and not academic advice. */
-  mode: 'mock' | 'generated';
-  /** ISO-8601 date-time. */
-  generated_at: string;
-  /** Echo the normalized request so the UI knows which inputs were used. */
-  request: PlanRequest;
-  quarters: QuarterPlan[];
-  career_milestones: CareerMilestone[];
-  /** Optional until the v2 backend rollout; the UI safely omits missing sections. */
-  recommended_skills?: RecommendedSkill[];
-  recommended_projects?: RecommendedProject[];
-  warnings: PlanWarning[];
-  sources: PlanSource[];
-}
-
-export interface ApiErrorResponse {
-  error: {
-    code: 'INVALID_REQUEST' | 'UNPROCESSABLE_PLAN' | 'INTERNAL_ERROR';
-    message: string;
-    details?: string[];
-  };
-}
+/** Canonical contract v2. Runtime schemas and TypeScript types share one source. */
+import { z } from 'zod';
+import { CourseIdSchema, TrackSchema, AcademicTermSchema } from './course';
+import { AcademicDecisionSchema } from './registration';
+export type { AcademicTerm } from './course';
+export const GoalTypeSchema = z.enum(['internship', 'research', 'projects', 'explore']);
+export const SUPPORTED_GOALS = {
+  internship: ['swe', 'ml', 'data', 'systems', 'hci'],
+  research: ['swe', 'ml', 'data', 'systems', 'hci'],
+  projects: ['swe', 'ml', 'data', 'systems', 'hci'],
+  explore: ['swe', 'ml', 'data', 'systems', 'hci', 'undecided'],
+} as const;
+export const GoalSchema = z.object({
+  type: GoalTypeSchema,
+  track: TrackSchema,
+  deadline: z.iso.date().nullable(),
+  notes: z.string().trim().max(2000).optional(),
+}).strict().superRefine((goal, ctx) => {
+  if (!(SUPPORTED_GOALS[goal.type] as readonly string[]).includes(goal.track))
+    ctx.addIssue({ code: 'custom', path: ['track'], message: 'Undecided is supported only for exploration; select a focus track for this goal.' });
+});
+export type Goal = z.infer<typeof GoalSchema>;
+export const TermIdSchema = z.string().regex(/^2\d{3}-(winter|spring|summer|autumn)$/);
+const ReviewedGradesSchema = z.record(z.string(), z.number().min(0).max(4)).superRefine((grades, ctx) => {
+  const ids = Object.keys(grades).map(id => CourseIdSchema.safeParse(id));
+  if (ids.some(id => !id.success) || new Set(ids.filter(id => id.success).map(id => id.data)).size !== ids.length)
+    ctx.addIssue({ code: 'custom', message: 'Invalid or duplicate normalized reviewed grade IDs' });
+  if (ids.length > 300) ctx.addIssue({ code: 'custom', message: 'Too many reviewed grades' });
+}).transform(grades => Object.fromEntries(Object.entries(grades).map(([id, grade]) => [CourseIdSchema.parse(id), grade])));
+export const PlanRequestSchema = z.object({
+  major: z.string().trim().min(1).max(200),
+  completed_courses: z.array(CourseIdSchema).max(300),
+  in_progress_courses: z.array(CourseIdSchema).max(30),
+  // Explicit user-confirmed inputs. The web form sends reviewed_grades only for numeric grades of transcript rows
+  // the student confirmed as completed; the parser itself never populates them.
+  reviewed_grades: ReviewedGradesSchema.optional(),
+  concurrent_courses: z.record(TermIdSchema, z.array(CourseIdSchema).max(30)).optional(),
+  selected_slns: z.record(TermIdSchema, z.array(z.string().regex(/^\d{5}$/)).max(30)).optional(),
+  goal: GoalSchema,
+  max_courses_per_term: z.number().int().min(1).max(5),
+  start_term: TermIdSchema.refine(value => Number(value.slice(0, 4)) <= 2099, 'Start year must be 2000–2099').optional(),
+  // Expected graduation quarter; plans run through it (summers skipped). Omitted: three regular quarters.
+  graduation_term: TermIdSchema.refine(value => Number(value.slice(0, 4)) <= 2099, 'Graduation year must be 2000–2099').optional(),
+  preferences: z.string().trim().max(2000).optional(),
+  // Explicit opt-in: sends structured goal/course plan to OpenAI, never PDF or grades.
+  use_ai_explanation: z.boolean().default(false),
+}).strict().superRefine((request, ctx) => {
+  const all = [...request.completed_courses, ...request.in_progress_courses];
+  if (new Set(all).size !== all.length)
+    ctx.addIssue({ code: 'custom', path: ['completed_courses'], message: 'Duplicate or conflicting course IDs after normalization' });
+  if (Object.keys(request.reviewed_grades ?? {}).some(id => !request.completed_courses.includes(id)))
+    ctx.addIssue({ code: 'custom', path: ['reviewed_grades'], message: 'Reviewed grades must describe confirmed completed courses only' });
+  for (const [term, ids] of Object.entries(request.concurrent_courses ?? {})) {
+    if (new Set(ids).size !== ids.length || ids.some(id => request.completed_courses.includes(id)))
+      ctx.addIssue({ code: 'custom', path: ['concurrent_courses', term], message: 'Concurrent intentions must be unique and not already completed' });
+  }
+});
+export type PlanRequest = z.infer<typeof PlanRequestSchema>;
+export const PlanWarningSchema = z.object({
+  code: z.string().min(1), severity: z.enum(['info', 'warning', 'blocking']),
+  message: z.string().min(1), affected_course_codes: z.array(CourseIdSchema),
+}).strict();
+export type PlanWarning = z.infer<typeof PlanWarningSchema>;
+export const PlanSourceSchema = z.object({
+  id: z.string(), title: z.string(), url: z.url().nullable(),
+  kind: z.enum(['official', 'mock']), verified_at: z.iso.date().nullable(),
+  data_status: z.enum(['verified', 'sample', 'unknown']),
+}).strict();
+export type PlanSource = z.infer<typeof PlanSourceSchema>;
+export const PlannedCourseSchema = z.object({
+  id: CourseIdSchema, title: z.string(), credits: z.number().nullable(),
+  explanation: z.string(), scheduling_status: z.enum(['eligible', 'tentative']),
+  source_ids: z.array(z.string()),
+}).strict();
+export type PlannedCourse = z.infer<typeof PlannedCourseSchema>;
+export const QuarterPlanSchema = z.object({
+  term: TermIdSchema, courses: z.array(PlannedCourseSchema), notes: z.string(),
+}).strict();
+export type QuarterPlan = z.infer<typeof QuarterPlanSchema>;
+export const CareerMilestoneSchema = z.object({
+  id: z.string(), action: z.string(), timeframe: z.object({
+    start: z.iso.date(), end: z.iso.date(), basis: z.literal('recommended'),
+  }).strict(), explanation: z.string(), associated_goal: GoalTypeSchema,
+  related_course_ids: z.array(CourseIdSchema),
+}).strict();
+export type CareerMilestone = z.infer<typeof CareerMilestoneSchema>;
+export const PlanResponseSchema = z.object({
+  schema_version: z.literal('2.0.0'), plan_id: z.string(),
+  mode: z.enum(['mock', 'generated']), generated_at: z.iso.datetime(),
+  request: PlanRequestSchema, quarters: z.array(QuarterPlanSchema).min(1).max(18),
+  career_milestones: z.array(CareerMilestoneSchema),
+  recommended_skills: z.array(z.string()), recommended_projects: z.array(z.string()),
+  warnings: z.array(PlanWarningSchema), sources: z.array(PlanSourceSchema),
+  plan_summary: z.string().optional(),
+  academic_decisions: z.array(AcademicDecisionSchema).optional(),
+}).strict().superRefine((plan, ctx) => {
+  const ids = new Set(plan.sources.map(s => s.id));
+  const seen = new Set([...plan.request.completed_courses, ...plan.request.in_progress_courses]);
+  for (const decision of plan.academic_decisions ?? []) {
+    if ([...decision.source_ids, ...decision.sections.flatMap(s => s.source_ids)].some(id => !ids.has(id)))
+      ctx.addIssue({ code: 'custom', message: 'Broken academic decision source reference' });
+  }
+  for (const q of plan.quarters) {
+    if (q.courses.length > plan.request.max_courses_per_term)
+      ctx.addIssue({ code: 'custom', message: 'Course load exceeded' });
+    for (const course of q.courses) {
+      if (seen.has(course.id) || course.source_ids.some(id => !ids.has(id)))
+        ctx.addIssue({ code: 'custom', message: 'Duplicate course or broken source reference' });
+      seen.add(course.id);
+    }
+  }
+  if (plan.mode === 'mock' && !plan.warnings.some(w => w.code === 'UNVERIFIED_CATALOG'))
+    ctx.addIssue({ code: 'custom', message: 'Mock plans must disclose sample data' });
+});
+export type PlanResponse = z.infer<typeof PlanResponseSchema>;
+export const ApiErrorResponseSchema = z.object({ error: z.object({
+  code: z.string(), message: z.string(), details: z.array(z.string()).optional(),
+}).strict() }).strict();
+export type ApiErrorResponse = z.infer<typeof ApiErrorResponseSchema>;

@@ -1,21 +1,17 @@
 {
-  "majors": [
-    "Computer Science",
-    "Applied Mathematics"
-  ],
+  "major": "Computer Science + Applied Mathematics",
   "completed_courses": [
     "CSE 123",
     "MATH 126"
   ],
-  "in_progress_courses": [
-    "CSE 311",
-    "CSE 351",
-    "INFO 201"
-  ],
-  "target_role": "Machine Learning Engineer Intern",
-  "target_summer": 2027,
-  "max_courses_per_term": 3,
-  "start_term": "autumn",
-  "start_year": 2026,
-  "horizon_terms": 4
+  "in_progress_courses": [],
+  "goal": {
+    "type": "internship",
+    "track": "ml",
+    "deadline": "2027-06-01",
+    "notes": "Fictional student preparing for Summer 2027."
+  },
+  "max_courses_per_term": 2,
+  "start_term": "2026-autumn",
+  "use_ai_explanation": false
 }

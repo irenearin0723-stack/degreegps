@@ -1,0 +1,259 @@
+{
+  "json_files": [
+    {
+      "file": "archive/2026-10-17_registration-handoff-v1/registration_evidence_handoff.json",
+      "valid_json": true
+    },
+    {
+      "file": "archive/2026-10-17_registration-handoff-v1/winter_2027_registration_review.json",
+      "valid_json": true
+    },
+    {
+      "file": "career_paths.json",
+      "valid_json": true
+    },
+    {
+      "file": "index/embeddings.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/major_requirements.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/policy_issues.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/program_catalog.json",
+      "valid_json": true
+    },
+    {
+      "file": "major_requirements/requirements_test_cases.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/courses.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/external_prerequisites.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/info_winter_inventory.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/metadata.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/prerequisites.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/projected_offerings.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/registration_rules.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/sections.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/test_cases.json",
+      "valid_json": true
+    }
+  ],
+  "total_courses": 351,
+  "raw_schema_valid": 351,
+  "raw_required_fields_missing": {},
+  "direct_canonical_valid": 0,
+  "direct_canonical_rejected": 351,
+  "canonical_fields_missing_before_adapter": {
+    "title": 351,
+    "prerequisite_groups": 351,
+    "offered_terms": 351,
+    "eligible_majors": 351,
+    "source_url": 351,
+    "verified_at": 351,
+    "data_status": 351,
+    "tracks": 351,
+    "foundation_priority": 351
+  },
+  "normalized_schema_valid": 351,
+  "normalized_rejected": 0,
+  "rejected_records": [],
+  "duplicate_ids": [],
+  "unnormalized_ids": [],
+  "placeholder_course_records": [],
+  "valid_prerequisite_records": 351,
+  "preserved_or_branches": 1003,
+  "external_prerequisite_ids": 55,
+  "dangling_prerequisites": [],
+  "catalog_source_and_date_preserved": 351,
+  "listed_winter_2027": 230,
+  "not_listed_winter_2027": [
+    "AMATH 353",
+    "AMATH 401",
+    "AMATH 481",
+    "AMATH 483",
+    "INFO 443",
+    "INFO 491",
+    "A A 260",
+    "A A 301",
+    "A A 310",
+    "A A 311",
+    "A A 320",
+    "A A 322",
+    "A A 332",
+    "A A 395",
+    "A A 411",
+    "A A 421",
+    "A A 447",
+    "A A 460",
+    "ASTR 321",
+    "ASTR 322",
+    "ASTR 480",
+    "ASTR 481",
+    "BIOEN 461",
+    "BIOL 130",
+    "BIOST 425",
+    "CFRM 420",
+    "CFRM 421",
+    "CHEM 143",
+    "CHEM 145",
+    "CHEM 165",
+    "CSE 142",
+    "CSE 143",
+    "CSE 442",
+    "E E 397",
+    "E E 406",
+    "E E 418",
+    "E E 437",
+    "E E 449",
+    "E E 461",
+    "E E 478",
+    "E E 498",
+    "ECON 424",
+    "ECON 481",
+    "ECON 483",
+    "ECON 484",
+    "ECON 487",
+    "ECON 488",
+    "ENGR 333",
+    "ENGR 490",
+    "HCDE 316",
+    "HCDE 322",
+    "HCDE 410",
+    "HCDE 438",
+    "HCDE 439",
+    "HCDE 493",
+    "HCDE 497",
+    "IND E 250",
+    "IND E 310",
+    "IND E 321",
+    "IND E 337",
+    "IND E 351",
+    "IND E 412",
+    "IND E 427",
+    "IND E 430",
+    "IND E 439",
+    "IND E 455",
+    "IND E 491",
+    "IND E 495",
+    "M E 331",
+    "M E 374",
+    "M E 414",
+    "M E 469",
+    "M E 471",
+    "M E 473",
+    "M E 480",
+    "MATH 134",
+    "MATH 136",
+    "MATH 334",
+    "MATH 336",
+    "MATH 402",
+    "MATH 404",
+    "MATH 409",
+    "MATH 426",
+    "MATH 427",
+    "MATH 441",
+    "MATH 443",
+    "MATH 461",
+    "MATH 464",
+    "MATH 491",
+    "MATH 493",
+    "PHYS 141",
+    "PHYS 143",
+    "PHYS 224",
+    "PHYS 231",
+    "PHYS 321",
+    "PHYS 323",
+    "PHYS 324",
+    "PHYS 328",
+    "PHYS 329",
+    "PHYS 331",
+    "PHYS 335",
+    "PHYS 432",
+    "PHYS 433",
+    "PHYS 434",
+    "PHYS 494",
+    "PHYS 496",
+    "PHYS 498",
+    "Q SCI 403",
+    "STAT 303",
+    "STAT 341",
+    "STAT 403",
+    "STAT 424",
+    "STAT 425",
+    "STAT 435",
+    "STAT 451",
+    "STAT 491",
+    "STAT 493",
+    "AMATH 403",
+    "AMATH 422",
+    "INFO 180",
+    "INFO 464"
+  ],
+  "not_collected_winter_2027": 0,
+  "unresolved_enrollment_records": 351,
+  "missing_section_meetings": 0,
+  "incomplete_verification_excluded": 351,
+  "independently_reverified_by_this_run": 0,
+  "sections": 1240,
+  "duplicate_slns": 0,
+  "orphan_sections": 0,
+  "metadata_counts_match": true,
+  "major_requirement_groups": 622,
+  "major_acceptance_fixtures_outside_mvp": 66,
+  "dangling_major_source_ids": [],
+  "notes": [
+    "Source URLs/dates are preserved human-curated provenance; this audit does not reverify UW policy.",
+    "Enrollment restrictions remain unresolved for every course; they are disclosed on planned courses, not used to block them. A Winter 2027 listing is never generalized into another term; later terms use the catalog offering pattern as tentative evidence.",
+    "The planner follows the major and admission rules of the matched requirement profile; credit allocation across majors, general education and degree-wide totals are not implemented."
+  ],
+  "projected_source_pages": 3,
+  "projected_source_entries": 164,
+  "effective_offerings": {
+    "2027-winter": {
+      "confirmed": 230,
+      "projected": 0,
+      "unknown": 121
+    },
+    "2027-spring": {
+      "confirmed": 0,
+      "projected": 270,
+      "unknown": 81
+    },
+    "2027-summer": {
+      "confirmed": 0,
+      "projected": 68,
+      "unknown": 283
+    }
+  }
+}

@@ -1,0 +1,2487 @@
+{
+  "schema_version": "registration-handoff-v1",
+  "checked_at": "2026-10-17",
+  "term": "Winter 2027",
+  "purpose": "Import existing evidence and connect prerequisite evaluation. This is not a fresh registration eligibility determination.",
+  "report_access": {
+    "summary_provided_by_user": true,
+    "full_report_available_locally": false,
+    "reported_1378_checks_independently_rerun": false,
+    "application_backend_inspected": false
+  },
+  "input_files": [
+    {
+      "name": "courses.json",
+      "sha256": "fed3cf9a72866a97edb55a6b27433d98348fbbcab7f189ee575926746faa1aeb"
+    },
+    {
+      "name": "prerequisites.json",
+      "sha256": "4850925d193726d135a4ae038ece15c4513ceaedc284494c9e38c6df6e00a217"
+    },
+    {
+      "name": "sections.json",
+      "sha256": "b8c11f17951d34ab5ac97fbbc555cd678c5095ea50b22cb48c5e5140e933c0d2"
+    }
+  ],
+  "counts": {
+    "courses": 64,
+    "section_records": 115,
+    "sections_with_recorded_notes": 32,
+    "grade_sensitive_courses": 4
+  },
+  "minimum_grade_rules": {
+    "CSE 311": {
+      "any_of": [
+        {
+          "all_of": [
+            "CSE 123",
+            "MATH 126"
+          ],
+          "min_grades": {
+            "CSE 123": 2,
+            "MATH 126": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 123",
+            "MATH 135"
+          ],
+          "min_grades": {
+            "CSE 123": 2,
+            "MATH 135": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 143",
+            "MATH 126"
+          ],
+          "min_grades": {
+            "CSE 143": 2,
+            "MATH 126": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 143",
+            "MATH 135"
+          ],
+          "min_grades": {
+            "CSE 143": 2,
+            "MATH 135": 2
+          }
+        }
+      ],
+      "summary": "(CSE 123 OR CSE 143) AND (MATH 126 OR MATH 135); minimum grade 2.0 in each required course",
+      "source_url": "https://www.washington.edu/students/crscat/cse.html#cse311",
+      "checked_at": "2026-10-17"
+    },
+    "CSE 331": {
+      "any_of": [
+        {
+          "all_of": [
+            "CSE 123"
+          ],
+          "min_grades": {
+            "CSE 123": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 143"
+          ],
+          "min_grades": {
+            "CSE 143": 2
+          }
+        }
+      ],
+      "summary": "(CSE 123 OR CSE 143); minimum grade 2.0 in each required course",
+      "source_url": "https://www.washington.edu/students/crscat/cse.html#cse331",
+      "checked_at": "2026-10-17"
+    },
+    "INFO 340": {
+      "any_of": [
+        {
+          "all_of": [
+            "CSE 123",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 143",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 154",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 163",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          },
+          "concurrent_allowed": [
+            "CSE 163"
+          ]
+        }
+      ],
+      "summary": "(CSE 123 OR CSE 143 OR CSE 154 OR CSE 163) AND (INFO 201); minimum grade 2.0 in INFO 201; CSE 163 may be taken concurrently",
+      "catalog_prerequisite_status": "listed",
+      "source_url": "https://www.washington.edu/students/crscat/info.html#info340",
+      "checked_at": "2026-10-17"
+    },
+    "INFO 430": {
+      "any_of": [
+        {
+          "all_of": [
+            "INFO 330"
+          ],
+          "min_grades": {
+            "INFO 330": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 414"
+          ],
+          "min_grades": {
+            "CSE 414": 2
+          }
+        },
+        {
+          "all_of": [
+            "I S 445"
+          ],
+          "min_grades": {
+            "I S 445": 2
+          }
+        }
+      ],
+      "summary": "(INFO 330 OR CSE 414 OR I S 445); minimum grade 2.0 in the selected prerequisite",
+      "catalog_prerequisite_status": "listed",
+      "source_url": "https://www.washington.edu/students/crscat/info.html#info430",
+      "checked_at": "2026-10-17"
+    }
+  },
+  "course_concurrency_rules": {
+    "INFO 340": {
+      "any_of": [
+        {
+          "all_of": [
+            "CSE 123",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 143",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 154",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          }
+        },
+        {
+          "all_of": [
+            "CSE 163",
+            "INFO 201"
+          ],
+          "min_grades": {
+            "INFO 201": 2
+          },
+          "concurrent_allowed": [
+            "CSE 163"
+          ]
+        }
+      ],
+      "summary": "(CSE 123 OR CSE 143 OR CSE 154 OR CSE 163) AND (INFO 201); minimum grade 2.0 in INFO 201; CSE 163 may be taken concurrently",
+      "catalog_prerequisite_status": "listed",
+      "source_url": "https://www.washington.edu/students/crscat/info.html#info340",
+      "checked_at": "2026-10-17"
+    }
+  },
+  "section_evidence": [
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12854",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 15, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12854",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12855",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12855",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12856",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12856",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12857",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12857",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12858",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12858",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "12859",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12859",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "12860",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 15, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12860",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "BA",
+      "sln": "12861",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12861",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "BB",
+      "sln": "12862",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12862",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "BC",
+      "sln": "12863",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12863",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "BD",
+      "sln": "12864",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12864",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "Winter 2027",
+      "section": "BE",
+      "sln": "12865",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12865",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12866",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 15, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12866",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12867",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12867",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12868",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12868",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12869",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12869",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12870",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12870",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "12871",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12871",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "AF",
+      "sln": "12872",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Open for registration, per section note.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12872",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "12873",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 15, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12873",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "BA",
+      "sln": "12874",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12874",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "BB",
+      "sln": "12875",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12875",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "BC",
+      "sln": "12876",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12876",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "BD",
+      "sln": "12877",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12877",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "BE",
+      "sln": "12878",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12878",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "Winter 2027",
+      "section": "BF",
+      "sln": "12879",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Open for registration, per section note.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12879",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12880",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 16, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12880",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12881",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12881",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12882",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12882",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12883",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12883",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12884",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12884",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "12885",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 16, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12885",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "BA",
+      "sln": "12886",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12886",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "BB",
+      "sln": "12887",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12887",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "BC",
+      "sln": "12888",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12888",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "Winter 2027",
+      "section": "BD",
+      "sln": "12889",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12889",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12890",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 18, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12890",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12891",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12891",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12892",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12892",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12893",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12893",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12894",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12894",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "12895",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12895",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "AF",
+      "sln": "12896",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Cross-listed quiz note: AF/BD.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12896",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "AG",
+      "sln": "12897",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12897",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "12898",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Tentative final: March 18, 12:30-14:20.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12898",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "BA",
+      "sln": "12899",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12899",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "BB",
+      "sln": "12900",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12900",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "BC",
+      "sln": "12901",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12901",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "Winter 2027",
+      "section": "BD",
+      "sln": "12902",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Cross-listed quiz note: AF/BD.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12902",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12903",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12903",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12904",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12904",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12905",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12905",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12906",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12906",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12907",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12907",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "12908",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12908",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "AF",
+      "sln": "12909",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12909",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "Winter 2027",
+      "section": "AG",
+      "sln": "12910",
+      "component": "QZ",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12910",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12915",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12915",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12916",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12916",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12917",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12917",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12918",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12918",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12919",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12919",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "12920",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12920",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12921",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Tentative final: March 17, 12:30-14:20. CSE majors only.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12921",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "major_restriction",
+          "allowed_major_label": "CSE",
+          "evidence_field": "notes",
+          "scope": "this_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12922",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12922",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12923",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12923",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12924",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12924",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12925",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12925",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "12926",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12926",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "12927",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Tentative final: March 17, 12:30-14:20. CSE majors only.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12927",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "major_restriction",
+          "allowed_major_label": "CSE",
+          "evidence_field": "notes",
+          "scope": "this_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "BA",
+      "sln": "12928",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12928",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "BB",
+      "sln": "12929",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12929",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "BC",
+      "sln": "12930",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12930",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "BD",
+      "sln": "12931",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12931",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "C",
+      "sln": "12932",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Tentative final: March 17, 12:30-14:20. ECE majors only.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12932",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "major_restriction",
+          "allowed_major_label": "ECE",
+          "evidence_field": "notes",
+          "scope": "this_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "CA",
+      "sln": "12933",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12933",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "CB",
+      "sln": "12934",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12934",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "CC",
+      "sln": "12935",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12935",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "CD",
+      "sln": "12936",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12936",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "CE",
+      "sln": "12937",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12937",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "D",
+      "sln": "12938",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "Tentative final: March 17, 12:30-14:20. ECE majors only.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12938",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "major_restriction",
+          "allowed_major_label": "ECE",
+          "evidence_field": "notes",
+          "scope": "this_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "DA",
+      "sln": "12939",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12939",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "DB",
+      "sln": "12940",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12940",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "DC",
+      "sln": "12941",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12941",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "Winter 2027",
+      "section": "DD",
+      "sln": "12942",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12942",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12945",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Non-major course; overlaps CSE 332 in the catalog.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12945",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "12946",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12946",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "12947",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12947",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "12948",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12948",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "12949",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12949",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "12950",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12950",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AF",
+      "sln": "12951",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12951",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AG",
+      "sln": "12952",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12952",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AH",
+      "sln": "12953",
+      "component": "QZ",
+      "restriction_flag": ">",
+      "section_status": "tentative",
+      "other_codes": "",
+      "notes": "Tentative; opens only if needed. Do not schedule by default.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12953",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "exclude_by_default",
+          "reason": "tentative_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AI",
+      "sln": "12954",
+      "component": "QZ",
+      "restriction_flag": ">",
+      "section_status": "tentative",
+      "other_codes": "",
+      "notes": "Tentative; opens only if needed. Do not schedule by default.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12954",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "exclude_by_default",
+          "reason": "tentative_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "Winter 2027",
+      "section": "AJ",
+      "sln": "12955",
+      "component": "QZ",
+      "restriction_flag": ">",
+      "section_status": "tentative",
+      "other_codes": "",
+      "notes": "Tentative; opens only if needed. Do not schedule by default.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12955",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "exclude_by_default",
+          "reason": "tentative_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 391",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "12962",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "CSE majors only.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12962",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "major_restriction",
+          "allowed_major_label": "CSE",
+          "evidence_field": "notes",
+          "scope": "this_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 391",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "12963",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "ECE majors only; concurrent registration in CSE 351 required.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12963",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "major_restriction",
+          "allowed_major_label": "ECE",
+          "evidence_field": "notes",
+          "scope": "this_section"
+        },
+        {
+          "type": "section_corequisite",
+          "course_id": "CSE 351",
+          "evidence_field": "notes",
+          "scope": "this_section"
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "13021",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "J",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13021",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "Winter 2027",
+      "section": "AA",
+      "sln": "13022",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13022",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "Winter 2027",
+      "section": "AB",
+      "sln": "13023",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13023",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "Winter 2027",
+      "section": "AC",
+      "sln": "13024",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13024",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "Winter 2027",
+      "section": "AD",
+      "sln": "13025",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13025",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "Winter 2027",
+      "section": "AE",
+      "sln": "13026",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13026",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "Winter 2027",
+      "section": "AF",
+      "sln": "13027",
+      "component": "QZ",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13027",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "AMATH 301",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "10211",
+      "component": "LEC",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "$22",
+      "notes": "Python section; course fee USD 22.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10211",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "AMATH 301",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "10212",
+      "component": "LEC",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "$22",
+      "notes": "Python section; course fee USD 22.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10212",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "AMATH 301",
+      "term": "Winter 2027",
+      "section": "C",
+      "sln": "10213",
+      "component": "LEC",
+      "restriction_flag": "",
+      "section_status": "open",
+      "other_codes": "$22",
+      "notes": "Python section; course fee USD 22.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10213",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components."
+      ]
+    },
+    {
+      "course_id": "AMATH 351",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "10215",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Department add-code policy: https://amath.washington.edu/advising",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10215",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "policy_reference",
+          "url": "https://amath.washington.edu/advising",
+          "implies_add_code_required": false
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "AMATH 351",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "10216",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Department add-code policy: https://amath.washington.edu/advising",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10216",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "policy_reference",
+          "url": "https://amath.washington.edu/advising",
+          "implies_add_code_required": false
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "AMATH 352",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "10217",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Department add-code policy: https://amath.washington.edu/advising",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10217",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "policy_reference",
+          "url": "https://amath.washington.edu/advising",
+          "implies_add_code_required": false
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "AMATH 352",
+      "term": "Winter 2027",
+      "section": "B",
+      "sln": "10218",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Department add-code policy: https://amath.washington.edu/advising",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10218",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "policy_reference",
+          "url": "https://amath.washington.edu/advising",
+          "implies_add_code_required": false
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "AMATH 383",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "10219",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Department add-code policy: https://amath.washington.edu/advising",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10219",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "policy_reference",
+          "url": "https://amath.washington.edu/advising",
+          "implies_add_code_required": false
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "AMATH 402",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "10220",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Department add-code policy: https://amath.washington.edu/advising Add-code waitlist: https://tinyurl.com/3V4P288W. Used only when registration requires an add code.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10220",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "policy_reference",
+          "url": "https://amath.washington.edu/advising",
+          "implies_add_code_required": false
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    },
+    {
+      "course_id": "AMATH 482",
+      "term": "Winter 2027",
+      "section": "A",
+      "sln": "10222",
+      "component": "LEC",
+      "restriction_flag": "Restr",
+      "section_status": "open",
+      "other_codes": "",
+      "notes": "Department add-code policy: https://amath.washington.edu/advising Add-code waitlist: https://tinyurl.com/YSW78KW2. Used only when registration requires an add code.",
+      "source_url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "detail_url": "https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10222",
+      "snapshot_at": "2026-10-17T00:03:00-07:00",
+      "import_candidates": [
+        {
+          "type": "policy_reference",
+          "url": "https://amath.washington.edu/advising",
+          "implies_add_code_required": false
+        }
+      ],
+      "remaining_checks": [
+        "Confirm detailed SLN rules and compatible linked components.",
+        "Restriction exists; permitted populations are not identified by the flag alone."
+      ]
+    }
+  ],
+  "integration_contract": {
+    "inputs_to_add_or_verify": [
+      "completed_courses",
+      "reviewed_grades",
+      "concurrent_courses",
+      "student_major",
+      "selected_slns",
+      "term"
+    ],
+    "reviewed_grades_shape": "Map prerequisite course_id to numeric reviewed UW grade. Missing is unknown, never zero.",
+    "prerequisite_outputs": [
+      "met",
+      "unmet",
+      "needs_grade_confirmation",
+      "needs_review"
+    ],
+    "registration_outputs": [
+      "eligible",
+      "ineligible",
+      "unknown"
+    ],
+    "separate_decisions": [
+      "catalog_prerequisite_status",
+      "section_registration_status",
+      "term_offering_status",
+      "schedule_conflict_status"
+    ],
+    "grade_logic": "Evaluate alternative branches independently. A branch needs all its courses and only its stated grade thresholds. A qualifying branch is sufficient. Missing grades must not pass.",
+    "concurrency_logic": "A same-term course satisfies a prerequisite only when that branch explicitly names it in concurrent_allowed. Do not waive any other course or grade requirement.",
+    "section_corequisite_logic": "CSE 391 section B requires concurrent CSE 351, separately from catalog prerequisite evaluation.",
+    "major_label_logic": "Map the recorded CSE/ECE labels to the application major model explicitly. Do not apply a section restriction to every section of a course.",
+    "evidence_scope": "Preserve recorded notes as existing dataset evidence. They are curated notes and may combine catalog context, schedule notes and unresolved exam notes; do not label all notes as verbatim UW SLN text.",
+    "registration_unknown": "Keep unknown for unresolved restrictions, missing linked-component compatibility or unverified detail. Imported known restrictions do not establish complete registration eligibility.",
+    "info_section_coverage": "INFO course prerequisite rules exist, but INFO section meetings and detailed section restrictions are not imported here.",
+    "snapshot_limits": "Section status and enrollment reflect October 17, 2026 at 00:03 Pacific. They are not live availability."
+  },
+  "acceptance_checks": [
+    "Missing reviewed grades for any potentially qualifying grade-dependent branch must not return met.",
+    "CSE 331 with CSE 123 grade 1.9 is unmet; grade 2.0 qualifies that branch.",
+    "INFO 430 may use INFO 330, CSE 414 or I S 445, with a grade of at least 2.0 in the selected alternative.",
+    "INFO 340 with completed INFO 201 grade 2.0 and concurrent CSE 163 meets catalog prerequisites.",
+    "Concurrent CSE 123 does not receive the CSE 163 concurrency exception.",
+    "INFO 340 still requires a qualifying completed INFO 201 grade when CSE 163 is concurrent.",
+    "An ECE-labelled CSE 351 section and a CSE-labelled section must keep separate major filters.",
+    "CSE 391 B requires concurrent CSE 351; do not apply that section-specific requirement to CSE 391 A.",
+    "Tentative CSE 373 quiz sections remain excluded by default.",
+    "An AMATH policy link alone does not prove that an add code is currently required.",
+    "Known prerequisite satisfaction must not overwrite an unknown registration decision.",
+    "Absence of a note is not evidence of unrestricted registration."
+  ],
+  "acceptance_execution": "Integration acceptance checks are proposed for the implementation agent. They were not executed against its API or planner."
+}

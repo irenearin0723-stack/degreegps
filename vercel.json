@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build:free",
+  "env": {
+    "DEGREEGPS_FREE_DEMO": "true",
+    "NEXT_PUBLIC_FREE_DEMO": "true",
+    "NEXT_PUBLIC_API_BASE_URL": "",
+    "NEXT_PUBLIC_USE_MOCK_DATA": "false",
+    "NEXT_PUBLIC_USE_MOCK_TRANSCRIPT": "false",
+    "AI_RATE_PER_MINUTE": "0",
+    "AI_RATE_PER_DAY": "0",
+    "AI_RATE_GLOBAL_PER_DAY": "0"
+  }
+}
