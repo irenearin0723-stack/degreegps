@@ -35,27 +35,28 @@ test('projected offering cannot bypass unknown or missing prerequisite rules', (
     assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
   }
 });
-test('unknown registration eligibility stays outside assignments; candidates are explicitly marked for review', () => {
+test('unknown registration eligibility does not block planning; the course discloses it', () => {
   const result = planAcademic(request, [course('projected', { enrollment_status: 'unknown', eligible_majors: null })], now);
-  assert.equal(result.quarters.flatMap(q => q.courses).length, 0);
-  assert.ok(result.quarters[0].notes.includes('REVIEW ONLY'));
-  assert.ok(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'));
+  assert.deepEqual(result.quarters[0].courses.map(c => c.id), ['DEMO 100']);
+  assert.match(result.quarters[0].courses[0].explanation, /Registration restrictions are not verified/);
+  assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
 });
-test('review-only candidate cannot satisfy a later-quarter prerequisite', () => {
+test('a planned course with unverified registration conditionally satisfies a later-quarter prerequisite', () => {
   const first = course('projected', { enrollment_status: 'unknown', eligible_majors: null });
   const second = course('projected', { course_id: 'DEMO 200', prerequisite_groups: [{ any_of: [{ course_id: 'DEMO 100', minimum_grade: null, concurrent_allowed: false }] }],
     offering_evidence: [{ term: '2027-spring', status: 'projected', source_url: 'https://www.washington.edu/', verified_at: '2026-10-17', notes: 'Synthetic' }] });
   const result = planAcademic(request, [first, second], now);
-  assert.equal(result.quarters.flatMap(q => q.courses).length, 0);
-  assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED' && w.affected_course_codes.includes('DEMO 200')), false);
+  assert.deepEqual(result.quarters[0].courses.map(c => c.id), ['DEMO 100']);
+  const later = result.quarters[1].courses.find(c => c.id === 'DEMO 200')!;
+  assert.equal(later.scheduling_status, 'tentative'); assert.match(later.explanation, /Conditional on successful completion/);
 });
 test('missing section meeting times do not block quarter-level recommendations', () => {
   const result = planAcademic(request, [course('projected', { section_data_status: 'not_imported' })], now);
   assert.equal(result.quarters[0].courses[0].id, 'DEMO 100');
 });
-test('a verified major mismatch remains blocked rather than becoming a review candidate', () => {
+test('a verified major mismatch is planned but flagged instead of hidden', () => {
   const result = planAcademic(request, [course('projected', { eligible_majors: ['Physics'] })], now);
-  assert.equal(result.quarters[0].courses.length, 0);
+  assert.match(result.quarters[0].courses[0].explanation, /section restriction does not match your major/);
   assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
 });
 test('a positive offering requires official dated evidence, and projection imports cannot claim confirmation', async () => {
@@ -76,12 +77,12 @@ test('real imports preserve confirmed Winter listings, AMATH Summer projections,
   assert.equal(offeringForTerm(courses.find(c => c.course_id === 'INFO 201')!, '2027-summer').status, 'unknown');
   assert.equal(offeringForTerm(courses.find(c => c.course_id === 'AMATH 352')!, '2028-summer').status, 'unknown');
 });
-test('realistic CS + AMATH history receives useful review candidates in all three quarters without inventing eligibility', async () => {
+test('realistic CS + AMATH history receives scheduled courses with disclosed registration status', async () => {
   const plan = await generatePlan(request, { now });
   assert.deepEqual(plan.quarters.map(q => q.term), ['2027-winter', '2027-spring', '2027-summer']);
-  assert.ok(plan.quarters.every(q => q.notes.includes('REVIEW ONLY')));
-  assert.ok(plan.warnings.filter(w => w.code === 'COURSE_REVIEW_REQUIRED').length >= 3);
-  assert.equal(plan.quarters.flatMap(q => q.courses).length, 0);
+  assert.ok(plan.quarters[0].courses.length > 0 && plan.quarters[1].courses.length > 0);
+  assert.ok(plan.quarters.flatMap(q => q.courses).every(c => /Registration restrictions are not verified|section restriction does not match/.test(c.explanation)));
+  assert.equal(plan.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
   assert.equal(plan.career_milestones.length, 4);
   assert.ok(plan.sources.some(s => s.url?.includes('amath-cfrm-undergraduate-course-schedule')));
 });

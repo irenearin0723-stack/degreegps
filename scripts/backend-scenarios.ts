@@ -38,7 +38,8 @@ export function verifyScenario(scenario: typeof scenarios[number], raw: unknown,
       assert.ok(!seen.has(planned.id));
       const course = courses.find(c => c.course_id === planned.id)!;
       assert.ok(course); assert.equal(course.data_status, 'verified');
-      assert.notEqual(course.enrollment_status, 'unknown');
+      // Registration eligibility no longer gates planning; an unverified status must be disclosed on the course.
+      if (course.enrollment_status === 'unknown') assert.ok(/Registration restrictions are not verified|section restriction does not match/.test(planned.explanation));
       assert.ok(checkPrerequisites(course, { completed: new Set(request.completed_courses), in_progress: new Set(request.in_progress_courses), previously_planned: previous }).eligible);
       const offering = offeringForTerm(course, quarter.term);
       assert.notEqual(offering.status, 'unknown');

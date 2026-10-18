@@ -28,8 +28,8 @@ export async function generatePlan(input: PlanRequest, options: { mock?: boolean
     ? { sections: [], courses: CourseDatasetSchema.parse(JSON.parse(await readFile(join(process.cwd(), 'mocks/course-data.json'), 'utf8'))).courses,
       careers: CareerDatasetSchema.parse(JSON.parse(await readFile(join(process.cwd(), 'data/career_paths.json'), 'utf8'))).paths }
     : await loadData();
-  const scope = options.mock ? { courses, programs: [], departments: [] } : await scopeToMajor(request.major, courses);
-  const academic = planAcademic(request, scope.courses, now, options.mock, sections);
+  const scope = options.mock ? { courses, programs: [], departments: [], importance: {} } : await scopeToMajor(request.major, courses);
+  const academic = planAcademic(request, scope.courses, now, options.mock, sections, scope.importance);
   if (!options.mock) academic.warnings.unshift(scope.programs.length
     ? { code: 'MAJOR_SCOPE', severity: 'info', affected_course_codes: [],
       message: `Planning considered ${scope.courses.length} of ${courses.length} catalog courses: those named by ${request.major} requirements (${scope.programs.join(', ')}), other ${scope.departments.join('/')} courses, and their prerequisites.` }

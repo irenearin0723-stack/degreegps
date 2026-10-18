@@ -32,13 +32,14 @@ test('blocking reasons follow the planner order', () => {
   assert.equal(blockingReason(d), null);
   assert.match(blockingReason({ ...d, catalog_prerequisite_status: 'unmet', term_offering_status: 'unknown' })!, /prerequisites/);
   assert.match(blockingReason({ ...d, term_offering_status: 'unknown', section_registration_status: 'ineligible' })!, /offering evidence/);
-  assert.match(blockingReason({ ...d, section_registration_status: 'unknown' })!, /adviser-review/);
+  assert.equal(blockingReason({ ...d, section_registration_status: 'unknown' }), null);
+  assert.equal(blockingReason({ ...d, section_registration_status: 'ineligible' }), null);
   assert.match(blockingReason({ ...d, catalog_prerequisite_status: 'needs_grade_confirmation' })!, /grade must be confirmed/);
 });
 
 test('questions about the plan cite the plan; general questions still cite official records', async () => {
   const cases: [string, string][] = [
-    ["Why can't I take CSE 332 next quarter?", 'plan:course:CSE 332'],
+    ["Why can't I take CSE 421 next quarter?", 'plan:course:CSE 421'],
     ['What should I take next quarter?', 'plan:quarter:2027-winter'],
     ['Is CSE 351 in my plan?', 'plan:course:CSE 351'],
     ['What are the prerequisites for CSE 311?', 'course:CSE 311'],
@@ -63,12 +64,12 @@ test('AI answers receive plan sources but never grades', async () => {
     const body = String(init?.body); bodies.push(body);
     if (!String(url).endsWith('/chat/completions')) throw new Error('offline embedding');
     return Response.json({ id: 'chatcmpl_test', object: 'chat.completion', created: 0, model: 'test', choices: [{ index: 0, finish_reason: 'stop', logprobs: null,
-      message: { role: 'assistant', refusal: null, content: JSON.stringify({ answer: 'You have not met the prerequisites for CSE 332 yet.', citations: ['S1'], insufficient_evidence: false }) } }] });
+      message: { role: 'assistant', refusal: null, content: JSON.stringify({ answer: 'You have not met the prerequisites for CSE 421 yet.', citations: ['S1'], insufficient_evidence: false }) } }] });
   }) as typeof fetch;
   try {
-    const result = await ask("Why can't I take CSE 332 next quarter?", { use_ai: true });
+    const result = await ask("Why can't I take CSE 421 next quarter?", { use_ai: true });
     assert.equal(result.mode, 'ai');
-    assert.deepEqual(result.citations, ['plan:course:CSE 332']);
+    assert.deepEqual(result.citations, ['plan:course:CSE 421']);
     const prompt = bodies.find(b => b.includes('grounded_answer'))!;
     assert.ok(prompt.includes('\\"kind\\":\\"plan\\"'));
     assert.ok(!/3\.7|3\.3|reviewed_grades/.test(prompt));

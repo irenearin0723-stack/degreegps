@@ -66,9 +66,10 @@ test('completed courses never repeat and missing rules produce a partial plan', 
   assert.ok(result.warnings.some(w => w.code === 'COURSE_BLOCKED'));
   assert.ok(result.warnings.some(w => w.code === 'PARTIAL_SCHEDULE'));
 });
-test('unknown offering, restricted major, and sample data are excluded from real plans', () => {
+test('unknown offering and sample data are excluded; a restricted major is planned but flagged', () => {
   const result = academic(request, [course('CSE 100', [], { offered_terms: null }), course('CSE 101', [], { eligible_majors: ['Physics'] }), course('CSE 102', [], { data_status: 'sample' })]);
-  assert.equal(result.quarters.flatMap(q => q.courses).length, 0);
+  assert.deepEqual(result.quarters.flatMap(q => q.courses).map(c => c.id), ['CSE 101']);
+  assert.match(result.quarters[0].courses[0].explanation, /section restriction does not match your major/);
 });
 test('verified offering restrictions are honored and summer/year boundaries advance correctly', () => {
   const result = academic({ ...request, start_term: '2027-autumn' }, [course('CSE 100', [], { offered_terms: ['spring'] })]);

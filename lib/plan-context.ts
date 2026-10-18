@@ -16,8 +16,7 @@ export function blockingReason(d: AcademicDecision): string | null {
   if (d.catalog_prerequisite_status === 'needs_grade_confirmation') return 'a prerequisite grade must be confirmed (no reviewed grade was provided)';
   if (d.catalog_prerequisite_status !== 'met') return 'prerequisites are not met yet';
   if (d.term_offering_status === 'unknown') return 'there is no offering evidence for this term';
-  if (d.section_registration_status === 'ineligible') return 'a known registration restriction does not match your major or selected sections';
-  if (d.section_registration_status === 'unknown') return 'registration eligibility is unresolved, so it is an adviser-review candidate only';
+  // Registration eligibility no longer blocks planning (see planner.ts); it is reported on scheduled courses.
   return null;
 }
 

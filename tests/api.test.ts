@@ -22,11 +22,12 @@ test('invalid goal categories, combinations, dates and duplicate normalized cour
   assert.equal(PlanRequestSchema.safeParse({ ...input, in_progress_courses: ['CSE123'] }).success, false);
   assert.equal(PlanRequestSchema.safeParse({ ...input, completed_courses: ['CSE123', 'CSE 123'] }).success, false);
 });
-test('real planner returns a validated partial plan with unresolved enrollment warnings', async () => {
+test('real planner schedules major courses and discloses unresolved enrollment', async () => {
   const result = await generatePlan(input, { now });
   assert.equal(PlanResponseSchema.safeParse(result).success, true);
   assert.equal(result.mode, 'generated');
-  assert.equal(result.quarters.flatMap(q => q.courses).length, 0);
+  assert.ok(result.quarters.flatMap(q => q.courses).length > 0);
+  assert.ok(result.quarters.flatMap(q => q.courses).every(c => /Registration restrictions are not verified|section restriction does not match/.test(c.explanation)));
   assert.ok(result.warnings.some(w => w.code === 'ENROLLMENT_UNVERIFIED'));
   assert.ok(result.career_milestones.length > 0);
 });

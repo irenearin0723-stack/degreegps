@@ -3,6 +3,7 @@ import type { PlanRequest, PlanWarning, PlanSource, QuarterPlan } from '../types
 import { offeringForTerm } from './offerings';
 import { checkPrerequisites } from './prerequisites';
 import { evaluateRegistration, majorLabels } from './registration';
+import { IMPORTANCE_LABELS } from './major-scope';
 import type { AcademicDecision, RegistrationSection } from '../types/registration';
 const terms: AcademicTerm[] = ['winter', 'spring', 'summer', 'autumn'];
 // Per-course blocked warnings beyond this are folded into one COURSE_BLOCKED_SUMMARY; academic_decisions keeps every reason.
@@ -22,14 +23,15 @@ export function consecutiveTerms(start: string): string[] {
   const initial = Number(yearText) * 4 + terms.indexOf(termText as AcademicTerm);
   return Array.from({ length: 3 }, (_, i) => `${Math.floor((initial + i) / 4)}-${terms[(initial + i) % 4]}`);
 }
-export function planAcademic(request: PlanRequest, courses: Course[], now = new Date(), allowSample = false, sections: RegistrationSection[] = []) {
+/** importance: how strongly the student's major needs each course (3 required, 2 named option, 1 elective pool); see major-scope.ts. */
+export function planAcademic(request: PlanRequest, courses: Course[], now = new Date(), allowSample = false, sections: RegistrationSection[] = [],
+  importance: Record<string, number> = {}) {
   const warnings: PlanWarning[] = [];
   const warn = (code: string, message: string, ids: string[] = []) => warnings.push({ code, severity: 'warning', message, affected_course_codes: ids });
   const completed = new Set(request.completed_courses);
   const inProgress = new Set(request.in_progress_courses);
   const previous = new Set<string>();
   const sources: PlanSource[] = [];
-  const reviewSeen = new Set<string>();
   const academic_decisions: AcademicDecision[] = [];
   const ordinal = (value: string) => Number(value.slice(0, 4)) * 4 + terms.indexOf(value.split('-')[1] as AcademicTerm);
   let start = request.start_term ?? nextTerm(now);
@@ -46,24 +48,33 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
   if (inProgress.size) warn('IN_PROGRESS_NOT_COMPLETED', 'In-progress courses are not completed. Only explicit exact-term concurrent intentions can satisfy a specifically verified concurrency exception. Update completed courses after grades are confirmed.', [...inProgress]);
   if (courses.some(c => c.data_status !== 'verified')) warn('UNVERIFIED_CATALOG', 'Dataset contains sample or unknown records. Generated mode excludes these records; mock mode is illustrative and is not academic advice.');
   const incomplete = courses.filter(c => c.enrollment_status === 'unknown');
-  if (incomplete.length) warn('ENROLLMENT_UNVERIFIED', `${incomplete.length} catalog records have unresolved registration eligibility. These records are excluded from confirmed course scheduling; missing restriction details are never treated as unrestricted enrollment.`);
+  if (incomplete.length) warn('ENROLLMENT_UNVERIFIED', `${incomplete.length} catalog records have unresolved registration eligibility. They are still scheduled when prerequisites and offerings allow; each course explains its registration status, and restrictions must be confirmed before registering.`);
   const snapshotTerms = [...new Set(courses.flatMap(c => c.offering_evidence?.filter(e => e.status !== 'unknown').map(e => e.term) ?? c.offered_term_ids ?? []))];
   if (snapshotTerms.length) warn('TERM_COVERAGE_LIMITED', `Positive offering evidence covers ${snapshotTerms.join(', ')} only. Confirmed listings are snapshots; departmental projections may change. No seat availability is implied.`);
   const available = courses.filter(c => c.data_status === 'verified' || (allowSample && c.data_status === 'sample'));
-  // Foundation priority + track match + prerequisite unlock value. Stable ID breaks ties.
-  const score = (c: Course) => c.foundation_priority * 10 + (c.tracks.includes(request.goal.track) ? 30 : 0)
+  // Importance to the major first, then foundation priority + track match + prerequisite unlock value. Stable ID breaks ties.
+  const score = (c: Course) => (importance[c.course_id] ?? 0) * 100 + c.foundation_priority * 10 + (c.tracks.includes(request.goal.track) ? 30 : 0)
     + available.filter(d => d.prerequisite_groups?.some(g => g.any_of.some(o => o.course_id === c.course_id)) || d.prerequisite_alternatives?.some(b => b.all_of.some(o => o.course_id === c.course_id))).length;
   const ranked = [...available].sort((a, b) => score(b) - score(a) || a.course_id.localeCompare(b.course_id));
+  // A completed course implies its prerequisite chain (MATH 126 done means MATH 124/125 need not be planned).
+  const byId = new Map(courses.map(c => [c.course_id, c]));
+  const implied = new Set<string>();
+  const queue = [...completed, ...inProgress];
+  while (queue.length) {
+    const course = byId.get(queue.pop()!);
+    for (const id of [...(course?.prerequisite_alternatives ?? []).flatMap(b => b.all_of.map(o => o.course_id)),
+      ...(course?.prerequisite_groups ?? []).flatMap(g => g.any_of.map(o => o.course_id))])
+      if (!implied.has(id)) { implied.add(id); queue.push(id); }
+  }
   const quarters: QuarterPlan[] = [];
   const blocked = new Map<string, { reason: string; kind: BlockedKind }>();
   for (const termId of consecutiveTerms(start)) {
     const invalidSelection = (request.selected_slns?.[termId] ?? []).some(sln => !sections.some(s => s.sln === sln && s.term_id === termId));
     const concurrent = new Set(request.concurrent_courses?.[termId] ?? []);
     if (concurrent.size) warn('CONCURRENT_INTENTIONS', `${termId}: concurrent intentions are conditional, not completed courses or validated external assignments. Verify actual concurrent enrollment.`, [...concurrent]);
-    const reviews: { course: Course; status: string; sourceId: string }[] = [];
     const quarter: QuarterPlan = { term: termId, courses: [], notes: 'Eligibility depends on confirmed history, verified rules, and actual registration availability; this is not a degree audit.' };
     for (const course of ranked) {
-      if (completed.has(course.course_id) || previous.has(course.course_id) || inProgress.has(course.course_id)) continue;
+      if (completed.has(course.course_id) || previous.has(course.course_id) || inProgress.has(course.course_id) || implied.has(course.course_id)) continue;
       if (quarter.courses.length >= request.max_courses_per_term) break;
       const sourceId = `course:${course.course_id}`;
       if (!sources.some(s => s.id === sourceId)) sources.push({ id: sourceId, title: course.title, url: course.source_url, kind: course.data_status === 'verified' ? 'official' : 'mock', verified_at: course.verified_at, data_status: course.data_status });
@@ -99,31 +110,20 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
       if (!eligibility.eligible) { blocked.set(course.course_id, eligibility.status === 'needs_grade_confirmation'
         ? { reason: eligibility.explanations.join(' '), kind: 'grade' } : { reason: eligibility.explanations.join(' '), kind: 'prerequisites' }); continue; }
       if (offering.status === 'unknown') { blocked.set(course.course_id, { reason: `Offering is unknown for ${termId}; no recommendation inferred.`, kind: 'offering' }); continue; }
-      if (registrationStatus === 'ineligible') { blocked.set(course.course_id, { reason: 'Known registration/selected section restriction does not match.', kind: 'registration' }); continue; }
-      if (registrationStatus === 'unknown') {
-        // Review candidates never enter quarter.courses or the previous-prerequisite set.
-        if (!reviewSeen.has(course.course_id)) reviews.push({ course, status: offering.status, sourceId: offeringSourceId });
-        blocked.set(course.course_id, { reason: 'Registration/major eligibility is unresolved. ' + (course.verification_notes ?? ''), kind: 'registration' });
-        continue;
-      }
+      // Registration eligibility does not block planning; it is reported on the course so the student can confirm it.
+      const registrationNote = registrationStatus === 'ineligible' ? 'A recorded section restriction does not match your major or selected section; confirm with an adviser before registering. '
+        : registrationStatus === 'unknown' ? 'Registration restrictions are not verified; check the Time Schedule and confirm before registering. ' : '';
+      const need = importance[course.course_id] ? `Planned because it is ${IMPORTANCE_LABELS[importance[course.course_id]]}. ` : '';
       quarter.courses.push({ id: course.course_id, title: course.title, credits: course.credits,
         scheduling_status: course.data_status === 'sample' || eligibility.conditional || offering.status === 'projected' ? 'tentative' : 'eligible',
-        explanation: `${offering.status === 'projected' ? 'PROJECTED offering: tentative and subject to change; not a confirmed offering. ' : 'CONFIRMED listing snapshot, not live seats. '}Priority ${score(course)}: foundation ${course.foundation_priority}/10; ${course.tracks.includes(request.goal.track) ? 'matches' : 'supports foundations for'} ${request.goal.track} ${request.goal.type}. ${eligibility.conditional ? 'Conditional on successful completion of previously planned prerequisites. ' : ''}${allowSample ? 'Illustrative sample rules only. ' : ''}Completing a course does not guarantee skills, admission, or employment.`,
+        explanation: `${need}${offering.status === 'projected' ? 'PROJECTED offering: tentative and subject to change; not a confirmed offering. ' : 'CONFIRMED listing snapshot, not live seats. '}Priority ${score(course)}: foundation ${course.foundation_priority}/10; ${course.tracks.includes(request.goal.track) ? 'matches' : 'supports foundations for'} ${request.goal.track} ${request.goal.type}. ${eligibility.conditional ? 'Conditional on successful completion of previously planned prerequisites. ' : ''}${allowSample ? 'Illustrative sample rules only. ' : ''}${registrationNote}Completing a course does not guarantee skills, admission, or employment.`,
         source_ids: [sourceId, offeringSourceId] });
       if (offering.status === 'projected') warn('PROJECTED_OFFERING', `${course.course_id} in ${termId} uses a departmental projection. Recheck the Time Schedule; no confirmed offering or seat is promised.`, [course.course_id]);
       blocked.delete(course.course_id);
     }
-    const reviewSelection = reviews.filter(r => !previous.has(r.course.course_id) && !quarter.courses.some(c => c.id === r.course.course_id)).slice(0, request.max_courses_per_term - quarter.courses.length);
-    if (reviewSelection.length) {
-      quarter.notes += ' REVIEW ONLY (not validated assignments): ' + reviewSelection.map(r => `${r.course.course_id} — ${r.course.title}; ${r.status === 'projected' ? 'projected (tentative)' : 'confirmed snapshot'} offering; enrollment eligibility unresolved`).join('; ') + '. Review candidates do not satisfy future prerequisites.';
-      for (const review of reviewSelection) {
-        reviewSeen.add(review.course.course_id);
-        warn('COURSE_REVIEW_REQUIRED', `${termId}: ${review.course.course_id} — ${review.course.title}. Known course prerequisites are satisfied; ${review.status === 'projected' ? 'projected (tentative; subject to change)' : 'confirmed snapshot'} offering evidence is linked as ${review.sourceId}. Enrollment restrictions remain unresolved. This is an adviser-review candidate, not a validated assignment or a seat guarantee.`, [review.course.course_id]);
-      }
-    }
     // Same-quarter recommendations cannot satisfy one another's prerequisites.
     for (const course of quarter.courses) previous.add(course.id);
-    if (quarter.courses.length < request.max_courses_per_term) warn('PARTIAL_SCHEDULE', `${termId}: only ${quarter.courses.length} courses could be suggested safely. Do not fill gaps with unverified assumptions.`);
+    if (quarter.courses.length < request.max_courses_per_term) warn('PARTIAL_SCHEDULE', `${termId}: only ${quarter.courses.length} courses had completed prerequisites and an offering this quarter.`);
     quarters.push(quarter);
   }
   // Detail the courses closest to schedulable first (prerequisites met or only a grade missing), in priority order.

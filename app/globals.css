@@ -38,3 +38,6 @@
 .warning-group .warning-row{padding:6px 0 0;border:0}
 .warning-more summary{font-size:8px;font-weight:750;color:#4d5564;cursor:pointer;margin-top:6px}
 .source-pill.plan{color:var(--violet);background:var(--violet-soft)}
+/* Collapsible "Sources used by this plan" */
+details.sources-section>summary{list-style:none;cursor:pointer;margin-bottom:0}details.sources-section>summary::-webkit-details-marker{display:none}details.sources-section[open]>summary{margin-bottom:32px}
+.sources-toggle{font-size:10px;font-weight:750;color:var(--blue);white-space:nowrap}details.sources-section[open] .sources-toggle{font-size:0}details.sources-section[open] .sources-toggle:after{content:"Hide";font-size:10px}

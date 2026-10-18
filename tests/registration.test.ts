@@ -80,7 +80,7 @@ const acceptance: (() => Promise<void>)[] = [
       assert.equal(d.excluded, true); assert.equal(d.registration_status, 'ineligible');
       const p = await decision('CSE 373', { completed_courses: ['CSE 123'], selected_slns: { '2027-winter': [s.sln] } });
       assert.equal(p.decision.section_registration_status, 'ineligible');
-      assert.equal(p.plan.quarters.flatMap(q => q.courses).length, 0);
+      assert.match(p.plan.quarters[0].courses[0].explanation, /section restriction does not match/);
     }
   },
   async () => {
@@ -94,8 +94,8 @@ const acceptance: (() => Promise<void>)[] = [
     const d = await decision('CSE 351', { completed_courses: ['CSE 123'] });
     assert.equal(d.decision.catalog_prerequisite_status, 'met'); assert.equal(d.decision.section_registration_status, 'unknown');
     assert.equal(d.decision.term_offering_status, 'confirmed'); assert.equal(d.decision.schedule_conflict_status, 'not_evaluated');
-    assert.equal(d.plan.quarters.flatMap(q => q.courses).length, 0);
-    assert.ok(d.plan.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'));
+    assert.deepEqual(d.plan.quarters[0].courses.map(c => c.id), ['CSE 351']);
+    assert.match(d.plan.quarters[0].courses[0].explanation, /Registration restrictions are not verified/);
   },
   async () => {
     const s = (await data).sections.find(s => !s.notes && !s.restriction_flag)!;
@@ -121,7 +121,9 @@ test('concurrency is exact-term, never inferred from in-progress or review-only 
   const { courses, sections } = await data; const course = courses.find(c => c.course_id === 'INFO 340')!;
   const p = planAcademic(request({ completed_courses: ['INFO 201'], reviewed_grades: { 'INFO 201': 2 }, concurrent_courses: { '2027-winter': ['CSE 163'] } }), [course], now, false, sections);
   assert.equal(p.academic_decisions[0].catalog_prerequisite_status, 'met');
-  assert.equal(p.academic_decisions[1].catalog_prerequisite_status, 'unmet');
+  // Starting in spring, the winter-only concurrent intention does not apply.
+  const spring = planAcademic(request({ start_term: '2027-spring', completed_courses: ['INFO 201'], reviewed_grades: { 'INFO 201': 2 }, concurrent_courses: { '2027-winter': ['CSE 163'] } }), [course], now, false, sections);
+  assert.equal(spring.academic_decisions[0].catalog_prerequisite_status, 'unmet');
   assert.equal((await decision('INFO 340', { completed_courses: ['INFO 201'], reviewed_grades: { 'INFO 201': 2 }, in_progress_courses: ['CSE 163'] })).decision.catalog_prerequisite_status, 'unmet');
 });
 test('all sections preserve complete original metadata, provenance and exact SLN/term scope', async () => {
@@ -136,9 +138,11 @@ test('all sections preserve complete original metadata, provenance and exact SLN
   }
   const plan = await generatePlan(request({ completed_courses: ['CSE 123'], selected_slns: { '2027-winter': ['12962'] } }), { now });
   assert.ok(PlanResponseSchema.safeParse(plan).success);
-  const winter = plan.academic_decisions!.find(d => d.course_id === 'CSE 391' && d.term === '2027-winter')!;
-  assert.ok(winter.sections.every(s => s.source_ids.every(id => plan.sources.some(source => source.id === id && source.url))));
-  assert.equal(plan.academic_decisions!.find(d => d.course_id === 'CSE 391' && d.term === '2027-spring')!.sections.length, 0);
+  // Every evaluated section is traceable to a cited source; sections never leak into a term they were not offered in.
+  const winter = plan.academic_decisions!.filter(d => d.term === '2027-winter' && d.sections.length);
+  assert.ok(winter.length > 0);
+  assert.ok(winter.every(d => d.sections.every(s => s.source_ids.every(id => plan.sources.some(source => source.id === id && source.url)))));
+  assert.ok(plan.academic_decisions!.filter(d => d.term !== '2027-winter').every(d => d.sections.length === 0));
 });
 test('mismatched sections, duplicate evidence or altered prerequisite rules fail closed', () => {
   const files = Object.fromEntries(['courses.json', 'prerequisites.json', 'sections.json'].map(name => [name, readFileSync(`data/target_courses/${name}`, 'utf8')]));
@@ -183,9 +187,10 @@ test('detailed SLN rules drive planner registration decisions', async () => {
 test('backward-compatible requests still work and no handoff course becomes falsely validated', async () => {
   const plan = await generatePlan(request(), { now });
   assert.ok(!Object.hasOwn(plan.request, 'reviewed_grades'));
-  assert.equal(plan.quarters.flatMap(q => q.courses).length, 0);
+  assert.ok(plan.quarters.flatMap(q => q.courses).every(c => /Registration restrictions are not verified|section restriction does not match/.test(c.explanation)));
   const { courses } = await data;
   for (const c of courses) {
+    if (!c.prerequisite_alternatives) continue;
     const prereqs = c.prerequisite_alternatives!.flatMap(b => b.all_of.map(o => o.course_id));
     assert.equal(checkPrerequisites(c, { completed: new Set(prereqs), grades: Object.fromEntries(prereqs.map(id => [id, 4])) }).status, 'met');
   }
@@ -194,7 +199,7 @@ test('backward-compatible requests still work and no handoff course becomes fals
 test('selected SLNs never cross terms or silently establish clearance for unknown selections', async () => {
   const s = await section('CSE 351', 'A');
   const { courses, sections } = await data;
-  const p = planAcademic(request({ completed_courses: ['CSE 123'], selected_slns: { '2027-spring': [s.sln] } }), [courses.find(c => c.course_id === 'CSE 351')!], now, false, sections);
+  const p = planAcademic(request({ start_term: '2027-spring', completed_courses: ['CSE 123'], selected_slns: { '2027-spring': [s.sln] } }), [courses.find(c => c.course_id === 'CSE 351')!], now, false, sections);
   const spring = p.academic_decisions.find(d => d.term === '2027-spring')!;
   assert.equal(spring.sections.length, 0); assert.equal(spring.section_registration_status, 'unknown');
   assert.ok(p.warnings.some(w => w.code === 'SECTION_SELECTION_UNKNOWN'));
