@@ -1,116 +1,451 @@
-"course_id","term","section","sln","component","credits","days","start_time","end_time","room","instructor","restriction_flag","section_status","enrolled_snapshot","capacity_snapshot","grading","other_codes","notes","source_url","detail_url","snapshot_at"
-"CSE 311","Winter 2027","A","12854","LEC","4","M|W|F","13:30","14:20","CSE2 G01","Wilcox,James Rasmussen","Restr","open","0","110","","","Tentative final: March 15, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12854","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","AA","12855","QZ","0","Th","10:30","11:20","ECE 042","","","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12855","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","AB","12856","QZ","0","Th","11:30","12:20","MGH 242","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12856","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","AC","12857","QZ","0","Th","12:30","13:20","MGH 228","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12857","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","AD","12858","QZ","0","Th","13:30","14:20","CDH 128","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12858","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","AE","12859","QZ","0","Th","14:30","15:20","TBA","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12859","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","B","12860","LEC","4","M|W|F","14:30","15:20","CSE2 G01","Wilcox,James Rasmussen","Restr","open","0","110","","","Tentative final: March 15, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12860","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","BA","12861","QZ","0","Th","12:30","13:20","ECE 025","","","open","0","27","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12861","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","BB","12862","QZ","0","Th","13:30","14:20","THO 334","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12862","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","BC","12863","QZ","0","Th","14:30","15:20","MGH 242","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12863","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","BD","12864","QZ","0","Th","15:30","16:20","MGH 242","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12864","2026-10-17T00:03:00-07:00"
-"CSE 311","Winter 2027","BE","12865","QZ","0","Th","14:30","15:20","LOW 219","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12865","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","A","12866","LEC","4","M|W|F","10:30","11:20","ARC 147","Weber,Robbie","Restr","open","0","150","","","Tentative final: March 15, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12866","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","AA","12867","QZ","0","Th","09:30","10:20","ECE 026","","","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12867","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","AB","12868","QZ","0","Th","10:30","11:20","ECE 031","","","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12868","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","AC","12869","QZ","0","Th","11:30","12:20","ECE 042","","","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12869","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","AD","12870","QZ","0","Th","12:30","13:20","ECE 042","","","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12870","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","AE","12871","QZ","0","Th","13:30","14:20","BLD 392","","","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12871","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","AF","12872","QZ","0","Th","14:30","15:20","ECE 042","","","open","0","2","","J","Open for registration, per section note.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12872","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","B","12873","LEC","4","M|W|F","13:30","14:20","MGH 389","Weber,Robbie","Restr","open","0","165","","","Tentative final: March 15, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12873","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","BA","12874","QZ","0","Th","11:30","12:20","ECE 031","","Restr","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12874","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","BB","12875","QZ","0","Th","12:30","13:20","ECE 031","","Restr","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12875","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","BC","12876","QZ","0","Th","13:30","14:20","MEB 251","","Restr","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12876","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","BD","12877","QZ","0","Th","14:30","15:20","ECE 026","","Restr","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12877","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","BE","12878","QZ","0","Th","15:30","16:20","ECE 031","","Restr","open","0","29","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12878","2026-10-17T00:03:00-07:00"
-"CSE 312","Winter 2027","BF","12879","QZ","0","Th","14:30","15:20","ECE 042","","Restr","open","0","27","","J","Open for registration, per section note.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12879","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","A","12880","LEC","4","M|W|F","14:30","15:20","PAA A102","Wang,Matt","Restr","open","0","110","","","Tentative final: March 16, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12880","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","AA","12881","QZ","0","Th","12:30","13:20","MGH 287","","","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12881","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","AB","12882","QZ","0","Th","13:30","14:20","MEB 237","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12882","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","AC","12883","QZ","0","Th","14:30","15:20","MGH 238","","","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12883","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","AD","12884","QZ","0","Th","15:30","16:20","MGH 287","","","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12884","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","B","12885","LEC","4","M|W|F","10:30","11:20","CSE2 G01","Wang,Matt","Restr","open","0","110","","","Tentative final: March 16, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12885","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","BA","12886","QZ","0","Th","09:30","10:20","MGH 254","","","open","0","27","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12886","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","BB","12887","QZ","0","Th","10:30","11:20","SIG 228","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12887","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","BC","12888","QZ","0","Th","11:30","12:20","LOW 219","","","open","0","27","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12888","2026-10-17T00:03:00-07:00"
-"CSE 331","Winter 2027","BD","12889","QZ","0","Th","12:30","13:20","BNS 203","","","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12889","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","A","12890","LEC","4","M|W|F","12:30","13:20","CSE2 G20","Anderson,Ruth","Restr","open","0","195","","","Tentative final: March 18, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12890","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","AA","12891","QZ","0","Th","08:30","09:20","JHN 022","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12891","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","AB","12892","QZ","0","Th","09:30","10:20","ECE 042","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12892","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","AC","12893","QZ","0","Th","10:30","11:20","MGH 287","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12893","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","AD","12894","QZ","0","Th","11:30","12:20","MGH 271","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12894","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","AE","12895","QZ","0","Th","12:30","13:20","MEB 250","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12895","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","AF","12896","QZ","0","Th","15:30","16:20","ECE 025","","","open","0","20","","J","Cross-listed quiz note: AF/BD.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12896","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","AG","12897","QZ","0","Th","12:30","13:20","MUE 154","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12897","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","B","12898","LEC","4","M|W|F","15:30","16:20","CSE2 G10","Anderson,Ruth","Restr","open","0","98","","","Tentative final: March 18, 12:30-14:20.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12898","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","BA","12899","QZ","0","Th","12:30","13:20","MEB 234","","","open","0","27","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12899","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","BB","12900","QZ","0","Th","13:30","14:20","MEB 235","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12900","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","BC","12901","QZ","0","Th","14:30","15:20","LOW 202","","","open","0","28","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12901","2026-10-17T00:03:00-07:00"
-"CSE 332","Winter 2027","BD","12902","QZ","0","Th","15:30","16:20","ECE 025","","","open","0","15","","J","Cross-listed quiz note: AF/BD.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12902","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","A","12903","LEC","4","M|W|F","11:30","12:20","GWN 301","Thachuk,Chris","Restr","open","0","195","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12903","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","AA","12904","QZ","0","Th","08:30","09:20","MGH 234","","","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12904","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","AB","12905","QZ","0","Th","09:30","10:20","SIG 228","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12905","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","AC","12906","QZ","0","Th","10:30","11:20","LOW 202","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12906","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","AD","12907","QZ","0","Th","11:30","12:20","MEB 234","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12907","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","AE","12908","QZ","0","Th","12:30","13:20","MEB 251","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12908","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","AF","12909","QZ","0","Th","14:30","15:20","SIG 226","","Restr","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12909","2026-10-17T00:03:00-07:00"
-"CSE 333","Winter 2027","AG","12910","QZ","0","Th","15:30","16:20","BNS 203","","Restr","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12910","2026-10-17T00:03:00-07:00"
-"CSE 344","Winter 2027","A","12915","LEC","4","M|W|F","09:30","10:20","SIG 134","Tang,Hannah C","Restr","open","0","140","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12915","2026-10-17T00:03:00-07:00"
-"CSE 344","Winter 2027","AA","12916","QZ","0","Th","08:30","09:20","SIG 228","","","open","0","32","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12916","2026-10-17T00:03:00-07:00"
-"CSE 344","Winter 2027","AB","12917","QZ","0","Th","09:30","10:20","BNS 203","","","open","0","32","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12917","2026-10-17T00:03:00-07:00"
-"CSE 344","Winter 2027","AC","12918","QZ","0","Th","10:30","11:20","MGH 238","","","open","0","32","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12918","2026-10-17T00:03:00-07:00"
-"CSE 344","Winter 2027","AD","12919","QZ","0","Th","11:30","12:20","MGH 287","","","open","0","32","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12919","2026-10-17T00:03:00-07:00"
-"CSE 344","Winter 2027","AE","12920","QZ","0","Th","12:30","13:20","GLD 436","","","open","0","32","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12920","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","A","12921","LEC","4","M|W|F","11:30","12:20","CSE2 G10","Hsia,Justin","Restr","open","0","95","","J","Tentative final: March 17, 12:30-14:20. CSE majors only.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12921","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","AA","12922","QZ","0","Th","08:30","09:20","MEB 234","","","open","0","28","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12922","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","AB","12923","QZ","0","Th","09:30","10:20","MGH 287","","","open","0","28","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12923","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","AC","12924","QZ","0","Th","10:30","11:20","BLD 286","","","open","0","28","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12924","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","AD","12925","QZ","0","Th","11:30","12:20","LOW 220","","","open","0","28","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12925","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","AE","12926","QZ","0","Th","12:30","13:20","MEB 245","","","open","0","28","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12926","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","B","12927","LEC","4","M|W|F","12:30","13:20","CSE2 G10","Hsia,Justin","Restr","open","0","95","","J","Tentative final: March 17, 12:30-14:20. CSE majors only.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12927","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","BA","12928","QZ","0","Th","12:30","13:20","MGH 242","","","open","0","26","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12928","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","BB","12929","QZ","0","Th","13:30","14:20","MGH 242","","","open","0","27","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12929","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","BC","12930","QZ","0","Th","14:30","15:20","ECE 031","","","open","0","27","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12930","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","BD","12931","QZ","0","Th","15:30","16:20","ECE 026","","","open","0","27","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12931","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","C","12932","LEC","4","M|W|F","11:30","12:20","CSE2 G10","Hsia,Justin","Restr","open","0","10","","J","Tentative final: March 17, 12:30-14:20. ECE majors only.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12932","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","CA","12933","QZ","0","Th","08:30","09:20","MEB 234","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12933","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","CB","12934","QZ","0","Th","09:30","10:20","MGH 287","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12934","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","CC","12935","QZ","0","Th","10:30","11:20","BLD 286","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12935","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","CD","12936","QZ","0","Th","11:30","12:20","LOW 220","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12936","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","CE","12937","QZ","0","Th","12:30","13:20","MEB 245","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12937","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","D","12938","LEC","4","M|W|F","12:30","13:20","CSE2 G10","Hsia,Justin","Restr","open","0","10","","J","Tentative final: March 17, 12:30-14:20. ECE majors only.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12938","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","DA","12939","QZ","0","Th","12:30","13:20","MGH 242","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12939","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","DB","12940","QZ","0","Th","13:30","14:20","MGH 242","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12940","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","DC","12941","QZ","0","Th","14:30","15:20","ECE 031","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12941","2026-10-17T00:03:00-07:00"
-"CSE 351","Winter 2027","DD","12942","QZ","0","Th","15:30","16:20","ECE 026","","","open","0","2","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12942","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","A","12945","LEC","4","M|W|F","15:30","16:20","BAG 131","Champion,Kasey","Restr","open","0","210","","","Non-major course; overlaps CSE 332 in the catalog.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12945","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AA","12946","QZ","0","Th","09:30","10:20","SIG 230","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12946","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AB","12947","QZ","0","Th","10:30","11:20","BNS 117","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12947","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AC","12948","QZ","0","Th","11:30","12:20","LOW 222","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12948","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AD","12949","QZ","0","Th","12:30","13:20","MEB 237","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12949","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AE","12950","QZ","0","Th","13:30","14:20","MEB 245","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12950","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AF","12951","QZ","0","Th","14:30","15:20","MEB 234","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12951","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AG","12952","QZ","0","Th","15:30","16:20","BLD 286","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12952","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AH","12953","QZ","0","Th","08:30","09:20","SIG 230","",">","tentative","0","30","","","Tentative; opens only if needed. Do not schedule by default.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12953","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AI","12954","QZ","0","Th","15:30","16:20","MGH 271","",">","tentative","0","30","","","Tentative; opens only if needed. Do not schedule by default.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12954","2026-10-17T00:03:00-07:00"
-"CSE 373","Winter 2027","AJ","12955","QZ","0","Th","12:30","13:20","MEB 235","",">","tentative","0","30","","","Tentative; opens only if needed. Do not schedule by default.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12955","2026-10-17T00:03:00-07:00"
-"CSE 391","Winter 2027","A","12962","LEC","1","T","13:30","14:20","CSE2 G20","Salguero,Adrian","Restr","open","0","150","CR/NC","J","CSE majors only.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12962","2026-10-17T00:03:00-07:00"
-"CSE 391","Winter 2027","B","12963","LEC","1","T","13:30","14:20","CSE2 G20","Salguero,Adrian","Restr","open","0","22","CR/NC","J","ECE majors only; concurrent registration in CSE 351 required.","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12963","2026-10-17T00:03:00-07:00"
-"CSE 446","Winter 2027","A","13021","LEC","4","M|W|F","09:00","10:20","CSE2 G20","Oh,Sewoong","Restr","open","0","173","","J","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13021","2026-10-17T00:03:00-07:00"
-"CSE 446","Winter 2027","AA","13022","QZ","0","Th","08:30","09:20","BNS 203","","","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13022","2026-10-17T00:03:00-07:00"
-"CSE 446","Winter 2027","AB","13023","QZ","0","Th","09:30","10:20","ECE 031","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13023","2026-10-17T00:03:00-07:00"
-"CSE 446","Winter 2027","AC","13024","QZ","0","Th","10:30","11:20","MGH 242","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13024","2026-10-17T00:03:00-07:00"
-"CSE 446","Winter 2027","AD","13025","QZ","0","Th","11:30","12:20","BLD 286","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13025","2026-10-17T00:03:00-07:00"
-"CSE 446","Winter 2027","AE","13026","QZ","0","Th","12:30","13:20","SIG 228","","","open","0","35","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13026","2026-10-17T00:03:00-07:00"
-"CSE 446","Winter 2027","AF","13027","QZ","0","Th","13:30","14:20","MEB 250","","","open","0","30","","","","https://www.washington.edu/students/timeschd/WIN2027/cse.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13027","2026-10-17T00:03:00-07:00"
-"AMATH 301","Winter 2027","A","10211","LEC","4","M|T|W|F","08:30","09:20","KNE 110","GKOGKOU,AIKATERINI","","open","0","200","","$22","Python section; course fee USD 22.","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10211","2026-10-17T00:03:00-07:00"
-"AMATH 301","Winter 2027","B","10212","LEC","4","M|T|W|F","09:30","10:20","KNE 110","GKOGKOU,AIKATERINI","","open","0","200","","$22","Python section; course fee USD 22.","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10212","2026-10-17T00:03:00-07:00"
-"AMATH 301","Winter 2027","C","10213","LEC","4","M|T|W|F","15:30","16:20","KNE 110","Upsal,Jeremy","","open","0","200","","$22","Python section; course fee USD 22.","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10213","2026-10-17T00:03:00-07:00"
-"AMATH 351","Winter 2027","A","10215","LEC","3","M|W|F","10:30","11:20","RAI 121","Bhavna,Fnu","Restr","open","0","75","","","Department add-code policy: https://amath.washington.edu/advising","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10215","2026-10-17T00:03:00-07:00"
-"AMATH 351","Winter 2027","B","10216","LEC","3","M|W|F","14:30","15:20","THO 125","Bhavna,Fnu","Restr","open","0","75","","","Department add-code policy: https://amath.washington.edu/advising","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10216","2026-10-17T00:03:00-07:00"
-"AMATH 352","Winter 2027","A","10217","LEC","3","M|W|F","11:30","12:20","JHN 075","Wang,Geshuo","Restr","open","0","100","","","Department add-code policy: https://amath.washington.edu/advising","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10217","2026-10-17T00:03:00-07:00"
-"AMATH 352","Winter 2027","B","10218","LEC","3","M|W|F","12:30","13:20","SMI 205","Wang,Haixiao","Restr","open","0","100","","","Department add-code policy: https://amath.washington.edu/advising","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10218","2026-10-17T00:03:00-07:00"
-"AMATH 383","Winter 2027","A","10219","LEC","3","T|Th","14:30","15:50","GLD 322","Tung,Ka-Kit","Restr","open","0","90","","","Department add-code policy: https://amath.washington.edu/advising","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10219","2026-10-17T00:03:00-07:00"
-"AMATH 402","Winter 2027","A","10220","LEC","4","M|W|F","12:30","13:20","THO 125","Kong,Fanze","Restr","open","0","75","","","Department add-code policy: https://amath.washington.edu/advising Add-code waitlist: https://tinyurl.com/3V4P288W. Used only when registration requires an add code.","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10220","2026-10-17T00:03:00-07:00"
-"AMATH 482","Winter 2027","A","10222","LEC","5","M|W|F","09:30","10:20","IEB G109","Shlizerman,Eli","Restr","open","0","80","","","Department add-code policy: https://amath.washington.edu/advising Add-code waitlist: https://tinyurl.com/YSW78KW2. Used only when registration requires an add code.","https://www.washington.edu/students/timeschd/WIN2027/appmath.html","https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10222","2026-10-17T00:03:00-07:00"
+course_id,term,section,sln,component,credits,days,start_time,end_time,room,instructor,restriction_flag,section_status,enrolled_snapshot,capacity_snapshot,grading,other_codes,notes,source_url,detail_url,snapshot_at,registration_detail_status,registration_status,registration_rules_summary,registration_notes,registration_source_url,registration_checked_at,registration_rules_json
+CSE 311,Winter 2027,A,12854,LEC,4,M|W|F,13:30,14:20,CSE2 G01,"Wilcox,James Rasmussen",Restr,open,0,110,,,"Tentative final: March 15, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12854,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 15, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12854,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 311,Winter 2027,AA,12855,QZ,0,Th,10:30,11:20,ECE 042,,,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12855,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12855,2026-10-17,[]
+CSE 311,Winter 2027,AB,12856,QZ,0,Th,11:30,12:20,MGH 242,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12856,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12856,2026-10-17,[]
+CSE 311,Winter 2027,AC,12857,QZ,0,Th,12:30,13:20,MGH 228,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12857,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12857,2026-10-17,[]
+CSE 311,Winter 2027,AD,12858,QZ,0,Th,13:30,14:20,CDH 128,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12858,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12858,2026-10-17,[]
+CSE 311,Winter 2027,AE,12859,QZ,0,Th,14:30,15:20,TBA,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12859,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12859,2026-10-17,[]
+CSE 311,Winter 2027,B,12860,LEC,4,M|W|F,14:30,15:20,CSE2 G01,"Wilcox,James Rasmussen",Restr,open,0,110,,,"Tentative final: March 15, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12860,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 15, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12860,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 311,Winter 2027,BA,12861,QZ,0,Th,12:30,13:20,ECE 025,,,open,0,27,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12861,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12861,2026-10-17,[]
+CSE 311,Winter 2027,BB,12862,QZ,0,Th,13:30,14:20,THO 334,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12862,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12862,2026-10-17,[]
+CSE 311,Winter 2027,BC,12863,QZ,0,Th,14:30,15:20,MGH 242,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12863,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12863,2026-10-17,[]
+CSE 311,Winter 2027,BD,12864,QZ,0,Th,15:30,16:20,MGH 242,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12864,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12864,2026-10-17,[]
+CSE 311,Winter 2027,BE,12865,QZ,0,Th,14:30,15:20,LOW 219,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12865,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12865,2026-10-17,[]
+CSE 312,Winter 2027,A,12866,LEC,4,M|W|F,10:30,11:20,ARC 147,"Weber,Robbie",Restr,open,0,150,,,"Tentative final: March 15, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12866,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 15, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12866,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 312,Winter 2027,AA,12867,QZ,0,Th,09:30,10:20,ECE 026,,,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12867,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12867,2026-10-17,[]
+CSE 312,Winter 2027,AB,12868,QZ,0,Th,10:30,11:20,ECE 031,,,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12868,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12868,2026-10-17,[]
+CSE 312,Winter 2027,AC,12869,QZ,0,Th,11:30,12:20,ECE 042,,,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12869,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12869,2026-10-17,[]
+CSE 312,Winter 2027,AD,12870,QZ,0,Th,12:30,13:20,ECE 042,,,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12870,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12870,2026-10-17,[]
+CSE 312,Winter 2027,AE,12871,QZ,0,Th,13:30,14:20,BLD 392,,,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12871,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12871,2026-10-17,[]
+CSE 312,Winter 2027,AF,12872,QZ,0,Th,14:30,15:20,ECE 042,,,open,0,2,,J,"Open for registration, per section note.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12872,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 312 BF (SLN 12879). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 312 BF
+Quiz Section
+--
+OPEN FOR REGISTRATION
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12872,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 312"",""counterpart_section"":""BF"",""counterpart_sln"":""12879"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 312,Winter 2027,B,12873,LEC,4,M|W|F,13:30,14:20,MGH 389,"Weber,Robbie",Restr,open,0,165,,,"Tentative final: March 15, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12873,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 15, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12873,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 312,Winter 2027,BA,12874,QZ,0,Th,11:30,12:20,ECE 031,,Restr,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12874,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Quiz Section
+C SCI,CMP E majors only",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12874,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 312,Winter 2027,BB,12875,QZ,0,Th,12:30,13:20,ECE 031,,Restr,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12875,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Quiz Section
+C SCI,CMP E majors only",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12875,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 312,Winter 2027,BC,12876,QZ,0,Th,13:30,14:20,MEB 251,,Restr,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12876,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Quiz Section
+C SCI,CMP E majors only",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12876,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 312,Winter 2027,BD,12877,QZ,0,Th,14:30,15:20,ECE 026,,Restr,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12877,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Quiz Section
+C SCI,CMP E majors only",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12877,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 312,Winter 2027,BE,12878,QZ,0,Th,15:30,16:20,ECE 031,,Restr,open,0,29,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12878,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Quiz Section
+C SCI,CMP E majors only",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12878,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 312,Winter 2027,BF,12879,QZ,0,Th,14:30,15:20,ECE 042,,Restr,open,0,27,,J,"Open for registration, per section note.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12879,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Joint offering: CSE 312 AF (SLN 12872). Not a lecture/quiz pairing approval
+Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Offered jointly with CSE 312 AF
+Quiz Section
+C SCI,CMP E majors only
+--
+OPEN FOR REGISTRATION
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12879,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 312"",""counterpart_section"":""AF"",""counterpart_sln"":""12872"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 331,Winter 2027,A,12880,LEC,4,M|W|F,14:30,15:20,PAA A102,"Wang,Matt",Restr,open,0,110,,,"Tentative final: March 16, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12880,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 16, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12880,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 331,Winter 2027,AA,12881,QZ,0,Th,12:30,13:20,MGH 287,,,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12881,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12881,2026-10-17,[]
+CSE 331,Winter 2027,AB,12882,QZ,0,Th,13:30,14:20,MEB 237,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12882,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12882,2026-10-17,[]
+CSE 331,Winter 2027,AC,12883,QZ,0,Th,14:30,15:20,MGH 238,,,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12883,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12883,2026-10-17,[]
+CSE 331,Winter 2027,AD,12884,QZ,0,Th,15:30,16:20,MGH 287,,,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12884,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12884,2026-10-17,[]
+CSE 331,Winter 2027,B,12885,LEC,4,M|W|F,10:30,11:20,CSE2 G01,"Wang,Matt",Restr,open,0,110,,,"Tentative final: March 16, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12885,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 16, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12885,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 331,Winter 2027,BA,12886,QZ,0,Th,09:30,10:20,MGH 254,,,open,0,27,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12886,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12886,2026-10-17,[]
+CSE 331,Winter 2027,BB,12887,QZ,0,Th,10:30,11:20,SIG 228,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12887,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12887,2026-10-17,[]
+CSE 331,Winter 2027,BC,12888,QZ,0,Th,11:30,12:20,LOW 219,,,open,0,27,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12888,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12888,2026-10-17,[]
+CSE 331,Winter 2027,BD,12889,QZ,0,Th,12:30,13:20,BNS 203,,,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12889,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12889,2026-10-17,[]
+CSE 332,Winter 2027,A,12890,LEC,4,M|W|F,12:30,13:20,CSE2 G20,"Anderson,Ruth",Restr,open,0,195,,,"Tentative final: March 18, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12890,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 18, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12890,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 332,Winter 2027,AA,12891,QZ,0,Th,08:30,09:20,JHN 022,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12891,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12891,2026-10-17,[]
+CSE 332,Winter 2027,AB,12892,QZ,0,Th,09:30,10:20,ECE 042,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12892,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12892,2026-10-17,[]
+CSE 332,Winter 2027,AC,12893,QZ,0,Th,10:30,11:20,MGH 287,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12893,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12893,2026-10-17,[]
+CSE 332,Winter 2027,AD,12894,QZ,0,Th,11:30,12:20,MGH 271,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12894,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12894,2026-10-17,[]
+CSE 332,Winter 2027,AE,12895,QZ,0,Th,12:30,13:20,MEB 250,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12895,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12895,2026-10-17,[]
+CSE 332,Winter 2027,AF,12896,QZ,0,Th,15:30,16:20,ECE 025,,,open,0,20,,J,Cross-listed quiz note: AF/BD.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12896,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 332 BD (SLN 12902). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 332 BD
+Quiz Section
+AF/BD",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12896,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 332"",""counterpart_section"":""BD"",""counterpart_sln"":""12902"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 332,Winter 2027,AG,12897,QZ,0,Th,12:30,13:20,MUE 154,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12897,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12897,2026-10-17,[]
+CSE 332,Winter 2027,B,12898,LEC,4,M|W|F,15:30,16:20,CSE2 G10,"Anderson,Ruth",Restr,open,0,98,,,"Tentative final: March 18, 12:30-14:20.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12898,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: C SCI, CMP E","Notes
+Check prerequisites
+C SCI,CMP E majors only
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 18, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12898,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 332,Winter 2027,BA,12899,QZ,0,Th,12:30,13:20,MEB 234,,,open,0,27,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12899,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12899,2026-10-17,[]
+CSE 332,Winter 2027,BB,12900,QZ,0,Th,13:30,14:20,MEB 235,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12900,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12900,2026-10-17,[]
+CSE 332,Winter 2027,BC,12901,QZ,0,Th,14:30,15:20,LOW 202,,,open,0,28,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12901,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12901,2026-10-17,[]
+CSE 332,Winter 2027,BD,12902,QZ,0,Th,15:30,16:20,ECE 025,,,open,0,15,,J,Cross-listed quiz note: AF/BD.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12902,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 332 AF (SLN 12896). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 332 AF
+Quiz Section
+AF/BD",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12902,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 332"",""counterpart_section"":""AF"",""counterpart_sln"":""12896"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 333,Winter 2027,A,12903,LEC,4,M|W|F,11:30,12:20,GWN 301,"Thachuk,Chris",Restr,open,0,195,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12903,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 333,Winter 2027,AA,12904,QZ,0,Th,08:30,09:20,MGH 234,,,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12904,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 333,Winter 2027,AB,12905,QZ,0,Th,09:30,10:20,SIG 228,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12905,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 333,Winter 2027,AC,12906,QZ,0,Th,10:30,11:20,LOW 202,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12906,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 333,Winter 2027,AD,12907,QZ,0,Th,11:30,12:20,MEB 234,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12907,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 333,Winter 2027,AE,12908,QZ,0,Th,12:30,13:20,MEB 251,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12908,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 333,Winter 2027,AF,12909,QZ,0,Th,14:30,15:20,SIG 226,,Restr,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12909,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 333,Winter 2027,AG,12910,QZ,0,Th,15:30,16:20,BNS 203,,Restr,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12910,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 344,Winter 2027,A,12915,LEC,4,M|W|F,09:30,10:20,SIG 134,"Tang,Hannah C",Restr,open,0,140,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12915,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 344,Winter 2027,AA,12916,QZ,0,Th,08:30,09:20,SIG 228,,,open,0,32,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12916,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 344,Winter 2027,AB,12917,QZ,0,Th,09:30,10:20,BNS 203,,,open,0,32,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12917,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 344,Winter 2027,AC,12918,QZ,0,Th,10:30,11:20,MGH 238,,,open,0,32,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12918,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 344,Winter 2027,AD,12919,QZ,0,Th,11:30,12:20,MGH 287,,,open,0,32,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12919,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 344,Winter 2027,AE,12920,QZ,0,Th,12:30,13:20,GLD 436,,,open,0,32,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12920,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 351,Winter 2027,A,12921,LEC,4,M|W|F,11:30,12:20,CSE2 G10,"Hsia,Justin",Restr,open,0,95,,J,"Tentative final: March 17, 12:30-14:20. CSE majors only.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12921,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Joint offering: CSE 351 C (SLN 12932). Not a lecture/quiz pairing approval
+Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Offered jointly with CSE 351 C
+C SCI,CMP E majors only
+--
+CSE MAJORS ONLY
+--
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 17, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12921,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""C"",""counterpart_sln"":""12932"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 351,Winter 2027,AA,12922,QZ,0,Th,08:30,09:20,MEB 234,,,open,0,28,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12922,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 CA (SLN 12933). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 CA
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12922,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""CA"",""counterpart_sln"":""12933"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,AB,12923,QZ,0,Th,09:30,10:20,MGH 287,,,open,0,28,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12923,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 CB (SLN 12934). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 CB
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12923,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""CB"",""counterpart_sln"":""12934"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,AC,12924,QZ,0,Th,10:30,11:20,BLD 286,,,open,0,28,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12924,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 CC (SLN 12935). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 CC
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12924,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""CC"",""counterpart_sln"":""12935"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,AD,12925,QZ,0,Th,11:30,12:20,LOW 220,,,open,0,28,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12925,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 CD (SLN 12936). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 CD
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12925,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""CD"",""counterpart_sln"":""12936"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,AE,12926,QZ,0,Th,12:30,13:20,MEB 245,,,open,0,28,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12926,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 CE (SLN 12937). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 CE
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12926,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""CE"",""counterpart_sln"":""12937"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,B,12927,LEC,4,M|W|F,12:30,13:20,CSE2 G10,"Hsia,Justin",Restr,open,0,95,,J,"Tentative final: March 17, 12:30-14:20. CSE majors only.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12927,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Joint offering: CSE 351 D (SLN 12938). Not a lecture/quiz pairing approval
+Majors only: C SCI, CMP E","Notes
+Check prerequisites
+Offered jointly with CSE 351 D
+C SCI,CMP E majors only
+--
+CSE MAJORS ONLY
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 17, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12927,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""D"",""counterpart_sln"":""12938"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 351,Winter 2027,BA,12928,QZ,0,Th,12:30,13:20,MGH 242,,,open,0,26,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12928,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 DA (SLN 12939). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 DA
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12928,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""DA"",""counterpart_sln"":""12939"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,BB,12929,QZ,0,Th,13:30,14:20,MGH 242,,,open,0,27,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12929,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 DB (SLN 12940). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 DB
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12929,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""DB"",""counterpart_sln"":""12940"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,BC,12930,QZ,0,Th,14:30,15:20,ECE 031,,,open,0,27,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12930,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 DC (SLN 12941). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 DC
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12930,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""DC"",""counterpart_sln"":""12941"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,BD,12931,QZ,0,Th,15:30,16:20,ECE 026,,,open,0,27,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12931,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 DD (SLN 12942). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 DD
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12931,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""DD"",""counterpart_sln"":""12942"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,C,12932,LEC,4,M|W|F,11:30,12:20,CSE2 G10,"Hsia,Justin",Restr,open,0,10,,J,"Tentative final: March 17, 12:30-14:20. ECE majors only.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12932,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Joint offering: CSE 351 A (SLN 12921). Not a lecture/quiz pairing approval
+Majors only: E E, ECENG, ECE","Notes
+Check prerequisites
+Offered jointly with CSE 351 A
+E E,ECENG,ECE majors only
+--
+ECE MAJORS ONLY
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 17, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12932,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""A"",""counterpart_sln"":""12921"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""E E"",""ECENG"",""ECE""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 351,Winter 2027,CA,12933,QZ,0,Th,08:30,09:20,MEB 234,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12933,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 AA (SLN 12922). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 AA
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12933,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""AA"",""counterpart_sln"":""12922"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,CB,12934,QZ,0,Th,09:30,10:20,MGH 287,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12934,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 AB (SLN 12923). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 AB
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12934,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""AB"",""counterpart_sln"":""12923"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,CC,12935,QZ,0,Th,10:30,11:20,BLD 286,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12935,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 AC (SLN 12924). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 AC
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12935,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""AC"",""counterpart_sln"":""12924"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,CD,12936,QZ,0,Th,11:30,12:20,LOW 220,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12936,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 AD (SLN 12925). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 AD
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12936,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""AD"",""counterpart_sln"":""12925"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,CE,12937,QZ,0,Th,12:30,13:20,MEB 245,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12937,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 AE (SLN 12926). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 AE
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12937,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""AE"",""counterpart_sln"":""12926"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,D,12938,LEC,4,M|W|F,12:30,13:20,CSE2 G10,"Hsia,Justin",Restr,open,0,10,,J,"Tentative final: March 17, 12:30-14:20. ECE majors only.",https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12938,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Joint offering: CSE 351 B (SLN 12927). Not a lecture/quiz pairing approval
+Majors only: E E, ECE, ECENG","Notes
+Check prerequisites
+Offered jointly with CSE 351 B
+E E,ECE,ECENG majors only
+--
+ECE MAJORS ONLY
+--
+FINAL EXAM TENTATIVELY PLANNED FOR
+MARCH 17, 1230-220PM
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12938,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""B"",""counterpart_sln"":""12927"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""E E"",""ECE"",""ECENG""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""period_qualification_in_note"":null}]"
+CSE 351,Winter 2027,DA,12939,QZ,0,Th,12:30,13:20,MGH 242,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12939,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 BA (SLN 12928). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 BA
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12939,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""BA"",""counterpart_sln"":""12928"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,DB,12940,QZ,0,Th,13:30,14:20,MGH 242,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12940,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 BB (SLN 12929). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 BB
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12940,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""BB"",""counterpart_sln"":""12929"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,DC,12941,QZ,0,Th,14:30,15:20,ECE 031,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12941,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 BC (SLN 12930). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 BC
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12941,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""BC"",""counterpart_sln"":""12930"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 351,Winter 2027,DD,12942,QZ,0,Th,15:30,16:20,ECE 026,,,open,0,2,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12942,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Joint offering: CSE 351 BD (SLN 12931). Not a lecture/quiz pairing approval,"Notes
+Check prerequisites
+Offered jointly with CSE 351 BD
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12942,2026-10-17,"[{""type"":""joint_offering"",""counterpart_course_id"":""CSE 351"",""counterpart_section"":""BD"",""counterpart_sln"":""12931"",""implies_lecture_quiz_pair_permission"":false,""verification"":""explicit_SLN_note""}]"
+CSE 373,Winter 2027,A,12945,LEC,4,M|W|F,15:30,16:20,BAG 131,"Champion,Kasey",Restr,open,0,210,,,Non-major course; overlaps CSE 332 in the catalog.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12945,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Excluded majors: C SCI, CMP E","Notes
+Check prerequisites
+No C SCI,CMP E majors
+CSE NON-MAJOR COURSE",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12945,2026-10-17,"[{""type"":""excluded_majors"",""institutional_major_codes"":[""C SCI"",""CMP E""],""scope"":""this_section"",""verification"":""explicit_SLN_note""}]"
+CSE 373,Winter 2027,AA,12946,QZ,0,Th,09:30,10:20,SIG 230,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12946,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12946,2026-10-17,[]
+CSE 373,Winter 2027,AB,12947,QZ,0,Th,10:30,11:20,BNS 117,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12947,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12947,2026-10-17,[]
+CSE 373,Winter 2027,AC,12948,QZ,0,Th,11:30,12:20,LOW 222,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12948,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12948,2026-10-17,[]
+CSE 373,Winter 2027,AD,12949,QZ,0,Th,12:30,13:20,MEB 237,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12949,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12949,2026-10-17,[]
+CSE 373,Winter 2027,AE,12950,QZ,0,Th,13:30,14:20,MEB 245,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12950,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12950,2026-10-17,[]
+CSE 373,Winter 2027,AF,12951,QZ,0,Th,14:30,15:20,MEB 234,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12951,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12951,2026-10-17,[]
+CSE 373,Winter 2027,AG,12952,QZ,0,Th,15:30,16:20,BLD 286,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12952,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,No additional structured restriction in captured Notes. Full eligibility remains unknown.,"Notes
+Check prerequisites
+Quiz Section",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12952,2026-10-17,[]
+CSE 373,Winter 2027,AH,12953,QZ,0,Th,08:30,09:20,SIG 230,,>,tentative,0,30,,,Tentative; opens only if needed. Do not schedule by default.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12953,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Add code required
+Tentative section. Exclude by default","Notes
+Check prerequisites
+Quiz Section
+Add Code required
+--
+TENTATIVE
+SECTION WILL OPEN IF NEEDED
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12953,2026-10-17,"[{""type"":""add_code_required"",""value"":true,""verification"":""explicit_MyPlan_label_and_SLN_note""},{""type"":""tentative_section"",""exclude_by_default"":true}]"
+CSE 373,Winter 2027,AI,12954,QZ,0,Th,15:30,16:20,MGH 271,,>,tentative,0,30,,,Tentative; opens only if needed. Do not schedule by default.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12954,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Add code required
+Tentative section. Exclude by default","Notes
+Check prerequisites
+Quiz Section
+Add Code required
+--
+TENTATIVE
+SECTION WILL OPEN IF NEEDED
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12954,2026-10-17,"[{""type"":""add_code_required"",""value"":true,""verification"":""explicit_MyPlan_label_and_SLN_note""},{""type"":""tentative_section"",""exclude_by_default"":true}]"
+CSE 373,Winter 2027,AJ,12955,QZ,0,Th,12:30,13:20,MEB 235,,>,tentative,0,30,,,Tentative; opens only if needed. Do not schedule by default.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12955,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Add code required
+Tentative section. Exclude by default","Notes
+Check prerequisites
+Quiz Section
+Add Code required
+--
+TENTATIVE
+SECTION WILL OPEN IF NEEDED
+--",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12955,2026-10-17,"[{""type"":""add_code_required"",""value"":true,""verification"":""explicit_MyPlan_label_and_SLN_note""},{""type"":""tentative_section"",""exclude_by_default"":true}]"
+CSE 391,Winter 2027,A,12962,LEC,1,T,13:30,14:20,CSE2 G20,"Salguero,Adrian",Restr,open,0,150,CR/NC,J,CSE majors only.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12962,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 391,Winter 2027,B,12963,LEC,1,T,13:30,14:20,CSE2 G20,"Salguero,Adrian",Restr,open,0,22,CR/NC,J,ECE majors only; concurrent registration in CSE 351 required.,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=12963,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 446,Winter 2027,A,13021,LEC,4,M|W|F,09:00,10:20,CSE2 G20,"Oh,Sewoong",Restr,open,0,173,,J,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13021,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 446,Winter 2027,AA,13022,QZ,0,Th,08:30,09:20,BNS 203,,,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13022,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 446,Winter 2027,AB,13023,QZ,0,Th,09:30,10:20,ECE 031,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13023,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 446,Winter 2027,AC,13024,QZ,0,Th,10:30,11:20,MGH 242,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13024,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 446,Winter 2027,AD,13025,QZ,0,Th,11:30,12:20,BLD 286,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13025,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 446,Winter 2027,AE,13026,QZ,0,Th,12:30,13:20,SIG 228,,,open,0,35,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13026,2026-10-17T00:03:00-07:00,,,,,,,
+CSE 446,Winter 2027,AF,13027,QZ,0,Th,13:30,14:20,MEB 250,,,open,0,30,,,,https://www.washington.edu/students/timeschd/WIN2027/cse.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=13027,2026-10-17T00:03:00-07:00,,,,,,,
+AMATH 301,Winter 2027,A,10211,LEC,4,M|T|W|F,08:30,09:20,KNE 110,"GKOGKOU,AIKATERINI",,open,0,200,,$22,Python section; course fee USD 22.,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10211,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Additional fee: USD 22,"Notes
+Check prerequisites
+$22 additional course fee req'd
+Fee purpose: Other
+PYTHON",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10211,2026-10-17,"[{""type"":""additional_course_fee"",""amount"":22,""currency"":""USD"",""fee_purpose"":""Other"",""verification"":""explicit_SLN_note""}]"
+AMATH 301,Winter 2027,B,10212,LEC,4,M|T|W|F,09:30,10:20,KNE 110,"GKOGKOU,AIKATERINI",,open,0,200,,$22,Python section; course fee USD 22.,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10212,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Additional fee: USD 22,"Notes
+Check prerequisites
+$22 additional course fee req'd
+Fee purpose: Other
+PYTHON",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10212,2026-10-17,"[{""type"":""additional_course_fee"",""amount"":22,""currency"":""USD"",""fee_purpose"":""Other"",""verification"":""explicit_SLN_note""}]"
+AMATH 301,Winter 2027,C,10213,LEC,4,M|T|W|F,15:30,16:20,KNE 110,"Upsal,Jeremy",,open,0,200,,$22,Python section; course fee USD 22.,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10213,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,Additional fee: USD 22,"Notes
+Check prerequisites
+$22 additional course fee req'd
+Fee purpose: Other
+PYTHON",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10213,2026-10-17,"[{""type"":""additional_course_fee"",""amount"":22,""currency"":""USD"",""fee_purpose"":""Other"",""verification"":""explicit_SLN_note""}]"
+AMATH 351,Winter 2027,A,10215,LEC,3,M|W|F,10:30,11:20,RAI 121,"Bhavna,Fnu",Restr,open,0,75,,,Department add-code policy: https://amath.washington.edu/advising,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10215,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: AMATH, CFRM, ACMS. Period I only: 2026-11-05 through 2026-11-22 (inclusive)","Notes
+Check prerequisites
+AMATH,CFRM,ACMS majors only Period 1 (11/5/2026-11/22/2026)
+ADD CODE POLICY:
+AMATH.WASHINGTON.EDU/ADVISING",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10215,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""AMATH"",""CFRM"",""ACMS""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""registration_period"":""I"",""start_date"":""2026-11-05"",""end_date"":""2026-11-22"",""date_bounds"":""inclusive"",""time_zone"":""America/Los_Angeles""}]"
+AMATH 351,Winter 2027,B,10216,LEC,3,M|W|F,14:30,15:20,THO 125,"Bhavna,Fnu",Restr,open,0,75,,,Department add-code policy: https://amath.washington.edu/advising,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10216,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Majors only: AMATH, CFRM, ACMS. Period I only: 2026-11-05 through 2026-11-22 (inclusive)","Notes
+Check prerequisites
+AMATH,CFRM,ACMS majors only Period 1 (11/5/2026-11/22/2026)
+ADD CODE POLICY:
+AMATH.WASHINGTON.EDU/ADVISING",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10216,2026-10-17,"[{""type"":""allowed_majors"",""institutional_major_codes"":[""AMATH"",""CFRM"",""ACMS""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""registration_period"":""I"",""start_date"":""2026-11-05"",""end_date"":""2026-11-22"",""date_bounds"":""inclusive"",""time_zone"":""America/Los_Angeles""}]"
+AMATH 352,Winter 2027,A,10217,LEC,3,M|W|F,11:30,12:20,JHN 075,"Wang,Geshuo",Restr,open,0,100,,,Department add-code policy: https://amath.washington.edu/advising,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10217,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Excluded student level: graduate
+Majors only: AMATH, CFRM, ACMS. Period I only: 2026-11-05 through 2026-11-22 (inclusive)","Notes
+Check prerequisites
+No Grads
+AMATH,CFRM,ACMS majors only Period 1 (11/5/2026-11/22/2026)
+ADD CODE POLICY:
+AMATH.WASHINGTON.EDU/ADVISING",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10217,2026-10-17,"[{""type"":""excluded_student_level"",""student_level"":""graduate"",""scope"":""this_section"",""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""AMATH"",""CFRM"",""ACMS""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""registration_period"":""I"",""start_date"":""2026-11-05"",""end_date"":""2026-11-22"",""date_bounds"":""inclusive"",""time_zone"":""America/Los_Angeles""}]"
+AMATH 352,Winter 2027,B,10218,LEC,3,M|W|F,12:30,13:20,SMI 205,"Wang,Haixiao",Restr,open,0,100,,,Department add-code policy: https://amath.washington.edu/advising,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10218,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Excluded student level: graduate
+Majors only: AMATH, CFRM, ACMS. Period I only: 2026-11-05 through 2026-11-22 (inclusive)","Notes
+Check prerequisites
+No Grads
+AMATH,CFRM,ACMS majors only Period 1 (11/5/2026-11/22/2026)
+ADD CODE POLICY:
+AMATH.WASHINGTON.EDU/ADVISING",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10218,2026-10-17,"[{""type"":""excluded_student_level"",""student_level"":""graduate"",""scope"":""this_section"",""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""AMATH"",""CFRM"",""ACMS""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""registration_period"":""I"",""start_date"":""2026-11-05"",""end_date"":""2026-11-22"",""date_bounds"":""inclusive"",""time_zone"":""America/Los_Angeles""}]"
+AMATH 383,Winter 2027,A,10219,LEC,3,T|Th,14:30,15:50,GLD 322,"Tung,Ka-Kit",Restr,open,0,90,,,Department add-code policy: https://amath.washington.edu/advising,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10219,2026-10-17T00:03:00-07:00,,,,,,,
+AMATH 402,Winter 2027,A,10220,LEC,4,M|W|F,12:30,13:20,THO 125,"Kong,Fanze",Restr,open,0,75,,,Department add-code policy: https://amath.washington.edu/advising Add-code waitlist: https://tinyurl.com/3V4P288W. Used only when registration requires an add code.,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10220,2026-10-17T00:03:00-07:00,,,,,,,
+AMATH 482,Winter 2027,A,10222,LEC,5,M|W|F,09:30,10:20,IEB G109,"Shlizerman,Eli",Restr,open,0,80,,,Department add-code policy: https://amath.washington.edu/advising Add-code waitlist: https://tinyurl.com/YSW78KW2. Used only when registration requires an add code.,https://www.washington.edu/students/timeschd/WIN2027/appmath.html,https://sdb.admin.washington.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10222,2026-10-17T00:03:00-07:00,SLN_notes_read,unknown,"Waitlist applies only when registration is restricted by add code
+Excluded student level: graduate
+Majors only: AMATH, CFRM, ACMS. Period I only: 2026-11-05 through 2026-11-22 (inclusive)
+Registration subject to prerequisite cancellation","Notes
+Check prerequisites
+Students who do not complete the prerequisites will be dropped from this course.
+No Grads
+AMATH,CFRM,ACMS majors only Period 1 (11/5/2026-11/22/2026)
+ADD CODE POLICY:
+AMATH.WASHINGTON.EDU/ADVISING
+ADD CODE WAITLIST:
+HTTPS://TINYURL.COM/YSW78KW2
+--
+IF COURSE REGISTRATION NOT
+RESTRICTED BY ADD CODE, WAITLIST
+WILL NOT BE USED.
+USE UW NOTIFY TO BE NOTIFIED OF
+SEAT AVAILABILITY AND ATTEMPT TO
+GAIN A SEAT.",https://sdb.admin.uw.edu/timeschd/uwnetid/sln.asp?QTRYR=WIN+2027&SLN=10222,2026-10-17,"[{""type"":""waitlist_policy"",""condition"":""registration_is_restricted_by_add_code"",""url"":""https://tinyurl.com/YSW78KW2"",""form_submitted"":false,""requires_add_code_for_every_student"":null},{""type"":""excluded_student_level"",""student_level"":""graduate"",""scope"":""this_section"",""verification"":""explicit_SLN_note""},{""type"":""allowed_majors"",""institutional_major_codes"":[""AMATH"",""CFRM"",""ACMS""],""scope"":""this_section"",""verification"":""explicit_SLN_note"",""institutional_code_mapping_required"":true,""registration_period"":""I"",""start_date"":""2026-11-05"",""end_date"":""2026-11-22"",""date_bounds"":""inclusive"",""time_zone"":""America/Los_Angeles""},{""type"":""prerequisite_cancellation"",""enabled"":true,""verification"":""explicit_SLN_note""}]"

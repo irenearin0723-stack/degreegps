@@ -2,13 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { loadData } from '../lib/data';
-import { importRegistration, evaluateSection } from '../lib/registration';
+import { importRegistration, evaluateSection, ruleCondition, type RuleCondition } from '../lib/registration';
 import { planAcademic } from '../lib/planner';
 import { generatePlan } from '../lib/plan-service';
 import { PlanRequestSchema, PlanResponseSchema, type PlanRequest } from '../types/plan';
 import { checkPrerequisites } from '../lib/prerequisites';
 const data = loadData();
-const handoff = JSON.parse(readFileSync('data/handoff/registration_evidence_handoff.json', 'utf8'));
+const registrationRules = JSON.parse(readFileSync('data/target_courses/registration_rules.json', 'utf8'));
 const now = new Date('2026-10-17T18:00:00Z');
 function request(changes: Partial<PlanRequest> = {}) {
   return PlanRequestSchema.parse({ major: 'Computer Science + Applied Mathematics', completed_courses: [], in_progress_courses: [],
@@ -85,7 +85,7 @@ const acceptance: (() => Promise<void>)[] = [
   },
   async () => {
     const s = await section('AMATH 351', 'A');
-    assert.ok(s.import_candidates.some(r => r.type === 'policy_reference' && !r.implies_add_code_required));
+    assert.ok(s.baseline_import_candidates?.some(r => r.type === 'policy_reference' && !r.implies_add_code_required));
     const d = await decision('AMATH 351', { completed_courses: ['MATH 125'] });
     assert.equal(d.decision.catalog_prerequisite_status, 'met'); assert.equal(d.decision.section_registration_status, 'unknown');
     assert.ok(!JSON.stringify(d.decision).includes('Add code required'));
@@ -103,7 +103,7 @@ const acceptance: (() => Promise<void>)[] = [
     assert.equal((await decision('INFO 330')).decision.section_registration_status, 'unknown');
   },
 ];
-handoff.acceptance_checks.forEach((name: string, i: number) => test(`handoff acceptance ${i + 1}: ${name}`, acceptance[i]));
+registrationRules.acceptance_checks.forEach((name: string, i: number) => test(`registration acceptance ${i + 1}: ${name}`, acceptance[i]));
 
 test('reviewed grade IDs normalize; invalid, colliding, nonnumeric, or unconfirmed grades fail safely', () => {
   assert.deepEqual(request({ completed_courses: ['cse123'], reviewed_grades: { cse123: 2 } }).reviewed_grades, { 'CSE 123': 2 });
@@ -138,13 +138,45 @@ test('all 115 sections preserve complete original metadata, provenance and exact
   assert.ok(winter.sections.every(s => s.source_ids.every(id => plan.sources.some(source => source.id === id && source.url))));
   assert.equal(plan.academic_decisions!.find(d => d.course_id === 'CSE 391' && d.term === '2027-spring')!.sections.length, 0);
 });
-test('stale inputs, duplicate sections or altered prerequisite handoff fail closed', () => {
+test('mismatched sections, duplicate evidence or altered prerequisite rules fail closed', () => {
   const files = Object.fromEntries(['courses.json', 'prerequisites.json', 'sections.json'].map(name => [name, readFileSync(`data/target_courses/${name}`, 'utf8')]));
-  assert.throws(() => importRegistration(handoff, { ...files, 'sections.json': files['sections.json'] + ' ' }));
-  const duplicate = structuredClone(handoff); duplicate.section_evidence[1] = duplicate.section_evidence[0];
+  assert.doesNotThrow(() => importRegistration(registrationRules, files));
+  const rows = JSON.parse(files['sections.json']);
+  const notes = structuredClone(rows); notes[0].notes += ' changed';
+  assert.throws(() => importRegistration(registrationRules, { ...files, 'sections.json': JSON.stringify(notes) }));
+  const reviewed = rows.findIndex((r: { registration_rules?: unknown[] }) => r.registration_rules?.length);
+  const rules = structuredClone(rows); rules[reviewed].registration_rules = [];
+  assert.throws(() => importRegistration(registrationRules, { ...files, 'sections.json': JSON.stringify(rules) }));
+  const duplicate = structuredClone(registrationRules); duplicate.section_evidence[1] = duplicate.section_evidence[0];
   assert.throws(() => importRegistration(duplicate, files));
-  const altered = structuredClone(handoff); altered.minimum_grade_rules['CSE 331'].any_of[0].min_grades['CSE 123'] = 1;
+  const altered = structuredClone(registrationRules); altered.minimum_grade_rules['CSE 331'].any_of[0].min_grades['CSE 123'] = 1;
   assert.throws(() => importRegistration(altered, files));
+  const unknownRule = structuredClone(registrationRules);
+  unknownRule.section_evidence.find((s: { structured_rules?: unknown[] }) => s.structured_rules?.length).structured_rules.push({ type: 'new_rule_type' });
+  assert.throws(() => importRegistration(unknownRule, files));
+});
+test('restriction fixtures from registration_rules.json evaluate as documented', async () => {
+  const { sections } = await data;
+  for (const fixture of registrationRules.restriction_test_cases) {
+    const s = sections.find(s => s.sln === fixture.sln)!;
+    const relevant = (s.structured_rules ?? []).filter(r => fixture.rule_type ? r.type === fixture.rule_type : ['allowed_majors', 'excluded_majors'].includes(r.type));
+    const results = relevant.map(r => ruleCondition(r, { majorCodes: fixture.major_codes ? new Set(fixture.major_codes) : null, date: fixture.date, studentLevel: fixture.student_level }));
+    const combined: RuleCondition = results.includes('fail') ? 'fail' : results.includes('unknown') ? 'unknown' : results.includes('pass') ? 'pass' : 'not_applicable';
+    assert.equal(combined, fixture.expected_condition, fixture.id);
+  }
+});
+test('detailed SLN rules drive planner registration decisions', async () => {
+  assert.equal((await decision('CSE 311', { major: 'Applied Mathematics' })).decision.section_registration_status, 'ineligible');
+  assert.equal((await decision('CSE 311', { major: 'Computer Science' })).decision.section_registration_status, 'unknown');
+  assert.equal((await decision('CSE 373', { major: 'Computer Science', completed_courses: ['CSE 123'] })).decision.section_registration_status, 'ineligible');
+  assert.equal((await decision('CSE 373', { major: 'Informatics', completed_courses: ['CSE 123'] })).decision.section_registration_status, 'unknown');
+  // Period I AMATH filter is a note before it ends, never a block, and disappears afterwards.
+  const before = (await decision('AMATH 351', { major: 'Computer Science', completed_courses: ['MATH 125'] })).decision;
+  assert.equal(before.section_registration_status, 'unknown');
+  assert.ok(before.sections.some(s => s.reasons.some(r => r.includes('AMATH, CFRM, ACMS majors only'))));
+  const { courses, sections } = await data;
+  const after = planAcademic(request({ major: 'Computer Science', completed_courses: ['MATH 125'] }), [courses.find(c => c.course_id === 'AMATH 351')!], new Date('2026-12-01T18:00:00Z'), true, sections);
+  assert.ok(after.academic_decisions[0].sections.every(s => !s.reasons.some(r => r.includes('majors only'))));
 });
 test('backward-compatible requests still work and no handoff course becomes falsely validated', async () => {
   const plan = await generatePlan(request(), { now });

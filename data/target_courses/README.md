@@ -31,6 +31,8 @@ The schedules state that enrollment/status reflects their creation at 12:03 a.m.
 | test_cases.json | Twenty-two fictional verification examples for prerequisites, grades, listing status, tentative sections, and time overlap. |
 | external_prerequisites.json | Referenced courses not yet included as schedulable records. |
 | metadata.json | Coverage counts, time zone, snapshot date, source URLs, and shared limitations. |
+| registration_rules.json | Consolidated registration evidence for all 115 sections, grade rules, concurrency, general policies and reviewed restriction fixtures. |
+| REGISTRATION_MERGE.md | Merge coverage, precedence and new fields. |
 
 ## Main fields
 
@@ -73,17 +75,19 @@ External prerequisite IDs are recognized in a student's completed-course input, 
 - AMATH 402 and AMATH 482 list conditional add-code waitlists. Their URLs are retained in section notes.
 - AMATH 482's heading says prerequisite cancellation is in effect. That concerns prerequisite enforcement, not cancellation of the class.
 
-Quiz prefixes suggest a lecture group, but allowed registration combinations have not been confirmed through section-detail pages. A planner must account for a lecture plus a compatible quiz when applicable. Do not use lecture-only time conflicts to claim a complete conflict-free schedule.
+Quiz prefixes suggest a lecture group, but the reviewed section-detail Notes do not establish an exact permitted-pair whitelist. A planner must account for a lecture plus a compatible quiz when applicable. Do not use lecture-only time conflicts to claim a complete conflict-free schedule.
 
 Tentative final-exam notes are retained as notes; they have not been independently confirmed. Some courses share an exam time in the displayed notes. Resolve exam conflicts before making a registration recommendation.
 
-## Access limitation
+## Detailed registration review coverage
 
-The user's signed-in MyUW session was used to reach the official Time Schedule. UW NetID reported successful sign-in, but MyPlan subsequently returned `504 Gateway Timeout`; SLN-detail pages also failed to load. This is an application-response issue, not a request for additional user authorization.
+The initial connection failures were resolved. MyPlan and all detailed SLN Notes for 10 selected courses (90 sections) were read on October 17, 2026 with the user's authorization. The other 25 sections retain their prior department-schedule evidence. INFO section meetings and detailed SLN restrictions remain outside this review.
 
-The visible department schedules, restriction flags, and written notes were collected. More detailed SLN Notes rules and registration-compatible lecture/quiz combinations remain unresolved. Those shared gaps are documented here rather than repeated as many status columns. Do not interpret missing detail as unrestricted registration.
+The reviewed courses are CSE 311, 312, 331, 332, 351, 373 and AMATH 301, 351, 352, 482. Detailed notes, source URLs and structured rules are merged into sections.json and sections.csv. Original notes, times, enrollment snapshots and identifiers are preserved. Registration status is not a live eligibility or seat guarantee.
 
-No personal academic, financial, or medical information is included. No courses were added to a student plan or registered.
+registration_rules.json is the consolidated companion file: all 115 section evidence records, minimum-grade rules, INFO 340 concurrency, general policies, source registry, candidate lecture/quiz groups and restriction fixtures. Do not concatenate the earlier root handoffs as extra sections. Exact permitted lecture/quiz combinations remain unverified.
+
+No personal student record was exported and no registration or waitlist submission was performed.
 
 ## Validation and next import step
 
@@ -111,7 +115,7 @@ Official catalog checked: https://www.washington.edu/students/crscat/info.html o
 
 ### Scheduling coverage
 
-section_data_status is imported for listed CSE/AMATH records, not_imported for listed INFO records, and not_applicable for courses not listed. A listed INFO course does not yet have imported section meetings. Blank lecture_sections for INFO means missing parsed section data, not no lecture requirement. Existing sections.csv and sections.json retain the 115 CSE/AMATH records unchanged. Do not generate a complete INFO timetable from these course records alone.
+section_data_status is imported for listed CSE/AMATH records, not_imported for listed INFO records, and not_applicable for courses not listed. A listed INFO course does not yet have imported section meetings. Blank lecture_sections for INFO means missing parsed section data, not no lecture requirement. Existing sections.csv and sections.json retain all 115 CSE/AMATH records, with additive detailed registration evidence for 90 sections. Do not generate a complete INFO timetable from these course records alone.
 
 ### Variable credits
 
@@ -126,3 +130,9 @@ The branch field concurrent_allowed permits same-term completion only for the na
 INFO 340 and INFO 430 contain numeric grade thresholds. Missing grades require needs_grade_confirmation. Catalog overlap notes are retained in verification_notes; course overlap does not automatically establish substitution or double-counting approval. Categories and skills remain team planning labels.
 
 Eight new INFO prerequisite examples were executed against a dataset helper. The original fourteen examples remain in test_cases.json; the team backend was not executed.
+
+## Registration evidence merge
+
+The October 17 detailed review supplements 90 of the 115 sections without replacing any existing field. New JSON fields are registration_detail_status, registration_status, registration_rules, registration_rules_summary, registration_notes, registration_source_url and registration_checked_at. CSV uses registration_rules_json for the structured rule array. Blank added CSV fields on the other 25 sections mean not reviewed in this batch, not unrestricted. The Excel Sections sheet provides readable summaries and the original detailed notes.
+
+Apply each rule only within its section and stated period. AMATH 351/352/482 allow AMATH, CFRM and ACMS majors only in Period I (November 5-22, 2026, inclusive). AMATH 352/482 separately exclude graduate students. CSE 373 excludes C SCI and CMP E majors; AH/AI/AJ require add codes and are tentative. Institutional major-code mapping and student-specific facts must be supplied by the application. AMATH 301's captured Notes list no major restriction. Missing restrictions do not prove full eligibility.

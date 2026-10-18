@@ -1,11 +1,11 @@
-> Projected-offering update: [current validation report](backend-validation-report.md).
+> Projected-offering update: [current validation report](reports/backend-validation-report.md).
 > 88 tests and 31 actual HTTP checks pass. Quarter-level recommendations accept
 > confirmed/projected evidence, with projections tentative. Missing section times
 > are metadata only. Unknown registration stays outside validated assignments;
 > dated review-only candidates are returned through notes/warnings for all three
 > quarters in the CS + AMATH example. Earlier counts below are historical.
 
-> Latest verification: see [backend-validation-report.md](backend-validation-report.md).
+> Latest verification: see [backend-validation-report.md](reports/backend-validation-report.md).
 > There are now 64 imported real catalog records; enrollment restrictions remain
 > unresolved and only Winter 2027 offerings are evidenced. The final suite has
 > 75 passing tests plus 30 actual HTTP checks. Earlier implementation counts below
@@ -42,7 +42,7 @@
 | AI/retrieval | `lib/ai.ts`, `lib/retrieval.ts` |
 | Data | `data/courses.json`, `data/career_paths.json`, `mocks/sample-plan.json` |
 | Examples | `examples/sample-request.json`, `examples/plan-response.json`, `examples/transcript-response.json`, `examples/transcript-text.txt`, `examples/transcript-request.sh` |
-| Verification | `tests/api.test.ts`, `tests/prerequisites.test.ts`, `tests/transcript.test.ts`, `scripts/check-contract.ts`, `scripts/check-contract.mjs`, `scripts/generate-sample.ts`, `scripts/smoke-api.ts` |
+| Verification | `tests/api.test.ts`, `tests/prerequisites.test.ts`, `tests/transcript.test.ts`, `scripts/check-contract.ts`, `scripts/generate-sample.ts`, `scripts/smoke-api.ts` |
 | Config | `package.json`, `package-lock.json`, `tsconfig.json`, `next.config.ts`, `next-env.d.ts`, `.nvmrc`, `.env.example`, `.gitignore`, `.github/workflows/contract-check.yml` |
 | Docs | `README.md`, `docs/api-contract.md`, `docs/data-format.md`, `docs/backend-handoff.md`, `docs/team-workflow.md`, archived v1 contracts/fixtures |
 

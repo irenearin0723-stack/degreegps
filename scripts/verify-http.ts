@@ -45,7 +45,7 @@ async function main() {
     assert.equal(response.status, 200); assert.equal(response.headers.get('cache-control'), 'no-store');
     const body = await response.json(); livePlans[scenario.id] = body;
     scenarioResults.push(verifyScenario(scenario, body, courses, new Date()));
-    if (scenario.id === 'B') await writeFile('docs/backend-validation-plan.json', JSON.stringify(body, null, 2) + '\n');
+    if (scenario.id === 'B') await writeFile('docs/reports/backend-validation-plan.json', JSON.stringify(body, null, 2) + '\n');
   });
   await check('Primary goal change changes roadmap over HTTP', async () => {
     const a = PlanResponseSchema.parse(livePlans.B); const b = PlanResponseSchema.parse(livePlans.I);
@@ -111,11 +111,11 @@ async function main() {
     assert.ok(plan.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED' && w.message.includes('2027-summer') && w.message.includes('projected')));
     assert.ok(plan.sources.some(s => s.url?.includes('amath-cfrm-undergraduate-course-schedule')));
     assert.equal(plan.career_milestones.length, 4);
-    await writeFile('docs/backend-projected-plan.json', JSON.stringify(plan, null, 2) + '\n');
+    await writeFile('docs/reports/backend-projected-plan.json', JSON.stringify(plan, null, 2) + '\n');
     await writeFile('examples/projected-review-request.json', JSON.stringify(request, null, 2) + '\n');
   });
   const report = { generated_at: new Date().toISOString(), paid_ai_requests: 0, passed: passed.length, failed: failed.length, checks_passed: passed, failures: failed, scenarios: scenarioResults };
-  await writeFile('docs/backend-http-verification.json', JSON.stringify(report, null, 2) + '\n');
+  await writeFile('docs/reports/backend-http-verification.json', JSON.stringify(report, null, 2) + '\n');
   console.log(`HTTP checks: ${passed.length} passed; ${failed.length} failed.`);
   if (failed.length) process.exitCode = 1;
 }

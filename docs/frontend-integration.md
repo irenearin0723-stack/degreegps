@@ -61,7 +61,7 @@ The optional browser script uses `playwright-core` installed only in a temporary
 folder, with the existing system Chrome. It is not a runtime dependency. Run a
 production server on 127.0.0.1:3101 and provide `DEGREEGPS_PLAYWRIGHT_PATH` pointing
 at that installation. Screenshot output is temporary and not committed; the JSON
-summary is `docs/frontend-browser-validation.json`. All test data is fictional and
+summary is `docs/reports/frontend-browser-validation.json`. All test data is fictional and
 AI calls are disabled. Browser-only verification does not certify enrollment,
 seat availability, OCR support or production authentication.
 

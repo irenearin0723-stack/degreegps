@@ -13,8 +13,8 @@ export async function auditData(directory = join(process.cwd(), 'data')) {
       const path = join(folder, entry.name);
       if (entry.isDirectory()) await visit(path);
       else if (entry.name.endsWith('.json')) {
-        try { JSON.parse(await readFile(path, 'utf8')); jsonFiles.push({ file: path.slice(directory.length + 1), valid_json: true }); }
-        catch (error) { jsonFiles.push({ file: path.slice(directory.length + 1), valid_json: false, error: String(error) }); }
+        try { JSON.parse(await readFile(path, 'utf8')); jsonFiles.push({ file: path.slice(directory.length + 1).replaceAll('\\', '/'), valid_json: true }); }
+        catch (error) { jsonFiles.push({ file: path.slice(directory.length + 1).replaceAll('\\', '/'), valid_json: false, error: String(error) }); }
       }
     }
   }
@@ -96,7 +96,7 @@ export async function auditData(directory = join(process.cwd(), 'data')) {
 }
 if (process.argv[1]?.endsWith('validate-data.ts')) {
   auditData().then(async result => {
-    await writeFile('docs/backend-data-audit.json', JSON.stringify(result, null, 2) + '\n');
+    await writeFile('docs/reports/backend-data-audit.json', JSON.stringify(result, null, 2) + '\n');
     console.log(JSON.stringify(result, null, 2));
   }).catch(error => { console.error(String(error)); process.exitCode = 1; });
 }

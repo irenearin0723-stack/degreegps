@@ -1,5 +1,5 @@
 {
-  "schema_version": "winter-2027-v2-info",
+  "schema_version": "winter-2027-v3-registration-merged",
   "institution": "University of Washington Seattle",
   "term": "Winter 2027",
   "time_zone": "America/Los_Angeles",
@@ -17,8 +17,8 @@
   ],
   "sections": 115,
   "quiz_credits": "Zero means no separate credits; add lecture credits once.",
-  "registration_details": "MyUW was signed in. UW NetID sign-in completed, but MyPlan returned 504 Gateway Timeout and SLN detail pages did not load. Visible schedule flags and notes are retained.",
-  "section_linkage": "Quiz parent candidates can be inferred from section prefixes, but registration-compatible combinations have not been verified against SLN details.",
+  "registration_details": "MyPlan and detailed SLN Notes were read for 10 courses and 90 sections on October 17, 2026. Restrictions were merged by term, campus and SLN. The remaining 25 sections retain department-schedule evidence only. Detailed access for the reviewed subset is resolved.",
+  "section_linkage": "Lecture/quiz prefix groupings remain candidates, not verified permitted combinations. Detailed SLN notes establish joint counterparts, not an exact registration-compatible lecture/quiz whitelist.",
   "source_urls": [
     "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
     "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
@@ -36,5 +36,13 @@
   },
   "info_section_data": "INFO has catalog and offering records, but section meetings have not been imported. Existing sections.json remains the 115-record CSE/AMATH dataset. Exclude listed INFO courses with section_data_status=not_imported from automated timetable generation until section data is added.",
   "variable_credit_policy": "credits=null indicates variable credits. Use credits_min and credits_max as catalog bounds; determine actual registered credits from the selected section or study arrangement.",
-  "concurrent_prerequisite_policy": "INFO 340 allows CSE 163 concurrently. Only branch concurrent_allowed explicitly authorizes concurrency. All other prerequisites and grade minima still apply."
+  "concurrent_prerequisite_policy": "INFO 340 allows CSE 163 concurrently. Only branch concurrent_allowed explicitly authorizes concurrency. All other prerequisites and grade minima still apply.",
+  "registration_rules_file": "registration_rules.json",
+  "registration_merge": {
+    "detailed_reviewed_sections": 90,
+    "baseline_only_sections": 25,
+    "registration_status": "unknown_until_student_specific_evaluation",
+    "source_review": "../archive/2026-10-17_registration-handoff-v1/winter_2027_registration_review.json",
+    "merged_at_utc": "2026-10-18T00:46:40.478227+00:00"
+  }
 }
