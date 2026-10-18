@@ -42,7 +42,7 @@
     "detailed_reviewed_sections": 90,
     "baseline_only_sections": 25,
     "registration_status": "unknown_until_student_specific_evaluation",
-    "source_review": "../handoff/winter_2027_registration_review.json",
+    "source_review": "../archive/2026-10-17_registration-handoff-v1/winter_2027_registration_review.json",
     "merged_at_utc": "2026-10-18T00:46:40.478227+00:00"
   }
 }

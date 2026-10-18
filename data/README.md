@@ -2,11 +2,13 @@
 
 ## target_courses
 
-Target-course records, prerequisite rules, Winter 2027 sections (with detailed registration rules for 90 reviewed sections), projected Spring/Summer offerings and the INFO offering inventory. Start with target_courses/README.md; REGISTRATION_MERGE.md explains the registration fields. `registration_rules.json` is the consolidated registration evidence (all 115 sections, grade and concurrency rules, policies, restriction fixtures).
+Target-course records, prerequisite rules, Winter 2027 sections (with detailed registration rules for 90 reviewed sections), projected Spring/Summer offerings and the INFO offering inventory. Start with target_courses/README.md; REGISTRATION_MERGE.md explains the registration fields.
 
-## handoff
+`registration_rules.json` is the registration evidence the backend loads (`lib/data.ts` → `lib/registration.ts`): all 115 sections, grade and concurrency rules, policies and restriction fixtures. On load it must agree with `courses.json`, `prerequisites.json` and `sections.json` (original section fields, and each reviewed section's `registration_rules` copy), or the API fails closed. When you update one, update the other.
 
-Registration evidence handoffs. `registration_evidence_handoff.json` is what the backend currently loads (`lib/data.ts`); it pins SHA-256 hashes of `target_courses/{courses,prerequisites,sections}.json`, so update its `input_files` hashes whenever those files change. `winter_2027_registration_review.json` is the raw detailed SLN review that was merged into `target_courses/`. Each JSON has a companion `.md` explaining it.
+## archive
+
+Superseded data, kept for provenance and never loaded by the app. See archive/README.md.
 
 ## major_requirements
 

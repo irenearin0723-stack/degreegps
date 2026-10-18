@@ -51,10 +51,8 @@ folder; put it on `PATH` first with
 
 ### Troubleshooting
 
-- **"Course or career data is missing or invalid" on Windows** — the registration
-  handoff pins SHA-256 hashes of `data/target_courses/*.json`, so those files must keep
-  LF line endings. `.gitattributes` enforces this; if your checkout predates it, delete
-  `data/target_courses/*.json` and run `git checkout -- data/target_courses` to restore them with LF.
+- **"Course or career data is missing or invalid"** — a data file disagrees with another
+  (e.g. `registration_rules.json` vs `sections.json`). Run `npm run validate:data` for details.
 - **`npm ci` fails with EPERM/EBUSY** — stop any running `npm run dev` first; it locks
   files in `node_modules`.
 - **`'tsc'`/`'next'` is not recognized** — `node_modules` is incomplete; rerun `npm ci`.
