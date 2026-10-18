@@ -1,8 +1,23 @@
-# DegreeGPS — Backend & AI MVP
+# DegreeGPS
 
-A Next.js App Router backend for transcript review, deterministic academic planning,
-and goal-specific career/research preparation. No database, authentication service,
-or real transcript persistence. This is not an official UW degree audit.
+One Next.js App Router app (frontend + API routes) for transcript review, deterministic
+academic planning, and goal-specific career/research preparation. No database,
+authentication service, or real transcript persistence. This is not an official UW degree audit.
+
+## Repository layout
+
+| Path | What lives there |
+| --- | --- |
+| `app/` | Pages (`page.tsx`) and API routes (`app/api/{plan,transcript,goal}`) |
+| `components/` | Frontend UI (form, dashboard, transcript upload, demo account) |
+| `lib/` | Planner, prerequisite/offering/registration checks, data loading, browser API clients, transcript parsing |
+| `types/` | Zod schemas + TypeScript types shared by frontend and backend |
+| `data/` | Real UW course data the planner reads — see [data/README.md](data/README.md) |
+| `mocks/` | Synthetic data for mock mode (`/api/plan/mock`) |
+| `examples/` | Sample API requests/responses |
+| `scripts/` | Validation, HTTP verification, and fixture generators |
+| `tests/` | Unit/API tests (`npm test`) |
+| `docs/` | Current guides; `docs/reports/` validation reports and generated evidence; `docs/legacy/` superseded v1 material |
 
 ## Run locally
 
@@ -104,7 +119,7 @@ registration, timing, and add-code checks are future work, not silently certifie
 `mocks/course-data.json` and `/api/plan/mock` remain explicitly synthetic and
 separate from real planning. Never hide mock labels, warnings, or tentative status.
 
-See [the backend validation report](docs/backend-validation-report.md) for exact
+See [the backend validation report](docs/reports/backend-validation-report.md) for exact
 counts, checklist results, executed scenarios, remaining blockers, and a full
 real-data response. Source URLs/dates preserve the data teammate's provenance;
 the three departmental offering pages were checked directly; remaining enrollment restrictions were not inferred or cleared.
@@ -141,8 +156,8 @@ Implementation reference: [OpenAI structured outputs](https://developers.openai.
 - `.github/workflows/contract-check.yml` — reproducible CI checks and production build.
 
 Contract v2 is a coordinated breaking update for the structured-goal backend.
-Original v1 types/docs/examples are preserved under `docs/legacy/`, `mocks/legacy/`,
-and `examples/legacy/` for teammate migration. Do not use them in new clients.
+Original v1 types/docs/examples are preserved under `docs/legacy/` for teammate
+migration. Do not use them in new clients.
 
 No changes are automatically committed or pushed. See [team workflow](docs/team-workflow.md).
 

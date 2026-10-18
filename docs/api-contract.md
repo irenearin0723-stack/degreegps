@@ -211,4 +211,4 @@ Lecture/quiz times are not required for quarter-level planning. Specific section
 selection, meeting conflicts, seat availability and add-code clearance are future
 features. Known registration restrictions are still enforced; missing details
 remain explicitly unknown. See `examples/projected-review-request.json` and
-`docs/backend-projected-plan.json` for the full actual HTTP request/response.
+`docs/reports/backend-projected-plan.json` for the full actual HTTP request/response.

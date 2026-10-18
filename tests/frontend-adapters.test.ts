@@ -24,7 +24,7 @@ test('quarter deadline uses the documented boundary and unsupported frontend tra
   assert.equal(formatGoalDeadline(input.goal_draft, 2027), 'Flexible deadline');
 });
 test('the UI adapter preserves review-only notes and warnings without manufacturing course cards', async () => {
-  const plan = PlanResponseSchema.parse(JSON.parse(await readFile('docs/backend-projected-plan.json', 'utf8')));
+  const plan = PlanResponseSchema.parse(JSON.parse(await readFile('docs/reports/backend-projected-plan.json', 'utf8')));
   const ui = toUiPlan(plan, input);
   assert.equal(ui.quarters.length, 3); assert.equal(ui.quarters.flatMap(q => q.courses).length, 0);
   assert.ok(ui.quarters.every(q => q.notes.includes('REVIEW ONLY')));
@@ -34,7 +34,7 @@ test('the UI adapter preserves review-only notes and warnings without manufactur
 });
 test('the browser client defaults to the real endpoint and validates the response', async () => {
   assert.equal(isMockMode(), false);
-  const plan = JSON.parse(await readFile('docs/backend-projected-plan.json', 'utf8'));
+  const plan = JSON.parse(await readFile('docs/reports/backend-projected-plan.json', 'utf8'));
   plan.request = toBackendRequest(input);
   const previous = globalThis.fetch;
   let posted: unknown;
@@ -72,7 +72,7 @@ test('unsupported images and oversized PDFs are rejected before any upload', asy
 });
 test('real client rejects a response for a different profile rather than relabeling it', async () => {
   const previous = globalThis.fetch;
-  const plan = JSON.parse(await readFile('docs/backend-projected-plan.json', 'utf8'));
+  const plan = JSON.parse(await readFile('docs/reports/backend-projected-plan.json', 'utf8'));
   globalThis.fetch = async () => Response.json(plan);
   try { await assert.rejects(createPlan(input), /does not match/); }
   finally { globalThis.fetch = previous; }

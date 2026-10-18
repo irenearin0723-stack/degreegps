@@ -5,6 +5,14 @@
       "valid_json": true
     },
     {
+      "file": "handoff/registration_evidence_handoff.json",
+      "valid_json": true
+    },
+    {
+      "file": "handoff/winter_2027_registration_review.json",
+      "valid_json": true
+    },
+    {
       "file": "major_requirements/major_requirements.json",
       "valid_json": true
     },
@@ -38,6 +46,10 @@
     },
     {
       "file": "target_courses/projected_offerings.json",
+      "valid_json": true
+    },
+    {
+      "file": "target_courses/registration_rules.json",
       "valid_json": true
     },
     {
