@@ -76,6 +76,7 @@ npm run start   # serve the production build
 | `POST /api/plan` | Confirmed course IDs + structured goal; deterministic three-quarter plan |
 | `GET /api/plan/mock` | Fictional, explicitly labeled dashboard fixture |
 | `POST /api/goal` | Optional goal interpretation; user confirms fields before planning |
+| `POST /api/ask` | Cited answers to planning questions from bundled data (RAG); see [API contract](docs/api-contract.md#post-apiask) |
 
 Try the planning API:
 
@@ -122,7 +123,7 @@ counts, checklist results, executed scenarios, remaining blockers, and a full
 real-data response. Source URLs/dates preserve the data teammate's provenance;
 the three departmental offering pages were checked directly; remaining enrollment restrictions were not inferred or cleared.
 
-## Optional OpenAI support
+## Optional AI support (OpenAI or Gemini)
 
 Copy `.env.example` to `.env.local` and add your key locally, if desired. Core APIs
 work without it. Never use a `NEXT_PUBLIC_` key variable.
@@ -131,9 +132,16 @@ work without it. Never use a `NEXT_PUBLIC_` key variable.
   sending goal text to OpenAI. Do not enter personal identifiers.
 - `/api/plan` defaults to deterministic summaries. `use_ai_explanation: true` opts
   in to sending the goal, preferences, and generated course-plan sentences to OpenAI.
-- The server uses the Responses API with Zod structured output, `store: false`, an
-  8-second timeout, and no retries. `store: false` does not imply zero provider
-  retention. No transcript PDF, raw transcript text, grades, or student header is sent.
+- The server uses Chat Completions with Zod structured output, an 8-second timeout, and
+  no retries. `OPENAI_BASE_URL` selects any OpenAI-compatible provider (e.g. Gemini; see
+  `.env.example`). Provider retention policies apply. No transcript PDF, raw transcript text, grades, or student header is sent.
+- `/api/ask` defaults to local keyword retrieval with an extractive answer. `use_ai: true`
+  sends only the question and retrieved public-data snippets to the provider; answers citing
+  course codes or dates absent from their sources are rejected. Build the optional
+  embedding index with `npm run build:index`.
+- All AI use is rate-limited (default 5/min and 30/day per client, 300/day overall);
+  over the limit, the local answer is returned with an `AI_RATE_LIMITED` warning. See
+  [AI rate limits](docs/api-contract.md#ai-rate-limits).
 - AI explanations select and order approved, grounded sentences. They cannot add
   factual prose, change courses/terms, override prerequisites, or invent citations.
 - Missing keys, refusals, invalid output, and request failures fall back locally.
@@ -150,6 +158,7 @@ Implementation reference: [OpenAI structured outputs](https://developers.openai.
 - `lib/{planner,prerequisites,career}.ts` — deterministic planning logic.
 - `lib/transcript/` — local parsing, normalization, upload validation.
 - `lib/{ai,plan-service,data,retrieval}.ts` — server-only orchestration and optional AI.
+- `lib/{rag-corpus,ask-service,rate-limit}.ts` — retrieval corpus, cited Q&A for `/api/ask`, AI budget.
 - `tests/` — prerequisite, planner, upload, transcript, goal, and fallback tests.
 - `.github/workflows/contract-check.yml` — reproducible CI checks and production build.
 

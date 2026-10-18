@@ -14,7 +14,7 @@ function legacyGoal(request: PlanRequest): GoalDraft {
   if (!track || !type) throw new PlanApiError('Choose a supported goal and direction before regenerating this saved plan.', 'UNSUPPORTED_GOAL');
   return { type, track, deadline: { term: 'summer', year: request.target_summer }, notes: '', career_hours_per_week: 6, intensity: 'balanced' };
 }
-export function toBackendRequest(request: PlanRequest): BackendRequest {
+export function toBackendRequest(request: PlanRequest, options: { aiExplanation?: boolean } = {}): BackendRequest {
   const goal = request.goal_draft ?? legacyGoal(request);
   const boundary = { winter: '01-01', spring: '04-01', summer: '06-01', autumn: '09-01' };
   const parsed = PlanRequestSchema.safeParse({
@@ -23,7 +23,8 @@ export function toBackendRequest(request: PlanRequest): BackendRequest {
     goal: { type: goal.type, track: goal.track, deadline: goal.deadline ? `${goal.deadline.year}-${boundary[goal.deadline.term]}` : null, notes: goal.notes },
     max_courses_per_term: request.max_courses_per_term, start_term: `${request.start_year}-${request.start_term}`,
     preferences: `Career preparation preference: ${goal.career_hours_per_week} hours/week; ${goal.intensity} pace. These preferences do not change academic eligibility.`,
-    use_ai_explanation: false,
+    // Explicit opt-in only: sends the goal, preferences and planned course sentences to the AI provider.
+    use_ai_explanation: options.aiExplanation ?? false,
   });
   if (!parsed.success) throw new PlanApiError('Check your courses, goal and direction before planning.', 'INVALID_REQUEST', parsed.error.issues.map(i => `${i.path.join('.')}: ${i.message}`));
   return parsed.data;
@@ -46,10 +47,10 @@ export function toUiPlan(raw: BackendResponse, request: PlanRequest): PlanRespon
       title: m.action, description: `${m.explanation} Recommended timeframe: ${m.timeframe.start}–${m.timeframe.end}.`,
       action_items: [], status: 'not_started' as const })),
     warnings: [...plan.warnings, ...(plan.mode === 'mock' ? [{ code: 'DEMO_PROFILE', severity: 'info' as const, message: 'This fixture uses a fictional example profile, not your submitted history.', affected_course_codes: [] }] : [])],
-    sources: plan.sources.map(s => ({ id: s.id, title: s.title, url: s.url, kind: s.kind, retrieved_at: s.verified_at })) };
+    sources: plan.sources.map(s => ({ id: s.id, title: s.title, url: s.url, kind: s.kind, retrieved_at: s.verified_at })), summary: plan.plan_summary };
 }
-export async function createPlan(payload: PlanRequest): Promise<PlanResponse> {
-  const request = toBackendRequest(payload);
+export async function createPlan(payload: PlanRequest, options: { aiExplanation?: boolean } = {}): Promise<PlanResponse> {
+  const request = toBackendRequest(payload, options);
   let response: Response;
   try {
     response = USE_MOCK_DATA ? await fetch(`${API_BASE_URL}/api/plan/mock`, { cache: 'no-store' })

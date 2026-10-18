@@ -77,3 +77,27 @@ test('real client rejects a response for a different profile rather than relabel
   try { await assert.rejects(createPlan(input), /does not match/); }
   finally { globalThis.fetch = previous; }
 });
+test('AI explanation is an explicit opt-in and the plan summary reaches the UI', async () => {
+  assert.equal(toBackendRequest(input, { aiExplanation: true }).use_ai_explanation, true);
+  const plan = PlanResponseSchema.parse(JSON.parse(await readFile('docs/reports/backend-projected-plan.json', 'utf8')));
+  assert.equal(toUiPlan({ ...plan, plan_summary: 'Grounded summary.' }, input).summary, 'Grounded summary.');
+});
+test('the ask client validates input and responses', async () => {
+  const { askQuestion, AskApiError } = await import('../lib/ask-api');
+  await assert.rejects(askQuestion({ question: 'hi' }), AskApiError);
+  const previous = globalThis.fetch;
+  let posted: unknown;
+  globalThis.fetch = async (url, options) => {
+    assert.equal(url, '/api/ask'); posted = JSON.parse(String(options?.body));
+    return Response.json({ schema_version: '1.0.0', mode: 'deterministic', retrieval: 'keyword', answer: 'From X: y', insufficient_evidence: false,
+      citations: ['course:CSE 311'], sources: [{ id: 'course:CSE 311', kind: 'course', document_title: 'X', content: 'y', source_url: null, section: null,
+        verified_at: null, effective_date: null, official: true, score: 1 }], warnings: [], disclaimer: 'd' });
+  };
+  try {
+    const result = await askQuestion({ question: 'CSE 311 prerequisites?', plan_course_ids: ['cse311'] });
+    assert.equal(result.citations[0], 'course:CSE 311');
+    assert.deepEqual(posted, { question: 'CSE 311 prerequisites?', official_only: false, plan_course_ids: ['CSE 311'], use_ai: false });
+    globalThis.fetch = async () => Response.json({ answer: 'missing fields' });
+    await assert.rejects(askQuestion({ question: 'CSE 311 prerequisites?' }), AskApiError);
+  } finally { globalThis.fetch = previous; }
+});

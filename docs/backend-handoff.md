@@ -28,7 +28,8 @@
 - Recommended deadline-relative timeframes and close/past-deadline feasibility warnings.
 - Optional server-only structured OpenAI goal interpretation and constrained grounded explanation.
 - Local fallback for absent API keys, malformed/refused AI output, network failure, and timeout.
-- Dedicated mock endpoint; retrieval interface placeholder with no external calls.
+- Dedicated mock endpoint.
+- `/api/ask`: cited Q&A over bundled data (local keyword retrieval; optional embeddings and grounded AI answers).
 - Canonical fictional examples, unit/API tests, actual HTTP smoke script, CI checks, and lockfile.
 
 ## Files created or changed
@@ -39,7 +40,7 @@
 | Shared contract | `types/plan.ts`, `types/course.ts`, `types/transcript.ts` |
 | Core | `lib/prerequisites.ts`, `lib/planner.ts`, `lib/career.ts`, `lib/data.ts`, `lib/http.ts`, `lib/plan-service.ts` |
 | PDF | `lib/transcript/parser.ts`, `lib/transcript/normalize.ts`, `lib/transcript/validate.ts` |
-| AI/retrieval | `lib/ai.ts`, `lib/retrieval.ts` |
+| AI/retrieval | `lib/ai.ts`, `lib/retrieval.ts`, `lib/rag-corpus.ts`, `lib/ask-service.ts`, `lib/rate-limit.ts`, `app/api/ask/route.ts`, `types/ask.ts`, `scripts/build-index.ts` |
 | Data | `data/courses.json`, `data/career_paths.json`, `mocks/sample-plan.json` |
 | Examples | `examples/sample-request.json`, `examples/plan-response.json`, `examples/transcript-response.json`, `examples/transcript-text.txt`, `examples/transcript-request.sh` |
 | Verification | `tests/api.test.ts`, `tests/prerequisites.test.ts`, `tests/transcript.test.ts`, `scripts/check-contract.ts`, `scripts/generate-sample.ts`, `scripts/smoke-api.ts` |
@@ -112,6 +113,7 @@ No hosting deployment has been performed.
    Goal interpretation returns suggestions for user confirmation, not authoritative intent.
 6. Degree completion, total credit coverage, seats, conflicts between meeting times,
    actual openings, and placement outcomes are outside this MVP.
-7. Future official-document retrieval is a placeholder only.
+7. Retrieval covers bundled data only; no live official pages are fetched. The
+   embedding index is not committed until someone runs `npm run build:index` with a key.
 
 Changes remain local. No commit or GitHub push is performed by this implementation.

@@ -149,6 +149,51 @@ minimal keyword matcher; it never pretends to understand all free text. AI is
 optional (`use_ai: true` is explicit consent to send that text externally). The
 user must review the interpreted structured fields. Relative dates are not guessed.
 
+## POST /api/ask
+
+```json
+{"question":"Can informatics majors take CSE 312?","major":"INFO","official_only":false,"plan_course_ids":["CSE 311"],"use_ai":false}
+```
+
+Answers a planning question from the bundled data only (RAG over `data/`).
+`question` is 3–500 characters; the other fields are optional. `major` (program
+ID or name) narrows requirement/policy sources but never hides course records.
+`plan_course_ids` only ranks related sources higher.
+
+Returns `{schema_version:"1.0.0", mode, retrieval, answer, insufficient_evidence,
+citations, sources, warnings, disclaimer}`. `sources[]` carries `id`, `kind`,
+`document_title`, `content`, `source_url`, `section`, `verified_at`,
+`effective_date`, `official`, and a relative `score`. Every `citations[]` entry is
+a returned `sources[].id`.
+
+- `use_ai: false` (default): local keyword ranking; `answer` is the top source
+  verbatim (`mode: "deterministic"`). Nothing leaves the server.
+- `use_ai: true`: the question (not transcripts or grades) is sent to the AI provider for
+  query embedding (when `data/index/embeddings.json` exists) and answer
+  generation. Answers mentioning a course code or date absent from the cited
+  sources, or containing links, are rejected and replaced by the extractive
+  answer with a warning.
+- No matching source: `answer: null`, `insufficient_evidence: true`.
+
+Answers explain bundled data; they never change plans or certify eligibility.
+
+### AI rate limits
+
+`use_ai` on `/api/ask` and `/api/goal`, and `use_ai_explanation` on `/api/plan`,
+share one budget (`lib/rate-limit.ts`). Defaults: 5 AI requests per client per
+minute, 30 per client per day, 300 per deployment per day (about $0.30/day worst
+case on `gemini-3.5-flash-lite`). Override with `AI_RATE_PER_MINUTE`,
+`AI_RATE_PER_DAY`, `AI_RATE_GLOBAL_PER_DAY`. Requests without AI, or without a
+configured key, consume nothing. Over the limit, the request still succeeds with
+the local answer and an `AI_RATE_LIMITED` warning (a `warnings[]` string on
+`/api/ask` and `/api/goal`; a plan warning on `/api/plan`). Counters are kept in
+server memory, so they reset on restart and are per instance; the client key
+comes from `X-Forwarded-For`, which is only trustworthy behind a proxy.
+
+`use_ai_explanation` may also quote up to two official requirement/policy records
+verbatim in `plan_summary`; each quoted record is added to `sources[]` with an ID
+starting `retrieved:`.
+
 ## Errors and privacy
 
 ```json

@@ -122,9 +122,9 @@ test('structured AI explanation cannot add prose or mutate academic assignments'
   const prior = JSON.stringify(plan);
   const previousFetch = globalThis.fetch; const previousKey = process.env.OPENAI_API_KEY;
   process.env.OPENAI_API_KEY = 'test-only-not-a-real-key';
-  const answer = (output: unknown) => new Response(JSON.stringify({ id: 'resp_test', object: 'response',
-    status: 'completed', output: [{ type: 'message', role: 'assistant', id: 'msg_test', status: 'completed',
-      content: [{ type: 'output_text', text: JSON.stringify(output), annotations: [] }] }] }), { headers: { 'Content-Type': 'application/json' } });
+  const answer = (output: unknown) => new Response(JSON.stringify({ id: 'chatcmpl_test', object: 'chat.completion', created: 0, model: 'test',
+    choices: [{ index: 0, finish_reason: 'stop', logprobs: null,
+      message: { role: 'assistant', content: JSON.stringify(output), refusal: null } }] }), { headers: { 'Content-Type': 'application/json' } });
   try {
     globalThis.fetch = async () => answer({ sentence_ids: ['academic', 'projects'] });
     const result = await explainPlan(plan);

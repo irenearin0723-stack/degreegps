@@ -160,9 +160,37 @@ verified deadlines. Do not invent company dates, lab openings, or guaranteed
 outcomes. The engine maps actions to a user-relative recommended date window.
 Keep every supported goal/track combination populated (21 combinations).
 
-## Retrieval placeholder
+## Retrieval corpus and index
 
-`retrieveSources(query, filters?)` in `lib/retrieval.ts` currently returns `[]`.
-Its future result includes content, document title, source URL, section,
-verification date, and effective date. Future retrieval helps explanation and
-source discovery; it must not override validated course rules.
+`lib/rag-corpus.ts` derives one citable chunk per course, per course's lecture
+sections, per requirement, program, option, policy issue and registration policy,
+and per career path (marked unofficial) from the files in `CORPUS_FILES`. The
+count grows with the data (1,160 chunks for the current 30-program import). Each
+chunk keeps its source URL and verification date. Edit the source data, not the
+chunks; avoid boilerplate repeated across records, because it matches every
+query that uses those words.
+
+`retrieveSources(query, filters?, options?)` in `lib/retrieval.ts` ranks chunks
+with BM25 keywords plus boosts for:
+
+- a named course code (`CSE 311`, `cse311`): that course's catalog record, then its sections;
+- a named program ID or name (`CS`, `cs`, `Computer Science`): that program's records
+  (IDs that are ordinary words, such as `INFO`, count only in capitals);
+- "which courses/classes…" questions without a course code: course records.
+
+When `options.use_embeddings` is set and `data/index/embeddings.json` exists, it
+fuses keyword and embedding ranks (reciprocal-rank fusion). The corpus is rebuilt
+automatically when any input file's modification time changes. Retrieval helps
+explanation and source discovery; it must not override validated course rules.
+
+`npm run build:index` (needs `OPENAI_API_KEY`) embeds only changed chunks;
+`-- --check` exits nonzero when the index is missing or stale; `-- --rebuild`
+re-embeds everything (required after changing `OPENAI_EMBEDDING_MODEL` or
+`OPENAI_EMBEDDING_DIMENSIONS`). Stale entries are ignored at query time and
+reported as `RETRIEVAL_INDEX_STALE`.
+
+Tests: `tests/retrieval-ranking.test.ts` checks ranking mechanics on a small
+fixed corpus and does not depend on `data/`. `tests/retrieval.test.ts` is the
+quality check on the real data: question → accepted source IDs (any in the top
+three passes). Add questions for new programs when importing data; if a re-import
+renames a record, the test reports the missing ID.

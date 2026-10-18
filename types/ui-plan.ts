@@ -100,6 +100,8 @@ export interface PlanResponse {
   career_milestones: CareerMilestone[];
   warnings: PlanWarning[];
   sources: PlanSource[];
+  /** Backend plan_summary: deterministic, or AI-selected approved sentences when requested. */
+  summary?: string;
 }
 
 export interface ApiErrorResponse {

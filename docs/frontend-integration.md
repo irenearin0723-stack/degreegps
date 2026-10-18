@@ -29,6 +29,15 @@ the original shared starter). Main itself is not reset or overwritten.
   extraction confidence percentages are shown.
 - Projected courses remain tentative. Review-only candidates stay in quarter notes
   and warnings, never fabricated course cards or prerequisite completions.
+- The dashboard shows the backend `plan_summary`. **Explain with AI** re-requests the
+  same plan with `use_ai_explanation: true` (explicit opt-in, disclosed next to the
+  button); courses and eligibility are unchanged, and quoted policy records appear in
+  the sources list. Hidden for mock plans.
+- **Ask about your route** (`components/AskPanel.tsx`, `lib/ask-api.ts`) calls
+  `POST /api/ask` with the plan's course IDs (and the major when there is exactly
+  one). AI answers are a per-question opt-in checkbox; the default answer quotes the
+  closest bundled record. Citations, related sources, warnings (including
+  `AI_RATE_LIMITED`) and the disclaimer are always shown.
 - Career milestones retain their recommended date ranges; the legacy timeline
   groups them into the nearest available displayed quarter without changing dates.
 - npm is the combined project's package manager. `package-lock.json` includes both

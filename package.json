@@ -13,7 +13,8 @@
     "test": "node --conditions=react-server --import tsx --test tests/*.test.ts",
     "validate:data": "node --conditions=react-server --import tsx scripts/validate-data.ts",
     "validate:data:artifacts": "python3 scripts/validate-data-artifacts.py",
-    "verify:http": "node --import tsx scripts/verify-http.ts"
+    "verify:http": "node --import tsx scripts/verify-http.ts",
+    "build:index": "node --env-file-if-exists=.env.local --conditions=react-server --import tsx scripts/build-index.ts"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
