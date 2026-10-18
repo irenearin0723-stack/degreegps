@@ -1,13 +1,13 @@
 'use client';
 import { formatGoalDeadline } from '../types/goal';
 
-import { AlertTriangle, ArrowLeft, ArrowRightLeft, BookOpen, BriefcaseBusiness, CalendarDays, CheckCircle2, ExternalLink, FolderGit2, Info, Map as MapIcon, RotateCcw, ShieldCheck, Sparkles, UserRound, Wrench } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, BookOpen, BriefcaseBusiness, CalendarDays, CheckCircle2, ExternalLink, FolderGit2, Info, Map as MapIcon, RotateCcw, ShieldCheck, Sparkles, UserRound, Wrench } from 'lucide-react';
 import type { CareerMilestone, PlanResponse, PlannedCourse } from '../types/ui-plan';
 import { Badge } from './ui/badge';
 import { AskPanel } from './AskPanel';
 import { toBackendRequest } from '../lib/plan-api';
 
-type Props = { plan: PlanResponse; onEdit: () => void; onRegenerate: () => void; onChangeGoal?: () => void; accountName?:string; onAccount:()=>void; onExplain?: () => void; explaining?: boolean; explainError?: string; readOnly?: boolean };
+type Props = { plan: PlanResponse; onEdit: () => void; onRegenerate: () => void; accountName?:string; onAccount:()=>void; onExplain?: () => void; explaining?: boolean; explainError?: string; readOnly?: boolean };
 const termNames = { autumn: 'Autumn', winter: 'Winter', spring: 'Spring', summer: 'Summer' };
 
 function CourseCard({ course, plan }: { course: PlannedCourse; plan: PlanResponse }) {
@@ -42,7 +42,7 @@ function MilestoneCard({ milestone }: { milestone: CareerMilestone }) {
   return <article className="milestone-card"><div className="milestone-head"><span className={`milestone-status ${milestone.status}`}>{milestone.status === 'done' ? <CheckCircle2 size={14} /> : <BriefcaseBusiness size={14} />}</span><div><h4>{milestone.title}</h4><p>{milestone.description}</p></div></div><ul>{milestone.action_items.map((item) => <li key={item}>{item}</li>)}</ul></article>;
 }
 
-export function PlanDashboard({ plan, onEdit, onRegenerate, onChangeGoal, accountName, onAccount, onExplain, explaining, explainError, readOnly = false }: Props) {
+export function PlanDashboard({ plan, onEdit, onRegenerate, accountName, onAccount, onExplain, explaining, explainError, readOnly = false }: Props) {
   const milestoneMap = new Map<string, CareerMilestone[]>();
   plan.career_milestones.forEach((milestone) => milestoneMap.set(milestone.quarter_id, [...(milestoneMap.get(milestone.quarter_id) ?? []), milestone]));
   const officialCount = plan.sources.filter((source) => source.kind === 'official').length;
@@ -52,7 +52,7 @@ export function PlanDashboard({ plan, onEdit, onRegenerate, onChangeGoal, accoun
   // The ask service regenerates this plan from its inputs; legacy saved plans that no longer validate get catalog-only answers.
   const planInputs = (() => { if (plan.mode === 'mock') return undefined; try { return toBackendRequest(plan.request); } catch { return undefined; } })();
   const blockedCourse = plan.warnings.find((warning) => ['COURSE_REVIEW_REQUIRED', 'COURSE_BLOCKED', 'NEEDS_GRADE_CONFIRMATION'].includes(warning.code))?.affected_course_codes[0];
-  return <main className="dashboard-page"><header className="dashboard-header"><button className="back-button" disabled={readOnly} onClick={onEdit}><ArrowLeft size={16} /> Edit inputs</button><div className="dash-actions"><Badge variant={plan.mode === 'mock' ? 'mock' : 'generated'}>{plan.mode === 'mock' ? 'DEMO · UNVERIFIED' : 'GENERATED PLAN'}</Badge>{onChangeGoal&&<button className="button secondary" disabled={readOnly} onClick={onChangeGoal}><ArrowRightLeft size={15}/> Change to SWE</button>}<button className="button secondary" disabled={readOnly} onClick={onRegenerate}><RotateCcw size={15} /> Regenerate</button><button className="button secondary" disabled={readOnly} onClick={onAccount}><UserRound size={15}/>{accountName??'Save plan'}</button></div></header>
+  return <main className="dashboard-page"><header className="dashboard-header"><button className="back-button" disabled={readOnly} onClick={onEdit}><ArrowLeft size={16} /> Edit inputs</button><div className="dash-actions"><Badge variant={plan.mode === 'mock' ? 'mock' : 'generated'}>{plan.mode === 'mock' ? 'DEMO · UNVERIFIED' : 'GENERATED PLAN'}</Badge><button className="button secondary" disabled={readOnly} onClick={onRegenerate}><RotateCcw size={15} /> Regenerate</button><button className="button secondary" disabled={readOnly} onClick={onAccount}><UserRound size={15}/>{accountName??'Save plan'}</button></div></header>
     <section className="destination-card"><div className="destination-icon"><MapIcon size={23} /></div><div><span>YOUR DESTINATION</span><h1>{plan.request.target_role}</h1><p>{formatGoalDeadline(plan.request.goal_draft, plan.request.target_summer)} · {plan.request.majors.join(' + ')}</p></div><div className="destination-stats"><span><b>{plan.quarters.length}</b> terms mapped</span><span><b>{officialCount}</b> official sources</span></div></section>
     {plan.summary && <section className="summary-section"><div><p className="eyebrow">PLAN SUMMARY</p><p>{plan.summary}</p>{explainError ? <small className="summary-error">{explainError}</small> : !readOnly && onExplain && plan.mode !== 'mock' && <small>AI explanation sends your goal, preferences and planned courses to an external AI provider. It can quote official policy records but never changes courses or eligibility.</small>}</div>{!readOnly && onExplain && plan.mode !== 'mock' && <button className="button secondary" onClick={onExplain} disabled={explaining}><Sparkles size={15} />{explaining ? 'Explaining…' : 'Explain with AI'}</button>}</section>}
     {plan.warnings.length > 0 && <section className="warnings-panel"><div className="warning-title"><AlertTriangle size={18} /><div><b>Review before using this plan</b><span>{plan.warnings.length} planning notice{plan.warnings.length === 1 ? '' : 's'}</span></div></div><div className="warning-list">{groupWarnings(plan.warnings).map((group) => <WarningGroup key={group.code} {...group} />)}</div></section>}
