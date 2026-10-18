@@ -9,6 +9,8 @@ import { planAcademic } from './planner';
 import { planCareer } from './career';
 import { deterministicSummary, explainPlan } from './ai';
 import { retrieveSources, type RetrievedSource } from './retrieval';
+import { HttpError } from './http';
+import { supportedCourseCodes } from './course-codes';
 import { scopeToMajor } from './major-scope';
 
 const POLICY_KINDS = new Set(['requirement', 'program', 'policy_issue', 'registration_policy', 'program_option']);
@@ -23,6 +25,8 @@ async function planPolicies(plan: PlanResponse): Promise<RetrievedSource[]> {
 }
 export async function generatePlan(input: PlanRequest, options: { mock?: boolean; now?: Date; aiBlocked?: string } = {}) {
   const request = PlanRequestSchema.parse(input);
+  const unsupported = [...request.completed_courses, ...request.in_progress_courses].filter(id => !supportedCourseCodes.has(id));
+  if (!options.mock && unsupported.length) throw new HttpError('UNSUPPORTED_COURSE', `Courses not in the supported data snapshot: ${unsupported.join(', ')}. Check the codes or ask an adviser; these records cannot be used for planning.`, 400);
   const now = options.now ?? new Date();
   const { courses, careers, sections } = options.mock
     ? { sections: [], courses: CourseDatasetSchema.parse(JSON.parse(await readFile(join(process.cwd(), 'mocks/course-data.json'), 'utf8'))).courses,

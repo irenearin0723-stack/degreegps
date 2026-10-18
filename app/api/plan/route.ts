@@ -4,6 +4,7 @@ import { DataError } from '../../../lib/data';
 import { HttpError, apiError, readJson, PRIVATE_HEADERS } from '../../../lib/http';
 import { gateAi } from '../../../lib/rate-limit';
 export const runtime = 'nodejs';
+export const maxDuration = 60;
 export async function POST(request: Request) {
   try {
     const result = PlanRequestSchema.safeParse(await readJson(request));

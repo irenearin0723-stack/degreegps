@@ -17,7 +17,13 @@ export function planCareer(request: PlanRequest, quarters: QuarterPlan[], paths:
   const milestones: CareerMilestone[] = actions.map((action, index) => {
     const start = new Date(today.getTime() + Math.floor(remaining * index / actions.length) * DAY);
     const end = new Date(today.getTime() + Math.floor(remaining * (index + 1) / actions.length) * DAY);
-    const related = quarters[Math.min(2, Math.floor(index * 3 / actions.length))]?.courses.map(c => c.id) ?? [];
+    // Only reference coursework whose quarter has ended before this activity begins.
+    const endBoundary = { winter: '04-01', spring: '07-01', summer: '10-01', autumn: '01-01' };
+    const related = quarters.filter(q => {
+      const [year, season] = q.term.split('-');
+      const end = `${Number(year) + (season === 'autumn' ? 1 : 0)}-${endBoundary[season as keyof typeof endBoundary]}`;
+      return end <= iso(start);
+    }).flatMap(q => q.courses.map(c => c.id));
     return { id: `career-${index + 1}`, action, timeframe: { start: iso(start), end: iso(end), basis: 'recommended' },
       explanation: `Recommended preparation for ${request.goal.track} ${request.goal.type}. ${related.length ? `Suggested coursework (${related.join(', ')}) may support preparation; verify readiness independently.` : 'Begin activities independently while academic options are reviewed.'} These are suggested personal timeframes, not employer or lab deadlines.`,
       associated_goal: request.goal.type, related_course_ids: related };

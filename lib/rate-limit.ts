@@ -1,4 +1,5 @@
 import 'server-only';
+import { externalAiEnabled } from './ai-config';
 
 /**
  * Budget guard for optional AI calls (/api/ask, /api/goal, /api/plan explanations).
@@ -54,6 +55,6 @@ export function consumeAiBudget(request: Request, now = Date.now()): AiGate {
 }
 /** Gates a request that asked for AI. Requests that did not ask, or run without a key, consume nothing. */
 export function gateAi(request: Request, requested: boolean): AiGate {
-  return requested && process.env.OPENAI_API_KEY ? consumeAiBudget(request) : { allowed: true };
+  return requested && externalAiEnabled() ? consumeAiBudget(request) : { allowed: true };
 }
 export function resetAiBudget() { windows.clear(); }

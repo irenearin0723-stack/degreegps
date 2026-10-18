@@ -1,4 +1,5 @@
 import { TranscriptResponseSchema } from '../types/transcript';
+import { MAX_PDF_BYTES, MAX_PDF_MIB } from './upload-limits';
 export type DetectedCourseStatus = 'completed' | 'in_progress' | 'uncertain';
 export interface DetectedTranscriptCourse {
   id: string; code: string; term: string | null; grade: string | null;
@@ -12,7 +13,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, '') ??
 const USE_MOCK_TRANSCRIPT = process.env.NEXT_PUBLIC_USE_MOCK_TRANSCRIPT === 'true';
 export async function parseTranscript(file: File): Promise<TranscriptParseResponse> {
   if (file.type !== 'application/pdf' || !file.name.toLowerCase().endsWith('.pdf')) throw new Error('Upload a text-based PDF. Scanned images and OCR are not supported.');
-  if (!file.size || file.size > 5 * 1024 * 1024) throw new Error('Upload a non-empty PDF no larger than 5 MiB.');
+  if (!file.size || file.size > MAX_PDF_BYTES) throw new Error(`Upload a non-empty PDF no larger than ${MAX_PDF_MIB} MiB.`);
   if (USE_MOCK_TRANSCRIPT) return { completed_courses: ['CSE 123'], in_progress_courses: [], detected_courses: [
     { id: 'demo-only', code: 'CSE 123', term: null, grade: null, status: 'uncertain', confidence: null },
   ], warnings: ['DEMO ONLY: fictional course data; the selected file was not uploaded.'] };

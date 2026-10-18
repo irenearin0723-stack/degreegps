@@ -23,7 +23,7 @@ function SourceCard({ source, cited }: { source: RetrievedSourceDto; cited: bool
 export function AskPanel({ courseIds, majors, plan, blockedCourse }: Props) {
   const [question, setQuestion] = useState('');
   // AI answers are on by default in the UI; the checkbox and its disclosure let students switch to quoted records.
-  const [useAi, setUseAi] = useState(true);
+  const [useAi, setUseAi] = useState(process.env.NEXT_PUBLIC_FREE_DEMO !== 'true');
   const [pending, setPending] = useState(false);
   const [result, setResult] = useState<AskResponse>();
   const [error, setError] = useState<string>();

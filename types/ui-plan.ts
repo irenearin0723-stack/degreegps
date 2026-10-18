@@ -48,6 +48,8 @@ export interface PlannedCourse {
   credits: number | null;
   category: CourseCategory;
   status: 'planned' | 'in_progress' | 'tentative';
+  /** Missing in older saved plans: never infer registration clearance. */
+  registration_status?: 'eligible' | 'ineligible' | 'unknown';
   /** Explanation for why this course appears in the suggested path. */
   rationale: string;
   /** Every ID must appear in PlanResponse.sources. Can be []. */

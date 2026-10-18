@@ -1,6 +1,7 @@
 import { PlanRequestSchema, PlanResponseSchema, type PlanRequest as BackendRequest, type PlanResponse as BackendResponse } from '../types/plan';
 import type { PlanRequest, PlanResponse } from '../types/ui-plan';
 import type { GoalDraft } from '../types/goal';
+import { uniqueCourseIds } from './course-history';
 import { CourseIdSchema } from '../types/course';
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, '') ?? '';
 const USE_MOCK_DATA = process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true';
@@ -22,8 +23,8 @@ export function toBackendRequest(request: PlanRequest, options: { aiExplanation?
   const grades = Object.entries(request.reviewed_grades ?? {}).flatMap(([id, grade]) => { const r = CourseIdSchema.safeParse(id); return r.success && completed.has(r.data) ? [[r.data, grade] as const] : []; });
   const boundary = { winter: '01-01', spring: '04-01', summer: '06-01', autumn: '09-01' };
   const parsed = PlanRequestSchema.safeParse({
-    major: request.majors.join(' + '), completed_courses: request.completed_courses,
-    in_progress_courses: request.in_progress_courses,
+    major: request.majors.join(' + '), completed_courses: uniqueCourseIds(request.completed_courses),
+    in_progress_courses: uniqueCourseIds(request.in_progress_courses),
     ...(grades.length ? { reviewed_grades: Object.fromEntries(grades) } : {}),
     goal: { type: goal.type, track: goal.track, deadline: goal.deadline ? `${goal.deadline.year}-${boundary[goal.deadline.term]}` : null, notes: goal.notes },
     max_courses_per_term: request.max_courses_per_term, start_term: `${request.start_year}-${request.start_term}`,
@@ -41,7 +42,7 @@ export function toUiPlan(raw: BackendResponse, request: PlanRequest): PlanRespon
   const quarters = plan.quarters.map(q => {
     const [year, term] = q.term.split('-');
     return { id: q.term, year: Number(year), term: term as PlanRequest['start_term'], notes: q.notes,
-      courses: q.courses.map(c => ({ code: c.id, title: c.title, credits: c.credits, category: 'other' as const,
+      courses: q.courses.map(c => ({ registration_status: plan.academic_decisions?.find(d => d.course_id === c.id && d.term === q.term)?.section_registration_status ?? 'unknown', code: c.id, title: c.title, credits: c.credits, category: 'other' as const,
         status: c.scheduling_status === 'tentative' ? 'tentative' as const : 'planned' as const,
         rationale: c.explanation, source_ids: c.source_ids })) };
   });

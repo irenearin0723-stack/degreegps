@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import { Plus, X } from 'lucide-react';
+import { CourseIdSchema } from '../types/course';
+import { uniqueCourseIds } from '../lib/course-history';
+import { supportedCourseCodes } from '../lib/course-codes';
 
 type Props = {
   label: string;
@@ -18,11 +21,14 @@ export function CourseInput({ label, hint, values, blockedValues, onChange }: Pr
   const [message, setMessage] = useState('');
 
   const add = () => {
-    const course = normalizeCourse(draft);
-    if (!course) return;
-    if (values.includes(course)) return setMessage('This course is already in the list.');
-    if (blockedValues.includes(course)) return setMessage('A course cannot be both completed and in progress.');
-    onChange([...values, course]);
+    if (!draft.trim()) return;
+    const parsed = CourseIdSchema.safeParse(normalizeCourse(draft));
+    if (!parsed.success) return setMessage('Enter a course code such as CSE 311.');
+    const course = parsed.data;
+    if (!supportedCourseCodes.has(course)) return setMessage(`${course} is not in our supported UW snapshot. Check the code; unlisted courses need adviser review.`);
+    if (uniqueCourseIds(values).includes(course)) return setMessage('This course is already in the list.');
+    if (uniqueCourseIds(blockedValues).includes(course)) return setMessage('A course cannot be both completed and in progress.');
+    onChange(uniqueCourseIds([...values, course]));
     setDraft('');
     setMessage('');
   };

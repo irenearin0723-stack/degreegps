@@ -3,6 +3,7 @@ import { interpretGoal } from '../../../lib/ai';
 import { apiError, HttpError, PRIVATE_HEADERS, readJson } from '../../../lib/http';
 import { gateAi } from '../../../lib/rate-limit';
 export const runtime = 'nodejs';
+export const maxDuration = 60;
 const InputSchema = z.object({ text: z.string().trim().min(1).max(2000), use_ai: z.boolean().default(false) }).strict();
 export async function POST(request: Request) {
   try {

@@ -19,6 +19,13 @@ authentication service, or real transcript persistence. This is not an official 
 | `tests/` | Unit/API tests (`npm test`) |
 | `docs/` | Current guides; `docs/reports/` validation reports and generated evidence; `docs/legacy/` superseded v1 material |
 
+## Public $0 demo
+
+**https://degreegps.vercel.app** — frontend and real Node API routes on Vercel Hobby.
+The hosted free build blocks external paid AI calls; cited local RAG, Planner and PDF extraction remain functional.
+Hosted PDFs are limited to 4 MiB by the provider transport limit. Free usage quotas still apply.
+See [free deployment instructions](docs/deployment-free.md) and [hosted verification](docs/reports/free-deployment-validation-2026-10-18.md).
+
 ## Run locally
 
 Requires [Node.js](https://nodejs.org/) **22.13 or newer** (`node -v`); `npm` ships with it.

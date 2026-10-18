@@ -3,6 +3,7 @@ import { answerQuestion } from '../../../lib/ask-service';
 import { apiError, HttpError, PRIVATE_HEADERS, readJson } from '../../../lib/http';
 import { gateAi } from '../../../lib/rate-limit';
 export const runtime = 'nodejs';
+export const maxDuration = 60;
 export async function POST(request: Request) {
   try {
     const parsed = AskRequestSchema.safeParse(await readJson(request));

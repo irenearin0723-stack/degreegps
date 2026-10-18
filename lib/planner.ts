@@ -61,6 +61,10 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
     graduation = start;
   }
   const planTerms = planningTerms(start, graduation);
+  if (!planTerms.length) {
+    warn('NO_REGULAR_QUARTERS', 'No regular academic quarter falls within this range. Summers are not scheduled; showing the next regular quarter for review.');
+    planTerms.push(...planningTerms(start).slice(0, 1));
+  }
   if (graduation && termOrdinal(graduation) > termOrdinal(planTerms[planTerms.length - 1]) + (graduation.endsWith('summer') ? 1 : 0))
     warn('PLAN_HORIZON_LIMITED', `Plans cover at most ${MAX_PLANNED_QUARTERS} quarters; quarters after ${planTerms[planTerms.length - 1]} are not planned.`);
 
@@ -179,7 +183,7 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
       const offeringNote = offering.status === 'confirmed' ? 'CONFIRMED listing snapshot, not live seats. '
         : /catalog/i.test(offering.notes) ? `Tentative: ${offering.notes} ` : 'PROJECTED offering: tentative and subject to change; not a confirmed offering. ';
       quarter.courses.push({ id: course.course_id, title: course.title, credits: course.credits,
-        scheduling_status: course.data_status === 'sample' || conditional || offering.status === 'projected' ? 'tentative' : 'eligible',
+        scheduling_status: course.data_status === 'sample' || conditional || offering.status === 'projected' || registrationStatus !== 'eligible' ? 'tentative' : 'eligible',
         explanation: `${why}${offeringNote}Priority ${score(course)}: foundation ${course.foundation_priority}/10; ${course.tracks.includes(request.goal.track) ? 'matches' : 'supports foundations for'} ${request.goal.track} ${request.goal.type}. ${conditional ? 'Conditional on successful completion of previously planned prerequisites. ' : ''}${assumesGrade ? 'Assumes you earn at least the minimum grade required in its prerequisites; confirm your grades. ' : ''}${allowSample ? 'Illustrative sample rules only. ' : ''}${registrationNote}Completing a course does not guarantee skills, admission, or employment.`,
         source_ids: [sourceId, offeringSourceId] });
       if (offering.status === 'projected' && !/catalog/i.test(offering.notes)) warn('PROJECTED_OFFERING', `${course.course_id} in ${termId} uses a departmental projection. Recheck the Time Schedule; no confirmed offering or seat is promised.`, [course.course_id]);

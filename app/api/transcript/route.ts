@@ -2,6 +2,7 @@ import { extractTranscript } from '../../../lib/transcript/parser';
 import { validatePdf, UploadError, MAX_MULTIPART_BYTES } from '../../../lib/transcript/validate';
 import { apiError, HttpError, PRIVATE_HEADERS, readBoundedBody } from '../../../lib/http';
 export const runtime = 'nodejs';
+export const maxDuration = 60;
 export async function POST(request: Request) {
   try {
     const contentType = request.headers.get('content-type') ?? '';

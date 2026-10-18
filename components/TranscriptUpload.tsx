@@ -1,17 +1,23 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { CourseIdSchema } from '../types/course';
+import { canonicalCourseId, mergeCourseHistory } from '../lib/course-history';
+import { supportedCourseCodes } from '../lib/course-codes';
+import { MAX_PDF_BYTES, MAX_PDF_MIB } from '../lib/upload-limits';
 import { AlertCircle, Check, FileText, LoaderCircle, LockKeyhole, Upload, X } from 'lucide-react';
 import { confirmedGrades, parseTranscript, type DetectedTranscriptCourse } from '../lib/transcript-api';
 
 type Props = {
+  existingCompleted?: string[];
+  existingInProgress?: string[];
   onConfirm: (completed: string[], inProgress: string[], grades: Record<string, number>) => void;
 };
 
 const allowedTypes = ['application/pdf'];
-const maxBytes = 5 * 1024 * 1024;
+const maxBytes = MAX_PDF_BYTES;
 
-export function TranscriptUpload({ onConfirm }: Props) {
+export function TranscriptUpload({ onConfirm, existingCompleted = [], existingInProgress = [] }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
   const [file, setFile] = useState<File>();
@@ -22,7 +28,7 @@ export function TranscriptUpload({ onConfirm }: Props) {
   const chooseFile = async (candidate?: File) => {
     if (!candidate) return;
     if (!allowedTypes.includes(candidate.type)) return fail('Upload a text-based PDF transcript.');
-    if (candidate.size > maxBytes) return fail('The transcript must be 5 MiB or smaller.');
+    if (candidate.size > maxBytes) return fail(`The transcript must be ${MAX_PDF_MIB} MiB or smaller.`);
     setFile(candidate); setState('parsing'); setMessage('Extracting course history…');
     try {
       const result = await parseTranscript(candidate);
@@ -37,9 +43,15 @@ export function TranscriptUpload({ onConfirm }: Props) {
   const remove = (id: string) => setCourses((current) => current.filter((course) => course.id !== id));
   const confirm = () => {
     if(courses.some(course=>course.status==='uncertain')){setMessage('Resolve every “Needs review” course before confirming.');return}
-    const completed = courses.filter((course) => course.status === 'completed').map((course) => course.code);
-    const inProgress = courses.filter((course) => course.status === 'in_progress').map((course) => course.code);
-    const grades = confirmedGrades(courses);
+    const reviewed = courses.map(course => ({...course, code: canonicalCourseId(course.code)}));
+    if (reviewed.some(course => !CourseIdSchema.safeParse(course.code).success || !supportedCourseCodes.has(course.code))) {setMessage('Correct each course code to a supported UW course before confirming.');return;}
+    const codes = reviewed.map(course => course.code);
+    const duplicates = [...new Set(codes.filter((code,index) => codes.indexOf(code) !== index))];
+    if (duplicates.length) {setMessage(`Duplicate courses: ${duplicates.join(', ')}. Keep one reviewed attempt per course and remove the extra rows before confirming.`);return;}
+    const completed = reviewed.filter((course) => course.status === 'completed').map((course) => course.code);
+    const inProgress = reviewed.filter((course) => course.status === 'in_progress').map((course) => course.code);
+    try { mergeCourseHistory({completed_courses: existingCompleted, in_progress_courses: existingInProgress}, completed, inProgress); } catch (error) {setMessage((error as Error).message);return;}
+    const grades = confirmedGrades(reviewed);
     const graded = Object.keys(grades).length;
     onConfirm(completed, inProgress, grades); setState('confirmed'); setMessage(`${completed.length + inProgress.length} courses added${graded ? `, ${graded} with grades used for minimum-grade prerequisites` : ''}. You can edit them below.`);
   };
@@ -49,7 +61,7 @@ export function TranscriptUpload({ onConfirm }: Props) {
     <div className="transcript-heading"><div><span className="transcript-icon"><FileText size={17} /></span><div><b>Import from transcript</b><small>Optional · PDF only</small></div></div>{state !== 'idle' && <button type="button" onClick={reset}>Start over</button>}</div>
     {state === 'idle' || state === 'error' ? <div className={dragging ? 'drop-zone dragging' : 'drop-zone'} onDragOver={(event) => { event.preventDefault(); setDragging(true); }} onDragLeave={() => setDragging(false)} onDrop={(event) => { event.preventDefault(); setDragging(false); void chooseFile(event.dataTransfer.files[0]); }}>
       <input ref={inputRef} type="file" accept=".pdf" onChange={(event) => void chooseFile(event.target.files?.[0])} />
-      <Upload size={21} /><div><b>Drop your unofficial transcript here</b><span>or choose a file from your device · max 5 MiB</span></div><button type="button" onClick={() => inputRef.current?.click()}>Choose file</button>
+      <Upload size={21} /><div><b>Drop your unofficial transcript here</b><span>or choose a file from your device · max {MAX_PDF_MIB} MiB</span></div><button type="button" onClick={() => inputRef.current?.click()}>Choose file</button>
     </div> : null}
     {state === 'parsing' && <div className="parse-progress"><LoaderCircle className="spin" size={23} /><div><b>{file?.name}</b><span>{message}</span><i><span /></i></div></div>}
     {state === 'review' && <div className="transcript-review"><div className="transcript-warning"><AlertCircle size={15}/><div><b>OCR can be wrong</b><span>Edit course codes and resolve every low-confidence item before continuing.</span></div></div><div className="review-top"><div><Check size={15} /><b>{courses.length} courses detected</b></div><span>Review status before adding</span></div><div className="detected-list">{courses.map((course) => <div className={course.status==='uncertain'?'detected-row needs-review':'detected-row'} key={course.id}><div><input aria-label={`Course code ${course.code}`} value={course.code} onChange={event=>updateCode(course.id,event.target.value)}/><span>{course.term ?? 'Term unknown'}{course.grade ? ` · Grade ${course.grade}` : ''}</span>{course.review_reasons?.length ? <small>{course.review_reasons.join(' ')}</small> : null}</div><select aria-label={`Status for ${course.code}`} value={course.status} onChange={(event) => updateStatus(course.id, event.target.value as DetectedTranscriptCourse['status'])}><option value="completed">Completed</option><option value="in_progress">In progress</option><option value="uncertain">Needs review</option></select><span className={course.confidence !== null && course.confidence < .9 ? 'confidence low' : 'confidence'}>{course.confidence === null ? 'Review' : `${Math.round(course.confidence * 100)}%`}</span><button type="button" onClick={() => remove(course.id)} aria-label={`Remove ${course.code}`}><X size={14} /></button></div>)}</div>{message&&<p className="transcript-review-message">{message}</p>}<button type="button" className="button primary transcript-confirm" onClick={confirm} disabled={!courses.length||courses.some(course=>course.status==='uncertain')}>Confirm and add courses <Check size={15} /></button></div>}

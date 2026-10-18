@@ -1,4 +1,5 @@
 import 'server-only';
+import { externalAiEnabled, aiUnavailableWarning } from './ai-config';
 import { AskRequestSchema, AskResponseSchema, type AskRequest, type AskResponse } from '../types/ask';
 import { answerFromSources } from './ai';
 import { generatePlan } from './plan-service';
@@ -11,8 +12,8 @@ export const ASK_DISCLAIMER = 'Answers use only the dated UW data snapshot bundl
 export async function answerQuestion(input: AskRequest, options: { directory?: string; now?: Date } = {}): Promise<AskResponse> {
   const request = AskRequestSchema.parse(input);
   const warnings: string[] = [];
-  if (request.use_ai && !process.env.OPENAI_API_KEY) warnings.push('AI_UNAVAILABLE: no API key configured; keyword retrieval and an extractive answer were returned.');
-  const useAi = request.use_ai && !!process.env.OPENAI_API_KEY;
+  if (request.use_ai && !externalAiEnabled()) warnings.push(aiUnavailableWarning());
+  const useAi = request.use_ai && externalAiEnabled();
   const corpus = await loadRetrievalCorpus(options.directory);
 
   // The plan is regenerated here from its inputs (deterministic, no AI) rather than trusted from the client.

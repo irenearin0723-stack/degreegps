@@ -1,5 +1,6 @@
 import 'server-only';
 import OpenAI from 'openai';
+import { externalAiEnabled, aiUnavailableWarning } from './ai-config';
 import { zodResponseFormat } from 'openai/helpers/zod';
 import { z } from 'zod';
 import { GoalSchema, type Goal, type PlanResponse } from '../types/plan';
@@ -19,6 +20,7 @@ export interface GoalInterpretation {
   mode: 'ai' | 'deterministic';
 }
 export function openaiClient() {
+  if (!externalAiEnabled()) throw new Error(aiUnavailableWarning());
   return new OpenAI({ apiKey: process.env.OPENAI_API_KEY, baseURL: process.env.OPENAI_BASE_URL || undefined, timeout: 8000, maxRetries: 0 });
 }
 /** Suggestions only. The frontend must confirm the goal before submitting /api/plan. */
@@ -49,7 +51,7 @@ export async function interpretGoal(text: string, useAi = false, now = new Date(
   const explicitDates = [...text.matchAll(/\b\d{4}-\d{2}-\d{2}\b/g)].map(match => match[0]);
   if (explicitDates.length > 1 || (!explicitDates.length && /next|before|summer|winter|spring|autumn|fall|deadline/i.test(text)))
     return { goal: null, clarification_required: true, mode: 'deterministic', warnings: ['Confirm one deadline as YYYY-MM-DD or flexible; relative dates are not guessed.'] };
-  if (!process.env.OPENAI_API_KEY) return fallback('AI_UNAVAILABLE: no API key configured; using local interpretation.');
+  if (!externalAiEnabled()) return fallback(aiUnavailableWarning());
   try {
     const response = await openaiClient().chat.completions.parse({
       model: process.env.OPENAI_MODEL || 'gpt-4.1-mini',
@@ -68,7 +70,7 @@ export async function interpretGoal(text: string, useAi = false, now = new Date(
 
 export function deterministicSummary(plan: PlanResponse): string {
   const count = plan.quarters.reduce((total, q) => total + q.courses.length, 0);
-  return `${count} course suggestions across three quarters support preparation for ${plan.request.goal.track} ${plan.request.goal.type}. ${count === 0 ? 'No courses could be scheduled safely with the current verified data. ' : ''}Review warnings and eligibility with an academic adviser. Career dates are recommended timeframes; outcomes are not guaranteed.`;
+  return `${count} course suggestions across ${plan.quarters.length} quarters support preparation for ${plan.request.goal.track} ${plan.request.goal.type}. ${count === 0 ? 'No courses could be scheduled safely with the current verified data. ' : ''}Review warnings and eligibility with an academic adviser. Career dates are recommended timeframes; outcomes are not guaranteed.`;
 }
 /** Leading sentences of a source, verbatim, up to roughly `max` characters. */
 export function quoteSource(source: Pick<RetrievedSourceDto, 'document_title' | 'content'>, max = 280) {
@@ -83,7 +85,7 @@ export function quoteSource(source: Pick<RetrievedSourceDto, 'document_title' | 
  */
 export async function explainPlan(plan: PlanResponse, policies: RetrievedSourceDto[] = []): Promise<{ summary: string; warning?: string; cited: string[] }> {
   const fallback = deterministicSummary(plan);
-  if (!process.env.OPENAI_API_KEY) return { summary: fallback, cited: [], warning: 'AI explanation unavailable: no key configured. Deterministic summary returned.' };
+  if (!externalAiEnabled()) return { summary: fallback, cited: [], warning: aiUnavailableWarning() };
   const sentences: Record<string, string> = {
     overview: fallback,
     academic: plan.quarters.map(q => `${q.term}: ${q.courses.length ? q.courses.map(c => `${c.id} (${c.scheduling_status})`).join(', ') : 'no safely schedulable courses'}.`).join(' '),
@@ -128,7 +130,7 @@ export function ungroundedReasons(answer: GroundedAnswer, sources: RetrievedSour
 /** Answers only from retrieved sources. Output is rejected unless every course code and date traces to a cited source. */
 export async function answerFromSources(question: string, sources: RetrievedSourceDto[], prefixes: string[], planCourseIds: string[] = []):
   Promise<{ result: GroundedAnswer | null; warning?: string }> {
-  if (!process.env.OPENAI_API_KEY) return { result: null, warning: 'AI_UNAVAILABLE: no API key configured; extractive answer returned.' };
+  if (!externalAiEnabled()) return { result: null, warning: aiUnavailableWarning() };
   if (!sources.length) return { result: null };
   const labels = sources.map((_, i) => `S${i + 1}`) as [string, ...string[]];
   const OutputSchema = z.object({

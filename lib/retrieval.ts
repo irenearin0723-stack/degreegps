@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { z } from 'zod';
 import type { RetrievedSourceDto } from '../types/ask';
 import { openaiClient } from './ai';
+import { externalAiEnabled, aiUnavailableWarning } from './ai-config';
 import { buildCorpus, chunkHash, CORPUS_FILES, extractCourseIds, type Corpus, type CorpusChunk } from './rag-corpus';
 
 export type RetrievedSource = RetrievedSourceDto;
@@ -162,7 +163,7 @@ export async function retrieveSources(query: string, filters: RetrievalFilters =
 
   let semanticRank: string[] = [];
   if (options.use_embeddings && p.index && p.vectors.size) {
-    if (!process.env.OPENAI_API_KEY) warnings.push('AI_UNAVAILABLE: no API key configured; keyword ranking used.');
+    if (!externalAiEnabled()) warnings.push(aiUnavailableWarning());
     else try {
       const response = await openaiClient().embeddings.create({ model: p.index.model, dimensions: p.index.dimensions, encoding_format: 'float', input: query });
       const q = unit(response.data[0].embedding);

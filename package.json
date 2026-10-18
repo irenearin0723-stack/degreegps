@@ -14,7 +14,10 @@
     "validate:data": "node --conditions=react-server --import tsx scripts/validate-data.ts",
     "validate:data:artifacts": "python3 scripts/validate-data-artifacts.py",
     "verify:http": "node --import tsx scripts/verify-http.ts",
-    "build:index": "node --env-file-if-exists=.env.local --conditions=react-server --import tsx scripts/build-index.ts"
+    "build:index": "node --env-file-if-exists=.env.local --conditions=react-server --import tsx scripts/build-index.ts",
+    "build:free": "node scripts/build-free.mjs",
+    "check:serverless": "node scripts/check-serverless-bundle.mjs",
+    "verify:deployment": "node scripts/verify-deployment.mjs"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
@@ -27,7 +30,7 @@
     "pdf-lib": "^1.17.1"
   },
   "engines": {
-    "node": ">=22.13.0"
+    "node": "22.x"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
