@@ -124,9 +124,11 @@ test('concurrency is exact-term, never inferred from in-progress or review-only 
   assert.equal(p.academic_decisions[1].catalog_prerequisite_status, 'unmet');
   assert.equal((await decision('INFO 340', { completed_courses: ['INFO 201'], reviewed_grades: { 'INFO 201': 2 }, in_progress_courses: ['CSE 163'] })).decision.catalog_prerequisite_status, 'unmet');
 });
-test('all 115 sections preserve complete original metadata, provenance and exact SLN/term scope', async () => {
+test('all sections preserve complete original metadata, provenance and exact SLN/term scope', async () => {
   const rows = JSON.parse(readFileSync('data/target_courses/sections.json', 'utf8'));
-  const { sections } = await data; assert.equal(sections.length, 115);
+  // 115 original Winter 2027 sections plus 1125 imported 2026-10-17 (expanded-profile, INFO and AMATH courses).
+  const { sections } = await data; assert.equal(sections.length, rows.length); assert.equal(rows.length, 1240);
+  assert.equal(sections.filter(s => s.evidence_level === 'detailed_SLN_notes').length, 90);
   for (const s of sections) {
     assert.deepEqual(s.metadata, rows.find((r: { sln: string }) => r.sln === s.sln));
     assert.ok(s.detail_url.includes(`SLN=${s.sln}`)); assert.equal(s.term_id, '2027-winter');

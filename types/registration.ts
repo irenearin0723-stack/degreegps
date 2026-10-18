@@ -24,7 +24,7 @@ export const StructuredRuleSchema = z.discriminatedUnion('type', [
 export type StructuredRule = z.infer<typeof StructuredRuleSchema>;
 export const SectionEvidenceSchema = z.object({
   course_id: CourseIdSchema, term: z.literal('Winter 2027'), section: z.string().min(1), sln: z.string().regex(/^\d{5}$/),
-  component: z.enum(['LEC', 'QZ']), restriction_flag: z.string(), section_status: z.string(), other_codes: z.string(), notes: z.string(),
+  component: z.enum(['LEC', 'QZ', 'LB', 'SM']), restriction_flag: z.string(), section_status: z.string(), other_codes: z.string(), notes: z.string(),
   source_url: OfficialUrlSchema, detail_url: OfficialUrlSchema, snapshot_at: z.iso.datetime({ offset: true }),
   remaining_checks: z.array(z.string().min(1)).min(1),
   evidence_level: z.enum(['detailed_SLN_notes', 'department_schedule_only']),
@@ -40,11 +40,11 @@ export type SectionEvidence = z.infer<typeof SectionEvidenceSchema>;
 // Keep every original section field (including fees, meetings and counts) distinct from interpreted rules.
 export const ImportedSectionSchema = z.object({
   course_id: CourseIdSchema, term: z.literal('Winter 2027'), section: z.string(), sln: z.string().regex(/^\d{5}$/),
-  component: z.enum(['LEC', 'QZ']), restriction_flag: z.string(), section_status: z.string(), other_codes: z.string(), notes: z.string(),
+  component: z.enum(['LEC', 'QZ', 'LB', 'SM']), restriction_flag: z.string(), section_status: z.string(), other_codes: z.string(), notes: z.string(),
 }).passthrough();
 export type RegistrationSection = SectionEvidence & { term_id: string; metadata: z.infer<typeof ImportedSectionSchema> };
 export const SectionDecisionSchema = z.object({
-  sln: z.string(), section: z.string(), component: z.enum(['LEC', 'QZ']),
+  sln: z.string(), section: z.string(), component: z.enum(['LEC', 'QZ', 'LB', 'SM']),
   registration_status: z.enum(['eligible', 'ineligible', 'unknown']),
   major_status: z.enum(['met', 'unmet', 'unknown']), corequisite_status: z.enum(['met', 'unmet', 'not_required']),
   excluded: z.boolean(), reasons: z.array(z.string()), source_ids: z.array(z.string()),

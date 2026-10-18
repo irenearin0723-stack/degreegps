@@ -9742,5 +9742,139 @@
     "catalog_prerequisite_status": "listed",
     "source_url": "https://www.washington.edu/students/crscat/stat.html#stat496",
     "checked_at": "2026-10-17"
+  },
+  "AMATH 342": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 125"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      }
+    ],
+    "summary": "(MATH 125 OR MATH 135)",
+    "original_text": "Prerequisite: MATH 125 or MATH 135.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath342",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 403": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 401",
+          "AMATH 351"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 401",
+          "MATH 136"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 401",
+          "MATH 207"
+        ]
+      }
+    ],
+    "summary": "(AMATH 401) AND (AMATH 351 OR MATH 136 OR MATH 207)",
+    "original_text": "Prerequisite: AMATH 401; and either AMATH 351, MATH 136, or MATH 207.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath403",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 422": {
+    "any_of": [
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "AMATH 351"
+        ]
+      }
+    ],
+    "summary": "(MATH 135 OR MATH 207 OR AMATH 351)",
+    "original_text": "Prerequisite: either MATH 135, MATH 207, or AMATH 351.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath422",
+    "checked_at": "2026-10-17"
+  },
+  "AMATH 423": {
+    "any_of": [
+      {
+        "all_of": [
+          "AMATH 351"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 207"
+        ]
+      },
+      {
+        "all_of": [
+          "MATH 135"
+        ]
+      }
+    ],
+    "summary": "(AMATH 351 OR MATH 207 OR MATH 135)",
+    "original_text": "Prerequisite: either AMATH 351, MATH 207, or MATH 135.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/appmath.html#amath423",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 180": {
+    "any_of": [
+      {
+        "all_of": []
+      }
+    ],
+    "summary": "No prerequisite listed in the official catalog.",
+    "catalog_prerequisite_status": "none_listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info180",
+    "checked_at": "2026-10-17"
+  },
+  "INFO 464": {
+    "any_of": [
+      {
+        "all_of": [
+          "INFO 360"
+        ]
+      },
+      {
+        "all_of": [
+          "DESIGN 383"
+        ]
+      },
+      {
+        "all_of": [
+          "CSE 440"
+        ]
+      },
+      {
+        "all_of": [
+          "HCDE 419"
+        ]
+      }
+    ],
+    "summary": "(INFO 360 OR DESIGN 383 OR CSE 440 OR HCDE 419)",
+    "original_text": "Prerequisite: either INFO 360, DESIGN 383, CSE 440, or HCDE 419.",
+    "catalog_prerequisite_status": "listed",
+    "source_url": "https://www.washington.edu/students/crscat/info.html#info464",
+    "checked_at": "2026-10-17"
   }
 }

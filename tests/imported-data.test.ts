@@ -43,8 +43,8 @@ test('all supplied course/prerequisite records import without loss, duplicate ID
   const audit = await auditData();
   const rows = await read('data/target_courses/courses.json');
   const rules = await read('data/target_courses/prerequisites.json');
-  // 64 Winter 2027 target courses plus 281 records added for the 2026-10-17 full-depth major profiles.
-  assert.equal(rows.length, 345);
+  // 64 Winter 2027 target courses plus 287 records added 2026-10-17 for courses the full-depth major profiles name.
+  assert.equal(rows.length, 351);
   assert.equal(audit.total_courses, rows.length); assert.equal(audit.normalized_schema_valid, rows.length);
   assert.equal(audit.normalized_rejected, 0); assert.deepEqual(audit.duplicate_ids, []);
   // Courses whose Winter 2027 schedule was not checked never get a confirmed offering.
@@ -136,8 +136,7 @@ test('new major names map to official institutional codes from catalog program I
 test('not_collected Winter 2027 status is never treated as an offering, and unencodable prerequisites stay unknown', async () => {
   const rows = await read('data/target_courses/courses.json');
   const rules = await read('data/target_courses/prerequisites.json');
-  const row = rows.find((r: { course_id: string }) => r.course_id === 'STAT 302');
-  assert.equal(row.offering_status, 'not_collected');
+  const row = { ...rows.find((r: { course_id: string }) => r.course_id === 'STAT 302'), offering_status: 'not_collected', lecture_sections: '' };
   const course = importCourse(row, rules['STAT 302']);
   assert.deepEqual(course.offered_term_ids, []); assert.deepEqual(course.offering_evidence, []);
   const plan = planAcademic(PlanRequestSchema.parse({ major: 'Statistics', completed_courses: [], in_progress_courses: [],
