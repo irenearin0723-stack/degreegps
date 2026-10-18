@@ -54,7 +54,7 @@ async function main() {
     assert.ok((await page.getByRole('button', { name: /Join research \/ RA/ }).getAttribute('class')).includes('active'));
     assert.equal(errors.length, 0, errors.join('\n'));
     passed.push('Editing preserves the structured goal; no browser runtime errors');
-    await writeFile('docs/frontend-browser-validation.json', JSON.stringify({ passed: passed.length, failed: 0, checks: passed, browser_errors: errors, paid_ai_requests: 0, screenshot: 'Temporary local artifact only; no student PDF saved' }, null, 2) + '\n');
+    await writeFile('docs/reports/frontend-browser-validation.json', JSON.stringify({ passed: passed.length, failed: 0, checks: passed, browser_errors: errors, paid_ai_requests: 0, screenshot: 'Temporary local artifact only; no student PDF saved' }, null, 2) + '\n');
     console.log(`${passed.length} real-browser checks passed; no runtime errors.`);
   } finally { await browser.close(); }
 }

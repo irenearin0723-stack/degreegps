@@ -96,7 +96,7 @@ for path in root.rglob('*.xlsx'):
 
 result = {'passed': len(checks), 'failed': len(failures), 'failures': failures, 'workbooks': workbooks,
           'scope': 'CSV parity, prerequisite semantics, references, XLSX structural integrity; no full spreadsheet calculation or degree-audit engine.'}
-Path('docs/backend-data-artifacts.json').write_text(json.dumps(result, indent=2) + '\n')
+Path('docs/reports/backend-data-artifacts.json').write_text(json.dumps(result, indent=2) + '\n')
 print(json.dumps(result, indent=2))
 if failures:
     raise SystemExit(1)
