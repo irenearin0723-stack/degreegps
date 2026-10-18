@@ -84,8 +84,8 @@ export async function auditData(directory = join(process.cwd(), 'data')) {
     major_requirement_groups: major.requirements.length, major_acceptance_fixtures_outside_mvp: JSON.parse(await readFile(join(directory, 'major_requirements/requirements_test_cases.json'), 'utf8')).fixtures.length,
     dangling_major_source_ids: danglingMajorSources,
     notes: ['Source URLs/dates are preserved human-curated provenance; this audit does not reverify UW policy.',
-      'All 64 enrollment restrictions remain unresolved. No winter offering is generalized into another term.',
-      'Degree membership, credit allocation, and requirement profiles are not implemented by the MVP planner.'],
+      'Enrollment restrictions remain unresolved for every course; they are disclosed on planned courses, not used to block them. A Winter 2027 listing is never generalized into another term; later terms use the catalog offering pattern as tentative evidence.',
+      'The planner follows the major and admission rules of the matched requirement profile; credit allocation across majors, general education and degree-wide totals are not implemented.'],
   };
   const loaded = await loadData(directory);
   const projection = ProjectionDatasetSchema.parse(JSON.parse(await readFile(join(directory, 'target_courses/projected_offerings.json'), 'utf8')));

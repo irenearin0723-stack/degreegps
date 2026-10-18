@@ -1,8 +1,9 @@
 # Frontend/backend integration
 
-Integration branch: `integration/backend-frontend`. The backend snapshot is
-`8056322`; teammate main was merged from `3b7d09b` (seven frontend commits after
-the original shared starter). Main itself is not reset or overwritten.
+The integrated app now lives on `main`. History: the backend (`8056322`) was first merged
+with the teammate frontend (`3b7d09b`) on `integration/backend-frontend`; on 2026-10-17 the
+`backend` branch, including that work, was merged into `main` (`c3d1898`) together with the
+teammate fix `9274fd0`, and the integration branch was deleted.
 
 ## What was preserved and reconciled
 
@@ -27,8 +28,19 @@ the original shared starter). Main itself is not reset or overwritten.
   match the backend (text-based PDF, 5 MiB). Images/OCR remain unsupported. Ambiguous,
   repeated, failed and transfer records stay uncertain until reviewed. No fabricated
   extraction confidence percentages are shown.
-- Projected courses remain tentative. Review-only candidates stay in quarter notes
-  and warnings, never fabricated course cards or prerequisite completions.
+- Projected and catalog-pattern courses are tentative. Each course card states which
+  major requirement it serves and its registration status; a "Validated" badge appears
+  only on generated, non-tentative courses backed by an official source, otherwise
+  "Tentative", with a legend above the timeline.
+- The form offers the 14 majors that have requirement profiles and an expected
+  graduation quarter and year; `lib/plan-api.ts` sends `graduation_term`, and the
+  dashboard shows every planned quarter (summers are not planned).
+- Logging out clears the in-memory plan, and the form starts with no prefilled courses,
+  so one account's history never appears in another's form.
+- Transcript review warns that extraction can be wrong, lets students edit course codes,
+  and blocks confirmation until every "Needs review" row is resolved.
+- "Skills + projects recommended for this goal" lists the backend's `recommended_skills`
+  and `recommended_projects`; "Sources used by this plan" is collapsed by default.
 - Transcript import sends `reviewed_grades` for confirmed completed rows with a numeric
   grade (0.0–4.0); credit-only grades and courses listed with conflicting grades are
   left out, and grades are dropped for courses later removed from the completed list.
@@ -53,10 +65,8 @@ the original shared starter). Main itself is not reset or overwritten.
 
 ## Start
 
-```sh
-export PATH="$PWD/.tools/node-v22.23.3-darwin-arm64/bin:$PATH"
-npm run dev
-```
+See [Run locally](../README.md#run-locally): `npm ci`, copy `.env.example` to `.env.local`,
+then `npm run dev`.
 
 Open http://localhost:3000. `.env.example` documents optional flags. No API key is
 needed. Demo accounts remain the teammate's browser-local demo, not real backend

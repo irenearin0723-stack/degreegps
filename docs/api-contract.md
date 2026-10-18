@@ -21,13 +21,16 @@ Content-Type: `application/json`, maximum body 64 KiB, unknown keys rejected.
   },
   "max_courses_per_term": 2,
   "start_term": "2027-winter",
+  "graduation_term": "2029-spring",
   "use_ai_explanation": false
 }
 ```
 
-`major`: one nonempty label (maximum 200 characters). A combined major string is
-accepted; it must match a verified dataset eligibility label or an explicit `*`
-rule. The planner does not infer that every combined major qualifies for every course.
+`major`: one nonempty label (maximum 200 characters); combine majors with ` + `.
+Each part is matched to a requirement profile in `data/major_requirements/` by program
+name or UW institutional major code; one profile per major is used (the standard profile,
+or for option-only majors the option matching `goal.track`). An unmatched major plans
+over the whole catalog and emits `MAJOR_SCOPE_UNAVAILABLE`.
 `completed_courses` (max 300) and `in_progress_courses` (max 30) contain IDs, not
 transcript files or grades. Course IDs normalize spaces/case (`cse311` → `CSE 311`).
 Duplicates and overlaps are errors after normalization. The client must confirm
@@ -47,8 +50,12 @@ MVP does not automatically interpret arbitrary academic constraints from prose.
 courses are excluded and never automatically promoted to completed. The start
 term should be a future planning quarter after the current enrollment period.
 `start_term`: optional `YYYY-winter|spring|summer|autumn`; when omitted, uses the
-next approximate seasonal window and emits a warning. A past/current requested term is adjusted to the next future planning window with `START_TERM_ADJUSTED`; chronological quarter order is used. The horizon is exactly
-three consecutive quarters, including summer. These windows are not UW term dates.
+next approximate seasonal window and emits a warning. A past/current requested term is adjusted to the next future planning window with `START_TERM_ADJUSTED`; chronological quarter order is used.
+`graduation_term`: optional `YYYY-winter|spring|summer|autumn`. The plan covers every
+autumn, winter and spring quarter from the start through graduation (summers are never
+planned), at most 18 quarters (`PLAN_HORIZON_LIMITED` beyond that). Without it, three
+regular quarters are planned. A graduation before the start emits `GRADUATION_BEFORE_START`.
+These windows are not UW term dates.
 
 `use_ai_explanation`: defaults false; true explicitly permits external transmission
 of goal/preferences and generated plan sentences for optional explanation selection.
@@ -56,7 +63,7 @@ A missing API key returns a local summary and `AI_UNAVAILABLE`, with HTTP 200.
 
 ### Response
 
-HTTP 200: `PlanResponse`, even when no safe academic courses can be scheduled.
+HTTP 200: `PlanResponse` with 1–18 `quarters`, even when no course can be scheduled.
 See `examples/plan-response.json` for a complete real-planner example and
 `mocks/sample-plan.json` for a dashboard with illustrative coursework.
 
@@ -65,9 +72,9 @@ See `examples/plan-response.json` for a complete real-planner example and
   "schema_version": "2.0.0",
   "mode": "generated",
   "quarters": [
-    {"term": "2027-winter", "courses": [], "notes": "Eligibility requires review."},
-    {"term": "2027-spring", "courses": [], "notes": "Eligibility requires review."},
-    {"term": "2027-summer", "courses": [], "notes": "Eligibility requires review."}
+    {"term": "2027-winter", "courses": [{"id": "CSE 311", "scheduling_status": "tentative", "explanation": "Planned for your major requirement \"Computing fundamentals\". ..."}], "notes": "..."},
+    {"term": "2027-spring", "courses": ["..."], "notes": "..."},
+    {"term": "2027-autumn", "courses": ["..."], "notes": "..."}
   ],
   "recommended_skills": ["Python", "Linear algebra", "Model evaluation"],
   "recommended_projects": ["Evaluate a baseline model on a public, non-sensitive dataset"]
@@ -77,10 +84,12 @@ See `examples/plan-response.json` for a complete real-planner example and
 The snippet omits required metadata, request echo, milestones, warnings, sources,
 and summary for readability; use the complete JSON files or runtime schema.
 Each course has `id`, `title`, nullable `credits`, `explanation`, `source_ids`, and
-`scheduling_status`: `eligible` or `tentative`. Eligible means the recorded rules
-were satisfied, not a reserved seat, an official degree recommendation, or a
-promise of future availability. Dependencies on earlier planned quarters are
-always tentative until prerequisites are actually completed.
+`scheduling_status`: `eligible` or `tentative`. Eligible means the prerequisites are
+completed and the course is in the Winter 2027 snapshot; it is not a reserved seat or a
+promise of availability. A course is tentative when it depends on an earlier planned
+course, assumes a missing prerequisite grade, or relies on a projected or catalog-pattern
+offering. Every explanation names the requirement the course serves (or the course it is a
+prerequisite for) and its registration status.
 
 Warnings contain `code`, `severity` (`info|warning|blocking`), `message`, and
 `affected_course_codes`. They may identify blocked courses absent from quarters.
@@ -96,7 +105,8 @@ window. Related course references express a preparation connection, not proven m
 
 ## GET /api/plan/mock
 
-Returns the canonical fictional Summer 2027 ML internship fixture (three quarters).
+Returns the canonical fictional Summer 2027 ML internship fixture (a static file with three
+consecutive quarters, from before summers were skipped).
 Always `mode: "mock"`, includes `UNVERIFIED_CATALOG`, and marks courses tentative.
 This route does not call OpenAI or use user inputs. Render a visible DEMO label.
 
@@ -245,7 +255,7 @@ The old contract is preserved only for migration under `docs/legacy/`.
 | `majors` | `major` (one explicit label) |
 | `target_role`, `target_summer` | `goal.type`, `goal.track`, `goal.deadline` |
 | `start_year` + `start_term` | combined `start_term`, e.g. `2027-winter` |
-| `horizon_terms` | removed; three quarters fixed for MVP |
+| `horizon_terms` | `graduation_term` (plan through that quarter, summers skipped) |
 | `quarters[].id/year/term` | `quarters[].term` (combined ID) |
 | `courses[].code/rationale` | `courses[].id/explanation` |
 | milestone quarter/title/action_items | action, recommended date range, explanation |
@@ -256,27 +266,29 @@ Do not send v1 request keys. Validate responses with `PlanResponseSchema` and im
 backend in this same Next.js app and use relative `/api/...` URLs; no separate
 backend origin or CORS configuration is needed for the MVP.
 
-## Confirmed / projected / unknown offering update
+## Offerings, registration and requirements
 
-The v2 frontend response shape and request fields are unchanged. Internal course
-records now have exact-term `offering_evidence`. Only confirmed or projected
-positive evidence can produce a recommendation. A confirmed record means presence
+Internal course records have exact-term `offering_evidence`. For a quarter without it, the
+UW course catalog "Offered:" pattern applies (`catalog_offering_pattern`), or a regular
+quarter is assumed when the catalog publishes none; both are `projected` with a note saying
+so. Only confirmed or projected evidence can produce a recommendation. A confirmed record means presence
 in a dated Time Schedule snapshot, not a seat guarantee. Projected recommendations
 always use `scheduling_status: "tentative"`, explain that the offering is projected,
 include `PROJECTED_OFFERING`, and cite the departmental projection in `source_ids`.
-Unknown offering/prerequisite/grade information never becomes successful eligibility.
+Unknown offering or prerequisite information never becomes successful eligibility. A
+missing prerequisite grade plans the course as tentative with a caveat; a reviewed grade
+below the minimum blocks it.
 
-If registration eligibility is unknown but prerequisites and positive offering
-are known, up to the remaining quarter capacity may be exposed as **review-only
-candidates** through existing `quarters[].notes` and warnings with
-`code: "COURSE_REVIEW_REQUIRED"`. These are not in `quarters[].courses`, cannot
-satisfy later prerequisites, and must not be rendered as validated assignments.
-Each warning includes its exact quarter, course ID, offering status, and source ID.
-The current imported catalog still has unresolved eligibility, so its useful
-three-quarter response is an adviser-review roadmap, not a confirmed registration plan.
+Registration eligibility does not block planning (it is unknown for almost every section).
+Each planned course states it instead: "Registration restrictions are not verified" or "A
+recorded section restriction does not match your major". `academic_decisions` keeps the
+per-section detail. The planner only schedules courses that advance an unmet major or
+admission requirement of the matched profile, or the prerequisite chain of one, and reports
+`REQUIREMENTS_REMAINING` or `REQUIREMENTS_COVERED` at the end. Quarters with nothing left to
+plan say so in their notes.
 
 Lecture/quiz times are not required for quarter-level planning. Specific section
 selection, meeting conflicts, seat availability and add-code clearance are future
-features. Known registration restrictions are still enforced; missing details
-remain explicitly unknown. See `examples/projected-review-request.json` and
+features. Known restrictions are disclosed on the course, and missing details remain
+explicitly unknown. See `examples/projected-review-request.json` and
 `docs/reports/backend-projected-plan.json` for the full actual HTTP request/response.

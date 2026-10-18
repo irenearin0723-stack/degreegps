@@ -31,7 +31,7 @@ The schedules state that enrollment/status reflects their creation at 12:03 a.m.
 | test_cases.json | Twenty-two fictional verification examples for prerequisites, grades, listing status, tentative sections, and time overlap. |
 | external_prerequisites.json | Referenced courses not yet included as schedulable records. |
 | metadata.json | Coverage counts, time zone, snapshot date, source URLs, and shared limitations. |
-| registration_rules.json | Consolidated registration evidence for all 115 sections, grade rules, concurrency, general policies and reviewed restriction fixtures. |
+| registration_rules.json | Consolidated registration evidence for all 1,240 sections (90 with detailed SLN Notes), grade rules, concurrency, general policies and reviewed restriction fixtures. |
 | REGISTRATION_MERGE.md | Merge coverage, precedence and new fields. |
 
 ## Main fields

@@ -1,4 +1,10 @@
-> Projected-offering update: [current validation report](reports/backend-validation-report.md).
+> **Current behavior (2026-10-17):** plans cover every autumn/winter/spring quarter until
+> `graduation_term`, follow the matched major requirement profile, and no longer hold courses
+> back for unverified registration eligibility. See the README section
+> [How plans are built](../README.md#how-plans-are-built) and the [API contract](api-contract.md).
+> The notes and counts below describe earlier milestones and are kept as history.
+
+> Projected-offering update: [validation report](reports/backend-validation-report.md).
 > 88 tests and 31 actual HTTP checks pass. Quarter-level recommendations accept
 > confirmed/projected evidence, with projections tentative. Missing section times
 > are metadata only. Unknown registration stays outside validated assignments;
@@ -22,8 +28,8 @@
   withdrawal/failure, repeated attempts, transfer uncertainty, and mandatory confirmation.
 - AND/OR prerequisites, conservative unknown rules, missing-prerequisite explanations,
   strict prior-quarter ordering, no duplicate courses, and course-load caps.
-- Stable greedy prioritization: foundation priority × 10 + track match × 30 + unlock count.
-- Three-quarter plan with partial-schedule warnings and tentative dependent suggestions.
+- Requirement-aware greedy selection: courses that advance an unmet major/admission rule (or its prerequisite chain) first, then foundation priority × 10 + track match × 30 + unlock count.
+- Plans through the expected graduation quarter (summers skipped) with partial-schedule warnings, tentative dependent suggestions, and a remaining-requirements report.
 - Goal-specific internship, research, projects, and exploration roadmaps, skills and project practice.
 - Recommended deadline-relative timeframes and close/past-deadline feasibility warnings.
 - Optional server-only structured OpenAI goal interpretation and constrained grounded explanation.

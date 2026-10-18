@@ -42,10 +42,17 @@ projections. `offeringForTerm` returns unknown for missing evidence; it never re
 another year's listing. A positive entry requires a dated official HTTPS source.
 `offered_term_ids` remains the legacy confirmed snapshot list, not the projection list.
 
-Quarter-level planning ignores `section_data_status` as a time-scheduling gate.
-It still enforces known major restrictions and prerequisite/grade rules. Unknown
-eligibility produces separate adviser-review warnings/notes, not validated assignments.
-Review-only courses cannot unlock dependent courses, even in later quarters.
+For quarters without exact-term evidence, `offeringForTerm` falls back to the UW course
+catalog "Offered:" pattern stored per course as `catalog_offering_pattern` (for example
+`AWSp`; empty when the catalog publishes none, in which case a regular quarter is assumed).
+That fallback is always `projected`, carries a note saying so, and never overrides an
+explicit snapshot entry: a course absent from the Winter 2027 snapshot stays `unknown` for
+that quarter.
+
+Quarter-level planning ignores `section_data_status` as a time-scheduling gate, and
+registration restrictions no longer block a course; they are disclosed in its explanation.
+Prerequisite rules still apply. Courses implied by completed ones count as completed, and a
+missing prerequisite grade plans the course as tentative rather than blocking it.
 
 # Dataset handoff — Member 4
 
@@ -124,10 +131,11 @@ Current limitations of this representation:
 - Offered terms model a verified recurring pattern, not a section reservation or
   year-specific schedule. Sources must substantiate the pattern; actual quarterly
   availability always needs verification before registration.
-- The reusable prerequisite checker supports actual numeric grades, but the MVP
-  planning request has only course IDs. Minimum-grade rules therefore block until
-  a future reviewed-grade contract is added; never silently assume a passing grade.
-- Verified concurrent rules are supported by the checker. The three-quarter planner
+- The prerequisite checker uses `reviewed_grades` when the request has them. Without a
+  grade, the planner schedules the course as tentative and says it assumes the minimum
+  grade; a reviewed grade below the minimum blocks the course. (Earlier MVP versions
+  blocked every missing grade.)
+- Verified concurrent rules are supported by the checker. The planner
   conservatively only uses prior completed/planned quarters; it does not solve
   co-requisite bundles within a quarter.
 - A combined major request must match a curated eligibility label or an explicit
