@@ -39,6 +39,8 @@ export const PlanRequestSchema = z.object({
   goal: GoalSchema,
   max_courses_per_term: z.number().int().min(1).max(5),
   start_term: TermIdSchema.refine(value => Number(value.slice(0, 4)) <= 2099, 'Start year must be 2000–2099').optional(),
+  // Expected graduation quarter; plans run through it (summers skipped). Omitted: three regular quarters.
+  graduation_term: TermIdSchema.refine(value => Number(value.slice(0, 4)) <= 2099, 'Graduation year must be 2000–2099').optional(),
   preferences: z.string().trim().max(2000).optional(),
   // Explicit opt-in: sends structured goal/course plan to OpenAI, never PDF or grades.
   use_ai_explanation: z.boolean().default(false),
@@ -85,7 +87,7 @@ export type CareerMilestone = z.infer<typeof CareerMilestoneSchema>;
 export const PlanResponseSchema = z.object({
   schema_version: z.literal('2.0.0'), plan_id: z.string(),
   mode: z.enum(['mock', 'generated']), generated_at: z.iso.datetime(),
-  request: PlanRequestSchema, quarters: z.array(QuarterPlanSchema).length(3),
+  request: PlanRequestSchema, quarters: z.array(QuarterPlanSchema).min(1).max(18),
   career_milestones: z.array(CareerMilestoneSchema),
   recommended_skills: z.array(z.string()), recommended_projects: z.array(z.string()),
   warnings: z.array(PlanWarningSchema), sources: z.array(PlanSourceSchema),

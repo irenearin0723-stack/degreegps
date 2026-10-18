@@ -42,6 +42,10 @@ export const CourseSchema = z.object({
   offering_evidence: z.array(OfferingEvidenceSchema).optional(),
   // Exact verified snapshots, never recurring future availability.
   offered_term_ids: z.array(z.string().regex(/^2\d{3}-(winter|spring|summer|autumn)$/)).optional(),
+  // UW course catalog "Offered:" pattern (e.g. AWSp), used only for terms without snapshot/projection evidence.
+  // null: the catalog publishes no pattern. Never a term guarantee.
+  typical_offered_terms: z.array(AcademicTermSchema).nullable().optional(),
+  catalog_source_url: OfficialUrlSchema.optional(),
   schedule_source_url: OfficialUrlSchema.optional(),
   source_category: z.string().optional(),
   verification_notes: z.string().optional(),

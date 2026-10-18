@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { CourseIdSchema, type Course } from '../types/course';
 import { institutionalMajorCodes } from './registration';
+import type { RequirementRule, RequirementSet } from './requirements-progress';
 
 export interface MajorScope {
   courses: Course[];
@@ -11,7 +12,10 @@ export interface MajorScope {
   departments: string[];
   // How strongly the matched programs need each course: 3 required, 2 named alternative/short choice, 1 elective pool.
   importance: Record<string, number>;
+  // Major/admission rules of the selected profile(s), for requirement-aware planning; empty when no profile matched.
+  requirements: RequirementSet;
 }
+const NO_REQUIREMENTS: RequirementSet = { rules: [], pools: {} };
 export const IMPORTANCE_LABELS: Record<number, string> = { 3: 'required by your major', 2: 'one of a few named options in your major', 1: 'on an approved elective list for your major' };
 
 /** Importance of each course a requirement names: all_of members are required; alternatives and short lists are named options; pools are electives. */
@@ -27,10 +31,10 @@ function importanceOf(logic: unknown, pools: MajorRequirements['course_pools'] =
   mark(poolCourses, 1);
   for (const branch of (l.branches as unknown[]) ?? []) importanceOf(branch, pools, Math.min(level, 2), out);
 }
-interface Program { program_id: string; name: string }
+interface Program { program_id: string; name: string; degree?: string; option?: string | null; parent_program_id?: string }
 interface MajorRequirements {
   programs: Program[];
-  requirements: { program_id: string; logic: unknown }[];
+  requirements: { program_id: string; rule_id: string; label: string; scope: string; logic: unknown }[];
   course_pools?: Record<string, { courses: string[] }>;
   optional_profiles?: { program_id: string; courses: string[] }[];
 }
@@ -43,6 +47,25 @@ export function matchPrograms(major: string, programs: Program[]): string[] {
     const base = p.name.split(':')[0].trim();
     return names.includes(base.toLowerCase()) || [...institutionalMajorCodes(base)].some(code => codes.has(code));
   }).map(p => p.program_id);
+}
+
+/**
+ * One profile per matched program family: the standard profile (BS before BA, current catalog before pre-2025),
+ * or — when the family has only options — the option matching the career track (Data Science for data/ml), else the first.
+ */
+export function selectProfiles(matched: string[], programs: Program[], track?: string): string[] {
+  const families = new Map<string, Program[]>();
+  for (const p of programs.filter(p => matched.includes(p.program_id))) {
+    const family = p.parent_program_id ?? p.program_id;
+    families.set(family, [...(families.get(family) ?? []), p]);
+  }
+  return [...families.values()].map(list => {
+    const standard = list.filter(p => !p.option).sort((a, b) =>
+      Number(/PRE/.test(a.program_id)) - Number(/PRE/.test(b.program_id)) || Number(/^BA/.test(a.degree ?? '')) - Number(/^BA/.test(b.degree ?? '')));
+    if (standard.length) return standard[0].program_id;
+    const wantsData = track === 'data' || track === 'ml';
+    return (list.find(p => wantsData && /data/i.test(p.option ?? '')) ?? list[0]).program_id;
+  });
 }
 
 /** Every course ID a requirement's logic names, including course pools, at any depth. */
@@ -60,20 +83,21 @@ function logicCourses(logic: unknown, pools: MajorRequirements['course_pools'] =
  * Restricts planning to courses the student's program requirements name, courses in the program's home
  * department, and their catalog prerequisites (transitively). Planning a CS student no longer evaluates Mechanical Engineering or Economics courses.
  */
-export async function scopeToMajor(major: string, courses: Course[], directory = join(process.cwd(), 'data')): Promise<MajorScope> {
+export async function scopeToMajor(major: string, courses: Course[], directory = join(process.cwd(), 'data'), track?: string): Promise<MajorScope> {
   let data: MajorRequirements;
   try { data = JSON.parse(await readFile(join(directory, 'major_requirements/major_requirements.json'), 'utf8')); }
-  catch { return { courses, programs: [], departments: [], importance: {} }; }
-  const programs = matchPrograms(major, data.programs ?? []);
-  if (!programs.length) return { courses, programs, departments: [], importance: {} };
+  catch { return { courses, programs: [], departments: [], importance: {}, requirements: NO_REQUIREMENTS }; }
+  const matched = matchPrograms(major, data.programs ?? []);
+  if (!matched.length) return { courses, programs: matched, departments: [], importance: {}, requirements: NO_REQUIREMENTS };
+  // One profile per major (e.g. standard CS, not also its Data Science option), so requirements are not double-counted.
+  const programs = selectProfiles(matched, data.programs ?? [], track);
   const relevant = new Set<string>();
   const importance: Record<string, number> = {};
-  // Option profiles (e.g. CS: Data Science) only count as electives unless the major has no standard profile at all.
-  const options = new Set((data.programs ?? []).filter(p => programs.includes(p.program_id) && (p as { option?: string | null }).option).map(p => p.program_id));
-  const allOptions = options.size === programs.length;
+  const rules: RequirementRule[] = [];
   for (const rule of data.requirements ?? []) if (programs.includes(rule.program_id)) {
     logicCourses(rule.logic, data.course_pools, relevant);
-    importanceOf(rule.logic, data.course_pools, options.has(rule.program_id) && !allOptions ? 1 : 3, importance);
+    importanceOf(rule.logic, data.course_pools, 3, importance);
+    if (rule.scope === 'major' || rule.scope === 'admission') rules.push({ rule_id: rule.rule_id, program_id: rule.program_id, label: rule.label, scope: rule.scope, logic: rule.logic });
   }
   for (const option of data.optional_profiles ?? []) if (programs.includes(option.program_id)) logicCourses(option.courses, data.course_pools, relevant);
   // Elective lists are partial (e.g. "any graded 400-level CSE major course"), so keep every catalog course in each
@@ -87,7 +111,8 @@ export async function scopeToMajor(major: string, courses: Course[], directory =
     const prerequisites = [...(course?.prerequisite_alternatives ?? []).flatMap(b => b.all_of), ...(course?.prerequisite_groups ?? []).flatMap(g => g.any_of)];
     for (const { course_id } of prerequisites) if (!relevant.has(course_id)) { relevant.add(course_id); queue.push(course_id); }
   }
-  return { courses: courses.filter(c => relevant.has(c.course_id)), programs, departments, importance };
+  return { courses: courses.filter(c => relevant.has(c.course_id)), programs, departments, importance,
+    requirements: { rules, pools: data.course_pools ?? {} } };
 }
 const prefix = (courseId: string) => courseId.replace(/ \d{3}[A-Z]?$/, '');
 export function homeDepartments(programs: string[], data: Pick<MajorRequirements, 'requirements' | 'course_pools'>): string[] {

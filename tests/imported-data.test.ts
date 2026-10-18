@@ -6,6 +6,7 @@ import { loadData } from '../lib/data';
 import { importCourse } from '../lib/course-import';
 import { checkPrerequisites } from '../lib/prerequisites';
 import { planAcademic } from '../lib/planner';
+import { offeringForTerm } from '../lib/offerings';
 import { PlanRequestSchema } from '../types/plan';
 import { auditData } from '../scripts/validate-data';
 import { CourseSchema } from '../types/course';
@@ -82,20 +83,23 @@ test('DNF branches retain correlated alternatives instead of accepting a flatten
   assert.equal(checkPrerequisites(course, { completed: new Set(['CSE 100', 'CSE 201']) }).eligible, false);
   assert.equal(checkPrerequisites(course, { completed: new Set(['CSE 200', 'CSE 201']) }).eligible, true);
 });
-test('exact Winter 2027 evidence cannot schedule Winter 2028 or infer Spring offerings', async () => {
+test('exact Winter 2027 evidence is never generalized: later terms are only tentative catalog patterns', async () => {
   const { courses } = await loadData();
   // Synthetic authorization below isolates term logic; no real record is changed or authorized.
   const isolated = { ...courses.find(c => c.course_id === 'AMATH 301')!, eligible_majors: ['*'], enrollment_status: 'verified' as const };
   const request = PlanRequestSchema.parse({ major: 'Computer Science', completed_courses: ['MATH 125'], in_progress_courses: [],
     goal: { type: 'internship', track: 'ml', deadline: '2028-06-01' }, max_courses_per_term: 2, start_term: '2028-winter' });
   const plan = planAcademic(request, [isolated], new Date('2026-10-17T18:00:00Z'));
-  assert.equal(plan.quarters.flatMap(q => q.courses).length, 0);
+  assert.notEqual(offeringForTerm(isolated, '2028-winter').status, 'confirmed');
+  for (const c of plan.quarters.flatMap(q => q.courses)) {
+    assert.equal(c.scheduling_status, 'tentative'); assert.match(c.explanation, /catalog/i);
+  }
 });
 test('past/current start term is adjusted by chronological quarter order, not lexicographic comparison', () => {
   const request = PlanRequestSchema.parse({ major: 'CS', completed_courses: [], in_progress_courses: [],
     goal: { type: 'explore', track: 'undecided', deadline: null }, max_courses_per_term: 2, start_term: '2026-autumn' });
   const plan = planAcademic(request, [], new Date('2026-10-17T18:00:00Z'));
-  assert.deepEqual(plan.quarters.map(q => q.term), ['2027-winter', '2027-spring', '2027-summer']);
+  assert.deepEqual(plan.quarters.map(q => q.term), ['2027-winter', '2027-spring', '2027-autumn']);
   assert.ok(plan.warnings.some(w => w.code === 'START_TERM_ADJUSTED'));
 });
 test('invalid import rules fail closed instead of dropping grades or concurrency metadata', async () => {
@@ -142,8 +146,9 @@ test('not_collected Winter 2027 status is never treated as an offering, and unen
   const plan = planAcademic(PlanRequestSchema.parse({ major: 'Statistics', completed_courses: [], in_progress_courses: [],
     goal: { type: 'internship', track: 'data', deadline: '2027-06-01' }, max_courses_per_term: 3, start_term: '2027-winter' }),
     [course], new Date('2026-10-17T18:00:00Z'));
-  assert.equal(plan.quarters.flatMap(q => q.courses).length, 0);
-  assert.ok(plan.academic_decisions.every(d => d.term_offering_status === 'unknown'));
+  // At most a tentative catalog pattern; an unchecked schedule is never a confirmed offering.
+  assert.ok(plan.academic_decisions.every(d => d.term_offering_status !== 'confirmed'));
+  assert.ok(plan.quarters.flatMap(q => q.courses).every(c => c.scheduling_status === 'tentative'));
   const opaque = importCourse(row, { ...rules['STAT 302'], any_of: [{ all_of: [] }], catalog_prerequisite_status: 'non_course_only' });
   assert.equal(opaque.prerequisite_alternatives, undefined);
   assert.equal(checkPrerequisites(opaque, { completed: new Set() }).status, 'unknown');

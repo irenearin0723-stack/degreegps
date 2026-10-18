@@ -23,6 +23,7 @@ export const ImportedCourseSchema = z.object({
   description: z.string(), skills: z.string(), verification_notes: z.string(),
   catalog_url: OfficialUrlSchema, schedule_url: OfficialUrlSchema, checked_at: z.iso.date(),
   section_data_status: z.enum(['imported', 'not_imported', 'not_applicable']),
+  catalog_offering_pattern: z.string().regex(/^(?:A|W|Sp|S)*$/).optional(),
 }).passthrough().superRefine((course, ctx) => {
   if (course.credits_min > course.credits_max || (course.credits !== null && (course.credits < course.credits_min || course.credits > course.credits_max)))
     ctx.addIssue({ code: 'custom', message: 'Invalid credit range' });
@@ -43,6 +44,12 @@ export const CATEGORY_MAP = {
   support_core: 'other', support_choice: 'elective',
 } as const;
 const UNENCODED_PREREQUISITES = new Set(['non_course_only', 'too_complex']);
+const QUARTER_CODES = { A: 'autumn', W: 'winter', Sp: 'spring', S: 'summer' } as const;
+/** Catalog "Offered:" codes such as "AWSp" → quarters; '' means the catalog publishes no pattern (null). */
+function typicalTerms(pattern: string) {
+  const codes = pattern.match(/Sp|A|W|S/g) as (keyof typeof QUARTER_CODES)[] | null;
+  return codes ? [...new Set(codes.map(code => QUARTER_CODES[code]))] : null;
+}
 /** These are application ranking labels, never official degree-requirement membership. */
 function ranking(course: z.infer<typeof ImportedCourseSchema>) {
   const text = `${course.course_name} ${course.skills}`.toLowerCase();
@@ -68,8 +75,12 @@ export function importCourse(raw: unknown, rawPrerequisites: unknown) {
       course_id: id, minimum_grade: branch.min_grades?.[id] ?? null,
       concurrent_allowed: branch.concurrent_allowed?.includes(id) ?? false,
     })) })),
-    offering_evidence: row.offering_status === 'listed' ? [{ term: '2027-winter', status: 'confirmed', source_url: row.schedule_url, verified_at: row.checked_at, notes: 'Listed in the Winter 2027 Time Schedule snapshot; not live seat availability or eligibility clearance.' }] : [],
+    offering_evidence: row.offering_status === 'listed' ? [{ term: '2027-winter', status: 'confirmed', source_url: row.schedule_url, verified_at: row.checked_at, notes: 'Listed in the Winter 2027 Time Schedule snapshot; not live seat availability or eligibility clearance.' }]
+      // Absent from the checked snapshot: an explicit unknown so the catalog pattern cannot override the schedule.
+      : row.offering_status === 'not_listed' ? [{ term: '2027-winter', status: 'unknown', source_url: null, verified_at: null, notes: 'Absent from the Winter 2027 Time Schedule snapshot.' }] : [],
     offered_terms: null, offered_term_ids: row.offering_status === 'listed' ? ['2027-winter'] : [],
+    typical_offered_terms: row.catalog_offering_pattern === undefined ? undefined : typicalTerms(row.catalog_offering_pattern),
+    catalog_source_url: row.catalog_url,
     // A Restr flag or a degree membership does not establish registration eligibility.
     eligible_majors: null, enrollment_status: 'unknown',
     section_data_status: row.section_data_status,

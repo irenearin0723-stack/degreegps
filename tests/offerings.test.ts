@@ -75,11 +75,13 @@ test('real imports preserve confirmed Winter listings, AMATH Summer projections,
   assert.equal(offeringForTerm(courses.find(c => c.course_id === 'AMATH 353')!, '2027-summer').status, 'projected');
   assert.equal(offeringForTerm(courses.find(c => c.course_id === 'CSE 446')!, '2027-summer').status, 'unknown');
   assert.equal(offeringForTerm(courses.find(c => c.course_id === 'INFO 201')!, '2027-summer').status, 'unknown');
-  assert.equal(offeringForTerm(courses.find(c => c.course_id === 'AMATH 352')!, '2028-summer').status, 'unknown');
+  // Beyond the snapshots, only the course catalog's typical pattern applies, and only as a tentative projection.
+  const later = offeringForTerm(courses.find(c => c.course_id === 'AMATH 352')!, '2028-summer');
+  assert.notEqual(later.status, 'confirmed'); if (later.status === 'projected') assert.match(later.notes, /catalog/i);
 });
 test('realistic CS + AMATH history receives scheduled courses with disclosed registration status', async () => {
   const plan = await generatePlan(request, { now });
-  assert.deepEqual(plan.quarters.map(q => q.term), ['2027-winter', '2027-spring', '2027-summer']);
+  assert.deepEqual(plan.quarters.map(q => q.term), ['2027-winter', '2027-spring', '2027-autumn']);
   assert.ok(plan.quarters[0].courses.length > 0 && plan.quarters[1].courses.length > 0);
   assert.ok(plan.quarters.flatMap(q => q.courses).every(c => /Registration restrictions are not verified|section restriction does not match/.test(c.explanation)));
   assert.equal(plan.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
@@ -100,12 +102,14 @@ test('adding projections never changes prerequisite branches, eligibility, or se
     assert.equal(merged.section_data_status, original.section_data_status);
   }
 });
-test('projected offerings still require actual minimum-grade evidence', () => {
+test('a missing (not failing) prerequisite grade plans the course tentatively and says so', () => {
   const restricted = course('projected', { prerequisite_groups: [{ any_of: [{ course_id: 'CSE 123', minimum_grade: 2, concurrent_allowed: false }] }] });
   const result = planAcademic(request, [restricted], now);
-  assert.equal(result.quarters[0].courses.length, 0);
-  assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
-  assert.ok(result.warnings.some(w => w.code === 'NEEDS_GRADE_CONFIRMATION'));
+  assert.equal(result.academic_decisions[0].catalog_prerequisite_status, 'needs_grade_confirmation');
+  assert.equal(result.quarters[0].courses[0].scheduling_status, 'tentative');
+  assert.match(result.quarters[0].courses[0].explanation, /minimum grade/);
+  const failed = planAcademic({ ...request, completed_courses: ['CSE 123'], reviewed_grades: { 'CSE 123': 1.5 } }, [restricted], now);
+  assert.equal(failed.quarters.flatMap(q => q.courses).length, 0);
 });
 test('a projected dependent cannot use an in-progress prerequisite as completed', () => {
   const restricted = course('projected', { prerequisite_groups: [{ any_of: [{ course_id: 'DEMO 099', minimum_grade: null, concurrent_allowed: false }] }] });

@@ -27,6 +27,7 @@ export function toBackendRequest(request: PlanRequest, options: { aiExplanation?
     ...(grades.length ? { reviewed_grades: Object.fromEntries(grades) } : {}),
     goal: { type: goal.type, track: goal.track, deadline: goal.deadline ? `${goal.deadline.year}-${boundary[goal.deadline.term]}` : null, notes: goal.notes },
     max_courses_per_term: request.max_courses_per_term, start_term: `${request.start_year}-${request.start_term}`,
+    ...(request.graduation_term && request.graduation_year ? { graduation_term: `${request.graduation_year}-${request.graduation_term}` } : {}),
     preferences: `Career preparation preference: ${goal.career_hours_per_week} hours/week; ${goal.intensity} pace. These preferences do not change academic eligibility.`,
     // Explicit opt-in only: sends the goal, preferences and planned course sentences to the AI provider.
     use_ai_explanation: options.aiExplanation ?? false,
@@ -46,7 +47,7 @@ export function toUiPlan(raw: BackendResponse, request: PlanRequest): PlanRespon
   });
   const startDate = (term: string) => { const [year, season] = term.split('-'); return `${year}-${({ winter: '01-01', spring: '04-01', summer: '06-01', autumn: '09-01' } as Record<string, string>)[season]}`; };
   return { schema_version: '1.0.0', plan_id: plan.plan_id, mode: plan.mode, generated_at: plan.generated_at,
-    request: { ...request, horizon_terms: 3 }, quarters,
+    request: { ...request, horizon_terms: quarters.length }, quarters,
     career_milestones: plan.career_milestones.map(m => ({ id: m.id,
       quarter_id: [...quarters].reverse().find(q => startDate(q.id) <= m.timeframe.start)?.id ?? quarters[0].id,
       title: m.action, description: `${m.explanation} Recommended timeframe: ${m.timeframe.start}–${m.timeframe.end}.`,

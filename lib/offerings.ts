@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { CourseIdSchema, OfferingEvidenceSchema, OfficialUrlSchema, type Course, type OfferingEvidence } from '../types/course';
+import { CourseIdSchema, OfferingEvidenceSchema, OfficialUrlSchema, type AcademicTerm, type Course, type OfferingEvidence } from '../types/course';
 export const ProjectionDatasetSchema = z.object({
   schema_version: z.literal('1.0.0'),
   sources: z.array(z.object({ url: OfficialUrlSchema, checked_at: z.iso.date(), content_sha256: z.string().regex(/^[a-f0-9]{64}$/),
@@ -32,5 +32,14 @@ export function offeringForTerm(course: Course, term: string): OfferingEvidence 
   if (explicit) return explicit;
   if (course.offering_evidence === undefined && (course.offered_term_ids?.includes(term) || (course.offered_term_ids === undefined && course.offered_terms?.includes(term.split('-')[1] as 'winter'))))
     return { term, status: course.data_status === 'sample' ? 'projected' : 'confirmed', source_url: course.schedule_source_url ?? course.source_url, verified_at: course.verified_at, notes: 'Legacy verified offering rule; no seat guarantee.' };
+  // Long-range planning: without term evidence, fall back to the course catalog (tentative, never confirmed).
+  const season = term.split('-')[1] as AcademicTerm;
+  const catalogUrl = course.catalog_source_url ?? course.source_url;
+  if (course.typical_offered_terms && course.typical_offered_terms.includes(season) && catalogUrl && course.verified_at)
+    return { term, status: 'projected', source_url: catalogUrl, verified_at: course.verified_at,
+      notes: `UW course catalog typical offering pattern includes ${season}; not a term guarantee. Verify in the Time Schedule.` };
+  if (course.typical_offered_terms === null && season !== 'summer' && catalogUrl && course.verified_at)
+    return { term, status: 'projected', source_url: catalogUrl, verified_at: course.verified_at,
+      notes: 'The UW course catalog publishes no offering pattern for this course; assumed available in a regular quarter. Verify in the Time Schedule.' };
   return { term, status: 'unknown', source_url: null, verified_at: null, notes: 'No verified positive offering evidence for this exact term.' };
 }

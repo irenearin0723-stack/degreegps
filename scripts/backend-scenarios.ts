@@ -3,7 +3,7 @@ import type { Course } from '../types/course';
 import { PlanRequestSchema, PlanResponseSchema, type PlanRequest } from '../types/plan';
 import { offeringForTerm } from '../lib/offerings';
 import { checkPrerequisites } from '../lib/prerequisites';
-import { consecutiveTerms, nextTerm } from '../lib/planner';
+import { planningTerms, nextTerm } from '../lib/planner';
 export const VALIDATION_NOW = new Date('2026-10-17T19:00:00Z');
 const base = PlanRequestSchema.parse({ major: 'Computer Science', completed_courses: ['CSE 123', 'MATH 126', 'CSE 311', 'CSE 351'],
   in_progress_courses: [], goal: { type: 'internship', track: 'swe', deadline: '2027-06-01' },
@@ -27,11 +27,18 @@ export function verifyScenario(scenario: typeof scenarios[number], raw: unknown,
   assert.deepEqual(response.request, request);
   assert.equal(response.quarters.length, 3);
   const start = response.quarters[0].term;
-  assert.deepEqual(response.quarters.map(q => q.term), consecutiveTerms(start));
+  // Regular quarters only (summers skipped), through graduation when given.
+  assert.deepEqual(response.quarters.map(q => q.term), planningTerms(start, request.graduation_term));
   const ordinal = (value: string) => Number(value.slice(0, 4)) * 4 + ['winter', 'spring', 'summer', 'autumn'].indexOf(value.split('-')[1]);
   assert.ok(ordinal(start) >= ordinal(nextTerm(now)));
   const seen = new Set([...request.completed_courses, ...request.in_progress_courses]);
   const previous = new Set<string>();
+  const completedOrImplied = new Set(request.completed_courses);
+  for (const queue = [...request.completed_courses, ...request.in_progress_courses]; queue.length;) {
+    const id = queue.pop();
+    for (const b of courses.find(c => c.course_id === id)?.prerequisite_alternatives ?? [])
+      for (const { course_id } of b.all_of) if (!completedOrImplied.has(course_id)) { completedOrImplied.add(course_id); queue.push(course_id); }
+  }
   for (const quarter of response.quarters) {
     assert.ok(quarter.courses.length <= request.max_courses_per_term);
     for (const planned of quarter.courses) {
@@ -40,7 +47,10 @@ export function verifyScenario(scenario: typeof scenarios[number], raw: unknown,
       assert.ok(course); assert.equal(course.data_status, 'verified');
       // Registration eligibility no longer gates planning; an unverified status must be disclosed on the course.
       if (course.enrollment_status === 'unknown') assert.ok(/Registration restrictions are not verified|section restriction does not match/.test(planned.explanation));
-      assert.ok(checkPrerequisites(course, { completed: new Set(request.completed_courses), in_progress: new Set(request.in_progress_courses), previously_planned: previous }).eligible);
+      // Prerequisites of completed courses count as completed; a missing (not failing) grade is allowed only when disclosed.
+      const check = checkPrerequisites(course, { completed: completedOrImplied, in_progress: new Set(request.in_progress_courses), previously_planned: previous,
+        concurrent: new Set(request.concurrent_courses?.[quarter.term] ?? []), grades: request.reviewed_grades });
+      assert.ok(check.eligible || (check.status === 'needs_grade_confirmation' && /minimum grade/.test(planned.explanation)), `${planned.id} in ${quarter.term}: ${check.status} ${check.explanations.join(' ')}`);
       const offering = offeringForTerm(course, quarter.term);
       assert.notEqual(offering.status, 'unknown');
       if (offering.status === 'projected') assert.equal(planned.scheduling_status, 'tentative');

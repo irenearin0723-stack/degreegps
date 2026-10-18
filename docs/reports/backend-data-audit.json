@@ -247,13 +247,13 @@
     },
     "2027-spring": {
       "confirmed": 0,
-      "projected": 49,
-      "unknown": 302
+      "projected": 270,
+      "unknown": 81
     },
     "2027-summer": {
       "confirmed": 0,
-      "projected": 5,
-      "unknown": 346
+      "projected": 68,
+      "unknown": 283
     }
   }
 }

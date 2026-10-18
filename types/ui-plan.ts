@@ -34,6 +34,9 @@ export interface PlanRequest {
   max_courses_per_term: number;
   start_term: AcademicTerm;
   start_year: number;
+  /** Expected graduation quarter; the plan runs through it and skips summers. Older saved plans may omit it. */
+  graduation_term?: Exclude<AcademicTerm, 'summer'>;
+  graduation_year?: number;
   /** Number of consecutive quarters, including summers; range 1–8. */
   horizon_terms: number;
 }
