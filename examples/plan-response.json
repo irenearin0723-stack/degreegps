@@ -1,0 +1,1657 @@
+{
+  "schema_version": "2.0.0",
+  "plan_id": "0bf5c352-36c7-4bd8-863b-72a0769a7e8e",
+  "mode": "generated",
+  "generated_at": "2026-10-17T22:29:19.417Z",
+  "request": {
+    "major": "Computer Science + Applied Mathematics",
+    "completed_courses": [
+      "CSE 123",
+      "MATH 126"
+    ],
+    "in_progress_courses": [],
+    "goal": {
+      "type": "internship",
+      "track": "ml",
+      "deadline": "2027-06-01",
+      "notes": "Fictional student preparing for Summer 2027."
+    },
+    "max_courses_per_term": 2,
+    "start_term": "2026-autumn",
+    "use_ai_explanation": false
+  },
+  "quarters": [
+    {
+      "term": "2027-winter",
+      "courses": [],
+      "notes": "Eligibility depends on confirmed history, verified rules, and actual registration availability; this is not a degree audit. REVIEW ONLY (not validated assignments): AMATH 352 — Applied Linear Algebra and Numerical Analysis; confirmed snapshot offering; enrollment eligibility unresolved; INFO 330 — Databases and Data Modeling; confirmed snapshot offering; enrollment eligibility unresolved. Review candidates do not satisfy future prerequisites."
+    },
+    {
+      "term": "2027-spring",
+      "courses": [],
+      "notes": "Eligibility depends on confirmed history, verified rules, and actual registration availability; this is not a degree audit. REVIEW ONLY (not validated assignments): INFO 360 — Design Methods; projected (tentative) offering; enrollment eligibility unresolved; INFO 201 — Foundational Skills for Data Science; projected (tentative) offering; enrollment eligibility unresolved. Review candidates do not satisfy future prerequisites."
+    },
+    {
+      "term": "2027-summer",
+      "courses": [],
+      "notes": "Eligibility depends on confirmed history, verified rules, and actual registration availability; this is not a degree audit."
+    }
+  ],
+  "career_milestones": [
+    {
+      "id": "career-1",
+      "action": "Identify skill gaps and research current internship openings; verify real deadlines",
+      "timeframe": {
+        "start": "2026-10-17",
+        "end": "2026-12-12",
+        "basis": "recommended"
+      },
+      "explanation": "Recommended preparation for ml internship. Begin activities independently while academic options are reviewed. These are suggested personal timeframes, not employer or lab deadlines.",
+      "associated_goal": "internship",
+      "related_course_ids": []
+    },
+    {
+      "id": "career-2",
+      "action": "Prepare resume, GitHub, and one scoped portfolio project",
+      "timeframe": {
+        "start": "2026-12-12",
+        "end": "2027-02-07",
+        "basis": "recommended"
+      },
+      "explanation": "Recommended preparation for ml internship. Begin activities independently while academic options are reviewed. These are suggested personal timeframes, not employer or lab deadlines.",
+      "associated_goal": "internship",
+      "related_course_ids": []
+    },
+    {
+      "id": "career-3",
+      "action": "Submit suitable applications and track responses",
+      "timeframe": {
+        "start": "2027-02-07",
+        "end": "2027-04-05",
+        "basis": "recommended"
+      },
+      "explanation": "Recommended preparation for ml internship. Begin activities independently while academic options are reviewed. These are suggested personal timeframes, not employer or lab deadlines.",
+      "associated_goal": "internship",
+      "related_course_ids": []
+    },
+    {
+      "id": "career-4",
+      "action": "Practice interviews and explain project decisions",
+      "timeframe": {
+        "start": "2027-04-05",
+        "end": "2027-06-01",
+        "basis": "recommended"
+      },
+      "explanation": "Recommended preparation for ml internship. Begin activities independently while academic options are reviewed. These are suggested personal timeframes, not employer or lab deadlines.",
+      "associated_goal": "internship",
+      "related_course_ids": []
+    }
+  ],
+  "recommended_skills": [
+    "Python",
+    "Linear algebra",
+    "Model evaluation"
+  ],
+  "recommended_projects": [
+    "Evaluate a baseline model on a public, non-sensitive dataset"
+  ],
+  "warnings": [
+    {
+      "code": "START_TERM_ADJUSTED",
+      "severity": "warning",
+      "message": "Requested 2026-autumn is not a future planning quarter. Starting at 2027-winter instead.",
+      "affected_course_codes": []
+    },
+    {
+      "code": "ENROLLMENT_UNVERIFIED",
+      "severity": "warning",
+      "message": "64 catalog records have unresolved registration eligibility. These records are excluded from confirmed course scheduling; missing restriction details are never treated as unrestricted enrollment.",
+      "affected_course_codes": []
+    },
+    {
+      "code": "TERM_COVERAGE_LIMITED",
+      "severity": "warning",
+      "message": "Positive offering evidence covers 2027-winter, 2026-autumn, 2027-spring, 2027-summer only. Confirmed listings are snapshots; departmental projections may change. No seat availability is implied.",
+      "affected_course_codes": []
+    },
+    {
+      "code": "COURSE_REVIEW_REQUIRED",
+      "severity": "warning",
+      "message": "2027-winter: AMATH 352 — Applied Linear Algebra and Numerical Analysis. Known course prerequisites are satisfied; confirmed snapshot offering evidence is linked as offering:AMATH 352:2027-winter. Enrollment restrictions remain unresolved. This is an adviser-review candidate, not a validated assignment or a seat guarantee.",
+      "affected_course_codes": [
+        "AMATH 352"
+      ]
+    },
+    {
+      "code": "COURSE_REVIEW_REQUIRED",
+      "severity": "warning",
+      "message": "2027-winter: INFO 330 — Databases and Data Modeling. Known course prerequisites are satisfied; confirmed snapshot offering evidence is linked as offering:INFO 330:2027-winter. Enrollment restrictions remain unresolved. This is an adviser-review candidate, not a validated assignment or a seat guarantee.",
+      "affected_course_codes": [
+        "INFO 330"
+      ]
+    },
+    {
+      "code": "PARTIAL_SCHEDULE",
+      "severity": "warning",
+      "message": "2027-winter: only 0 courses could be suggested safely. Do not fill gaps with unverified assumptions.",
+      "affected_course_codes": []
+    },
+    {
+      "code": "COURSE_REVIEW_REQUIRED",
+      "severity": "warning",
+      "message": "2027-spring: INFO 360 — Design Methods. Known course prerequisites are satisfied; projected (tentative; subject to change) offering evidence is linked as offering:INFO 360:2027-spring. Enrollment restrictions remain unresolved. This is an adviser-review candidate, not a validated assignment or a seat guarantee.",
+      "affected_course_codes": [
+        "INFO 360"
+      ]
+    },
+    {
+      "code": "COURSE_REVIEW_REQUIRED",
+      "severity": "warning",
+      "message": "2027-spring: INFO 201 — Foundational Skills for Data Science. Known course prerequisites are satisfied; projected (tentative; subject to change) offering evidence is linked as offering:INFO 201:2027-spring. Enrollment restrictions remain unresolved. This is an adviser-review candidate, not a validated assignment or a seat guarantee.",
+      "affected_course_codes": [
+        "INFO 201"
+      ]
+    },
+    {
+      "code": "PARTIAL_SCHEDULE",
+      "severity": "warning",
+      "message": "2027-spring: only 0 courses could be suggested safely. Do not fill gaps with unverified assumptions.",
+      "affected_course_codes": []
+    },
+    {
+      "code": "PARTIAL_SCHEDULE",
+      "severity": "warning",
+      "message": "2027-summer: only 0 courses could be suggested safely. Do not fill gaps with unverified assumptions.",
+      "affected_course_codes": []
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 351: Requires one complete alternative: (MATH 125) OR (MATH 135). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 351"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 352: Registration/major eligibility is unresolved. Restriction flag present; detailed SLN rules could not be loaded. See department add-code policy.",
+      "affected_course_codes": [
+        "AMATH 352"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 301: Requires one complete alternative: (MATH 125) OR (MATH 135) OR (Q SCI 292). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 301"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 330: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 330"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 312: Requires one complete alternative: (CSE 311). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "CSE 312"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 353: Requires one complete alternative: (AMATH 351) OR (MATH 136) OR (MATH 207). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 353"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 383: Requires one complete alternative: (AMATH 351) OR (MATH 136) OR (MATH 207). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 383"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 340: Requires one complete alternative: (CSE 123 AND INFO 201 (grade >= 2)) OR (CSE 143 AND INFO 201 (grade >= 2)) OR (CSE 154 AND INFO 201 (grade >= 2)) OR (CSE 163 (verified concurrency permitted) AND INFO 201 (grade >= 2)). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 340"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 360: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 360"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 201: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 201"
+      ]
+    },
+    {
+      "code": "NEEDS_GRADE_CONFIRMATION",
+      "severity": "warning",
+      "message": "CSE 311: NEEDS_GRADE_CONFIRMATION: Confirm actual qualifying grades. Requires one complete alternative: (CSE 123 (grade >= 2) AND MATH 126 (grade >= 2)) OR (CSE 123 (grade >= 2) AND MATH 135 (grade >= 2)) OR (CSE 143 (grade >= 2) AND MATH 126 (grade >= 2)) OR (CSE 143 (grade >= 2) AND MATH 135 (grade >= 2)). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "CSE 311"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 300: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 300"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 380: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 380"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 481: Requires one complete alternative: (AMATH 301 AND AMATH 351 AND AMATH 352) OR (AMATH 301 AND AMATH 351 AND MATH 136) OR (AMATH 301 AND AMATH 351 AND MATH 208) OR (AMATH 301 AND MATH 135 AND AMATH 352) OR (AMATH 301 AND MATH 135 AND MATH 136) OR (AMATH 301 AND MATH 135 AND MATH 208) OR (AMATH 301 AND MATH 207 AND AMATH 352) OR (AMATH 301 AND MATH 207 AND MATH 136) OR (AMATH 301 AND MATH 207 AND MATH 208). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 481"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 332: Requires one complete alternative: (CSE 311). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "CSE 332"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 351: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "CSE 351"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 370: Requires one complete alternative: (INFO 201 AND CSE 122 AND STAT 220) OR (INFO 201 AND CSE 122 AND STAT 221) OR (INFO 201 AND CSE 122 AND CS&SS 221) OR (INFO 201 AND CSE 122 AND SOC 221) OR (INFO 201 AND CSE 122 AND STAT 290) OR (INFO 201 AND CSE 122 AND STAT 311) OR (INFO 201 AND CSE 122 AND STAT 390) OR (INFO 201 AND CSE 122 AND QMETH 201) OR (INFO 201 AND CSE 122 AND Q SCI 381) OR (INFO 201 AND CSE 123 AND STAT 220) OR (INFO 201 AND CSE 123 AND STAT 221) OR (INFO 201 AND CSE 123 AND CS&SS 221) OR (INFO 201 AND CSE 123 AND SOC 221) OR (INFO 201 AND CSE 123 AND STAT 290) OR (INFO 201 AND CSE 123 AND STAT 311) OR (INFO 201 AND CSE 123 AND STAT 390) OR (INFO 201 AND CSE 123 AND QMETH 201) OR (INFO 201 AND CSE 123 AND Q SCI 381) OR (INFO 201 AND CSE 142 AND STAT 220) OR (INFO 201 AND CSE 142 AND STAT 221) OR (INFO 201 AND CSE 142 AND CS&SS 221) OR (INFO 201 AND CSE 142 AND SOC 221) OR (INFO 201 AND CSE 142 AND STAT 290) OR (INFO 201 AND CSE 142 AND STAT 311) OR (INFO 201 AND CSE 142 AND STAT 390) OR (INFO 201 AND CSE 142 AND QMETH 201) OR (INFO 201 AND CSE 142 AND Q SCI 381) OR (INFO 201 AND CSE 143 AND STAT 220) OR (INFO 201 AND CSE 143 AND STAT 221) OR (INFO 201 AND CSE 143 AND CS&SS 221) OR (INFO 201 AND CSE 143 AND SOC 221) OR (INFO 201 AND CSE 143 AND STAT 290) OR (INFO 201 AND CSE 143 AND STAT 311) OR (INFO 201 AND CSE 143 AND STAT 390) OR (INFO 201 AND CSE 143 AND QMETH 201) OR (INFO 201 AND CSE 143 AND Q SCI 381) OR (INFO 201 AND CSE 160 AND STAT 220) OR (INFO 201 AND CSE 160 AND STAT 221) OR (INFO 201 AND CSE 160 AND CS&SS 221) OR (INFO 201 AND CSE 160 AND SOC 221) OR (INFO 201 AND CSE 160 AND STAT 290) OR (INFO 201 AND CSE 160 AND STAT 311) OR (INFO 201 AND CSE 160 AND STAT 390) OR (INFO 201 AND CSE 160 AND QMETH 201) OR (INFO 201 AND CSE 160 AND Q SCI 381) OR (INFO 201 AND CSE 163 AND STAT 220) OR (INFO 201 AND CSE 163 AND STAT 221) OR (INFO 201 AND CSE 163 AND CS&SS 221) OR (INFO 201 AND CSE 163 AND SOC 221) OR (INFO 201 AND CSE 163 AND STAT 290) OR (INFO 201 AND CSE 163 AND STAT 311) OR (INFO 201 AND CSE 163 AND STAT 390) OR (INFO 201 AND CSE 163 AND QMETH 201) OR (INFO 201 AND CSE 163 AND Q SCI 381). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 370"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 401: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "AMATH 401"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 482: Requires one complete alternative: (AMATH 301 AND AMATH 352) OR (AMATH 301 AND MATH 136) OR (AMATH 301 AND MATH 208). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 482"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 483: Requires one complete alternative: (AMATH 481 AND AMATH 352) OR (AMATH 481 AND MATH 136) OR (AMATH 481 AND MATH 208). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 483"
+      ]
+    },
+    {
+      "code": "NEEDS_GRADE_CONFIRMATION",
+      "severity": "warning",
+      "message": "CSE 331: NEEDS_GRADE_CONFIRMATION: Confirm actual qualifying grades. Requires one complete alternative: (CSE 123 (grade >= 2)) OR (CSE 143 (grade >= 2)). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "CSE 331"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 333: Requires one complete alternative: (CSE 351). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "CSE 333"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 344: Requires one complete alternative: (CSE 311). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "CSE 344"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 446: Requires one complete alternative: (CSE 332 AND MATH 208 AND STAT 390) OR (CSE 332 AND MATH 208 AND STAT 391) OR (CSE 332 AND MATH 208 AND CSE 312) OR (CSE 332 AND MATH 136 AND STAT 390) OR (CSE 332 AND MATH 136 AND STAT 391) OR (CSE 332 AND MATH 136 AND CSE 312). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "CSE 446"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 200: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 200"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 280: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 280"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 371: Requires one complete alternative: (INFO 370). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 371"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "AMATH 402: Requires one complete alternative: (AMATH 351) OR (MATH 136) OR (MATH 207). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "AMATH 402"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 373: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "CSE 373"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "CSE 391: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "CSE 391"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 102: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 102"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 108: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 108"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 310: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 310"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 312: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 312"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 314: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 314"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 331: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 331"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 351: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 351"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 352: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 352"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 353: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 353"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 354: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 354"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 355: Requires one complete alternative: (INFO 360) OR (HCDE 210). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 355"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 356: Requires one complete alternative: (INFO 360) OR (HCDE 210). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 356"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 357: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 357"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 358: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 358"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 376: Requires one complete alternative: (INFO 201 AND CSE 122) OR (INFO 201 AND CSE 123) OR (INFO 201 AND CSE 142) OR (INFO 201 AND CSE 143) OR (INFO 201 AND CSE 160) OR (INFO 201 AND CSE 163). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 376"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 410: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 410"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 430: Requires one complete alternative: (INFO 330 (grade >= 2)) OR (CSE 414 (grade >= 2)) OR (I S 445 (grade >= 2)). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 430"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 433: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 433"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 441: Requires one complete alternative: (CSE 123 AND INFO 340 AND INFO 330) OR (CSE 123 AND CSE 154 AND INFO 330) OR (CSE 143 AND INFO 340 AND INFO 330) OR (CSE 143 AND CSE 154 AND INFO 330) OR (CSE 163 AND INFO 340 AND INFO 330) OR (CSE 163 AND CSE 154 AND INFO 330). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 441"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 442: Requires one complete alternative: (INFO 360 AND INFO 340) OR (INFO 360 AND CSE 154). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 442"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 443: Requires one complete alternative: (CSE 123 AND INFO 340) OR (CSE 143 AND INFO 340) OR (CSE 163 AND INFO 340). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 443"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 449: Requires one complete alternative: (CSE 123 AND INFO 340) OR (CSE 143 AND INFO 340). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 449"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 463: Requires one complete alternative: (INFO 360). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 463"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 465: Requires one complete alternative: (INFO 360). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 465"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 474: Requires one complete alternative: (INFO 340 AND CSE 123 AND STAT 220) OR (INFO 340 AND CSE 123 AND STAT 221) OR (INFO 340 AND CSE 123 AND CS&SS 221) OR (INFO 340 AND CSE 123 AND SOC 221) OR (INFO 340 AND CSE 123 AND STAT 290) OR (INFO 340 AND CSE 123 AND STAT 311) OR (INFO 340 AND CSE 123 AND STAT 390) OR (INFO 340 AND CSE 123 AND QMETH 201) OR (INFO 340 AND CSE 123 AND Q SCI 381) OR (INFO 340 AND CSE 143 AND STAT 220) OR (INFO 340 AND CSE 143 AND STAT 221) OR (INFO 340 AND CSE 143 AND CS&SS 221) OR (INFO 340 AND CSE 143 AND SOC 221) OR (INFO 340 AND CSE 143 AND STAT 290) OR (INFO 340 AND CSE 143 AND STAT 311) OR (INFO 340 AND CSE 143 AND STAT 390) OR (INFO 340 AND CSE 143 AND QMETH 201) OR (INFO 340 AND CSE 143 AND Q SCI 381) OR (INFO 340 AND CSE 163 AND STAT 220) OR (INFO 340 AND CSE 163 AND STAT 221) OR (INFO 340 AND CSE 163 AND CS&SS 221) OR (INFO 340 AND CSE 163 AND SOC 221) OR (INFO 340 AND CSE 163 AND STAT 290) OR (INFO 340 AND CSE 163 AND STAT 311) OR (INFO 340 AND CSE 163 AND STAT 390) OR (INFO 340 AND CSE 163 AND QMETH 201) OR (INFO 340 AND CSE 163 AND Q SCI 381) OR (CSE 154 AND CSE 123 AND STAT 220) OR (CSE 154 AND CSE 123 AND STAT 221) OR (CSE 154 AND CSE 123 AND CS&SS 221) OR (CSE 154 AND CSE 123 AND SOC 221) OR (CSE 154 AND CSE 123 AND STAT 290) OR (CSE 154 AND CSE 123 AND STAT 311) OR (CSE 154 AND CSE 123 AND STAT 390) OR (CSE 154 AND CSE 123 AND QMETH 201) OR (CSE 154 AND CSE 123 AND Q SCI 381) OR (CSE 154 AND CSE 143 AND STAT 220) OR (CSE 154 AND CSE 143 AND STAT 221) OR (CSE 154 AND CSE 143 AND CS&SS 221) OR (CSE 154 AND CSE 143 AND SOC 221) OR (CSE 154 AND CSE 143 AND STAT 290) OR (CSE 154 AND CSE 143 AND STAT 311) OR (CSE 154 AND CSE 143 AND STAT 390) OR (CSE 154 AND CSE 143 AND QMETH 201) OR (CSE 154 AND CSE 143 AND Q SCI 381) OR (CSE 154 AND CSE 163 AND STAT 220) OR (CSE 154 AND CSE 163 AND STAT 221) OR (CSE 154 AND CSE 163 AND CS&SS 221) OR (CSE 154 AND CSE 163 AND SOC 221) OR (CSE 154 AND CSE 163 AND STAT 290) OR (CSE 154 AND CSE 163 AND STAT 311) OR (CSE 154 AND CSE 163 AND STAT 390) OR (CSE 154 AND CSE 163 AND QMETH 201) OR (CSE 154 AND CSE 163 AND Q SCI 381). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 474"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 478: Requires one complete alternative: (INFO 201). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 478"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 495: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 495"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 498: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 498"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 490: Requires one complete alternative: (INFO 340 AND INFO 360 AND INFO 380) OR (INFO 300 AND INFO 360 AND INFO 380) OR (INFO 300 AND INFO 340 AND INFO 380) OR (INFO 300 AND INFO 340 AND INFO 360). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 490"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 491: Requires one complete alternative: (INFO 490). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 491"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 492: Requires one complete alternative: (INFO 300 AND INFO 340 AND INFO 360 AND INFO 380). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 492"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 493: Requires one complete alternative: (INFO 300 AND INFO 340 AND INFO 360 AND INFO 380). In-progress courses do not count as completed.",
+      "affected_course_codes": [
+        "INFO 493"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 494: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 494"
+      ]
+    },
+    {
+      "code": "COURSE_BLOCKED",
+      "severity": "warning",
+      "message": "INFO 499: Offering is unknown for 2027-summer; no recommendation inferred.",
+      "affected_course_codes": [
+        "INFO 499"
+      ]
+    },
+    {
+      "code": "RECOMMENDED_TIMELINES",
+      "severity": "info",
+      "message": "Career activities and dates are recommendations. Check actual openings and deadlines with organizations; no internship, research, admission, or graduation outcome is guaranteed.",
+      "affected_course_codes": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "course:AMATH 351",
+      "title": "Introduction to Differential Equations and Applications",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath351",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "schedule:AMATH 351",
+      "title": "Term-specific offering snapshot (not live registration)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 352",
+      "title": "Applied Linear Algebra and Numerical Analysis",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath352",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:AMATH 352:2027-winter",
+      "title": "AMATH 352 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/appmath.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 301",
+      "title": "Beginning Scientific Computing",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath301",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 330",
+      "title": "Databases and Data Modeling",
+      "url": "https://www.washington.edu/students/crscat/info.html#info330",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "schedule:INFO 330",
+      "title": "Term-specific offering snapshot (not live registration)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 330:2027-winter",
+      "title": "INFO 330 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 312",
+      "title": "Foundations of Computing II",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse312",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "schedule:CSE 312",
+      "title": "Term-specific offering snapshot (not live registration)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 353",
+      "title": "Partial Differential Equations and Waves",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath353",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 383",
+      "title": "Introduction to Continuous Mathematical Modeling",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath383",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 340",
+      "title": "Client-Side Development",
+      "url": "https://www.washington.edu/students/crscat/info.html#info340",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 360",
+      "title": "Design Methods",
+      "url": "https://www.washington.edu/students/crscat/info.html#info360",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 360:2027-winter",
+      "title": "INFO 360 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 201",
+      "title": "Foundational Skills for Data Science",
+      "url": "https://www.washington.edu/students/crscat/info.html#info201",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 201:2027-winter",
+      "title": "INFO 201 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 311",
+      "title": "Foundations of Computing I",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse311",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 300",
+      "title": "Research Methods",
+      "url": "https://www.washington.edu/students/crscat/info.html#info300",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 300:2027-winter",
+      "title": "INFO 300 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 380",
+      "title": "Product and Information Systems Management",
+      "url": "https://www.washington.edu/students/crscat/info.html#info380",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 380:2027-winter",
+      "title": "INFO 380 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 481",
+      "title": "Scientific Computing",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath481",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 332",
+      "title": "Data Structures and Parallelism",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse332",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 351",
+      "title": "The Hardware/Software Interface",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse351",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:CSE 351:2027-winter",
+      "title": "CSE 351 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 370",
+      "title": "Core Methods in Data Science",
+      "url": "https://www.washington.edu/students/crscat/info.html#info370",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 401",
+      "title": "Vector Calculus and Complex Variables",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath401",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 482",
+      "title": "Computational Methods for Data Analysis",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath482",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 483",
+      "title": "High-Performance Scientific Computing",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath483",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 331",
+      "title": "Software Design and Implementation",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse331",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 333",
+      "title": "Systems Programming",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse333",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 344",
+      "title": "Introduction to Data Management",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse344",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 446",
+      "title": "Machine Learning",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse446",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 200",
+      "title": "Intellectual Foundations of Informatics",
+      "url": "https://www.washington.edu/students/crscat/info.html#info200",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 200:2027-winter",
+      "title": "INFO 200 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 280",
+      "title": "Professional Practices in Informatics",
+      "url": "https://www.washington.edu/students/crscat/info.html#info280",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 280:2027-winter",
+      "title": "INFO 280 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 371",
+      "title": "Advanced Methods in Data Science",
+      "url": "https://www.washington.edu/students/crscat/info.html#info371",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:AMATH 402",
+      "title": "Introduction to Dynamical Systems and Chaos",
+      "url": "https://www.washington.edu/students/crscat/appmath.html#amath402",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 373",
+      "title": "Data Structures and Algorithms",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse373",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:CSE 373:2027-winter",
+      "title": "CSE 373 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:CSE 391",
+      "title": "System and Software Tools",
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse391",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:CSE 391:2027-winter",
+      "title": "CSE 391 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/cse.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 102",
+      "title": "Gender and Information Technology",
+      "url": "https://www.washington.edu/students/crscat/info.html#info102",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 102:2027-winter",
+      "title": "INFO 102 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 108",
+      "title": "Music and Information",
+      "url": "https://www.washington.edu/students/crscat/info.html#info108",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 108:2027-winter",
+      "title": "INFO 108 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 310",
+      "title": "Information Assurance and Cybersecurity",
+      "url": "https://www.washington.edu/students/crscat/info.html#info310",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 310:2027-winter",
+      "title": "INFO 310 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 312",
+      "title": "Enterprise Risk Management",
+      "url": "https://www.washington.edu/students/crscat/info.html#info312",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 312:2027-winter",
+      "title": "INFO 312 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 314",
+      "title": "Computer Networks and Distributed Applications",
+      "url": "https://www.washington.edu/students/crscat/info.html#info314",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 314:2027-winter",
+      "title": "INFO 314 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 331",
+      "title": "Introduction to Information Architecture",
+      "url": "https://www.washington.edu/students/crscat/info.html#info331",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 331:2027-winter",
+      "title": "INFO 331 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 351",
+      "title": "Information Ethics and Policy",
+      "url": "https://www.washington.edu/students/crscat/info.html#info351",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 351:2027-winter",
+      "title": "INFO 351 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 352",
+      "title": "Race, Gender, and Information",
+      "url": "https://www.washington.edu/students/crscat/info.html#info352",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 352:2027-winter",
+      "title": "INFO 352 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 353",
+      "title": "Indigenous Ways of Knowing in the Digital World",
+      "url": "https://www.washington.edu/students/crscat/info.html#info353",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 353:2027-winter",
+      "title": "INFO 353 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 354",
+      "title": "Data Justice",
+      "url": "https://www.washington.edu/students/crscat/info.html#info354",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 354:2027-winter",
+      "title": "INFO 354 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 355",
+      "title": "Information Policy Design",
+      "url": "https://www.washington.edu/students/crscat/info.html#info355",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 356",
+      "title": "Moral Reasoning and Interaction Design",
+      "url": "https://www.washington.edu/students/crscat/info.html#info356",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 357",
+      "title": "The Record of Us All",
+      "url": "https://www.washington.edu/students/crscat/info.html#info357",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 357:2027-winter",
+      "title": "INFO 357 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 358",
+      "title": "Exploring Information Science Through Popular Culture",
+      "url": "https://www.washington.edu/students/crscat/info.html#info358",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 358:2027-winter",
+      "title": "INFO 358 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 376",
+      "title": "Introduction to Search and Recommender Systems",
+      "url": "https://www.washington.edu/students/crscat/info.html#info376",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 410",
+      "title": "Cybersecurity Strategies and Policies",
+      "url": "https://www.washington.edu/students/crscat/info.html#info410",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 410:2027-winter",
+      "title": "INFO 410 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 430",
+      "title": "Database Design and Management",
+      "url": "https://www.washington.edu/students/crscat/info.html#info430",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 433",
+      "title": "Content Strategy in Information Architecture",
+      "url": "https://www.washington.edu/students/crscat/info.html#info433",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 433:2027-winter",
+      "title": "INFO 433 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 441",
+      "title": "Server-Side Development",
+      "url": "https://www.washington.edu/students/crscat/info.html#info441",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 442",
+      "title": "Cooperative Software Development",
+      "url": "https://www.washington.edu/students/crscat/info.html#info442",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 443",
+      "title": "Software Architecture for Interactive Systems",
+      "url": "https://www.washington.edu/students/crscat/info.html#info443",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 449",
+      "title": "Mobile Development: IOS",
+      "url": "https://www.washington.edu/students/crscat/info.html#info449",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 463",
+      "title": "Input and Interaction",
+      "url": "https://www.washington.edu/students/crscat/info.html#info463",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 465",
+      "title": "Technology, Time and Design",
+      "url": "https://www.washington.edu/students/crscat/info.html#info465",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 474",
+      "title": "Interactive Information Visualization",
+      "url": "https://www.washington.edu/students/crscat/info.html#info474",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 478",
+      "title": "Population Health Informatics",
+      "url": "https://www.washington.edu/students/crscat/info.html#info478",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 495",
+      "title": "Internship in Informatics",
+      "url": "https://www.washington.edu/students/crscat/info.html#info495",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 495:2027-winter",
+      "title": "INFO 495 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 498",
+      "title": "Special Topics in Informatics",
+      "url": "https://www.washington.edu/students/crscat/info.html#info498",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 498:2027-winter",
+      "title": "INFO 498 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 490",
+      "title": "Practical Capstone I",
+      "url": "https://www.washington.edu/students/crscat/info.html#info490",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 491",
+      "title": "Practical Capstone II",
+      "url": "https://www.washington.edu/students/crscat/info.html#info491",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 492",
+      "title": "Intensive Capstone",
+      "url": "https://www.washington.edu/students/crscat/info.html#info492",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 493",
+      "title": "Research Capstone",
+      "url": "https://www.washington.edu/students/crscat/info.html#info493",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 494",
+      "title": "Research Studio",
+      "url": "https://www.washington.edu/students/crscat/info.html#info494",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 494:2027-winter",
+      "title": "INFO 494 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "course:INFO 499",
+      "title": "Independent Study",
+      "url": "https://www.washington.edu/students/crscat/info.html#info499",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 499:2027-winter",
+      "title": "INFO 499 2027-winter: confirmed offering evidence (no seat guarantee)",
+      "url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:AMATH 352:2027-spring",
+      "title": "AMATH 352 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 330:2027-spring",
+      "title": "INFO 330 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 360:2027-spring",
+      "title": "INFO 360 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 201:2027-spring",
+      "title": "INFO 201 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 300:2027-spring",
+      "title": "INFO 300 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 380:2027-spring",
+      "title": "INFO 380 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:CSE 351:2027-spring",
+      "title": "CSE 351 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 200:2027-spring",
+      "title": "INFO 200 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 280:2027-spring",
+      "title": "INFO 280 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:CSE 373:2027-spring",
+      "title": "CSE 373 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:CSE 391:2027-spring",
+      "title": "CSE 391 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 310:2027-spring",
+      "title": "INFO 310 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 331:2027-spring",
+      "title": "INFO 331 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 351:2027-spring",
+      "title": "INFO 351 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 352:2027-spring",
+      "title": "INFO 352 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 353:2027-spring",
+      "title": "INFO 353 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 354:2027-spring",
+      "title": "INFO 354 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 357:2027-spring",
+      "title": "INFO 357 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 358:2027-spring",
+      "title": "INFO 358 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 410:2027-spring",
+      "title": "INFO 410 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 495:2027-spring",
+      "title": "INFO 495 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 498:2027-spring",
+      "title": "INFO 498 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 494:2027-spring",
+      "title": "INFO 494 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:INFO 499:2027-spring",
+      "title": "INFO 499 2027-spring: projected offering evidence (no seat guarantee)",
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    },
+    {
+      "id": "offering:AMATH 352:2027-summer",
+      "title": "AMATH 352 2027-summer: projected offering evidence (no seat guarantee)",
+      "url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "kind": "official",
+      "verified_at": "2026-10-17",
+      "data_status": "verified"
+    }
+  ],
+  "plan_summary": "0 course suggestions across three quarters support preparation for ml internship. No courses could be scheduled safely with the current verified data. Review warnings and eligibility with an academic adviser. Career dates are recommended timeframes; outcomes are not guaranteed."
+}

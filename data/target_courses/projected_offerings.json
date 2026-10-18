@@ -1,0 +1,1353 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "checked_at": "2026-10-17",
+      "content_sha256": "49acadf8be6969a4e04ff5bebe0c33ea3c1b3fdb467c7d51b3da75bebffdbc3a",
+      "covered_terms": [
+        "2026-autumn",
+        "2027-winter",
+        "2027-spring"
+      ],
+      "note": "Positive entries for existing catalog records only. Blank cells and omitted courses/terms remain unknown; no new course rules imported."
+    },
+    {
+      "url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "checked_at": "2026-10-17",
+      "content_sha256": "9313c819f3b3a0631558748cec7556f52c89e53cb094d9c75433ce9f5af57e51",
+      "covered_terms": [
+        "2026-autumn",
+        "2027-winter",
+        "2027-spring",
+        "2027-summer"
+      ],
+      "note": "Positive entries for existing catalog records only. Blank cells and omitted courses/terms remain unknown; no new course rules imported."
+    },
+    {
+      "url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "checked_at": "2026-10-17",
+      "content_sha256": "470e56b2e0a5c9e56656b66e802318100844043c2f8fcee9f0c8def5a90d1641",
+      "covered_terms": [
+        "2026-autumn",
+        "2027-winter",
+        "2027-spring"
+      ],
+      "note": "Positive entries for existing catalog records only. Blank cells and omitted courses/terms remain unknown; no new course rules imported."
+    }
+  ],
+  "offerings": [
+    {
+      "course_id": "AMATH 301",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 301",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 301",
+      "term": "2027-summer",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 301",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 351",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 351",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 351",
+      "term": "2027-summer",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 351",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 352",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 352",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 352",
+      "term": "2027-summer",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 352",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 353",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 353",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 353",
+      "term": "2027-summer",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 383",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 383",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 383",
+      "term": "2027-summer",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 383",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 401",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 402",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 481",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 482",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "AMATH 483",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://amath.washington.edu/2026-27-amath-cfrm-undergraduate-course-schedule",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 311",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 312",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 331",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 332",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 333",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 344",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 351",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 373",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 391",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 391",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 391",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "CSE 446",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://courses.cs.washington.edu/courses/cse000/time-sched/teaching2026-2027.html",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 102",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 102",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 108",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 200",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 200",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 200",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 201",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 201",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 201",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 280",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 280",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 280",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 300",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 300",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 300",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 310",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 310",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 310",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 312",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 314",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 330",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 330",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 330",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 331",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 331",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 331",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 340",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 340",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 340",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 351",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 351",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 351",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 352",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 352",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 352",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 353",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 353",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 353",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 354",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 354",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 354",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 355",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 355",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 355",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 356",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 356",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 356",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 357",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 357",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 357",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 358",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 358",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 358",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 360",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 360",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 360",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 370",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 370",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 370",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 371",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 371",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 371",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 376",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 376",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 380",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 380",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 380",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 410",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 410",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 410",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 430",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 430",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 430",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 433",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 441",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 441",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 441",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 442",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 442",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 442",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 443",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 449",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 463",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 463",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 465",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 474",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 474",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 474",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 478",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 478",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 490",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 491",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 492",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 492",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 492",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 493",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 493",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 493",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 494",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 494",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 494",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 495",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 495",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 495",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 498",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 498",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 498",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 499",
+      "term": "2026-autumn",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 499",
+      "term": "2027-spring",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    },
+    {
+      "course_id": "INFO 499",
+      "term": "2027-winter",
+      "status": "projected",
+      "source_url": "https://ischool.uw.edu/programs/informatics/curriculum/course-schedules/info-projected",
+      "verified_at": "2026-10-17",
+      "notes": "Departmental projection; subject to change. No seat availability or registration eligibility is established."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "major": "Computer Science + Applied Mathematics",
+  "completed_courses": [
+    "CSE 123",
+    "MATH 126",
+    "CSE 311",
+    "CSE 351",
+    "MATH 125",
+    "MATH 208",
+    "CSE 312",
+    "CSE 332",
+    "MATH 207"
+  ],
+  "in_progress_courses": [],
+  "goal": {
+    "type": "internship",
+    "track": "ml",
+    "deadline": "2027-06-01"
+  },
+  "max_courses_per_term": 2,
+  "start_term": "2027-winter",
+  "use_ai_explanation": false
+}

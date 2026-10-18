@@ -1,0 +1,119 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { CourseSchema, OfferingEvidenceSchema, type Course } from '../types/course';
+import { PlanRequestSchema } from '../types/plan';
+import { offeringForTerm, mergeProjectedOfferings, ProjectionDatasetSchema } from '../lib/offerings';
+import { planAcademic } from '../lib/planner';
+import { loadData } from '../lib/data';
+import { generatePlan } from '../lib/plan-service';
+const now = new Date('2026-10-17T19:00:00Z');
+const request = PlanRequestSchema.parse({ major: 'Computer Science + Applied Mathematics', completed_courses: ['MATH 125', 'MATH 126', 'MATH 207', 'MATH 208', 'CSE 123', 'CSE 311', 'CSE 332', 'CSE 312'],
+  in_progress_courses: [], goal: { type: 'internship', track: 'ml', deadline: '2027-06-01' }, max_courses_per_term: 2, start_term: '2027-winter' });
+function course(status: 'confirmed' | 'projected' | 'unknown', changes: Partial<Course> = {}) {
+  return CourseSchema.parse({ course_id: 'DEMO 100', title: 'Synthetic test rules only', credits: 4, category: 'major', prerequisite_groups: [],
+    offered_terms: null, eligible_majors: ['*'], enrollment_status: 'verified', source_url: 'https://www.washington.edu/', verified_at: '2026-10-17', data_status: 'verified', tracks: ['ml'], foundation_priority: 5,
+    offering_evidence: [{ term: '2027-winter', status, source_url: status === 'unknown' ? null : 'https://www.washington.edu/', verified_at: status === 'unknown' ? null : '2026-10-17', notes: 'Synthetic evidence for algorithm testing' }], ...changes });
+}
+test('confirmed offerings with satisfied eligibility are eligible, projected ones are tentative', () => {
+  const confirmed = planAcademic(request, [course('confirmed')], now);
+  assert.equal(confirmed.quarters[0].courses[0].scheduling_status, 'eligible');
+  const projected = planAcademic(request, [course('projected')], now);
+  assert.equal(projected.quarters[0].courses[0].scheduling_status, 'tentative');
+  assert.ok(projected.warnings.some(w => w.code === 'PROJECTED_OFFERING'));
+  assert.ok(projected.quarters[0].courses[0].source_ids.some(id => id.startsWith('offering:')));
+});
+test('unknown offering blocks scheduling even if a legacy field claims that term', () => {
+  const result = planAcademic(request, [course('unknown', { offered_term_ids: ['2027-winter'] })], now);
+  assert.equal(result.quarters.flatMap(q => q.courses).length, 0);
+  assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
+});
+test('projected offering cannot bypass unknown or missing prerequisite rules', () => {
+  for (const prerequisites of [null, [{ any_of: [{ course_id: 'DEMO 099', minimum_grade: null, concurrent_allowed: false }] }]]) {
+    const result = planAcademic(request, [course('projected', { prerequisite_groups: prerequisites })], now);
+    assert.equal(result.quarters.flatMap(q => q.courses).length, 0);
+    assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
+  }
+});
+test('unknown registration eligibility does not block planning; the course discloses it', () => {
+  const result = planAcademic(request, [course('projected', { enrollment_status: 'unknown', eligible_majors: null })], now);
+  assert.deepEqual(result.quarters[0].courses.map(c => c.id), ['DEMO 100']);
+  assert.match(result.quarters[0].courses[0].explanation, /Registration restrictions are not verified/);
+  assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
+});
+test('a planned course with unverified registration conditionally satisfies a later-quarter prerequisite', () => {
+  const first = course('projected', { enrollment_status: 'unknown', eligible_majors: null });
+  const second = course('projected', { course_id: 'DEMO 200', prerequisite_groups: [{ any_of: [{ course_id: 'DEMO 100', minimum_grade: null, concurrent_allowed: false }] }],
+    offering_evidence: [{ term: '2027-spring', status: 'projected', source_url: 'https://www.washington.edu/', verified_at: '2026-10-17', notes: 'Synthetic' }] });
+  const result = planAcademic(request, [first, second], now);
+  assert.deepEqual(result.quarters[0].courses.map(c => c.id), ['DEMO 100']);
+  const later = result.quarters[1].courses.find(c => c.id === 'DEMO 200')!;
+  assert.equal(later.scheduling_status, 'tentative'); assert.match(later.explanation, /Conditional on successful completion/);
+});
+test('missing section meeting times do not block quarter-level recommendations', () => {
+  const result = planAcademic(request, [course('projected', { section_data_status: 'not_imported' })], now);
+  assert.equal(result.quarters[0].courses[0].id, 'DEMO 100');
+});
+test('a verified major mismatch is planned but flagged instead of hidden', () => {
+  const result = planAcademic(request, [course('projected', { eligible_majors: ['Physics'] })], now);
+  assert.match(result.quarters[0].courses[0].explanation, /section restriction does not match your major/);
+  assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
+});
+test('a positive offering requires official dated evidence, and projection imports cannot claim confirmation', async () => {
+  assert.equal(OfferingEvidenceSchema.safeParse({ term: '2027-spring', status: 'projected', source_url: null, verified_at: null, notes: '' }).success, false);
+  const dataset = JSON.parse(await readFile('data/target_courses/projected_offerings.json', 'utf8'));
+  assert.ok(ProjectionDatasetSchema.safeParse(dataset).success);
+  const invalid = structuredClone(dataset); invalid.offerings[0].status = 'confirmed';
+  assert.equal(ProjectionDatasetSchema.safeParse(invalid).success, false);
+  const duplicate = structuredClone(dataset); duplicate.offerings.push(duplicate.offerings[0]);
+  assert.equal(ProjectionDatasetSchema.safeParse(duplicate).success, false);
+});
+test('real imports preserve confirmed Winter listings, AMATH Summer projections, and unknown CSE/INFO Summer', async () => {
+  const { courses } = await loadData();
+  assert.equal(offeringForTerm(courses.find(c => c.course_id === 'CSE 446')!, '2027-winter').status, 'confirmed');
+  assert.equal(offeringForTerm(courses.find(c => c.course_id === 'CSE 446')!, '2027-spring').status, 'projected');
+  assert.equal(offeringForTerm(courses.find(c => c.course_id === 'AMATH 353')!, '2027-summer').status, 'projected');
+  assert.equal(offeringForTerm(courses.find(c => c.course_id === 'CSE 446')!, '2027-summer').status, 'unknown');
+  assert.equal(offeringForTerm(courses.find(c => c.course_id === 'INFO 201')!, '2027-summer').status, 'unknown');
+  // Beyond the snapshots, only the course catalog's typical pattern applies, and only as a tentative projection.
+  const later = offeringForTerm(courses.find(c => c.course_id === 'AMATH 352')!, '2028-summer');
+  assert.notEqual(later.status, 'confirmed'); if (later.status === 'projected') assert.match(later.notes, /catalog/i);
+});
+test('realistic CS + AMATH history receives scheduled courses with disclosed registration status', async () => {
+  const plan = await generatePlan(request, { now });
+  assert.deepEqual(plan.quarters.map(q => q.term), ['2027-winter', '2027-spring', '2027-autumn']);
+  assert.ok(plan.quarters[0].courses.length > 0 && plan.quarters[1].courses.length > 0);
+  assert.ok(plan.quarters.flatMap(q => q.courses).every(c => /Registration restrictions are not verified|section restriction does not match/.test(c.explanation)));
+  assert.equal(plan.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
+  assert.equal(plan.career_milestones.length, 4);
+  assert.ok(plan.sources.some(s => s.url?.includes('amath-cfrm-undergraduate-course-schedule')));
+});
+test('adding projections never changes prerequisite branches, eligibility, or section evidence', async () => {
+  const { courses } = await loadData();
+  const rows = JSON.parse(await readFile('data/target_courses/courses.json', 'utf8'));
+  const rules = JSON.parse(await readFile('data/target_courses/prerequisites.json', 'utf8'));
+  const { importCourse } = await import('../lib/course-import');
+  for (const row of rows) {
+    const original = importCourse(row, rules[row.course_id]);
+    const merged = courses.find(c => c.course_id === row.course_id)!;
+    assert.deepEqual(merged.prerequisite_alternatives, original.prerequisite_alternatives);
+    assert.equal(merged.enrollment_status, original.enrollment_status);
+    assert.equal(merged.eligible_majors, original.eligible_majors);
+    assert.equal(merged.section_data_status, original.section_data_status);
+  }
+});
+test('a missing (not failing) prerequisite grade plans the course tentatively and says so', () => {
+  const restricted = course('projected', { prerequisite_groups: [{ any_of: [{ course_id: 'CSE 123', minimum_grade: 2, concurrent_allowed: false }] }] });
+  const result = planAcademic(request, [restricted], now);
+  assert.equal(result.academic_decisions[0].catalog_prerequisite_status, 'needs_grade_confirmation');
+  assert.equal(result.quarters[0].courses[0].scheduling_status, 'tentative');
+  assert.match(result.quarters[0].courses[0].explanation, /minimum grade/);
+  const failed = planAcademic({ ...request, completed_courses: ['CSE 123'], reviewed_grades: { 'CSE 123': 1.5 } }, [restricted], now);
+  assert.equal(failed.quarters.flatMap(q => q.courses).length, 0);
+});
+test('a projected dependent cannot use an in-progress prerequisite as completed', () => {
+  const restricted = course('projected', { prerequisite_groups: [{ any_of: [{ course_id: 'DEMO 099', minimum_grade: null, concurrent_allowed: false }] }] });
+  const result = planAcademic({ ...request, in_progress_courses: ['DEMO 099'] }, [restricted], now);
+  assert.equal(result.quarters[0].courses.length, 0);
+  assert.equal(result.warnings.some(w => w.code === 'COURSE_REVIEW_REQUIRED'), false);
+});

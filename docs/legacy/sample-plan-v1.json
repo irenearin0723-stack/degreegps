@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "demo-uw-001",
+  "mode": "mock",
+  "generated_at": "2026-10-17T18:00:00Z",
+  "request": {
+    "majors": ["Computer Science", "Applied Mathematics"],
+    "completed_courses": ["CSE 123", "MATH 126"],
+    "in_progress_courses": ["CSE 311", "CSE 351", "INFO 201"],
+    "target_role": "Machine Learning Engineer Intern",
+    "target_summer": 2027,
+    "max_courses_per_term": 3,
+    "start_term": "autumn",
+    "start_year": 2026,
+    "horizon_terms": 4
+  },
+  "quarters": [
+    {
+      "id": "2026-autumn",
+      "year": 2026,
+      "term": "autumn",
+      "courses": [
+        {
+          "code": "CSE 311",
+          "title": "Foundations of Computing I",
+          "credits": null,
+          "category": "major",
+          "status": "in_progress",
+          "rationale": "Example of displaying a course that the student is already taking.",
+          "source_ids": ["demo-only"]
+        },
+        {
+          "code": "CSE 351",
+          "title": "The Hardware/Software Interface",
+          "credits": null,
+          "category": "major",
+          "status": "in_progress",
+          "rationale": "Example of preserving an in-progress course in the timeline.",
+          "source_ids": ["demo-only"]
+        },
+        {
+          "code": "INFO 201",
+          "title": "Foundational Skills for Data Science",
+          "credits": null,
+          "category": "elective",
+          "status": "in_progress",
+          "rationale": "Demonstrates that the timeline supports electives.",
+          "source_ids": ["demo-only"]
+        }
+      ],
+      "notes": "Existing coursework shown for continuity; not new recommendations."
+    },
+    {
+      "id": "2027-winter",
+      "year": 2027,
+      "term": "winter",
+      "courses": [
+        {
+          "code": "CSE 312",
+          "title": "Foundations of Computing II",
+          "credits": null,
+          "category": "major",
+          "status": "planned",
+          "rationale": "Illustrative next-quarter option. Eligibility and availability must be checked.",
+          "source_ids": ["demo-only"]
+        },
+        {
+          "code": "AMATH 301",
+          "title": "Beginning Scientific Computing",
+          "credits": null,
+          "category": "math",
+          "status": "planned",
+          "rationale": "Illustrative applied-math programming option; not a verified degree requirement.",
+          "source_ids": ["demo-only"]
+        }
+      ],
+      "notes": "Prototype suggestion: 2 planned courses, leaving capacity for other commitments."
+    },
+    {
+      "id": "2027-spring",
+      "year": 2027,
+      "term": "spring",
+      "courses": [
+        {
+          "code": "CSE 332",
+          "title": "Data Structures and Parallelism",
+          "credits": null,
+          "category": "major",
+          "status": "planned",
+          "rationale": "Illustrative data-structures course; prerequisites and offering not verified.",
+          "source_ids": ["demo-only"]
+        },
+        {
+          "code": "AMATH 352",
+          "title": "Applied Linear Algebra and Numerical Analysis",
+          "credits": null,
+          "category": "math",
+          "status": "planned",
+          "rationale": "Illustrative applied-math course; prerequisites and offering not verified.",
+          "source_ids": ["demo-only"]
+        }
+      ],
+      "notes": "Prototype suggestion: leave room for interviews and project work."
+    },
+    {
+      "id": "2027-summer",
+      "year": 2027,
+      "term": "summer",
+      "courses": [],
+      "notes": "Target internship summer; academic courses intentionally left blank."
+    }
+  ],
+  "career_milestones": [
+    {
+      "id": "milestone-portfolio",
+      "quarter_id": "2026-autumn",
+      "title": "Prepare internship portfolio",
+      "description": "Show credible software or ML-related project work before recruiting deadlines.",
+      "action_items": ["Select two showcase projects", "Write README files", "Draft a one-page resume"],
+      "status": "in_progress"
+    },
+    {
+      "id": "milestone-applications",
+      "quarter_id": "2027-winter",
+      "title": "Track remaining internship opportunities",
+      "description": "Keep applying as openings appear; many summer roles recruit earlier than winter.",
+      "action_items": ["Create an application tracker", "Practice technical interviews weekly"],
+      "status": "not_started"
+    },
+    {
+      "id": "milestone-interviews",
+      "quarter_id": "2027-spring",
+      "title": "Refine interview and ML fundamentals",
+      "description": "Review core algorithms and document outcomes from applications.",
+      "action_items": ["Practice algorithms", "Prepare two project stories"],
+      "status": "not_started"
+    },
+    {
+      "id": "milestone-summer",
+      "quarter_id": "2027-summer",
+      "title": "Internship or alternative summer project",
+      "description": "If an internship is unavailable, ship a substantial public project instead.",
+      "action_items": ["Complete internship or a scoped ML project", "Publish a project retrospective"],
+      "status": "not_started"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "UNVERIFIED_CATALOG",
+      "severity": "warning",
+      "message": "Demo course suggestions are not checked against official UW prerequisites, degree requirements, or quarterly offerings.",
+      "affected_course_codes": ["CSE 312", "AMATH 301", "CSE 332", "AMATH 352"]
+    },
+    {
+      "code": "RECRUITING_TIMELINE",
+      "severity": "info",
+      "message": "Some Summer 2027 internship applications may have opened before the planned winter term.",
+      "affected_course_codes": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "demo-only",
+      "title": "Illustrative prototype data — NOT a verified UW catalog source",
+      "url": null,
+      "kind": "mock",
+      "retrieved_at": null
+    }
+  ]
+}

@@ -1,0 +1,772 @@
+[
+  {
+    "course_id": "INFO 102",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 3,
+    "slns": [
+      "15750",
+      "15751",
+      "15752"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info102",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 108",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15753"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info108",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 200",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 18,
+    "slns": [
+      "15754",
+      "15755",
+      "15756",
+      "15757",
+      "15758",
+      "15759",
+      "15760",
+      "15761",
+      "15762",
+      "15763",
+      "15764",
+      "15765",
+      "15766",
+      "15767",
+      "15768",
+      "15769",
+      "15770",
+      "15771"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info200",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 201",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 18,
+    "slns": [
+      "15772",
+      "15773",
+      "15774",
+      "15775",
+      "15776",
+      "15777",
+      "15778",
+      "15779",
+      "15780",
+      "15781",
+      "15782",
+      "15783",
+      "15784",
+      "15785",
+      "15786",
+      "15787",
+      "15788",
+      "15789"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info201",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 280",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 4,
+    "slns": [
+      "15790",
+      "15791",
+      "15792",
+      "15793"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info280",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 300",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 7,
+    "slns": [
+      "15794",
+      "15797",
+      "15798",
+      "15799",
+      "15800",
+      "15801",
+      "15802"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info300",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 310",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15803"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info310",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 312",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15804"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info312",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 314",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15805"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info314",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 330",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 6,
+    "slns": [
+      "15806",
+      "15807",
+      "15808",
+      "15809",
+      "15810",
+      "15811"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info330",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 331",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15812"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info331",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 340",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 9,
+    "slns": [
+      "15813",
+      "15814",
+      "15815",
+      "15816",
+      "15817",
+      "15818",
+      "15819",
+      "15820",
+      "15821"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info340",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 351",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 3,
+    "slns": [
+      "15822",
+      "15823",
+      "15824"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info351",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 352",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 3,
+    "slns": [
+      "15825",
+      "15826",
+      "15827"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info352",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 353",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15828"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info353",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 354",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 2,
+    "slns": [
+      "15829",
+      "15830"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info354",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 355",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15831"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info355",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 356",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 2,
+    "slns": [
+      "15832",
+      "15833"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info356",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 357",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15834"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info357",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 358",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15835"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info358",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 360",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 3,
+    "slns": [
+      "15836",
+      "15837",
+      "15838"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info360",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 370",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 6,
+    "slns": [
+      "15839",
+      "15840",
+      "15841",
+      "15842",
+      "15843",
+      "15844"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info370",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 371",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 6,
+    "slns": [
+      "15845",
+      "15846",
+      "15847",
+      "15848",
+      "15849",
+      "15850"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info371",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 376",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15851"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info376",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 380",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 9,
+    "slns": [
+      "15852",
+      "15853",
+      "15854",
+      "15855",
+      "15856",
+      "15857",
+      "15858",
+      "15859",
+      "15860"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info380",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 410",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15861"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info410",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 430",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 2,
+    "slns": [
+      "15862",
+      "15863"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info430",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 433",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15864"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info433",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 441",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15865"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info441",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 442",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 3,
+    "slns": [
+      "15866",
+      "15867",
+      "15868"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info442",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 449",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15869"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info449",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 463",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15870"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info463",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 465",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 1,
+    "slns": [
+      "15871"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info465",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 474",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 4,
+    "slns": [
+      "15872",
+      "15873",
+      "15874",
+      "15875"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info474",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 478",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 5,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15876"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info478",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 490",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 4,
+    "credits_max": 4,
+    "section_count": 7,
+    "slns": [
+      "15877",
+      "15878",
+      "15879",
+      "15880",
+      "15881",
+      "15882",
+      "15883"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info490",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 492",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 8,
+    "credits_max": 8,
+    "section_count": 1,
+    "slns": [
+      "15884"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info492",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 493",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 1,
+    "credits_max": 8,
+    "section_count": 1,
+    "slns": [
+      "15885"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info493",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 494",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 1,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15886"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info494",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 495",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 1,
+    "credits_max": 5,
+    "section_count": 1,
+    "slns": [
+      "15888"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info495",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 498",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 3,
+    "credits_max": 5,
+    "section_count": 5,
+    "slns": [
+      "15889",
+      "15890",
+      "15892",
+      "15893",
+      "15894"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info498",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 499",
+    "term": "Winter 2027",
+    "offering_status": "listed",
+    "credits_min": 1,
+    "credits_max": 5,
+    "section_count": 2,
+    "slns": [
+      "15895",
+      "15896"
+    ],
+    "meeting_data_status": "imported",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html#info499",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 290",
+    "term": "Winter 2027",
+    "offering_status": "not_listed",
+    "credits_min": null,
+    "credits_max": null,
+    "section_count": 0,
+    "slns": [],
+    "meeting_data_status": "not_applicable",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 443",
+    "term": "Winter 2027",
+    "offering_status": "not_listed",
+    "credits_min": null,
+    "credits_max": null,
+    "section_count": 0,
+    "slns": [],
+    "meeting_data_status": "not_applicable",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  },
+  {
+    "course_id": "INFO 491",
+    "term": "Winter 2027",
+    "offering_status": "not_listed",
+    "credits_min": null,
+    "credits_max": null,
+    "section_count": 0,
+    "slns": [],
+    "meeting_data_status": "not_applicable",
+    "source_url": "https://www.washington.edu/students/timeschd/WIN2027/info.html",
+    "snapshot_at": "2026-10-17T00:03:00-07:00",
+    "checked_at": "2026-10-17"
+  }
+]
