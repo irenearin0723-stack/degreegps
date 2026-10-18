@@ -114,6 +114,8 @@ No hosting deployment has been performed.
 6. Degree completion, total credit coverage, seats, conflicts between meeting times,
    actual openings, and placement outcomes are outside this MVP.
 7. Retrieval covers bundled data only; no live official pages are fetched. The
-   embedding index is not committed until someone runs `npm run build:index` with a key.
+   committed embedding index (`data/index/embeddings.json`) must be refreshed with
+   `npm run build:index` after data changes; `npm run build:index -- --check` reports
+   stale chunks, which fall back to keyword ranking until refreshed.
 
 Changes remain local. No commit or GitHub push is performed by this implementation.
