@@ -4,50 +4,19 @@ A Next.js App Router backend for transcript review, deterministic academic plann
 and goal-specific career/research preparation. No database, authentication service,
 or real transcript persistence. This is not an official UW degree audit.
 
-## Run locally
+## Start on this Mac
 
-Requires [Node.js](https://nodejs.org/) **22.13 or newer** (`node -v`); `npm` ships with it.
-Use npm only — there is no pnpm lockfile.
+Node.js 22 is required. This workspace has a checksum-verified, project-local Node
+installation, ignored by Git. In the VS Code terminal, from this folder:
 
-1. Install dependencies (first time, and after pulling `package.json` changes):
+```sh
+export PATH="$PWD/.tools/node-v22.23.3-darwin-arm64/bin:$PATH"
+npm run dev
+```
 
-   ```sh
-   npm ci
-   ```
-
-2. Create `.env.local` from the template (first time only). No key is needed for
-   core planning; leave the mock flags `false` to use the real backend.
-
-   | Shell | Command |
-   | --- | --- |
-   | macOS / Linux / Git Bash | `cp .env.example .env.local` |
-   | Windows PowerShell | `Copy-Item .env.example .env.local` |
-   | Windows cmd | `copy .env.example .env.local` |
-
-3. Start the dev server and open http://localhost:3000 (stop with `Ctrl+C`):
-
-   ```sh
-   npm run dev
-   ```
-
-On the original Mac workspace, a project-local Node lives in the Git-ignored `.tools`
-folder; put it on `PATH` first with
-`export PATH="$PWD/.tools/node-v22.23.3-darwin-arm64/bin:$PATH"`.
-
-### Troubleshooting
-
-- **"Course or career data is missing or invalid" on Windows** — the registration
-  handoff pins SHA-256 hashes of `data/target_courses/*.json`, so those files must keep
-  LF line endings. `.gitattributes` enforces this; if your checkout predates it, delete
-  `data/target_courses/*.json` and run `git checkout -- data/target_courses` to restore them with LF.
-- **`npm ci` fails with EPERM/EBUSY** — stop any running `npm run dev` first; it locks
-  files in `node_modules`.
-- **`'tsc'`/`'next'` is not recognized** — `node_modules` is incomplete; rerun `npm ci`.
-- **Port 3000 in use** — another dev server is running; stop it or use `npm run dev -- -p 3001`.
-- **Plan always looks like sample data** — `.env.local` has `NEXT_PUBLIC_USE_MOCK_DATA=true`
-  (copied from an older template); set it to `false` and restart.
-
-### Checks
+Open http://localhost:3000. The homepage is a minimal handoff placeholder for Member 2.
+After cloning elsewhere, install Node.js 22 (or `nvm use`), then run `npm ci` and
+`npm run dev`. The `.tools` directory is machine-local and is not distributed.
 
 ```sh
 npm run check    # TypeScript, imported-data validation, unit/API tests, fixture validation
