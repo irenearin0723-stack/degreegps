@@ -22,7 +22,8 @@ function SourceCard({ source, cited }: { source: RetrievedSourceDto; cited: bool
 /** Cited Q&A over the bundled UW data. AI is opt-in per question; the default answer is a verbatim source. */
 export function AskPanel({ courseIds, majors, plan, blockedCourse }: Props) {
   const [question, setQuestion] = useState('');
-  const [useAi, setUseAi] = useState(false);
+  // AI answers are on by default in the UI; the checkbox and its disclosure let students switch to quoted records.
+  const [useAi, setUseAi] = useState(true);
   const [pending, setPending] = useState(false);
   const [result, setResult] = useState<AskResponse>();
   const [error, setError] = useState<string>();

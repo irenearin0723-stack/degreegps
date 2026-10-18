@@ -40,8 +40,9 @@ the original shared starter). Main itself is not reset or overwritten.
   the sources list. Hidden for mock plans.
 - **Ask about your route** (`components/AskPanel.tsx`, `lib/ask-api.ts`) calls
   `POST /api/ask` with the plan's inputs as `plan` (omitted for mock plans), its course
-  IDs, and the major when there is exactly one. Plan sources show a "Your plan" label. AI answers are a per-question opt-in checkbox; the default answer quotes the
-  closest bundled record. Citations, related sources, warnings (including
+  IDs, and the major when there is exactly one. Plan sources show a "Your plan" label. AI answers are on by default (a checkbox with
+  the privacy disclosure turns them off per question, falling back to quoting the closest
+  bundled record); the API itself still defaults to `use_ai: false`. Citations, related sources, warnings (including
   `AI_RATE_LIMITED`) and the disclaimer are always shown.
 - Career milestones retain their recommended date ranges; the legacy timeline
   groups them into the nearest available displayed quarter without changing dates.
