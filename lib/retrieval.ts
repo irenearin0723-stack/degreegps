@@ -14,6 +14,8 @@ export interface RetrievalOptions {
   use_embeddings?: boolean;
   boost_course_ids?: string[];
   directory?: string;
+  // Per-request sources ranked with the corpus (e.g. the student's plan). Keyword-ranked only; never embedded.
+  extra_chunks?: CorpusChunk[];
 }
 export interface RetrievalResult { sources: RetrievedSource[]; mode: 'hybrid' | 'keyword'; warnings: string[] }
 
@@ -125,21 +127,31 @@ export async function retrieveSources(query: string, filters: RetrievalFilters =
   const programs = mentionedPrograms(query, p.programs);
   // "Which courses teach X?" asks for course records, not requirements that merely list courses.
   const wantsCourses = !mentioned.length && /\b(courses?|class(es)?)\b/i.test(query);
-  const candidates = chunks.map((chunk, i) => ({ chunk, i })).filter(({ chunk }) => passes(chunk, filters));
+  // Questions about "my plan", "can I", "next quarter" prefer the student's own plan sources.
+  const personal = /\b(my|me|i|i'm|plan|roadmap|next (quarter|term)|should i|can i)\b/i.test(query);
+  const extra = (options.extra_chunks ?? []).map(chunk => {
+    const terms = new Map<string, number>();
+    for (const t of tokenize(`${chunk.document_title} ${chunk.content}`, prefixes)) terms.set(t, (terms.get(t) ?? 0) + 1);
+    return { chunk, terms, length: [...terms.values()].reduce((a, b) => a + b, 0) };
+  });
+  // Plan sources answer questions about the student's plan, not general policy ("When does registration open?").
+  const relevantExtra = extra.filter(({ chunk }) => personal || mentioned.some(id => chunk.course_ids.includes(id)));
+  const candidates = [...chunks.map((chunk, i) => ({ chunk, terms: p.terms[i], length: p.lengths[i] })), ...relevantExtra].filter(({ chunk }) => passes(chunk, filters));
 
   const keyword = new Map<string, number>();
-  for (const { chunk, i } of candidates) {
+  for (const { chunk, terms, length } of candidates) {
     let score = 0;
     for (const term of queryTerms) {
-      const tf = p.terms[i].get(term) ?? 0;
+      const tf = terms.get(term) ?? 0;
       if (!tf) continue;
       const df = p.df.get(term) ?? 0;
       const idf = Math.log(1 + (chunks.length - df + 0.5) / (df + 0.5));
-      score += idf * tf * 2.2 / (tf + 1.2 * (0.25 + 0.75 * p.lengths[i] / p.average));
+      score += idf * tf * 2.2 / (tf + 1.2 * (0.25 + 0.75 * length / p.average));
     }
-    // An explicitly named course should surface its own catalog and section records first.
+    // An explicitly named course should surface its own catalog, plan and section records first.
     for (const id of mentioned) score += chunk.course_ids[0] !== id ? (chunk.course_ids.includes(id) ? 1 : 0)
-      : chunk.kind === 'course' ? 6 : chunk.kind === 'sections' ? 4 : 1;
+      : chunk.kind === 'course' || chunk.kind === 'plan' ? 6 : chunk.kind === 'sections' ? 4 : 1;
+    if (score > 0 && personal && chunk.kind === 'plan') score += 2;
     if (score > 0 && chunk.course_ids.some(id => boosted.has(id))) score += 0.5;
     // A named program ("CS", "Informatics") outranks other programs' similarly worded rules.
     if (score > 0 && chunk.program_id && programs.has(chunk.program_id)) score += 3;
@@ -165,7 +177,7 @@ export async function retrieveSources(query: string, filters: RetrievalFilters =
     keywordRank.slice(0, 20).forEach((id, rank) => fused.set(id, (fused.get(id) ?? 0) + 1 / (60 + rank)));
     semanticRank.forEach((id, rank) => fused.set(id, (fused.get(id) ?? 0) + 1 / (60 + rank)));
   } else for (const [id, score] of keyword) fused.set(id, score);
-  const byId = new Map(chunks.map(c => [c.id, c]));
+  const byId = new Map([...chunks, ...extra.map(e => e.chunk)].map(c => [c.id, c]));
   const sources = [...fused.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit).map(([id, score]) => {
     const c = byId.get(id)!;
     return { id: c.id, kind: c.kind, document_title: c.document_title, content: c.content, source_url: c.source_url, section: c.section,

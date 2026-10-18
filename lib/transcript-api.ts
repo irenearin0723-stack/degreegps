@@ -31,3 +31,13 @@ export async function parseTranscript(file: File): Promise<TranscriptParseRespon
       confidence: null, review_reasons: r.review_reasons,
     })), warnings: result.data.warnings.map(w => w.message).concat(result.data.records.flatMap(r => r.review_reasons)) };
 }
+
+/** Numeric grades of confirmed completed courses. A course listed with different grades is left out (unknown). */
+export function confirmedGrades(courses: DetectedTranscriptCourse[]): Record<string, number> {
+  const grades = new Map<string, number | null>();
+  for (const course of courses.filter(c => c.status === 'completed')) {
+    const grade = /^[0-3]\.\d$|^4\.0$/.test(course.grade ?? '') ? Number(course.grade) : null;
+    grades.set(course.code, grades.has(course.code) && grades.get(course.code) !== grade ? null : grade);
+  }
+  return Object.fromEntries([...grades].filter((entry): entry is [string, number] => entry[1] !== null));
+}

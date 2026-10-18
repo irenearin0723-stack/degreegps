@@ -1,6 +1,7 @@
 import { PlanRequestSchema, PlanResponseSchema, type PlanRequest as BackendRequest, type PlanResponse as BackendResponse } from '../types/plan';
 import type { PlanRequest, PlanResponse } from '../types/ui-plan';
 import type { GoalDraft } from '../types/goal';
+import { CourseIdSchema } from '../types/course';
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/$/, '') ?? '';
 const USE_MOCK_DATA = process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true';
 export class PlanApiError extends Error {
@@ -16,10 +17,14 @@ function legacyGoal(request: PlanRequest): GoalDraft {
 }
 export function toBackendRequest(request: PlanRequest, options: { aiExplanation?: boolean } = {}): BackendRequest {
   const goal = request.goal_draft ?? legacyGoal(request);
+  // Keep only grades for courses still listed as completed (the student may have edited the list after import).
+  const completed = new Set(request.completed_courses.flatMap(id => { const r = CourseIdSchema.safeParse(id); return r.success ? [r.data] : []; }));
+  const grades = Object.entries(request.reviewed_grades ?? {}).flatMap(([id, grade]) => { const r = CourseIdSchema.safeParse(id); return r.success && completed.has(r.data) ? [[r.data, grade] as const] : []; });
   const boundary = { winter: '01-01', spring: '04-01', summer: '06-01', autumn: '09-01' };
   const parsed = PlanRequestSchema.safeParse({
     major: request.majors.join(' + '), completed_courses: request.completed_courses,
     in_progress_courses: request.in_progress_courses,
+    ...(grades.length ? { reviewed_grades: Object.fromEntries(grades) } : {}),
     goal: { type: goal.type, track: goal.track, deadline: goal.deadline ? `${goal.deadline.year}-${boundary[goal.deadline.term]}` : null, notes: goal.notes },
     max_courses_per_term: request.max_courses_per_term, start_term: `${request.start_year}-${request.start_term}`,
     preferences: `Career preparation preference: ${goal.career_hours_per_week} hours/week; ${goal.intensity} pace. These preferences do not change academic eligibility.`,

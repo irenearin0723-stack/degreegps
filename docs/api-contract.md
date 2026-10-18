@@ -160,6 +160,17 @@ Answers a planning question from the bundled data only (RAG over `data/`).
 ID or name) narrows requirement/policy sources but never hides course records.
 `plan_course_ids` only ranks related sources higher.
 
+`plan` (optional) takes the same object as `POST /api/plan`. The server regenerates
+that deterministic plan (no AI, no rate-limit cost) and adds "your plan" sources
+(`kind: "plan"`, `official: false`, IDs `plan:overview`, `plan:quarter:<term>`,
+`plan:course:<id>`) describing the inputs, each quarter, and why each evaluated
+course was or was not scheduled. They are considered only for personal questions
+("my", "I", "next quarter"…) or when the question names a course they describe, so
+general policy questions still cite official records. Plan sources never contain
+`reviewed_grades` values; grades only affect the regenerated plan. If the plan
+cannot be regenerated, a `PLAN_CONTEXT_UNAVAILABLE` warning is returned and
+catalog sources are used.
+
 Returns `{schema_version:"1.0.0", mode, retrieval, answer, insufficient_evidence,
 citations, sources, warnings, disclaimer}`. `sources[]` carries `id`, `kind`,
 `document_title`, `content`, `source_url`, `section`, `verified_at`,
@@ -168,7 +179,7 @@ a returned `sources[].id`.
 
 - `use_ai: false` (default): local keyword ranking; `answer` is the top source
   verbatim (`mode: "deterministic"`). Nothing leaves the server.
-- `use_ai: true`: the question (not transcripts or grades) is sent to the AI provider for
+- `use_ai: true`: the question and retrieved sources, including any plan sources (never transcripts or grades), are sent to the AI provider for
   query embedding (when `data/index/embeddings.json` exists) and answer
   generation. Answers mentioning a course code or date absent from the cited
   sources, or containing links, are rejected and replaced by the extractive
@@ -176,6 +187,18 @@ a returned `sources[].id`.
 - No matching source: `answer: null`, `insufficient_evidence: true`.
 
 Answers explain bundled data; they never change plans or certify eligibility.
+
+### Plan warnings for large catalogs
+
+`/api/plan` plans only courses relevant to `major`: those named by the matching
+requirement programs, every course in each program's home department (the prefix
+its major rules name most often, e.g. CSE for Computer Science), and their
+prerequisites. An info `MAJOR_SCOPE` warning states the counts; an unmatched major
+returns `MAJOR_SCOPE_UNAVAILABLE` and considers the whole catalog. At most 10
+per-course `COURSE_BLOCKED`/`NEEDS_GRADE_CONFIRMATION` warnings are returned, closest
+to schedulable first; the rest are counted by reason in one info
+`COURSE_BLOCKED_SUMMARY` whose `affected_course_codes` lists them. Every course's
+reasons remain in `academic_decisions`.
 
 ### AI rate limits
 

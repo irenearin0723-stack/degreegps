@@ -5,6 +5,9 @@ import { checkPrerequisites } from './prerequisites';
 import { evaluateRegistration, majorLabels } from './registration';
 import type { AcademicDecision, RegistrationSection } from '../types/registration';
 const terms: AcademicTerm[] = ['winter', 'spring', 'summer', 'autumn'];
+// Per-course blocked warnings beyond this are folded into one COURSE_BLOCKED_SUMMARY; academic_decisions keeps every reason.
+export const BLOCKED_DETAIL_LIMIT = 10;
+type BlockedKind = 'prerequisites' | 'grade' | 'offering' | 'registration';
 // MVP calendar windows, not official UW registration/start dates.
 export function nextTerm(now: Date): string {
   const month = now.getUTCMonth();
@@ -52,7 +55,7 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
     + available.filter(d => d.prerequisite_groups?.some(g => g.any_of.some(o => o.course_id === c.course_id)) || d.prerequisite_alternatives?.some(b => b.all_of.some(o => o.course_id === c.course_id))).length;
   const ranked = [...available].sort((a, b) => score(b) - score(a) || a.course_id.localeCompare(b.course_id));
   const quarters: QuarterPlan[] = [];
-  const blocked = new Map<string, string>();
+  const blocked = new Map<string, { reason: string; kind: BlockedKind }>();
   for (const termId of consecutiveTerms(start)) {
     const invalidSelection = (request.selected_slns?.[termId] ?? []).some(sln => !sections.some(s => s.sln === sln && s.term_id === termId));
     const concurrent = new Set(request.concurrent_courses?.[termId] ?? []);
@@ -93,13 +96,14 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
         section_registration_status: registrationStatus, term_offering_status: offering.status,
         schedule_conflict_status: 'not_evaluated', schedule_conflict_reason: 'Quarter-level planning only; no section timetable or conflict-free registration claim. Meeting times do not block quarter-level planning.',
         sections: registration.sections, source_ids: [sourceId, ...(offering.status === 'unknown' ? [] : [offeringSourceId])] });
-      if (!eligibility.eligible) { blocked.set(course.course_id, `${eligibility.status === 'needs_grade_confirmation' ? 'NEEDS_GRADE_CONFIRMATION: ' : ''}${eligibility.explanations.join(' ')}`); continue; }
-      if (offering.status === 'unknown') { blocked.set(course.course_id, `Offering is unknown for ${termId}; no recommendation inferred.`); continue; }
-      if (registrationStatus === 'ineligible') { blocked.set(course.course_id, 'Known registration/selected section restriction does not match.'); continue; }
+      if (!eligibility.eligible) { blocked.set(course.course_id, eligibility.status === 'needs_grade_confirmation'
+        ? { reason: eligibility.explanations.join(' '), kind: 'grade' } : { reason: eligibility.explanations.join(' '), kind: 'prerequisites' }); continue; }
+      if (offering.status === 'unknown') { blocked.set(course.course_id, { reason: `Offering is unknown for ${termId}; no recommendation inferred.`, kind: 'offering' }); continue; }
+      if (registrationStatus === 'ineligible') { blocked.set(course.course_id, { reason: 'Known registration/selected section restriction does not match.', kind: 'registration' }); continue; }
       if (registrationStatus === 'unknown') {
         // Review candidates never enter quarter.courses or the previous-prerequisite set.
         if (!reviewSeen.has(course.course_id)) reviews.push({ course, status: offering.status, sourceId: offeringSourceId });
-        blocked.set(course.course_id, 'Registration/major eligibility is unresolved. ' + (course.verification_notes ?? ''));
+        blocked.set(course.course_id, { reason: 'Registration/major eligibility is unresolved. ' + (course.verification_notes ?? ''), kind: 'registration' });
         continue;
       }
       quarter.courses.push({ id: course.course_id, title: course.title, credits: course.credits,
@@ -122,8 +126,19 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
     if (quarter.courses.length < request.max_courses_per_term) warn('PARTIAL_SCHEDULE', `${termId}: only ${quarter.courses.length} courses could be suggested safely. Do not fill gaps with unverified assumptions.`);
     quarters.push(quarter);
   }
-  for (const [id, reason] of blocked) {
-    if (!previous.has(id)) warn(reason.startsWith('NEEDS_GRADE_CONFIRMATION:') ? 'NEEDS_GRADE_CONFIRMATION' : 'COURSE_BLOCKED', `${id}: ${reason}`, [id]);
+  // Detail the courses closest to schedulable first (prerequisites met or only a grade missing), in priority order.
+  const rank = new Map(ranked.map((c, i) => [c.course_id, i]));
+  const pending = [...blocked].filter(([id]) => !previous.has(id))
+    .sort(([a, x], [b, y]) => Number(x.kind === 'prerequisites') - Number(y.kind === 'prerequisites') || rank.get(a)! - rank.get(b)!);
+  for (const [id, { reason, kind }] of pending.slice(0, BLOCKED_DETAIL_LIMIT))
+    warn(kind === 'grade' ? 'NEEDS_GRADE_CONFIRMATION' : 'COURSE_BLOCKED', `${id}: ${kind === 'grade' ? 'NEEDS_GRADE_CONFIRMATION: ' : ''}${reason}`, [id]);
+  const rest = pending.slice(BLOCKED_DETAIL_LIMIT);
+  if (rest.length) {
+    const count = (kind: BlockedKind) => rest.filter(([, b]) => b.kind === kind).length;
+    const parts = [[count('prerequisites'), 'need', 'needs', 'prerequisites not yet completed'], [count('offering'), 'have', 'has', 'no offering evidence for these terms'],
+      [count('registration'), 'have', 'has', 'unresolved or non-matching registration restrictions'], [count('grade'), 'need', 'needs', 'a reviewed prerequisite grade']] as const;
+    warnings.push({ code: 'COURSE_BLOCKED_SUMMARY', severity: 'info', affected_course_codes: rest.map(([id]) => id),
+      message: `${rest.length} more course${rest.length === 1 ? ' was' : 's were'} not scheduled: ${parts.filter(([n]) => n).map(([n, plural, singular, text]) => `${n} ${n === 1 ? singular : plural} ${text}`).join('; ')}. Per-course reasons are in academic_decisions.` });
   }
   return { quarters, warnings, sources, academic_decisions };
 }

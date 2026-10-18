@@ -1,37 +1,43 @@
 'use client';
 import { useState, type FormEvent } from 'react';
-import { AlertTriangle, ExternalLink, Info, MessageCircleQuestion, Search, ShieldCheck, Sparkles } from 'lucide-react';
+import { AlertTriangle, ExternalLink, Info, MapPinned, MessageCircleQuestion, Search, ShieldCheck, Sparkles } from 'lucide-react';
+import type { PlanRequest as BackendPlanRequest } from '../types/plan';
 import type { AskResponse, RetrievedSourceDto } from '../types/ask';
 import { askQuestion, AskApiError } from '../lib/ask-api';
 
-type Props = { courseIds: string[]; majors: string[] };
+// plan: the plan's validated inputs, so answers can cite the student's own plan. Omitted for mock plans.
+type Props = { courseIds: string[]; majors: string[]; plan?: BackendPlanRequest; blockedCourse?: string };
 
 function SourceCard({ source, cited }: { source: RetrievedSourceDto; cited: boolean }) {
+  const mine = source.kind === 'plan';
   return <article className={cited ? 'ask-source cited' : 'ask-source'}>
-    <div className="ask-source-head"><span className={`source-pill ${source.official ? 'verified' : 'pending'}`}>{source.official ? <ShieldCheck size={11} /> : <AlertTriangle size={11} />}{source.official ? 'Official data' : 'General guidance'}</span>{cited && <b>Cited</b>}</div>
+    <div className="ask-source-head">{mine ? <span className="source-pill plan"><MapPinned size={11} />Your plan</span>
+      : <span className={`source-pill ${source.official ? 'verified' : 'pending'}`}>{source.official ? <ShieldCheck size={11} /> : <AlertTriangle size={11} />}{source.official ? 'Official data' : 'General guidance'}</span>}{cited && <b>Cited</b>}</div>
     <h4>{source.document_title}</h4>
-    <p>{source.verified_at ? `Checked ${source.verified_at}` : 'Verification date unavailable'}</p>
-    {source.source_url ? <a href={source.source_url} target="_blank" rel="noreferrer">Open source <ExternalLink size={11} /></a> : <span className="no-source">No external link</span>}
+    <p>{mine ? `Computed from your inputs on ${source.verified_at}` : source.verified_at ? `Checked ${source.verified_at}` : 'Verification date unavailable'}</p>
+    {source.source_url ? <a href={source.source_url} target="_blank" rel="noreferrer">Open source <ExternalLink size={11} /></a> : <span className="no-source">{mine ? 'Not an official record' : 'No external link'}</span>}
   </article>;
 }
 
 /** Cited Q&A over the bundled UW data. AI is opt-in per question; the default answer is a verbatim source. */
-export function AskPanel({ courseIds, majors }: Props) {
+export function AskPanel({ courseIds, majors, plan, blockedCourse }: Props) {
   const [question, setQuestion] = useState('');
   const [useAi, setUseAi] = useState(false);
   const [pending, setPending] = useState(false);
   const [result, setResult] = useState<AskResponse>();
   const [error, setError] = useState<string>();
   const suggestions = [
-    courseIds[0] && `What are the prerequisites for ${courseIds[0]}?`,
+    plan && 'What should I take next quarter?',
+    plan && blockedCourse && `Why isn't ${blockedCourse} in my plan?`,
+    !plan && courseIds[0] && `What are the prerequisites for ${courseIds[0]}?`,
     majors[0] && `What does the ${majors[0]} major require?`,
     'When does Winter 2027 registration open?',
-  ].filter((s): s is string => Boolean(s));
+  ].filter((s): s is string => Boolean(s)).slice(0, 4);
 
   async function ask(text: string) {
     if (pending) return;
     setQuestion(text); setPending(true); setError(undefined);
-    try { setResult(await askQuestion({ question: text, plan_course_ids: courseIds, use_ai: useAi, ...(majors.length === 1 ? { major: majors[0] } : {}) })); }
+    try { setResult(await askQuestion({ question: text, plan_course_ids: courseIds, use_ai: useAi, ...(plan ? { plan } : {}), ...(majors.length === 1 ? { major: majors[0] } : {}) })); }
     catch (caught) { setResult(undefined); setError(caught instanceof AskApiError ? caught.message : 'Something went wrong. Please retry.'); }
     finally { setPending(false); }
   }
@@ -46,7 +52,7 @@ export function AskPanel({ courseIds, majors }: Props) {
         <input value={question} onChange={e => setQuestion(e.target.value)} maxLength={500} placeholder="e.g. Can informatics majors take CSE 312?" /></label>
       <button className="button primary" type="submit" disabled={pending || question.trim().length < 3}>{pending ? 'Searching…' : 'Ask'}</button>
     </form>
-    <label className="ask-ai-toggle"><input type="checkbox" checked={useAi} onChange={e => setUseAi(e.target.checked)} /><span><Sparkles size={12} /> Write the answer with AI. This sends your question and the matching public UW records to an external AI provider. Don’t include personal details.</span></label>
+    <label className="ask-ai-toggle"><input type="checkbox" checked={useAi} onChange={e => setUseAi(e.target.checked)} /><span><Sparkles size={12} /> Write the answer with AI. This sends your question, the matching public UW records and, for questions about your plan, your plan’s course statuses (never grades) to an external AI provider. Don’t include personal details.</span></label>
     {suggestions.length > 0 && !result && <div className="ask-suggestions">{suggestions.map(s => <button key={s} type="button" onClick={() => void ask(s)} disabled={pending}>{s}</button>)}</div>}
     <div aria-live="polite">
       {error && <div className="ask-error"><AlertTriangle size={14} /><p>{error}</p></div>}

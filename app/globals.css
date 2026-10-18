@@ -30,3 +30,11 @@
 .ask-disclaimer{font-size:8px;color:#9096a2;margin:0;line-height:1.5}
 @media(max-width:900px){.ask-sources{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.summary-section,.ask-section{padding:21px 14px}.summary-section{flex-direction:column}.ask-form{flex-direction:column}.ask-sources{grid-template-columns:1fr}}
+
+/* Grouped plan warnings */
+.warning-group{padding:10px 0;border-bottom:1px solid var(--line)}.warning-group:last-child{border:0}
+.warning-group-head{display:flex;align-items:center;gap:7px}.warning-group-head b{font-size:8px;color:#8d5b27;letter-spacing:.04em}.warning-group.info .warning-group-head b{color:var(--blue)}
+.warning-count{font-size:7px;font-weight:850;border-radius:999px;padding:2px 6px;background:var(--amber-soft);color:var(--amber)}.warning-group.info .warning-count{background:var(--blue-soft);color:var(--blue)}
+.warning-group .warning-row{padding:6px 0 0;border:0}
+.warning-more summary{font-size:8px;font-weight:750;color:#4d5564;cursor:pointer;margin-top:6px}
+.source-pill.plan{color:var(--violet);background:var(--violet-soft)}

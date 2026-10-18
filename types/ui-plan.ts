@@ -24,6 +24,8 @@ export interface PlanRequest {
   /** Canonical codes, e.g. 'CSE 123'. No duplicates. */
   completed_courses: string[];
   in_progress_courses: string[];
+  /** Numeric UW grades (0.0–4.0) the student confirmed in the transcript review step; completed courses only. */
+  reviewed_grades?: Record<string, number>;
   /** Free text at MVP stage; e.g. 'ML Engineer Intern'. */
   target_role: string;
   /** Calendar year of the desired summer internship (e.g. 2027). */

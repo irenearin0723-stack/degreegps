@@ -29,13 +29,18 @@ the original shared starter). Main itself is not reset or overwritten.
   extraction confidence percentages are shown.
 - Projected courses remain tentative. Review-only candidates stay in quarter notes
   and warnings, never fabricated course cards or prerequisite completions.
+- Transcript import sends `reviewed_grades` for confirmed completed rows with a numeric
+  grade (0.0–4.0); credit-only grades and courses listed with conflicting grades are
+  left out, and grades are dropped for courses later removed from the completed list.
+- Plan warnings are grouped by code (most severe first), showing two per group with
+  "Show N more".
 - The dashboard shows the backend `plan_summary`. **Explain with AI** re-requests the
   same plan with `use_ai_explanation: true` (explicit opt-in, disclosed next to the
   button); courses and eligibility are unchanged, and quoted policy records appear in
   the sources list. Hidden for mock plans.
 - **Ask about your route** (`components/AskPanel.tsx`, `lib/ask-api.ts`) calls
-  `POST /api/ask` with the plan's course IDs (and the major when there is exactly
-  one). AI answers are a per-question opt-in checkbox; the default answer quotes the
+  `POST /api/ask` with the plan's inputs as `plan` (omitted for mock plans), its course
+  IDs, and the major when there is exactly one. Plan sources show a "Your plan" label. AI answers are a per-question opt-in checkbox; the default answer quotes the
   closest bundled record. Citations, related sources, warnings (including
   `AI_RATE_LIMITED`) and the disclaimer are always shown.
 - Career milestones retain their recommended date ranges; the legacy timeline

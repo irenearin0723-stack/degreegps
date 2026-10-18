@@ -1,7 +1,8 @@
 import { z } from 'zod';
 import { CourseIdSchema } from './course';
+import { PlanRequestSchema } from './plan';
 
-export const ChunkKindSchema = z.enum(['course', 'sections', 'requirement', 'program', 'program_option', 'policy_issue', 'registration_policy', 'career_path']);
+export const ChunkKindSchema = z.enum(['course', 'sections', 'requirement', 'program', 'program_option', 'policy_issue', 'registration_policy', 'career_path', 'plan']);
 export const RetrievedSourceSchema = z.object({
   id: z.string().min(1), kind: ChunkKindSchema, document_title: z.string(), content: z.string(),
   source_url: z.string().nullable(), section: z.string().nullable(),
@@ -17,6 +18,9 @@ export const AskRequestSchema = z.object({
   official_only: z.boolean().default(false),
   // Courses already in the student's plan; used only to rank related sources higher.
   plan_course_ids: z.array(CourseIdSchema).max(30).default([]),
+  // The plan's inputs (same shape as POST /api/plan). The server regenerates the deterministic plan and
+  // cites it as "your plan" sources; reviewed grades are used for planning but never shown or sent to AI.
+  plan: PlanRequestSchema.optional(),
   use_ai: z.boolean().default(false),
 }).strict();
 export type AskRequest = z.input<typeof AskRequestSchema>;

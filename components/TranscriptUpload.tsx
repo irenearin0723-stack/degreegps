@@ -2,10 +2,10 @@
 
 import { useRef, useState } from 'react';
 import { AlertCircle, Check, FileText, LoaderCircle, LockKeyhole, Upload, X } from 'lucide-react';
-import { parseTranscript, type DetectedTranscriptCourse } from '../lib/transcript-api';
+import { confirmedGrades, parseTranscript, type DetectedTranscriptCourse } from '../lib/transcript-api';
 
 type Props = {
-  onConfirm: (completed: string[], inProgress: string[]) => void;
+  onConfirm: (completed: string[], inProgress: string[], grades: Record<string, number>) => void;
 };
 
 const allowedTypes = ['application/pdf'];
@@ -37,7 +37,9 @@ export function TranscriptUpload({ onConfirm }: Props) {
   const confirm = () => {
     const completed = courses.filter((course) => course.status === 'completed').map((course) => course.code);
     const inProgress = courses.filter((course) => course.status === 'in_progress').map((course) => course.code);
-    onConfirm(completed, inProgress); setState('confirmed'); setMessage(`${completed.length + inProgress.length} courses added. You can edit them below.`);
+    const grades = confirmedGrades(courses);
+    const graded = Object.keys(grades).length;
+    onConfirm(completed, inProgress, grades); setState('confirmed'); setMessage(`${completed.length + inProgress.length} courses added${graded ? `, ${graded} with grades used for minimum-grade prerequisites` : ''}. You can edit them below.`);
   };
   const reset = () => { setFile(undefined); setCourses([]); setState('idle'); setMessage(''); if (inputRef.current) inputRef.current.value = ''; };
 

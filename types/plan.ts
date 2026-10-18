@@ -31,7 +31,8 @@ export const PlanRequestSchema = z.object({
   major: z.string().trim().min(1).max(200),
   completed_courses: z.array(CourseIdSchema).max(300),
   in_progress_courses: z.array(CourseIdSchema).max(30),
-  // Explicit user-confirmed inputs; transcript extraction does not populate these automatically.
+  // Explicit user-confirmed inputs. The web form sends reviewed_grades only for numeric grades of transcript rows
+  // the student confirmed as completed; the parser itself never populates them.
   reviewed_grades: ReviewedGradesSchema.optional(),
   concurrent_courses: z.record(TermIdSchema, z.array(CourseIdSchema).max(30)).optional(),
   selected_slns: z.record(TermIdSchema, z.array(z.string().regex(/^\d{5}$/)).max(30)).optional(),

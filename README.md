@@ -136,7 +136,8 @@ work without it. Never use a `NEXT_PUBLIC_` key variable.
   no retries. `OPENAI_BASE_URL` selects any OpenAI-compatible provider (e.g. Gemini; see
   `.env.example`). Provider retention policies apply. No transcript PDF, raw transcript text, grades, or student header is sent.
 - `/api/ask` defaults to local keyword retrieval with an extractive answer. `use_ai: true`
-  sends only the question and retrieved public-data snippets to the provider; answers citing
+  sends only the question, retrieved public-data snippets and, with `plan`, the student's plan
+  statuses (never grades) to the provider; answers citing
   course codes or dates absent from their sources are rejected. Build the optional
   embedding index with `npm run build:index`.
 - All AI use is rate-limited (default 5/min and 30/day per client, 300/day overall);
