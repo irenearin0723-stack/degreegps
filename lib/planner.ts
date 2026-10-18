@@ -2,6 +2,8 @@ import type { AcademicTerm, Course } from '../types/course';
 import type { PlanRequest, PlanWarning, PlanSource, QuarterPlan } from '../types/plan';
 import { offeringForTerm } from './offerings';
 import { checkPrerequisites } from './prerequisites';
+import { evaluateRegistration, majorLabels } from './registration';
+import type { AcademicDecision, RegistrationSection } from '../types/registration';
 const terms: AcademicTerm[] = ['winter', 'spring', 'summer', 'autumn'];
 // MVP calendar windows, not official UW registration/start dates.
 export function nextTerm(now: Date): string {
@@ -17,7 +19,7 @@ export function consecutiveTerms(start: string): string[] {
   const initial = Number(yearText) * 4 + terms.indexOf(termText as AcademicTerm);
   return Array.from({ length: 3 }, (_, i) => `${Math.floor((initial + i) / 4)}-${terms[(initial + i) % 4]}`);
 }
-export function planAcademic(request: PlanRequest, courses: Course[], now = new Date(), allowSample = false) {
+export function planAcademic(request: PlanRequest, courses: Course[], now = new Date(), allowSample = false, sections: RegistrationSection[] = []) {
   const warnings: PlanWarning[] = [];
   const warn = (code: string, message: string, ids: string[] = []) => warnings.push({ code, severity: 'warning', message, affected_course_codes: ids });
   const completed = new Set(request.completed_courses);
@@ -25,6 +27,7 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
   const previous = new Set<string>();
   const sources: PlanSource[] = [];
   const reviewSeen = new Set<string>();
+  const academic_decisions: AcademicDecision[] = [];
   const ordinal = (value: string) => Number(value.slice(0, 4)) * 4 + terms.indexOf(value.split('-')[1] as AcademicTerm);
   let start = request.start_term ?? nextTerm(now);
   if (!allowSample && ordinal(start) < ordinal(nextTerm(now))) {
@@ -33,7 +36,11 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
   }
   if (!request.start_term) warn('APPROXIMATE_START_TERM', `Defaulted to ${start}; confirm the desired term. Calendar windows are approximate.`);
 
-  if (inProgress.size) warn('IN_PROGRESS_NOT_COMPLETED', 'In-progress courses are excluded from recommendations and do not satisfy prerequisites. Update completed courses after grades are confirmed.', [...inProgress]);
+  for (const [term, slns] of Object.entries(request.selected_slns ?? {})) {
+    if (slns.some(sln => !sections.some(s => s.sln === sln && s.term_id === term)))
+      warn('SECTION_SELECTION_UNKNOWN', `${term}: selected SLN has no imported evidence for that exact term. No registration clearance inferred.`);
+  }
+  if (inProgress.size) warn('IN_PROGRESS_NOT_COMPLETED', 'In-progress courses are not completed. Only explicit exact-term concurrent intentions can satisfy a specifically verified concurrency exception. Update completed courses after grades are confirmed.', [...inProgress]);
   if (courses.some(c => c.data_status !== 'verified')) warn('UNVERIFIED_CATALOG', 'Dataset contains sample or unknown records. Generated mode excludes these records; mock mode is illustrative and is not academic advice.');
   const incomplete = courses.filter(c => c.enrollment_status === 'unknown');
   if (incomplete.length) warn('ENROLLMENT_UNVERIFIED', `${incomplete.length} catalog records have unresolved registration eligibility. These records are excluded from confirmed course scheduling; missing restriction details are never treated as unrestricted enrollment.`);
@@ -47,7 +54,9 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
   const quarters: QuarterPlan[] = [];
   const blocked = new Map<string, string>();
   for (const termId of consecutiveTerms(start)) {
-    const term = termId.split('-')[1] as AcademicTerm;
+    const invalidSelection = (request.selected_slns?.[termId] ?? []).some(sln => !sections.some(s => s.sln === sln && s.term_id === termId));
+    const concurrent = new Set(request.concurrent_courses?.[termId] ?? []);
+    if (concurrent.size) warn('CONCURRENT_INTENTIONS', `${termId}: concurrent intentions are conditional, not completed courses or validated external assignments. Verify actual concurrent enrollment.`, [...concurrent]);
     const reviews: { course: Course; status: string; sourceId: string }[] = [];
     const quarter: QuarterPlan = { term: termId, courses: [], notes: 'Eligibility depends on confirmed history, verified rules, and actual registration availability; this is not a degree audit.' };
     for (const course of ranked) {
@@ -56,19 +65,38 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
       const sourceId = `course:${course.course_id}`;
       if (!sources.some(s => s.id === sourceId)) sources.push({ id: sourceId, title: course.title, url: course.source_url, kind: course.data_status === 'verified' ? 'official' : 'mock', verified_at: course.verified_at, data_status: course.data_status });
       if (course.schedule_source_url && !sources.some(s => s.url === course.schedule_source_url)) sources.push({ id: `schedule:${course.course_id}`, title: 'Term-specific offering snapshot (not live registration)', url: course.schedule_source_url, kind: 'official', verified_at: course.verified_at, data_status: course.data_status });
-      const eligibility = checkPrerequisites(course, { completed, in_progress: inProgress, previously_planned: previous, allow_sample: allowSample });
-      if (!eligibility.eligible) { blocked.set(course.course_id, `${eligibility.status === 'needs_grade_confirmation' ? 'NEEDS_GRADE_CONFIRMATION: ' : ''}${eligibility.explanations.join(' ')}`); continue; }
+      const eligibility = checkPrerequisites(course, { completed, in_progress: inProgress, previously_planned: previous,
+        concurrent, grades: request.reviewed_grades, allow_sample: allowSample });
       const offering = offeringForTerm(course, termId);
-      if (offering.status === 'unknown') { blocked.set(course.course_id, `Offering is unknown for ${termId}; no recommendation inferred.`); continue; }
+      const sectionEvidence = sections.filter(s => s.course_id === course.course_id && s.term_id === termId);
+      for (const section of sectionEvidence) {
+        for (const [prefix, url] of [['section', section.source_url], ['section-detail', section.detail_url]]) {
+          const id = `${prefix}:${termId}:${section.sln}`;
+          if (!sources.some(source => source.id === id)) sources.push({ id, title: `${course.course_id} section ${section.section} SLN ${section.sln}: curated evidence, not complete clearance or live seats`,
+            url, kind: 'official', verified_at: section.snapshot_at.slice(0, 10), data_status: 'verified' });
+        }
+      }
+      const majorAllowed = course.eligible_majors?.some(m => m === '*' || m.toLowerCase() === request.major.toLowerCase()
+        || (majorLabels(m).size > 0 && [...majorLabels(m)].some(label => majorLabels(request.major).has(label))));
+      const registration = evaluateRegistration(sections, course.course_id, termId, request.major, concurrent, request.selected_slns?.[termId]);
+      const registrationStatus = invalidSelection ? 'unknown' : sectionEvidence.length ? registration.status
+        : course.eligible_majors && !majorAllowed ? 'ineligible'
+        : course.enrollment_status === 'unknown' || !course.eligible_majors ? 'unknown' : 'eligible';
       const offeringSourceId = `offering:${course.course_id}:${termId}`;
-      if (!sources.some(source => source.id === offeringSourceId)) sources.push({
+      if (offering.status !== 'unknown' && !sources.some(source => source.id === offeringSourceId)) sources.push({
         id: offeringSourceId, title: `${course.course_id} ${termId}: ${offering.status} offering evidence (no seat guarantee)`,
         url: offering.source_url, kind: course.data_status === 'sample' ? 'mock' : 'official',
         verified_at: offering.verified_at, data_status: course.data_status,
       });
-      const majorAllowed = course.eligible_majors?.some(m => m === '*' || m.toLowerCase() === request.major.toLowerCase());
-      if (course.eligible_majors && !majorAllowed) { blocked.set(course.course_id, 'Verified major restriction does not match.'); continue; }
-      if (course.enrollment_status === 'unknown' || !course.eligible_majors) {
+      academic_decisions.push({ course_id: course.course_id, term: termId,
+        catalog_prerequisite_status: eligibility.status, prerequisite_conditional: eligibility.conditional, prerequisite_reasons: eligibility.explanations,
+        section_registration_status: registrationStatus, term_offering_status: offering.status,
+        schedule_conflict_status: 'not_evaluated', schedule_conflict_reason: 'Quarter-level planning only; no section timetable or conflict-free registration claim. Meeting times do not block quarter-level planning.',
+        sections: registration.sections, source_ids: [sourceId, ...(offering.status === 'unknown' ? [] : [offeringSourceId])] });
+      if (!eligibility.eligible) { blocked.set(course.course_id, `${eligibility.status === 'needs_grade_confirmation' ? 'NEEDS_GRADE_CONFIRMATION: ' : ''}${eligibility.explanations.join(' ')}`); continue; }
+      if (offering.status === 'unknown') { blocked.set(course.course_id, `Offering is unknown for ${termId}; no recommendation inferred.`); continue; }
+      if (registrationStatus === 'ineligible') { blocked.set(course.course_id, 'Known registration/selected section restriction does not match.'); continue; }
+      if (registrationStatus === 'unknown') {
         // Review candidates never enter quarter.courses or the previous-prerequisite set.
         if (!reviewSeen.has(course.course_id)) reviews.push({ course, status: offering.status, sourceId: offeringSourceId });
         blocked.set(course.course_id, 'Registration/major eligibility is unresolved. ' + (course.verification_notes ?? ''));
@@ -97,5 +125,5 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
   for (const [id, reason] of blocked) {
     if (!previous.has(id)) warn(reason.startsWith('NEEDS_GRADE_CONFIRMATION:') ? 'NEEDS_GRADE_CONFIRMATION' : 'COURSE_BLOCKED', `${id}: ${reason}`, [id]);
   }
-  return { quarters, warnings, sources };
+  return { quarters, warnings, sources, academic_decisions };
 }

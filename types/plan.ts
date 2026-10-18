@@ -1,6 +1,7 @@
 /** Canonical contract v2. Runtime schemas and TypeScript types share one source. */
 import { z } from 'zod';
 import { CourseIdSchema, TrackSchema, AcademicTermSchema } from './course';
+import { AcademicDecisionSchema } from './registration';
 export type { AcademicTerm } from './course';
 export const GoalTypeSchema = z.enum(['internship', 'research', 'projects', 'explore']);
 export const SUPPORTED_GOALS = {
@@ -20,10 +21,20 @@ export const GoalSchema = z.object({
 });
 export type Goal = z.infer<typeof GoalSchema>;
 export const TermIdSchema = z.string().regex(/^2\d{3}-(winter|spring|summer|autumn)$/);
+const ReviewedGradesSchema = z.record(z.string(), z.number().min(0).max(4)).superRefine((grades, ctx) => {
+  const ids = Object.keys(grades).map(id => CourseIdSchema.safeParse(id));
+  if (ids.some(id => !id.success) || new Set(ids.filter(id => id.success).map(id => id.data)).size !== ids.length)
+    ctx.addIssue({ code: 'custom', message: 'Invalid or duplicate normalized reviewed grade IDs' });
+  if (ids.length > 300) ctx.addIssue({ code: 'custom', message: 'Too many reviewed grades' });
+}).transform(grades => Object.fromEntries(Object.entries(grades).map(([id, grade]) => [CourseIdSchema.parse(id), grade])));
 export const PlanRequestSchema = z.object({
   major: z.string().trim().min(1).max(200),
   completed_courses: z.array(CourseIdSchema).max(300),
   in_progress_courses: z.array(CourseIdSchema).max(30),
+  // Explicit user-confirmed inputs; transcript extraction does not populate these automatically.
+  reviewed_grades: ReviewedGradesSchema.optional(),
+  concurrent_courses: z.record(TermIdSchema, z.array(CourseIdSchema).max(30)).optional(),
+  selected_slns: z.record(TermIdSchema, z.array(z.string().regex(/^\d{5}$/)).max(30)).optional(),
   goal: GoalSchema,
   max_courses_per_term: z.number().int().min(1).max(5),
   start_term: TermIdSchema.refine(value => Number(value.slice(0, 4)) <= 2099, 'Start year must be 2000–2099').optional(),
@@ -34,6 +45,12 @@ export const PlanRequestSchema = z.object({
   const all = [...request.completed_courses, ...request.in_progress_courses];
   if (new Set(all).size !== all.length)
     ctx.addIssue({ code: 'custom', path: ['completed_courses'], message: 'Duplicate or conflicting course IDs after normalization' });
+  if (Object.keys(request.reviewed_grades ?? {}).some(id => !request.completed_courses.includes(id)))
+    ctx.addIssue({ code: 'custom', path: ['reviewed_grades'], message: 'Reviewed grades must describe confirmed completed courses only' });
+  for (const [term, ids] of Object.entries(request.concurrent_courses ?? {})) {
+    if (new Set(ids).size !== ids.length || ids.some(id => request.completed_courses.includes(id)))
+      ctx.addIssue({ code: 'custom', path: ['concurrent_courses', term], message: 'Concurrent intentions must be unique and not already completed' });
+  }
 });
 export type PlanRequest = z.infer<typeof PlanRequestSchema>;
 export const PlanWarningSchema = z.object({
@@ -72,9 +89,14 @@ export const PlanResponseSchema = z.object({
   recommended_skills: z.array(z.string()), recommended_projects: z.array(z.string()),
   warnings: z.array(PlanWarningSchema), sources: z.array(PlanSourceSchema),
   plan_summary: z.string().optional(),
+  academic_decisions: z.array(AcademicDecisionSchema).optional(),
 }).strict().superRefine((plan, ctx) => {
   const ids = new Set(plan.sources.map(s => s.id));
   const seen = new Set([...plan.request.completed_courses, ...plan.request.in_progress_courses]);
+  for (const decision of plan.academic_decisions ?? []) {
+    if ([...decision.source_ids, ...decision.sections.flatMap(s => s.source_ids)].some(id => !ids.has(id)))
+      ctx.addIssue({ code: 'custom', message: 'Broken academic decision source reference' });
+  }
   for (const q of plan.quarters) {
     if (q.courses.length > plan.request.max_courses_per_term)
       ctx.addIssue({ code: 'custom', message: 'Course load exceeded' });
