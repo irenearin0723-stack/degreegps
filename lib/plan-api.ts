@@ -19,6 +19,7 @@ function mockForRequest(request: PlanRequest): PlanResponse {
   const isResearch = request.target_role.includes('Research Assistant');
   const isExplore = request.target_role.includes('Exploration');
   const isProfile = request.target_role.includes('Profile & Project');
+  const isSWE = request.target_role.includes('Software Engineering');
   const career_milestones = isResearch ? fixture.career_milestones.map((item, index) => ({
     ...item,
     title: ['Map relevant UW labs', 'Build research readiness', 'Prepare thoughtful outreach', 'Research or scoped replication project'][index],
@@ -32,13 +33,17 @@ function mockForRequest(request: PlanRequest): PlanResponse {
     title: ['Audit skills and existing evidence', 'Build one focused project', 'Document and publish the work', 'Choose the next opportunity'][index],
     description: ['Find the most important gap between current evidence and the target direction.', 'Scope a project that can be finished alongside coursework.', 'Explain decisions, results, and limitations clearly.', 'Use the finished work to choose an internship or research target.'][index],
     action_items: [['List current skills', 'Choose one evidence gap'], ['Define a six-week scope', 'Ship a working baseline'], ['Write a strong README', 'Request feedback'], ['Select a primary goal', 'Regenerate the roadmap']][index],
-  })) : fixture.career_milestones;
+  })) : isSWE ? fixture.career_milestones.map((item,index)=>({...item,title:['Strengthen SWE portfolio','Practice algorithms consistently','Prepare system and project stories','Internship or production-grade app'][index],description:['Turn existing work into clear software engineering evidence.','Build interview fluency without overwhelming coursework.','Explain architecture decisions, testing, and tradeoffs.','Pursue an SWE role or ship a credible fallback application.'][index],action_items:[['Polish one full-stack project','Add tests and deployment notes'],['Complete two focused problems weekly','Track patterns, not just answers'],['Practice one system-design prompt','Prepare two behavioral stories'],['Complete internship or ship an app','Write a technical retrospective']][index]})) : fixture.career_milestones;
+  const recommended_skills=isSWE?[{name:'API and system design',reason:'Build reliable services and explain architecture tradeoffs.',priority:'now' as const},{name:'Testing and delivery',reason:'Show production-minded engineering evidence.',priority:'next' as const}]:[{name:'Python for ML',reason:'Build reproducible data and model experiments.',priority:'now' as const},{name:'Model evaluation',reason:'Explain results, limitations, and tradeoffs.',priority:'next' as const}];
+  const recommended_projects=isSWE?[{title:'Full-stack degree planning app',description:'Ship an accessible application with a tested API and deployment notes.',skills:['React','APIs','Testing']}]:[{title:'UW course-demand forecaster',description:'Build an explainable forecasting prototype with documented evaluation and limitations.',skills:['Python','Data analysis','Model evaluation']}];
   return {
     ...fixture,
     plan_id: `demo-${Date.now()}`,
     generated_at: new Date().toISOString(),
     request,
     career_milestones,
+    recommended_skills,
+    recommended_projects,
   };
 }
 
