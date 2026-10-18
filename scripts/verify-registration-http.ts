@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { PlanResponseSchema } from '../types/plan';
 const origin = process.env.DEGREEGPS_SMOKE_ORIGIN ?? 'http://127.0.0.1:3113';
 async function main() {
-  const handoff = JSON.parse(await readFile('data/handoff/registration_evidence_handoff.json', 'utf8'));
+  const registrationRules = JSON.parse(await readFile('data/target_courses/registration_rules.json', 'utf8'));
   const passed: string[] = [];
   async function plan(changes: Record<string, unknown> = {}) {
     const response = await fetch(`${origin}/api/plan`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
@@ -40,7 +40,7 @@ async function main() {
     async () => { const d = await decision('CSE 351', { completed_courses: ['CSE 123'] }); assert.equal(d.catalog_prerequisite_status, 'met'); assert.equal(d.section_registration_status, 'unknown'); assert.equal(d.term_offering_status, 'confirmed'); assert.equal(d.schedule_conflict_status, 'not_evaluated'); },
     async () => { const d = await decision('AMATH 301', { completed_courses: ['MATH 125'] }); assert.equal(d.section_registration_status, 'unknown'); assert.ok(d.sections.every(s => s.registration_status === 'unknown')); },
   ];
-  for (const [i, check] of checks.entries()) { await check(); passed.push(handoff.acceptance_checks[i]); console.log(`PASS ${i + 1}: ${handoff.acceptance_checks[i]}`); }
+  for (const [i, check] of checks.entries()) { await check(); passed.push(registrationRules.acceptance_checks[i]); console.log(`PASS ${i + 1}: ${registrationRules.acceptance_checks[i]}`); }
   for (const reviewed_grades of [{ 'CSE 123': 5 }, { 'CSE 123': 2, cse123: 3 }, { 'CSE 123': '2' }]) {
     const response = await fetch(`${origin}/api/plan`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ major: 'CSE', completed_courses: ['CSE 123'], in_progress_courses: [], goal: { type: 'research', track: 'ml', deadline: null }, max_courses_per_term: 2, reviewed_grades }) });
     assert.equal(response.status, 400);

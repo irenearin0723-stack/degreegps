@@ -38,7 +38,7 @@ export async function loadData(directory = join(process.cwd(), 'data')) {
       courses = mergeProjectedOfferings(courses, JSON.parse(await readFile(join(directory, 'target_courses/projected_offerings.json'), 'utf8')));
       const files = Object.fromEntries(await Promise.all(['courses.json', 'prerequisites.json', 'sections.json'].map(async name =>
         [name, await readFile(join(directory, 'target_courses', name), 'utf8')])));
-      sections = importRegistration(JSON.parse(await readFile(join(directory, 'handoff/registration_evidence_handoff.json'), 'utf8')), files);
+      sections = importRegistration(JSON.parse(await readFile(join(directory, 'target_courses/registration_rules.json'), 'utf8')), files);
     } else {
       courses = CourseDatasetSchema.parse(raw).courses;
     }

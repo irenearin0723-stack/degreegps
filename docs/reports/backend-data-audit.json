@@ -1,15 +1,15 @@
 {
   "json_files": [
     {
+      "file": "archive/2026-10-17_registration-handoff-v1/registration_evidence_handoff.json",
+      "valid_json": true
+    },
+    {
+      "file": "archive/2026-10-17_registration-handoff-v1/winter_2027_registration_review.json",
+      "valid_json": true
+    },
+    {
       "file": "career_paths.json",
-      "valid_json": true
-    },
-    {
-      "file": "handoff/registration_evidence_handoff.json",
-      "valid_json": true
-    },
-    {
-      "file": "handoff/winter_2027_registration_review.json",
       "valid_json": true
     },
     {

@@ -78,7 +78,7 @@ export function planAcademic(request: PlanRequest, courses: Course[], now = new 
       }
       const majorAllowed = course.eligible_majors?.some(m => m === '*' || m.toLowerCase() === request.major.toLowerCase()
         || (majorLabels(m).size > 0 && [...majorLabels(m)].some(label => majorLabels(request.major).has(label))));
-      const registration = evaluateRegistration(sections, course.course_id, termId, request.major, concurrent, request.selected_slns?.[termId]);
+      const registration = evaluateRegistration(sections, course.course_id, termId, request.major, concurrent, request.selected_slns?.[termId], now.toISOString().slice(0, 10));
       const registrationStatus = invalidSelection ? 'unknown' : sectionEvidence.length ? registration.status
         : course.eligible_majors && !majorAllowed ? 'ineligible'
         : course.enrollment_status === 'unknown' || !course.eligible_majors ? 'unknown' : 'eligible';
